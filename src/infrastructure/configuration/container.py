@@ -1,4 +1,4 @@
-from src.adapters.out.ai.context_predictor_mock import ContextPredictorMock
+from src.adapters.out.ai.sklearn_context_predictor import SklearnContextPredictor
 from src.adapters.out.ai.generador_borrador_mock import GeneradorBorradorMock
 from src.adapters.out.persistence.catalogo_repository_memory import CatalogoRepositoryMemory
 from src.adapters.out.persistence.informe_repository_memory import InformeRepositoryMemory
@@ -35,7 +35,10 @@ class Container:
         self.obtener_solicitud = ObtenerSolicitud(self.servicios)
         self.actualizar_solicitud = ActualizarSolicitud(self.servicios)
         self.guardar_valores = GuardarValoresSolicitud(self.servicios)
-        self.predecir_contexto = PredecirContexto(self.servicios, ContextPredictorMock())
+        self.predecir_contexto = PredecirContexto(
+                self.servicios,
+                SklearnContextPredictor()
+            )
         self.validar_prediccion = ValidarPrediccion(self.servicios)
         self.generar_borrador = GenerarBorrador(self.servicios, self.informes, GeneradorBorradorMock())
         self.obtener_informe = ObtenerInforme(self.servicios, self.informes)

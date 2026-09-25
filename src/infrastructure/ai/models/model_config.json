@@ -1,0 +1,5 @@
+{
+  "umbral_normas": 0.25,
+  "version_modelo": "RF-IA-01-200CASOS-v1",
+  "sklearn_version": "1.6.1"
+}
