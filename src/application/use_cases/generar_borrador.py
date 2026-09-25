@@ -1,33 +1,54 @@
-from src.application.ports.output.llm_port import LLMPort
+from uuid import UUID
+
+from src.application.ports.output.generador_borrador import ContextoConfirmado, GeneradorBorrador
+from src.application.ports.output.informe_repository import InformeRepository
+from src.application.use_cases.servicios_solicitud import ServiciosSolicitud
+from src.domain.entities.informe import Informe, VersionInforme
+from src.domain.entities.usuario_actual import UsuarioActual
+from src.domain.services.errores import ConflictoEstado, DatosInvalidos
+from src.domain.services.informe_service import validar_contenido
+from src.domain.services.solicitud_service import SolicitudService
+from src.domain.value_objects.estado_solicitud import EstadoSolicitud
+from src.domain.value_objects.estados import OrigenVersion, ResultadoValidacion
 
 
 class GenerarBorrador:
 
-    def __init__(self, llm: LLMPort):
-        self.llm = llm
+    def __init__(self, servicios: ServiciosSolicitud, informes: InformeRepository,
+                 generador: GeneradorBorrador):
+        self.s, self.informes, self.generador = servicios, informes, generador
 
-    def ejecutar(self, asunto: str, descripcion: str) -> str:
-
-        prompt = f"""
-Eres un asistente de inteligencia artificial para una municipalidad.
-
-Genera un borrador formal de respuesta administrativa utilizando la
-siguiente información:
-
-Asunto:
-{asunto}
-
-Descripción:
-{descripcion}
-
-El borrador debe:
-- Estar redactado en español.
-- Tener un tono formal y administrativo.
-- Ser claro y ordenado.
-- No inventar datos que no hayan sido proporcionados.
-- Servir como borrador para posterior revisión humana.
-
-Genera únicamente el borrador.
-"""
-
-        return self.llm.generar(prompt)
+    def ejecutar(self, solicitud_id: UUID, usuario: UsuarioActual, instrucciones: str = ""):
+        if not isinstance(instrucciones, str):
+            raise DatosInvalidos("Las instrucciones deben ser texto")
+        with self.s.uow.transaccion():
+            solicitud = self.s.obtener(solicitud_id, usuario, escritura=True)
+            SolicitudService.editable(solicitud)
+            if self.informes.obtener_por_solicitud(solicitud.id):
+                raise ConflictoEstado("Ya existe un informe para esta solicitud")
+            p = self.s.predicciones.ultima(solicitud.id)
+            if not p or p.resultado_validacion not in (ResultadoValidacion.ACEPTADA, ResultadoValidacion.CORREGIDA):
+                raise ConflictoEstado("Debe confirmar o corregir el contexto antes de generar")
+            self.s.validar_referencias(solicitud)
+            plantilla = self.s.plantilla(solicitud.plantilla_id)
+            SolicitudService.validar_obligatorios(solicitud, plantilla)
+            self.s.recalcular_estado(solicitud)
+            if solicitud.estado != EstadoSolicitud.LISTA_PARA_GENERAR:
+                raise ConflictoEstado("La solicitud no está lista para generar")
+            solicitud.estado = EstadoSolicitud.PROCESANDO
+            self.s.guardar(solicitud)
+            claves = {c.id: c.clave for c in plantilla.campos if c.activo}
+            datos = {claves[v.campo_plantilla_id]: v.valor for v in solicitud.valores}
+            contexto = ContextoConfirmado(solicitud.tipo_informe_id, solicitud.area_destino_id,
+                                           tuple(n.normativa_id for n in p.normativas if n.aceptada))
+            resultado = self.generador.generar(solicitud.asunto, plantilla, datos, contexto, instrucciones)
+            validar_contenido(resultado.contenido)
+            informe = Informe(solicitud.id, plantilla.id, usuario.id, titulo=solicitud.asunto)
+            informe.versiones.append(VersionInforme(
+                informe.id, 1, resultado.contenido, OrigenVersion.IA, usuario.id,
+                modelo_ia=resultado.modelo_ia, prompt_version=resultado.prompt_version,
+            ))
+            self.informes.guardar(informe)
+            solicitud.estado = EstadoSolicitud.GENERADA
+            self.s.guardar(solicitud)
+            return informe
