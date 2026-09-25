@@ -183,14 +183,13 @@ modificaciones. No se importan ni instancian al iniciar la aplicación PMV1. Su 
 antiguo de texto/prompt requerirá adaptación por el responsable de la integración;
 el controller PMV1 utiliza exclusivamente el puerto estructurado y su mock.
 
-## Frontend PMV 1
+## Interfaz web PMV 1
 
-El Front-End de PMV 1 está en la carpeta [`frontend`](frontend). No modifica la API.
+La interfaz React queda como adaptador de entrada en `src/adapters/in/web/` (páginas, componentes, layouts y servicios). No modifica controladores ni casos de uso del backend.
+
+Con el backend encendido en `http://127.0.0.1:8000`:
 
 ```powershell
-cd frontend
 npm install
 npm run dev
 ```
-
-Consume este backend en `http://127.0.0.1:8000`. Detalle de instalación: [frontend/README.md](frontend/README.md).

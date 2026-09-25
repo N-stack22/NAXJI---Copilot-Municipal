@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "api": "node server/pmv1-api.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
