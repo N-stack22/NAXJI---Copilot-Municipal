@@ -182,3 +182,15 @@ El `OllamaAdapter` y `LLMPort` que ya existían en el commit remoto se conservan
 modificaciones. No se importan ni instancian al iniciar la aplicación PMV1. Su contrato
 antiguo de texto/prompt requerirá adaptación por el responsable de la integración;
 el controller PMV1 utiliza exclusivamente el puerto estructurado y su mock.
+
+## Frontend PMV 1
+
+El Front-End de PMV 1 está en la carpeta [`frontend`](frontend). No modifica la API.
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Consume este backend en `http://127.0.0.1:8000`. Detalle de instalación: [frontend/README.md](frontend/README.md).
