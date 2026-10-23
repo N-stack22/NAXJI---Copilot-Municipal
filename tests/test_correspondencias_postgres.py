@@ -147,7 +147,7 @@ def test_sklearn_y_ollama_reales_con_semilla_verificada_sin_citas(db_local, tmp_
     with TestClient(app) as client:
         url = '/solicitudes/'+client.post('/solicitudes', json={'asunto': asunto}).json()['id']
         p = client.post(url+'/predecir-contexto').json()
-        assert not p['es_mock'] and p['modelo'] == 'SKLEARN_RF_IA_01'
+        assert not p['es_mock'] and p['modelo'] == 'SKLEARN_IA_01'
         assert len(p['normativas']) == 2
         elegido = next(n for n in p['normativas'] if n['codigo'] == 'PE_DL_1278')
         tipo = str(deps.plantillas.obtener_por_id(pid).tipo_informe_id)

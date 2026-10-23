@@ -28,7 +28,7 @@ def create_app(settings: Settings | None = None, container: Container | None = N
     app = FastAPI(
         title="NAXJI API", version="1.0.0",
         description=(f"Backend PMV1. Persistencia configurada: {settings.persistence_mode}. "
-                     "Predicción RF-IA-01 y generación estructurada con Ollama local. "
+                     "Predicción IA-01 con estimadores sklearn y generación estructurada con Ollama local. "
                      "Los tokens demo solo están habilitados en memoria. PostgreSQL usa Supabase Auth."),
     )
     app.state.settings = settings

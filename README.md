@@ -7,6 +7,15 @@ con correspondencias de catálogo; el generador de borradores usa **Ollama local
 con `qwen2.5:7b` y las secciones de la plantilla seleccionada.
 La plantilla técnica piloto es demostrativa, no un formato municipal aprobado.
 
+**Identificación del predictor:** RF-IA-01 es el nombre histórico del requerimiento
+y de la versión de los artefactos. Los archivos incluidos contienen
+`LogisticRegression` para tipo y área, y `OneVsRestClassifier[LogisticRegression]`
+para temas normativos; no un Random Forest. Las nuevas respuestas identifican el
+modelo como `SKLEARN_IA_01` y exponen `algoritmos`; las predicciones históricas
+conservan sus metadatos. La confianza por entrada no es una métrica de precisión.
+No se incluye un conjunto etiquetado independiente para medir rendimiento.
+Véase la [evaluación formativa y sus límites](docs/AUDITORIA_FORMATIVA.md).
+
 Estado y evidencias: [catálogos PMV1](docs/IMPLEMENTACION_CATALOGOS_PMV1.md) y
 [autenticación/persistencia](docs/VERIFICACION_SUPABASE.md).
 

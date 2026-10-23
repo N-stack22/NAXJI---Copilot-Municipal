@@ -13,7 +13,7 @@ class CategoriaPredicha(ResponseModel):
     id: UUID
     codigo: str | None
     nombre: str
-    confianza: float | None = Field(ge=0, le=1)
+    confianza: float | None = Field(ge=0, le=1, description="Probabilidad de la clase para esta entrada; no es una métrica de precisión del modelo")
 
 
 class CorrespondenciaResponse(ResponseModel):
@@ -55,6 +55,8 @@ class PrediccionResponse(ResponseModel):
     solicitud_id: UUID
     modelo: str
     version_modelo: str | None
+    algoritmos: dict[str, str] = Field(default_factory=dict,
+        description="Estimadores cargados. Vacío en predicciones históricas sin este metadato; la versión histórica RF-IA-01 no identifica el algoritmo")
     es_mock: bool
     resultado_validacion: ResultadoValidacion
     validado_por: UUID | None
@@ -83,6 +85,7 @@ def representar_prediccion(p: PrediccionContexto, catalogos: CatalogoRepository)
                                   confianza=confianza) if item else None
     return PrediccionResponse(
         id=p.id, solicitud_id=p.solicitud_id, modelo=p.modelo, version_modelo=p.version_modelo,
+        algoritmos=p.parametros.get("algoritmos", {}),
         es_mock=p.modelo.startswith("MOCK_"), resultado_validacion=p.resultado_validacion,
         validado_por=p.validado_por, validado_at=p.validado_at,
         tipo_informe=categoria(tipo, p.confianza_tipo),

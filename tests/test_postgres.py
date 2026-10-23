@@ -124,6 +124,6 @@ def test_predictor_resolves_real_ids_and_rejects_missing_catalogs():
 def test_real_sklearn_predictor_remains_available():
     deps = Container(Settings())
     prediction = deps.predecir_contexto.predictor.predecir("Inspección de parque municipal", uuid4())
-    assert prediction.modelo == "SKLEARN_RF_IA_01"
+    assert prediction.modelo == "SKLEARN_IA_01"
     assert prediction.tipo_informe_predicho_id in {t.id for t in TIPOS}
     assert prediction.area_destino_predicha_id in {a.id for a in AREAS}

@@ -32,7 +32,8 @@ class SolicitudService:
         elif tipo == TipoDato.BOOLEAN:
             correcto = type(valor) is bool
         elif tipo == TipoDato.NUMBER:
-            correcto = type(valor) in (int, float) and isfinite(valor)
+            # Los enteros de Python son finitos; convertirlos a float puede desbordar.
+            correcto = type(valor) is int or (type(valor) is float and isfinite(valor))
         elif tipo == TipoDato.DATE:
             try:
                 correcto = isinstance(valor, str) and date.fromisoformat(valor).isoformat() == valor

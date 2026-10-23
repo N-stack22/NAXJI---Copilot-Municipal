@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 from uuid import UUID, NAMESPACE_URL, uuid5
 
-import numpy as np
 from joblib import load
 
 from src.application.ports.output.context_predictor import ContextPredictor
@@ -103,6 +102,15 @@ class SklearnContextPredictor(ContextPredictor):
             "version_modelo",
             "RF-IA-01-v1"
         )
+
+        # Describir los estimadores cargados, no deducir el algoritmo del nombre
+        # histórico RF-IA-01 del requerimiento o de la versión del artefacto.
+        self.algoritmos = {
+            "tipo_informe": type(self.modelo_tipo.steps[-1][1]).__name__,
+            "area_destino": type(self.modelo_area.steps[-1][1]).__name__,
+            "normativas": type(self.modelo_normas).__name__ + "["
+                + ",".join(sorted({type(e).__name__ for e in self.modelo_normas.estimators_})) + "]",
+        }
 
     # --------------------------------------------------------
     # Obtener probabilidad de la clase elegida
@@ -294,13 +302,14 @@ class SklearnContextPredictor(ContextPredictor):
 
             confianza_area=confianza_area,
 
-            modelo="SKLEARN_RF_IA_01",
+            modelo="SKLEARN_IA_01",
 
             version_modelo=(
                 self.version_modelo
             ),
 
             parametros={
+                "algoritmos": dict(self.algoritmos),
                 "umbral_normas":
                     self.umbral_normas,
 

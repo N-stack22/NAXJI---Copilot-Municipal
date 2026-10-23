@@ -60,6 +60,8 @@ class ServiciosSolicitud:
         if solicitud.plantilla_id:
             plantilla = self.plantilla(solicitud.plantilla_id)
             if solicitud.tipo_informe_id is None:
+                if plantilla.tipo_informe_id not in tipos:
+                    raise NoEncontrado("Tipo de informe activo no encontrado")
                 solicitud.tipo_informe_id = plantilla.tipo_informe_id
             if plantilla.tipo_informe_id != solicitud.tipo_informe_id:
                 raise DatosInvalidos("La plantilla no corresponde al tipo de informe")
