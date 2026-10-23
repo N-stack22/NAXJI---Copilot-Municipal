@@ -1,0 +1,603 @@
+{
+  "python": [
+    {
+      "archivo": "scripts/aplicar_seguridad_supabase.py",
+      "lineas": 120
+    },
+    {
+      "archivo": "scripts/cargar_catalogos.py",
+      "lineas": 89
+    },
+    {
+      "archivo": "scripts/consultar_compatibilidad_plantillas.py",
+      "lineas": 109
+    },
+    {
+      "archivo": "scripts/crear_base_informe_mdt.py",
+      "lineas": 86
+    },
+    {
+      "archivo": "scripts/evaluar_predictor.py",
+      "lineas": 162
+    },
+    {
+      "archivo": "scripts/verificar_auth_supabase.py",
+      "lineas": 171
+    },
+    {
+      "archivo": "scripts/verificar_catalogos_sesion.py",
+      "lineas": 81
+    },
+    {
+      "archivo": "scripts/verificar_inspeccion_guardada.py",
+      "lineas": 136
+    },
+    {
+      "archivo": "scripts/verificar_supabase.py",
+      "lineas": 207
+    },
+    {
+      "archivo": "src/adapters/in/controllers/auth_controller.py",
+      "lineas": 98
+    },
+    {
+      "archivo": "src/adapters/in/controllers/catalogo_controller.py",
+      "lineas": 31
+    },
+    {
+      "archivo": "src/adapters/in/controllers/ia_controller.py",
+      "lineas": 41
+    },
+    {
+      "archivo": "src/adapters/in/controllers/informe_controller.py",
+      "lineas": 41
+    },
+    {
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "lineas": 62
+    },
+    {
+      "archivo": "src/adapters/in/controllers/usuario_controller.py",
+      "lineas": 28
+    },
+    {
+      "archivo": "src/adapters/in/schemas/base.py",
+      "lineas": 14
+    },
+    {
+      "archivo": "src/adapters/in/schemas/catalogo_response.py",
+      "lineas": 55
+    },
+    {
+      "archivo": "src/adapters/in/schemas/error_response.py",
+      "lineas": 18
+    },
+    {
+      "archivo": "src/adapters/in/schemas/informe_request.py",
+      "lineas": 15
+    },
+    {
+      "archivo": "src/adapters/in/schemas/informe_response.py",
+      "lineas": 49
+    },
+    {
+      "archivo": "src/adapters/in/schemas/prediccion_request.py",
+      "lineas": 12
+    },
+    {
+      "archivo": "src/adapters/in/schemas/prediccion_response.py",
+      "lineas": 95
+    },
+    {
+      "archivo": "src/adapters/in/schemas/seccion_response.py",
+      "lineas": 7
+    },
+    {
+      "archivo": "src/adapters/in/schemas/solicitud_request.py",
+      "lineas": 55
+    },
+    {
+      "archivo": "src/adapters/in/schemas/solicitud_response.py",
+      "lineas": 30
+    },
+    {
+      "archivo": "src/adapters/out/ai/context_predictor_catalogo.py",
+      "lineas": 77
+    },
+    {
+      "archivo": "src/adapters/out/ai/context_predictor_mock.py",
+      "lineas": 20
+    },
+    {
+      "archivo": "src/adapters/out/ai/fidelidad_inspeccion.py",
+      "lineas": 69
+    },
+    {
+      "archivo": "src/adapters/out/ai/generador_borrador_mock.py",
+      "lineas": 19
+    },
+    {
+      "archivo": "src/adapters/out/ai/generador_borrador_ollama.py",
+      "lineas": 185
+    },
+    {
+      "archivo": "src/adapters/out/ai/ollama_adapter.py",
+      "lineas": 54
+    },
+    {
+      "archivo": "src/adapters/out/ai/sklearn_context_predictor.py",
+      "lineas": 327
+    },
+    {
+      "archivo": "src/adapters/out/documents/__init__.py",
+      "lineas": 0
+    },
+    {
+      "archivo": "src/adapters/out/documents/exportador_docx.py",
+      "lineas": 148
+    },
+    {
+      "archivo": "src/adapters/out/documents/exportador_mdt.py",
+      "lineas": 60
+    },
+    {
+      "archivo": "src/adapters/out/persistence/catalogo_repository_memory.py",
+      "lineas": 44
+    },
+    {
+      "archivo": "src/adapters/out/persistence/datos_demo.py",
+      "lineas": 319
+    },
+    {
+      "archivo": "src/adapters/out/persistence/informe_repository_memory.py",
+      "lineas": 32
+    },
+    {
+      "archivo": "src/adapters/out/persistence/memoria.py",
+      "lineas": 30
+    },
+    {
+      "archivo": "src/adapters/out/persistence/perfil_repository_postgres.py",
+      "lineas": 29
+    },
+    {
+      "archivo": "src/adapters/out/persistence/plantilla_repository_memory.py",
+      "lineas": 16
+    },
+    {
+      "archivo": "src/adapters/out/persistence/postgres.py",
+      "lineas": 263
+    },
+    {
+      "archivo": "src/adapters/out/persistence/prediccion_repository_memory.py",
+      "lineas": 22
+    },
+    {
+      "archivo": "src/adapters/out/persistence/solicitud_repository_memory.py",
+      "lineas": 22
+    },
+    {
+      "archivo": "src/application/ports/input/solicitud_use_case.py",
+      "lineas": 21
+    },
+    {
+      "archivo": "src/application/ports/output/catalogo_repository.py",
+      "lineas": 20
+    },
+    {
+      "archivo": "src/application/ports/output/context_predictor.py",
+      "lineas": 9
+    },
+    {
+      "archivo": "src/application/ports/output/exportador_informe.py",
+      "lineas": 10
+    },
+    {
+      "archivo": "src/application/ports/output/generador_borrador.py",
+      "lineas": 46
+    },
+    {
+      "archivo": "src/application/ports/output/informe_repository.py",
+      "lineas": 17
+    },
+    {
+      "archivo": "src/application/ports/output/llm_port.py",
+      "lineas": 18
+    },
+    {
+      "archivo": "src/application/ports/output/perfil_repository.py",
+      "lineas": 10
+    },
+    {
+      "archivo": "src/application/ports/output/plantilla_repository.py",
+      "lineas": 12
+    },
+    {
+      "archivo": "src/application/ports/output/prediccion_repository.py",
+      "lineas": 14
+    },
+    {
+      "archivo": "src/application/ports/output/solicitud_repository.py",
+      "lineas": 17
+    },
+    {
+      "archivo": "src/application/ports/output/unidad_trabajo.py",
+      "lineas": 13
+    },
+    {
+      "archivo": "src/application/use_cases/actualizar_borrador.py",
+      "lineas": 56
+    },
+    {
+      "archivo": "src/application/use_cases/actualizar_solicitud.py",
+      "lineas": 44
+    },
+    {
+      "archivo": "src/application/use_cases/consultar_catalogos.py",
+      "lineas": 32
+    },
+    {
+      "archivo": "src/application/use_cases/crear_solicitud.py",
+      "lineas": 21
+    },
+    {
+      "archivo": "src/application/use_cases/exportar_informe.py",
+      "lineas": 20
+    },
+    {
+      "archivo": "src/application/use_cases/generar_borrador.py",
+      "lineas": 168
+    },
+    {
+      "archivo": "src/application/use_cases/guardar_solicitud_completa.py",
+      "lineas": 26
+    },
+    {
+      "archivo": "src/application/use_cases/guardar_valores_solicitud.py",
+      "lineas": 32
+    },
+    {
+      "archivo": "src/application/use_cases/obtener_contexto.py",
+      "lineas": 8
+    },
+    {
+      "archivo": "src/application/use_cases/obtener_informe.py",
+      "lineas": 25
+    },
+    {
+      "archivo": "src/application/use_cases/obtener_solicitud.py",
+      "lineas": 12
+    },
+    {
+      "archivo": "src/application/use_cases/predecir_contexto.py",
+      "lineas": 45
+    },
+    {
+      "archivo": "src/application/use_cases/servicios_solicitud.py",
+      "lineas": 87
+    },
+    {
+      "archivo": "src/application/use_cases/validar_prediccion.py",
+      "lineas": 64
+    },
+    {
+      "archivo": "src/application/use_cases/verificar_referencias_normativas.py",
+      "lineas": 16
+    },
+    {
+      "archivo": "src/domain/entities/catalogo.py",
+      "lineas": 36
+    },
+    {
+      "archivo": "src/domain/entities/correspondencia_normativa.py",
+      "lineas": 53
+    },
+    {
+      "archivo": "src/domain/entities/informe.py",
+      "lineas": 39
+    },
+    {
+      "archivo": "src/domain/entities/plantilla.py",
+      "lineas": 36
+    },
+    {
+      "archivo": "src/domain/entities/prediccion_contexto.py",
+      "lineas": 34
+    },
+    {
+      "archivo": "src/domain/entities/solicitud.py",
+      "lineas": 35
+    },
+    {
+      "archivo": "src/domain/entities/usuario_actual.py",
+      "lineas": 17
+    },
+    {
+      "archivo": "src/domain/services/errores.py",
+      "lineas": 35
+    },
+    {
+      "archivo": "src/domain/services/informe_service.py",
+      "lineas": 19
+    },
+    {
+      "archivo": "src/domain/services/solicitud_service.py",
+      "lineas": 58
+    },
+    {
+      "archivo": "src/domain/value_objects/encabezado_documento.py",
+      "lineas": 67
+    },
+    {
+      "archivo": "src/domain/value_objects/estado_solicitud.py",
+      "lineas": 9
+    },
+    {
+      "archivo": "src/domain/value_objects/estados.py",
+      "lineas": 40
+    },
+    {
+      "archivo": "src/domain/value_objects/estructura_piloto.py",
+      "lineas": 12
+    },
+    {
+      "archivo": "src/domain/value_objects/fuentes_piloto.py",
+      "lineas": 33
+    },
+    {
+      "archivo": "src/domain/value_objects/seccion_salida.py",
+      "lineas": 59
+    },
+    {
+      "archivo": "src/infrastructure/auth/mock.py",
+      "lineas": 14
+    },
+    {
+      "archivo": "src/infrastructure/auth/supabase.py",
+      "lineas": 109
+    },
+    {
+      "archivo": "src/infrastructure/configuration/container.py",
+      "lineas": 137
+    },
+    {
+      "archivo": "src/infrastructure/configuration/database.py",
+      "lineas": 83
+    },
+    {
+      "archivo": "src/infrastructure/configuration/settings.py",
+      "lineas": 50
+    },
+    {
+      "archivo": "src/infrastructure/dependencies.py",
+      "lineas": 38
+    },
+    {
+      "archivo": "src/main.py",
+      "lineas": 103
+    },
+    {
+      "archivo": "tests/conftest.py",
+      "lineas": 26
+    },
+    {
+      "archivo": "tests/fixtures/normativa_demo.py",
+      "lineas": 18
+    },
+    {
+      "archivo": "tests/postgres_restart_worker.py",
+      "lineas": 43
+    },
+    {
+      "archivo": "tests/test_api.py",
+      "lineas": 140
+    },
+    {
+      "archivo": "tests/test_arquitectura.py",
+      "lineas": 24
+    },
+    {
+      "archivo": "tests/test_auditoria_criterios.py",
+      "lineas": 159
+    },
+    {
+      "archivo": "tests/test_auth.py",
+      "lineas": 112
+    },
+    {
+      "archivo": "tests/test_auth_integration.py",
+      "lineas": 8
+    },
+    {
+      "archivo": "tests/test_casos_uso.py",
+      "lineas": 204
+    },
+    {
+      "archivo": "tests/test_catalogos_pmv1.py",
+      "lineas": 78
+    },
+    {
+      "archivo": "tests/test_catalogos_supabase.py",
+      "lineas": 126
+    },
+    {
+      "archivo": "tests/test_compatibilidad_predicciones.py",
+      "lineas": 46
+    },
+    {
+      "archivo": "tests/test_correspondencias_normativas.py",
+      "lineas": 167
+    },
+    {
+      "archivo": "tests/test_correspondencias_postgres.py",
+      "lineas": 183
+    },
+    {
+      "archivo": "tests/test_estructura_borrador.py",
+      "lineas": 161
+    },
+    {
+      "archivo": "tests/test_estructura_postgres.py",
+      "lineas": 124
+    },
+    {
+      "archivo": "tests/test_evaluar_predictor.py",
+      "lineas": 81
+    },
+    {
+      "archivo": "tests/test_exportacion_mdt.py",
+      "lineas": 37
+    },
+    {
+      "archivo": "tests/test_formato_mdt.py",
+      "lineas": 154
+    },
+    {
+      "archivo": "tests/test_generacion_concurrencia.py",
+      "lineas": 149
+    },
+    {
+      "archivo": "tests/test_generacion_postgres.py",
+      "lineas": 65
+    },
+    {
+      "archivo": "tests/test_inspeccion_contenido.py",
+      "lineas": 131
+    },
+    {
+      "archivo": "tests/test_inspeccion_contenido_real.py",
+      "lineas": 97
+    },
+    {
+      "archivo": "tests/test_inspeccion_piloto.py",
+      "lineas": 298
+    },
+    {
+      "archivo": "tests/test_inspeccion_semilla.py",
+      "lineas": 139
+    },
+    {
+      "archivo": "tests/test_ollama.py",
+      "lineas": 172
+    },
+    {
+      "archivo": "tests/test_ollama_integration.py",
+      "lineas": 92
+    },
+    {
+      "archivo": "tests/test_piloto_v2.py",
+      "lineas": 165
+    },
+    {
+      "archivo": "tests/test_piloto_v2_ollama.py",
+      "lineas": 83
+    },
+    {
+      "archivo": "tests/test_piloto_v2_postgres.py",
+      "lineas": 84
+    },
+    {
+      "archivo": "tests/test_postgres.py",
+      "lineas": 129
+    },
+    {
+      "archivo": "tests/test_supabase_integration.py",
+      "lineas": 229
+    },
+    {
+      "archivo": "tests/test_validaciones.py",
+      "lineas": 30
+    }
+  ],
+  "dependencias_prohibidas": [],
+  "sql": [
+    "NAXJI_database_schema_actual.sql",
+    "database/checks/20261001_verificar_piloto_inspeccion.sql",
+    "database/migrations/20260930_01_secciones_salida.sql",
+    "database/migrations/20261001_01_correspondencias_normativas.sql",
+    "database/migrations/20261001_02_titulo_version.sql",
+    "database/migrations/20261001_03_formato_documento.sql",
+    "database/migrations/20261023_01_validar_titulos_secciones.sql",
+    "database/seeds/20261001_inspeccion_v2_anexo08.sql",
+    "database/seeds/20261001_piloto_inspeccion_ambiental.sql",
+    "database/seeds/20261001_piloto_v2_datos_fuente.sql",
+    "database/seeds/20261001_referencias_residuos_verificadas.sql",
+    "database/seeds/paso3_estructura_piloto.sql",
+    "database/seeds/pmv1_catalogos.sql",
+    "migrations/20260928_01_auth_rls.sql"
+  ],
+  "rutinas": [
+    {
+      "archivo": "NAXJI_database_schema_actual.sql",
+      "linea": 18,
+      "tipo": "function",
+      "nombre": "public.set_updated_at"
+    },
+    {
+      "archivo": "NAXJI_database_schema_actual.sql",
+      "linea": 234,
+      "tipo": "trigger",
+      "nombre": "trg_perfiles_updated_at"
+    },
+    {
+      "archivo": "NAXJI_database_schema_actual.sql",
+      "linea": 237,
+      "tipo": "trigger",
+      "nombre": "trg_plantillas_updated_at"
+    },
+    {
+      "archivo": "NAXJI_database_schema_actual.sql",
+      "linea": 240,
+      "tipo": "trigger",
+      "nombre": "trg_solicitudes_updated_at"
+    },
+    {
+      "archivo": "NAXJI_database_schema_actual.sql",
+      "linea": 243,
+      "tipo": "trigger",
+      "nombre": "trg_solicitud_valores_updated_at"
+    },
+    {
+      "archivo": "NAXJI_database_schema_actual.sql",
+      "linea": 246,
+      "tipo": "trigger",
+      "nombre": "trg_informes_updated_at"
+    },
+    {
+      "archivo": "database/migrations/20260930_01_secciones_salida.sql",
+      "linea": 6,
+      "tipo": "function",
+      "nombre": "public.naxji_secciones_salida_validas"
+    },
+    {
+      "archivo": "database/migrations/20261023_01_validar_titulos_secciones.sql",
+      "linea": 7,
+      "tipo": "function",
+      "nombre": "public.naxji_secciones_salida_validas"
+    },
+    {
+      "archivo": "migrations/20260928_01_auth_rls.sql",
+      "linea": 9,
+      "tipo": "function",
+      "nombre": "naxji_private.has_role"
+    },
+    {
+      "archivo": "migrations/20260928_01_auth_rls.sql",
+      "linea": 25,
+      "tipo": "function",
+      "nombre": "naxji_private.can_read"
+    },
+    {
+      "archivo": "migrations/20260928_01_auth_rls.sql",
+      "linea": 107,
+      "tipo": "function",
+      "nombre": "naxji_private.create_pending_profile"
+    },
+    {
+      "archivo": "migrations/20260928_01_auth_rls.sql",
+      "linea": 125,
+      "tipo": "trigger",
+      "nombre": "naxji_pending_profile"
+    }
+  ]
+}

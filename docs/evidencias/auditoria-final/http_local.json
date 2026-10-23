@@ -1,0 +1,419 @@
+{
+  "fecha_utc": "2026-10-23T22:25:37.140805+00:00",
+  "alcance": "HTTP TCP local contra uvicorn; memoria, autenticación demo y sklearn real; sin Ollama ni Supabase",
+  "casos": [
+    {
+      "metodo": "GET",
+      "ruta": "/health",
+      "entrada": null,
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": {
+        "status": "ok",
+        "service": "NAXJI API"
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/areas",
+      "entrada": null,
+      "esperado": 401,
+      "obtenido": 401,
+      "respuesta": {
+        "detail": "Autenticación requerida o token inválido"
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/tipos-informe",
+      "entrada": null,
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": [
+        {
+          "id": "d8e55e3d-9de4-59d2-b620-c5e874ee26b9",
+          "codigo": "INFORME_TECNICO",
+          "nombre": "Informe Técnico",
+          "activo": true
+        },
+        {
+          "id": "c7d94e4a-eaf1-5596-87ab-e76d14920c26",
+          "codigo": "INFORME_LEGAL",
+          "nombre": "Informe Legal",
+          "activo": true
+        },
+        {
+          "id": "66e32186-86ce-5113-b64c-db14037419c9",
+          "codigo": "INFORME_INSPECCION",
+          "nombre": "Informe de Inspección",
+          "activo": true
+        },
+        {
+          "id": "7d1e31de-ad93-5596-9b2f-8b3d9eac44c3",
+          "codigo": "MEMORANDO",
+          "nombre": "Memorando",
+          "activo": true
+        }
+      ]
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/auth/config",
+      "entrada": null,
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": {
+        "mode": "mock",
+        "persistence": "memory"
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes",
+      "entrada": {
+        "asunto": "Solicito inspección de residuos en un parque municipal"
+      },
+      "esperado": 201,
+      "obtenido": 201,
+      "respuesta": {
+        "id": "96733b93-e569-4711-b6ed-eb4667867de1",
+        "usuario_id": "c4f0a52f-6858-5c7d-b17b-074ca8a4b2d4",
+        "asunto": "Solicito inspección de residuos en un parque municipal",
+        "tipo_informe_id": null,
+        "plantilla_id": null,
+        "area_origen_id": "017f244c-967b-5d1f-8a68-db5d64fe2c7b",
+        "area_destino_id": null,
+        "estado": "BORRADOR",
+        "valores": [],
+        "created_at": "2026-10-23T22:25:37.091978Z",
+        "updated_at": "2026-10-23T22:25:37.091983Z"
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/96733b93-e569-4711-b6ed-eb4667867de1",
+      "entrada": null,
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": {
+        "id": "96733b93-e569-4711-b6ed-eb4667867de1",
+        "usuario_id": "c4f0a52f-6858-5c7d-b17b-074ca8a4b2d4",
+        "asunto": "Solicito inspección de residuos en un parque municipal",
+        "tipo_informe_id": null,
+        "plantilla_id": null,
+        "area_origen_id": "017f244c-967b-5d1f-8a68-db5d64fe2c7b",
+        "area_destino_id": null,
+        "estado": "BORRADOR",
+        "valores": [],
+        "created_at": "2026-10-23T22:25:37.091978Z",
+        "updated_at": "2026-10-23T22:25:37.091983Z"
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/96733b93-e569-4711-b6ed-eb4667867de1/predecir-contexto",
+      "entrada": null,
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": {
+        "id": "19a88bf4-3842-48fa-a869-39360a9ed1a4",
+        "solicitud_id": "96733b93-e569-4711-b6ed-eb4667867de1",
+        "modelo": "SKLEARN_IA_01",
+        "version_modelo": "RF-IA-01-200CASOS-v1",
+        "algoritmos": {
+          "tipo_informe": "LogisticRegression",
+          "area_destino": "LogisticRegression",
+          "normativas": "OneVsRestClassifier[LogisticRegression]"
+        },
+        "es_mock": false,
+        "resultado_validacion": "PENDIENTE",
+        "validado_por": null,
+        "validado_at": null,
+        "tipo_informe": {
+          "id": "d8e55e3d-9de4-59d2-b620-c5e874ee26b9",
+          "codigo": "INFORME_TECNICO",
+          "nombre": "Informe Técnico",
+          "confianza": 0.3898989992847631
+        },
+        "area_destino": {
+          "id": "017f244c-967b-5d1f-8a68-db5d64fe2c7b",
+          "codigo": "AREA_ECOLOGIA",
+          "nombre": "Subgerencia de Ecología y Medio Ambiente",
+          "confianza": 0.2821402664700659
+        },
+        "normativas": [
+          {
+            "normativa_id": "9cbce3d5-fa56-595b-aaa1-80358423a646",
+            "codigo": "NORM_SERVICIOS_PUBLICOS",
+            "titulo": "Normativa municipal sobre gestión de servicios públicos",
+            "confianza": 0.3195349664558487,
+            "orden": 1,
+            "aceptada": null,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "ac27e7f7-f659-583d-ac38-2b5aa740e85a",
+            "codigo": "NORM_RESIDUOS",
+            "titulo": "Normativa municipal sobre gestión de residuos sólidos",
+            "confianza": 0.28347736649927535,
+            "orden": 2,
+            "aceptada": null,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "bf9ebcde-d1df-5545-8b07-7b8debd6c669",
+            "codigo": "LPAG",
+            "titulo": "Ley del Procedimiento Administrativo General",
+            "confianza": 0.2722581887994856,
+            "orden": 3,
+            "aceptada": null,
+            "correspondencias": []
+          }
+        ],
+        "advertencias": [],
+        "temas_normativos": []
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/96733b93-e569-4711-b6ed-eb4667867de1/contexto",
+      "entrada": null,
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": {
+        "id": "19a88bf4-3842-48fa-a869-39360a9ed1a4",
+        "solicitud_id": "96733b93-e569-4711-b6ed-eb4667867de1",
+        "modelo": "SKLEARN_IA_01",
+        "version_modelo": "RF-IA-01-200CASOS-v1",
+        "algoritmos": {
+          "tipo_informe": "LogisticRegression",
+          "area_destino": "LogisticRegression",
+          "normativas": "OneVsRestClassifier[LogisticRegression]"
+        },
+        "es_mock": false,
+        "resultado_validacion": "PENDIENTE",
+        "validado_por": null,
+        "validado_at": null,
+        "tipo_informe": {
+          "id": "d8e55e3d-9de4-59d2-b620-c5e874ee26b9",
+          "codigo": "INFORME_TECNICO",
+          "nombre": "Informe Técnico",
+          "confianza": 0.3898989992847631
+        },
+        "area_destino": {
+          "id": "017f244c-967b-5d1f-8a68-db5d64fe2c7b",
+          "codigo": "AREA_ECOLOGIA",
+          "nombre": "Subgerencia de Ecología y Medio Ambiente",
+          "confianza": 0.2821402664700659
+        },
+        "normativas": [
+          {
+            "normativa_id": "9cbce3d5-fa56-595b-aaa1-80358423a646",
+            "codigo": "NORM_SERVICIOS_PUBLICOS",
+            "titulo": "Normativa municipal sobre gestión de servicios públicos",
+            "confianza": 0.3195349664558487,
+            "orden": 1,
+            "aceptada": null,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "ac27e7f7-f659-583d-ac38-2b5aa740e85a",
+            "codigo": "NORM_RESIDUOS",
+            "titulo": "Normativa municipal sobre gestión de residuos sólidos",
+            "confianza": 0.28347736649927535,
+            "orden": 2,
+            "aceptada": null,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "bf9ebcde-d1df-5545-8b07-7b8debd6c669",
+            "codigo": "LPAG",
+            "titulo": "Ley del Procedimiento Administrativo General",
+            "confianza": 0.2722581887994856,
+            "orden": 3,
+            "aceptada": null,
+            "correspondencias": []
+          }
+        ],
+        "advertencias": [],
+        "temas_normativos": []
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/96733b93-e569-4711-b6ed-eb4667867de1/validar-prediccion",
+      "entrada": {
+        "prediccion_id": "19a88bf4-3842-48fa-a869-39360a9ed1a4",
+        "resultado": "ACEPTADA"
+      },
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": {
+        "id": "19a88bf4-3842-48fa-a869-39360a9ed1a4",
+        "solicitud_id": "96733b93-e569-4711-b6ed-eb4667867de1",
+        "modelo": "SKLEARN_IA_01",
+        "version_modelo": "RF-IA-01-200CASOS-v1",
+        "algoritmos": {
+          "tipo_informe": "LogisticRegression",
+          "area_destino": "LogisticRegression",
+          "normativas": "OneVsRestClassifier[LogisticRegression]"
+        },
+        "es_mock": false,
+        "resultado_validacion": "ACEPTADA",
+        "validado_por": "c4f0a52f-6858-5c7d-b17b-074ca8a4b2d4",
+        "validado_at": "2026-10-23T22:25:37.130451Z",
+        "tipo_informe": {
+          "id": "d8e55e3d-9de4-59d2-b620-c5e874ee26b9",
+          "codigo": "INFORME_TECNICO",
+          "nombre": "Informe Técnico",
+          "confianza": 0.3898989992847631
+        },
+        "area_destino": {
+          "id": "017f244c-967b-5d1f-8a68-db5d64fe2c7b",
+          "codigo": "AREA_ECOLOGIA",
+          "nombre": "Subgerencia de Ecología y Medio Ambiente",
+          "confianza": 0.2821402664700659
+        },
+        "normativas": [
+          {
+            "normativa_id": "9cbce3d5-fa56-595b-aaa1-80358423a646",
+            "codigo": "NORM_SERVICIOS_PUBLICOS",
+            "titulo": "Normativa municipal sobre gestión de servicios públicos",
+            "confianza": 0.3195349664558487,
+            "orden": 1,
+            "aceptada": true,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "ac27e7f7-f659-583d-ac38-2b5aa740e85a",
+            "codigo": "NORM_RESIDUOS",
+            "titulo": "Normativa municipal sobre gestión de residuos sólidos",
+            "confianza": 0.28347736649927535,
+            "orden": 2,
+            "aceptada": true,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "bf9ebcde-d1df-5545-8b07-7b8debd6c669",
+            "codigo": "LPAG",
+            "titulo": "Ley del Procedimiento Administrativo General",
+            "confianza": 0.2722581887994856,
+            "orden": 3,
+            "aceptada": true,
+            "correspondencias": []
+          }
+        ],
+        "advertencias": [],
+        "temas_normativos": []
+      }
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/96733b93-e569-4711-b6ed-eb4667867de1/contexto",
+      "entrada": null,
+      "esperado": 200,
+      "obtenido": 200,
+      "respuesta": {
+        "id": "19a88bf4-3842-48fa-a869-39360a9ed1a4",
+        "solicitud_id": "96733b93-e569-4711-b6ed-eb4667867de1",
+        "modelo": "SKLEARN_IA_01",
+        "version_modelo": "RF-IA-01-200CASOS-v1",
+        "algoritmos": {
+          "tipo_informe": "LogisticRegression",
+          "area_destino": "LogisticRegression",
+          "normativas": "OneVsRestClassifier[LogisticRegression]"
+        },
+        "es_mock": false,
+        "resultado_validacion": "ACEPTADA",
+        "validado_por": "c4f0a52f-6858-5c7d-b17b-074ca8a4b2d4",
+        "validado_at": "2026-10-23T22:25:37.130451Z",
+        "tipo_informe": {
+          "id": "d8e55e3d-9de4-59d2-b620-c5e874ee26b9",
+          "codigo": "INFORME_TECNICO",
+          "nombre": "Informe Técnico",
+          "confianza": 0.3898989992847631
+        },
+        "area_destino": {
+          "id": "017f244c-967b-5d1f-8a68-db5d64fe2c7b",
+          "codigo": "AREA_ECOLOGIA",
+          "nombre": "Subgerencia de Ecología y Medio Ambiente",
+          "confianza": 0.2821402664700659
+        },
+        "normativas": [
+          {
+            "normativa_id": "9cbce3d5-fa56-595b-aaa1-80358423a646",
+            "codigo": "NORM_SERVICIOS_PUBLICOS",
+            "titulo": "Normativa municipal sobre gestión de servicios públicos",
+            "confianza": 0.3195349664558487,
+            "orden": 1,
+            "aceptada": true,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "ac27e7f7-f659-583d-ac38-2b5aa740e85a",
+            "codigo": "NORM_RESIDUOS",
+            "titulo": "Normativa municipal sobre gestión de residuos sólidos",
+            "confianza": 0.28347736649927535,
+            "orden": 2,
+            "aceptada": true,
+            "correspondencias": []
+          },
+          {
+            "normativa_id": "bf9ebcde-d1df-5545-8b07-7b8debd6c669",
+            "codigo": "LPAG",
+            "titulo": "Ley del Procedimiento Administrativo General",
+            "confianza": 0.2722581887994856,
+            "orden": 3,
+            "aceptada": true,
+            "correspondencias": []
+          }
+        ],
+        "advertencias": [],
+        "temas_normativos": []
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes",
+      "entrada": {
+        "asunto": "   "
+      },
+      "esperado": 422,
+      "obtenido": 422,
+      "respuesta": {
+        "detail": [
+          {
+            "loc": [
+              "body",
+              "asunto"
+            ],
+            "msg": "String should have at least 1 character",
+            "type": "string_too_short"
+          }
+        ]
+      }
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/",
+      "entrada": {
+        "asunto": "Prueba del alias de creación de solicitudes"
+      },
+      "esperado": 201,
+      "obtenido": 201,
+      "respuesta": {
+        "id": "f5de592c-0420-4aff-95c7-f22f4c142ee1",
+        "usuario_id": "c4f0a52f-6858-5c7d-b17b-074ca8a4b2d4",
+        "asunto": "Prueba del alias de creación de solicitudes",
+        "tipo_informe_id": null,
+        "plantilla_id": null,
+        "area_origen_id": "017f244c-967b-5d1f-8a68-db5d64fe2c7b",
+        "area_destino_id": null,
+        "estado": "BORRADOR",
+        "valores": [],
+        "created_at": "2026-10-23T22:29:00.342974Z",
+        "updated_at": "2026-10-23T22:29:00.342979Z"
+      }
+    }
+  ]
+}

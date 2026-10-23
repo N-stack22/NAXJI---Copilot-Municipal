@@ -1,0 +1,1454 @@
+{
+  "python": {
+    "comando": "NAXJI_TEST_PG_PORT=55433 .venv/bin/python -m pytest -q -ra --junitxml=/tmp/naxji-final-python.xml",
+    "aprobadas": 260,
+    "fallidas": 0,
+    "omitidas": 19,
+    "advertencias": [
+      "StarletteDeprecationWarning: httpx/TestClient"
+    ],
+    "casos": [
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_flujo_completo_swagger_y_catalogos",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_validaciones_request[body0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_validaciones_request[body1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_validaciones_request[body2]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_validaciones_request[body3]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_validaciones_request[body4]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_validaciones_request[body5]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_errores_401_403_404_409_422",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_informe_de_otro_usuario_y_campos_obligatorios",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_fallo_generador_devuelve_500_sin_detalles_y_permite_reintentar",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_error_no_controlado_no_expone_detalles",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_modo_disabled_no_acepta_tokens_demo",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "prueba": "test_cors_configurable_y_memoria_aislada",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_arquitectura",
+        "prueba": "test_dominio_y_aplicacion_no_importan_infraestructura",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_arquitectura",
+        "prueba": "test_todos_los_modulos_se_importan_sin_servicios_externos",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[crear-True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[crear-False]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[actualizar-True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[actualizar-False]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_tipo_inferido_activo_sigue_funcionando",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_entero_grande_es_finito_y_se_integra_por_rest",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_metadatos_describen_estimadores_reales_y_no_precision",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_funcion_sql_rechaza_titulos_vacios_segun_el_dominio",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_migracion_revierte_si_una_fila_anterior_tiene_titulo_invalido",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "prueba": "test_funciones_y_trigger_auth_existentes_en_postgres_desechable",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_verified_identity_uses_database_roles_not_metadata",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_unverified_token_never_reaches_profile[None]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_unverified_token_never_reaches_profile[demo-admin]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_unverified_token_never_reaches_profile[forged]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_unverified_token_never_reaches_profile[expired]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_missing_inactive_or_roleless_profile_denied[missing]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_missing_inactive_or_roleless_profile_denied[inactive]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_missing_inactive_or_roleless_profile_denied[no-roles]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_login_refresh_logout_cookie_and_no_secret_reflection",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_cookie_endpoints_reject_csrf[headers0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_cookie_endpoints_reject_csrf[headers1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_http_cannot_assign_admin_or_reflect_password",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "prueba": "test_auth_outage_is_503_without_upstream_details",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth_integration",
+        "prueba": "test_real_auth_persistence_restart_and_isolation",
+        "estado": "omitida",
+        "motivo": "Auth real: requiere .env.local y .env.auth-test"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_crear_y_obtener_con_uuid_y_propietario",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_crear_rechaza_asunto_vacio",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_prediccion_usa_puerto_y_no_confirma_automaticamente",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_prediccion_confianza_invalida_no_se_persiste",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_generar_transmite_plantilla_datos_contexto_instrucciones",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_generar_fallo_hace_rollback_incluso_despues_de_guardar_informe",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_generar_requiere_datos_obligatorios",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_generar_requiere_contexto_confirmado",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_editar_conserva_versiones_y_detecta_edicion_obsoleta",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_cambiar_asunto_invalida_contexto",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_corregir_contexto_usa_seleccion_usuario_en_generacion",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_rechazar_o_repetir_prediccion_bloquea_generacion",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_campo_ajeno_y_cambio_plantilla",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_cancelacion_impide_operaciones",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_acceso_por_propietario_y_rol",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "prueba": "test_generaciones_concurrentes_crean_un_solo_informe",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_completa_creacion_actualizacion_y_rollback",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_completa_rechaza_referencias_desconocidas[tipo_informe_id]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_completa_rechaza_referencias_desconocidas[plantilla_id]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_completa_rechaza_referencias_desconocidas[area_destino_id]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_completa_rechaza_referencias_desconocidas[area_origen_id]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_completa_rechaza_campo_ajeno",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_asunto_solo_y_recuperacion_contexto",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "prueba": "test_mapeo_mdt_sin_inventar_normativas_y_categoria_ausente",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_supabase",
+        "prueba": "test_seed_idempotente_y_catalogos_rls",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_catalogos_supabase",
+        "prueba": "test_piloto_http_validaciones_y_rollback",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_catalogos_supabase",
+        "prueba": "test_piloto_sobrevive_otro_proceso",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_compatibilidad_predicciones",
+        "prueba": "test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_RF_IA_01]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_compatibilidad_predicciones",
+        "prueba": "test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_IA_01]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_etiquetas_coinciden_con_artefacto_entrenado_sin_modificarlo",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_sin_correspondencia_no_convierte_etiqueta_en_documento",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_una_etiqueta_resuelve_una_o_varias_normas[1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_una_etiqueta_resuelve_una_o_varias_normas[2]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_dos_temas_mismo_documento_conserva_procedencia_sin_duplicar",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios2]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios3]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios4]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios5]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios6]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_norma_caducada_o_sin_identidad_no_se_propone",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_descartar_recuperar_y_generar_sin_citas_inventadas",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_aceptada_confirma_todas_y_rechaza_norma_externa",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_revocar_correspondencia_impide_confirmar_o_generar_pero_no_leer",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "prueba": "test_retiro_durante_inferencia_no_guarda_documento_y_permite_reintentar",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "prueba": "test_migracion_aditiva_idempotente_semilla_y_compatibilidad",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "prueba": "test_sql_rechaza_verificacion_incompleta_y_semilla_no_sobrescribe",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "prueba": "test_sql_recupera_descarte_fuentes_y_genera_solo_confirmadas",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "prueba": "test_sklearn_y_ollama_reales_con_semilla_verificada_sin_citas",
+        "estado": "omitida",
+        "motivo": "Ollama real: opt-in"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_api_genera_edita_recupera_estructura_seleccionada[piloto-demo]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_api_genera_edita_recupera_estructura_seleccionada[ficha-sintetica-demo]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_compatibilidad_version_sin_estructura_aunque_plantilla_cambie",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_plantilla_anterior_y_piloto_de_memoria",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido2]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido3]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_rechaza_definiciones_invalidas[valor0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_rechaza_definiciones_invalidas[valor1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_rechaza_definiciones_invalidas[valor2]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_rechaza_definiciones_invalidas[valor3]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_rechaza_definiciones_invalidas[valor4]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_rechaza_definiciones_invalidas[valor5]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_adaptador_postgres_serializa_snapshot_y_null_sql",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_ollama_recibe_estructura_y_valida_respuesta_sin_servicio[demo0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_ollama_recibe_estructura_y_valida_respuesta_sin_servicio[demo1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "prueba": "test_validacion_legacy_y_opcionales",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_postgres",
+        "prueba": "test_migracion_preserva_versiones_y_repositorios_recuperan_snapshot",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_postgres",
+        "prueba": "test_postgres_rechaza_estructura_invalida_sin_alterar_registros",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_metricas_categoria_con_errores_y_clase_sin_soporte",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_metricas_multietiqueta_no_confunden_acierto_parcial_con_conjunto_exacto",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[vacio]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[duplicado]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[asunto_repetido]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[sin_etiqueta]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[tipo_desconocido]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[tema_desconocido]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[tema_repetido]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_rechaza_evaluaciones_invalidas[sin_procedencia]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_evaluacion_real_es_reproducible_y_no_certifica_independencia",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "prueba": "test_cli_genera_hashes_y_no_sobrescribe_evidencia",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_exportacion_mdt",
+        "prueba": "test_no_interpreta_el_texto_guardado_como_variables_ni_permite_firmas_tecnicas",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_exportacion_mdt",
+        "prueba": "test_formato_desconocido_o_estructura_distinta_no_se_disfrazan_de_piloto",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "prueba": "test_migracion_y_semilla_idempotentes_preservan_plantillas_y_documentos",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "prueba": "test_generacion_edicion_recuperacion_exportacion[False-False]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "prueba": "test_generacion_edicion_recuperacion_exportacion[False-True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "prueba": "test_generacion_edicion_recuperacion_exportacion[True-False]",
+        "estado": "omitida",
+        "motivo": "Ollama real opt-in"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "prueba": "test_generacion_edicion_recuperacion_exportacion[True-True]",
+        "estado": "omitida",
+        "motivo": "Ollama real opt-in"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_contexto_enviado_resuelve_nombres_y_solo_normas_aceptadas",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_inferencia_fuera_de_transaccion_con_reserva_visible_y_sin_bloquear_lecturas",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_resultado_o_fallo_tardio_no_pisa_una_reserva_nueva[False]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_resultado_o_fallo_tardio_no_pisa_una_reserva_nueva[True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_reserva_abandonada_se_recupera_despues_de_reiniciar_caso_de_uso",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_cambio_de_plantilla_durante_inferencia_descarta_resultado_y_libera",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_plantilla_retirada_no_deja_solicitud_bloqueada",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "prueba": "test_error_inesperado_del_proveedor_se_sanitiza_y_se_puede_reintentar",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_postgres",
+        "prueba": "test_inferencia_sin_bloqueo_postgres_y_dos_instancias_no_duplican",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Verificar el parque infantil.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Visitar el parque recreativo.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Inspeccionar el parque Los Olivos.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Se realiz\\xf3 una visita.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Se observ\\xf3 acumulaci\\xf3n de residuos.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[No se han realizado inspecciones.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[No existen hallazgos.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Aplicar la Ley 12345.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[La visita fue el 2026-09-15.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Se recomienda retirar los residuos.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Hay acumulaci\\xf3n de residuos.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[El c\\xe9sped est\\xe1 en mal estado.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_con_hechos_y_evidencia_permite_recomendaciones_vinculadas",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_recomendacion_de_verificar_no_se_confunde_con_hallazgo",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_observaciones_parciales_no_desaparecen_ni_se_infiere_contenido[A\\xfan no hay hallazgos confirmados con la informaci\\xf3n aportada.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_observaciones_parciales_no_desaparecen_ni_se_infiere_contenido[Se observaron dos bolsas con residuos junto al acceso norte.]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_esquema_con_observaciones_no_instruye_ausencia_de_hallazgos",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_encabezado_humano_versionado_recuperacion_exportacion_y_legacy",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "prueba": "test_exportacion_oculta_uuid_legacy_sin_mutar_version",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido_real",
+        "prueba": "test_generar_editar_recuperar_y_descargar[sin-resultados]",
+        "estado": "omitida",
+        "motivo": "Ollama y PostgreSQL aislado: opt-in"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido_real",
+        "prueba": "test_generar_editar_recuperar_y_descargar[con-resultados]",
+        "estado": "omitida",
+        "motivo": "Ollama y PostgreSQL aislado: opt-in"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_sql_idempotente_preserva_todas_las_filas_tecnicas_y_documentos",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_sql_rechaza_conflictos_sin_reactivar_o_sobrescribir[UPDATE public.plantillas SET activa=false WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_sql_rechaza_conflictos_sin_reactivar_o_sobrescribir[UPDATE public.plantillas SET area_id=NULL WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_sql_rechaza_conflictos_sin_reactivar_o_sobrescribir[UPDATE public.campos_plantilla SET etiqueta='Campo personalizado' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s)]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_sql_sin_prerrequisito_no_inserta_registros[UPDATE public.areas_municipales SET activo=false WHERE codigo='MDT_SGGA']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_sql_sin_prerrequisito_no_inserta_registros[UPDATE public.tipos_informe SET activo=false WHERE codigo='INFORME_INSPECCION']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_sql_sin_prerrequisito_no_inserta_registros[ALTER TABLE public.versiones_informe DROP COLUMN titulo]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_inspeccion_sin_resultados_reintento_edicion_recuperacion_docx_y_permisos",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Sin resultados de inspecci\\xf3n-Notas sin acreditar resultados.-True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Informaci\\xf3n parcial por verificar--True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles--True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles-Acta ficticia de prueba: se aport\\xf3 una medici\\xf3n identificada.-False]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "prueba": "test_inspeccion_ollama_real_pocos_datos",
+        "estado": "omitida",
+        "motivo": "Ollama real: opt-in"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_reproduce_42p01_y_semilla_no_depende_de_objetos_entre_conexiones",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_respeta_la_transaccion_externa_y_el_rollback",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[DELETE FROM public.campos_plantilla WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET etiqueta='Distinta' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET tipo_dato='textarea' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET obligatorio=false WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET orden=8 WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET activo=false WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET clave='otro_campo' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET configuracion=configuracion-'valores_sin_resultados' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET configuracion=configuracion || '{\"extra\":true}'::jsonb WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET configuracion=jsonb_set(configuracion,'{opciones,0}','\"Otra opcion\"') WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET tipo_informe_id=(SELECT id FROM public.tipos_informe WHERE codigo='INFORME_TECNICO') WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET area_id=NULL WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET activa=false WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET descripcion='Distinta' WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=jsonb_set(secciones_salida,'{0,titulo}','\"Distinto\"') WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=jsonb_set(secciones_salida,'{5,obligatoria}','true') WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=(secciones_salida->5) || (secciones_salida - 5) WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=secciones_salida - 5 WHERE nombre=%s]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_fallo_al_insertar_campos_revierte_tambien_la_plantilla",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_lectura_completa_integra_con_columnas_y_sin_mutaciones",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "prueba": "test_comparador_respeta_tipos_y_orden_pero_no_orden_de_claves",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adapter_envia_esquema_y_configuracion_sin_streaming",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_sanitiza_errores_de_red[error0-OLLAMA_NO_DISPONIBLE]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_sanitiza_errores_de_red[error1-OLLAMA_TIMEOUT]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_sanitiza_errores_de_red[error2-OLLAMA_TIMEOUT]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_sanitiza_errores_de_red[error3-OLLAMA_ERROR]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[404-body0-OLLAMA_MODELO_NO_INSTALADO]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[500-body1-OLLAMA_ERROR]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[302-body2-OLLAMA_ERROR]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body3-OLLAMA_RESPUESTA_INVALIDA]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body4-OLLAMA_RESPUESTA_INVALIDA]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body5-OLLAMA_RESPUESTA_INVALIDA]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body6-OLLAMA_RESPUESTA_INVALIDA]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body7-OLLAMA_RESPUESTA_INVALIDA]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_adaptador_json_http_invalido",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_timeout_total_cancela_peticion_aunque_no_haya_timeout_de_red",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_prompt_separa_datos_de_reglas_y_no_atribuye_contenido_juridico",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{}]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[[]]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[```json\\n{}\\n```]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"a\",\"antecedentes\":\"b\"}]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":\"T\",\"conclusiones\":\"C\",\"encabezado\":{}}]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":\" \",\"conclusiones\":\"C\"}]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":null,\"conclusiones\":\"C\"}]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":\"T\",\"conclusiones\":\"C\"} texto adicional]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_NO_DISPONIBLE-503]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_MODELO_NO_INSTALADO-503]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_TIMEOUT-504]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_RESPUESTA_INVALIDA-502]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_ERROR-502]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_backend_se_inyecta_en_contenedor",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_BASE_URL-http://usuario:secreto@host]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_BASE_URL-file:///tmp]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_BASE_URL-http://localhost?token=secreto]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_MODEL-]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-nan]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-1801]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "prueba": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-texto]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama_integration",
+        "prueba": "test_flujo_completo_piloto_tecnico_sin_resultados[memory]",
+        "estado": "omitida",
+        "motivo": "Ollama real: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_ollama_integration",
+        "prueba": "test_flujo_completo_piloto_tecnico_sin_resultados[postgres]",
+        "estado": "omitida",
+        "motivo": "Ollama real: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_fuentes_minimas_ollama_edicion_recuperacion_y_exportacion",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_sin_hechos_rechaza_salida_sin_advertencia_y_permite_reintentar",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_descarga_aplica_permisos_del_informe[None-401]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_descarga_aplica_permisos_del_informe[invalido-401]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_descarga_aplica_permisos_del_informe[demo-otro-403]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_descarga_aplica_permisos_del_informe[demo-revisor-200]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_descarga_aplica_permisos_del_informe[demo-admin-200]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_descarga_aplica_permisos_del_informe[demo-funcionario-200]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_versiones_inexistentes_y_solicitudes_sin_informe",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_exporta_legacy_y_texto_corregido_sin_consultar_plantilla_actual",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "prueba": "test_exportacion_caracteres_no_xml_error_controlado",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2_ollama",
+        "prueba": "test_piloto_v2_real_pocos_datos_edicion_y_word",
+        "estado": "omitida",
+        "motivo": "Requiere Ollama real y PostgreSQL local aislado: opt-in"
+      },
+      {
+        "modulo": "tests.test_piloto_v2_postgres",
+        "prueba": "test_semilla_aditiva_idempotente_y_persistencia_de_versiones",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2_postgres",
+        "prueba": "test_semilla_rechaza_definicion_v2_conflictiva_sin_sobrescribir",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_config_validates_before_connecting_and_hides_password",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_config_rejects_invalid_values[NAXJI_DB_PORT-invalid]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_config_rejects_invalid_values[NAXJI_DB_PORT-0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_config_rejects_invalid_values[NAXJI_DB_SSLMODE-disable]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_config_rejects_invalid_values[NAXJI_DB_CONNECT_TIMEOUT-0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_config_rejects_invalid_values[NAXJI_DB_PASSWORD-[YOUR-PASSWORD]]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_dotenv_absolute_root_preserves_literals_and_os_priority",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_uow_rolls_back_and_releases_connection_on_failure",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_postgres_never_falls_back_to_memory_or_exposes_connection_error",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_predictor_resolves_real_ids_and_rejects_missing_catalogs",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "prueba": "test_real_sklearn_predictor_remains_available",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "prueba": "test_crud_script_and_rollback_after_injected_failure",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "prueba": "test_endpoint_reads_actual_postgres_catalog",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "prueba": "test_repositories_read_temporary_catalogs_and_rollback",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "prueba": "test_endpoint_rejects_nonexistent_profile_and_rolls_back",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "prueba": "test_request_survives_two_backend_processes",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "prueba": "test_full_endpoint_flow_uses_postgres_aggregates",
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[text-123]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[textarea-  ]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[date-2026-02-30]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[date-20260925]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[number-True]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[number-nan]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[boolean-1]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_invalidos[select-OTRO]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_validos_incluyen_cero_y_false[text-Texto]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_validos_incluyen_cero_y_false[textarea-Antecedentes]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_validos_incluyen_cero_y_false[date-2026-09-25]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_validos_incluyen_cero_y_false[number-0]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_validos_incluyen_cero_y_false[boolean-False]",
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "prueba": "test_valores_validos_incluyen_cero_y_false[select-NORMAL]",
+        "estado": "aprobada"
+      }
+    ]
+  },
+  "frontend": {
+    "comando": "npm run test:frontend",
+    "aprobadas": 51,
+    "fallidas": 0,
+    "omitidas": 0
+  },
+  "checks": [
+    {
+      "comando": "npm run lint",
+      "resultado": "aprobado"
+    },
+    {
+      "comando": "npm run build",
+      "resultado": "aprobado"
+    },
+    {
+      "comando": "git diff --check",
+      "resultado": "aprobado"
+    }
+  ],
+  "verificacion_final_herramienta": {
+    "comando": ".venv/bin/python -m pytest -q tests/test_evaluar_predictor.py",
+    "aprobadas": 12,
+    "fallidas": 0,
+    "omitidas": 0,
+    "alcance": "Reejecución tras comprobar que errores de serialización no creen evidencia parcial."
+  }
+}

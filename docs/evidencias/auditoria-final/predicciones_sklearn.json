@@ -1,0 +1,115 @@
+{
+  "alcance": "Inferencia real local, ejemplos sin etiquetas verdaderas; no es evaluación de precisión",
+  "sha256_artefactos": {
+    "features_norm.joblib": "7f544c2908808d30d943dc56ae2c703b8f8d82bba1373644958eb5fb5b842bb7",
+    "mlb.joblib": "38a12ae14e9412c113e21c4b483820af2b735531250c67f064f884556404d924",
+    "model_config.json": "12e4368b213803b054b2605ed87d75e699c5067b9fed159916d0eb83fe837b17",
+    "modelo_area.joblib": "fcb58df2ac8a32d4b3e66b65f55a3897a7515821e285b6dbbde35246e52912dc",
+    "modelo_normas.joblib": "1841c25b9144572347e5186b9c9f8964293cb3bafa0abec42434e853298630e4",
+    "modelo_tipo.joblib": "153c18fd25f250be0522f5b71cd3378bc86af772cb44faecc7c9dcac9d5c8113"
+  },
+  "resultados": [
+    {
+      "entrada": "Solicito inspección de residuos en un parque municipal",
+      "entrada_normalizada": "Solicito inspección de residuos en un parque municipal",
+      "tipo_informe": "Informe Técnico",
+      "area_destino": "Subgerencia de Ecología y Medio Ambiente",
+      "confianza_tipo": 0.3898989992847631,
+      "confianza_area": 0.2821402664700659,
+      "temas_normativos": [
+        "Normativa municipal sobre gestión de servicios públicos",
+        "Normativa municipal sobre gestión de residuos sólidos",
+        "Ley del Procedimiento Administrativo General"
+      ],
+      "probabilidades_temas": {
+        "Ley del Procedimiento Administrativo General": 0.2722581887994856,
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones": 0.047250846346378265,
+        "Normativa de contratación pública aplicable": 0.03657318075029108,
+        "Normativa de transparencia y acceso a la información pública": 0.0655180945898772,
+        "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos": 0.032074213830758085,
+        "Normativa municipal sobre desarrollo urbano y edificaciones": 0.06630905253844842,
+        "Normativa municipal sobre fiscalización y sanciones administrativas": 0.17403292331719813,
+        "Normativa municipal sobre gestión de residuos sólidos": 0.28347736649927535,
+        "Normativa municipal sobre gestión de servicios públicos": 0.3195349664558487,
+        "Normativa municipal sobre licencias de funcionamiento": 0.04415060889005743,
+        "Normativa municipal sobre prevención y control de contaminación sonora": 0.0416345551433775
+      },
+      "modelo": "SKLEARN_IA_01",
+      "version_modelo": "RF-IA-01-200CASOS-v1",
+      "algoritmos": {
+        "tipo_informe": "LogisticRegression",
+        "area_destino": "LogisticRegression",
+        "normativas": "OneVsRestClassifier[LogisticRegression]"
+      },
+      "umbral_normas": 0.25,
+      "validacion_humana": "PENDIENTE"
+    },
+    {
+      "entrada": "Evaluación jurídica de un recurso administrativo",
+      "entrada_normalizada": "Evaluación jurídica de un recurso administrativo",
+      "tipo_informe": "Informe Legal",
+      "area_destino": "Oficina de Asesoría Jurídica",
+      "confianza_tipo": 0.7327275965960153,
+      "confianza_area": 0.631547487505546,
+      "temas_normativos": [
+        "Ley del Procedimiento Administrativo General",
+        "Normativa de transparencia y acceso a la información pública"
+      ],
+      "probabilidades_temas": {
+        "Ley del Procedimiento Administrativo General": 0.7381261079256077,
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones": 0.06593288853392351,
+        "Normativa de contratación pública aplicable": 0.042180409846537203,
+        "Normativa de transparencia y acceso a la información pública": 0.3896958679851127,
+        "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos": 0.050018728949961296,
+        "Normativa municipal sobre desarrollo urbano y edificaciones": 0.05237574300003044,
+        "Normativa municipal sobre fiscalización y sanciones administrativas": 0.2068712387554015,
+        "Normativa municipal sobre gestión de residuos sólidos": 0.05662891860456465,
+        "Normativa municipal sobre gestión de servicios públicos": 0.07453898954201184,
+        "Normativa municipal sobre licencias de funcionamiento": 0.050903281601866024,
+        "Normativa municipal sobre prevención y control de contaminación sonora": 0.061074548360932505
+      },
+      "modelo": "SKLEARN_IA_01",
+      "version_modelo": "RF-IA-01-200CASOS-v1",
+      "algoritmos": {
+        "tipo_informe": "LogisticRegression",
+        "area_destino": "LogisticRegression",
+        "normativas": "OneVsRestClassifier[LogisticRegression]"
+      },
+      "umbral_normas": 0.25,
+      "validacion_humana": "PENDIENTE"
+    },
+    {
+      "entrada": "Evaluación técnica de una licencia de edificación",
+      "entrada_normalizada": "Evaluación técnica de una licencia de edificación",
+      "tipo_informe": "Informe Técnico",
+      "area_destino": "Subgerencia de Gestión del Riesgo de Desastres",
+      "confianza_tipo": 0.7710710960006679,
+      "confianza_area": 0.37931912795041667,
+      "temas_normativos": [
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones"
+      ],
+      "probabilidades_temas": {
+        "Ley del Procedimiento Administrativo General": 0.12393247170681264,
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones": 0.40801217400109335,
+        "Normativa de contratación pública aplicable": 0.043190945390492015,
+        "Normativa de transparencia y acceso a la información pública": 0.059036450064330594,
+        "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos": 0.037087307561424566,
+        "Normativa municipal sobre desarrollo urbano y edificaciones": 0.1250166056816723,
+        "Normativa municipal sobre fiscalización y sanciones administrativas": 0.0697062750373329,
+        "Normativa municipal sobre gestión de residuos sólidos": 0.045112838211737324,
+        "Normativa municipal sobre gestión de servicios públicos": 0.05932706371658987,
+        "Normativa municipal sobre licencias de funcionamiento": 0.1650524572657769,
+        "Normativa municipal sobre prevención y control de contaminación sonora": 0.03306270124310026
+      },
+      "modelo": "SKLEARN_IA_01",
+      "version_modelo": "RF-IA-01-200CASOS-v1",
+      "algoritmos": {
+        "tipo_informe": "LogisticRegression",
+        "area_destino": "LogisticRegression",
+        "normativas": "OneVsRestClassifier[LogisticRegression]"
+      },
+      "umbral_normas": 0.25,
+      "validacion_humana": "PENDIENTE"
+    }
+  ]
+}
