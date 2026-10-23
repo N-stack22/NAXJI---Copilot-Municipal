@@ -346,3 +346,56 @@ carencia reproducible del criterio 4, pero no sustituye datos ni demuestra preci
   una rutina para aparentar cumplimiento.
 - Se conservaron rama, configuración del entorno, Trello, diseño visual, contratos
   REST y modelos. No hubo reentrenamiento ni cambios de PMV ajenos a los criterios.
+
+## G. Verificación final sobre `4d85c1a`
+
+Se verificó la rama `audit/criterios-hexagonal-api-prediccion-sql`, conservando
+como ancestros los commits `946738b` y `4d85c1a`. No se encontraron incumplimientos
+nuevos comprobados: **no se requieren nuevas correcciones de código**. Esta
+entrega únicamente actualiza el informe y registra una nueva ejecución de pruebas;
+no modifica código, pruebas, SQL, contratos, diseño ni modelos.
+
+Los [resultados de esta verificación](evidencias/auditoria-final/verificacion_final.json)
+identifican el commit comprobado, cada caso Python, duración, resultado, motivos
+de omisión y salidas de frontend/lint/build. Las evidencias HTTP y de inferencia de
+los apartados anteriores pertenecen a la revisión previa y no se presentan como
+peticiones TCP nuevas en esta ejecución. En esta verificación la integración REST
+se ejecutó mediante los tests de FastAPI, incluyendo PostgreSQL real aislado.
+
+| Ejecución final | Aprobadas | Fallidas | Omitidas | Evidencia y alcance |
+|---|---:|---:|---:|---|
+| Suite Python completa | 260 | 0 | 19 | PostgreSQL 16 exclusivo en loopback; arquitectura, dominio, casos de uso, API, predictor, SQL y regresiones |
+| Frontend | 51 | 0 | 0 | Tests de React/DOM y contratos con HTTP simulado |
+| Lint | Comando correcto | 0 | 0 | `npm run lint` |
+| Compilación | Comando correcto | 0 | 0 | `npm run build` |
+| Revisión de diff | Comando correcto | 0 | 0 | `git diff --check` |
+
+Dentro de las 260 aprobadas se incluyen las diez regresiones de las cuatro
+correcciones originales, doce casos de la herramienta de evaluación, dos casos
+de compatibilidad histórica PostgreSQL/REST y dos pruebas de arquitectura. No
+son conteos adicionales a sumar a la suite. Se conservaron las 19 omisiones
+externas: diez de Supabase y nueve de Ollama. La advertencia de deprecación
+Starlette/httpx no provocó fallos.
+
+Se resolvieron importaciones absolutas y relativas en la inspección de dominio y
+aplicación: sin dependencias prohibidas detectadas. Los cinco artefactos `.joblib`
+y `model_config.json` se compararon byte a byte con ambos commits; idénticos.
+La herramienta de evaluación sigue probada con fixtures sintéticos identificados
+como tales: estos comprueban el software, no la precisión del modelo del proyecto.
+No se generaron nuevas métricas académicas ni se reentrenaron modelos.
+
+La migración de títulos, su idempotencia, validación Unicode, conservación de
+filas y rollback se verificaron nuevamente en bases desechables. Las funciones
+de roles, lectura y alta pendiente también se probaron allí con dobles mínimos
+del esquema Auth. No hubo SQL ni modificación de datos, roles, RLS o credenciales
+en Supabase real. No se añadieron procedimientos.
+
+**Dictamen para revisión de Pull Request:** los cambios están listos para revisión
+técnica, con pruebas locales aprobadas y limitaciones documentadas; esto no
+significa que la evaluación académica esté completamente cerrada. Los estados
+de A permanecen: criterios 1 y 2 «Cumple»; 3, 4 y 5 «Cumple parcialmente».
+Faltan corpus predictivo etiquetado independiente y criterios de aceptación,
+decisión sobre cobertura de Memorando, validación autorizada de Supabase/Ollama
+reales y definición de los procedimientos concretos exigidos por el profesor.
+No se fusiona con `main`; esta actualización documental se guarda en un commit
+adicional de la misma rama.

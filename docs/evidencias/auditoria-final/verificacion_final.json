@@ -1,0 +1,1758 @@
+{
+  "commit_verificado": "4d85c1aeac665756a9d13ea41b2b08b57c84a77e",
+  "rama": "audit/criterios-hexagonal-api-prediccion-sql",
+  "fecha_verificacion": "2026-10-23T17:50:15.098335-05:00",
+  "ancestros_conservados": {
+    "946738b": true,
+    "4d85c1a": true
+  },
+  "nuevas_correcciones_codigo": false,
+  "codigo_tests_sql_sin_cambios_respecto_4d85c1a": true,
+  "inspeccion": {
+    "infracciones_capas": [],
+    "importaciones_relativas_resueltas": true,
+    "sha256_modelos": {
+      "features_norm.joblib": "7f544c2908808d30d943dc56ae2c703b8f8d82bba1373644958eb5fb5b842bb7",
+      "mlb.joblib": "38a12ae14e9412c113e21c4b483820af2b735531250c67f064f884556404d924",
+      "model_config.json": "12e4368b213803b054b2605ed87d75e699c5067b9fed159916d0eb83fe837b17",
+      "modelo_area.joblib": "fcb58df2ac8a32d4b3e66b65f55a3897a7515821e285b6dbbde35246e52912dc",
+      "modelo_normas.joblib": "1841c25b9144572347e5186b9c9f8964293cb3bafa0abec42434e853298630e4",
+      "modelo_tipo.joblib": "153c18fd25f250be0522f5b71cd3378bc86af772cb44faecc7c9dcac9d5c8113"
+    },
+    "modelos_identicos_a_ambos_commits": true
+  },
+  "python": {
+    "comando": "NAXJI_TEST_PG_PORT=55433 .venv/bin/python -m pytest -q -ra --junitxml=/tmp/naxji-check-python.xml",
+    "aprobadas": 260,
+    "fallidas": 0,
+    "omitidas": 19,
+    "casos": [
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_flujo_completo_swagger_y_catalogos",
+        "duracion_segundos": 0.957,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_validaciones_request[body0]",
+        "duracion_segundos": 0.636,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_validaciones_request[body1]",
+        "duracion_segundos": 0.177,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_validaciones_request[body2]",
+        "duracion_segundos": 0.124,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_validaciones_request[body3]",
+        "duracion_segundos": 0.586,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_validaciones_request[body4]",
+        "duracion_segundos": 0.171,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_validaciones_request[body5]",
+        "duracion_segundos": 0.031,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_errores_401_403_404_409_422",
+        "duracion_segundos": 0.288,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_informe_de_otro_usuario_y_campos_obligatorios",
+        "duracion_segundos": 0.152,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_fallo_generador_devuelve_500_sin_detalles_y_permite_reintentar",
+        "duracion_segundos": 0.214,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_error_no_controlado_no_expone_detalles",
+        "duracion_segundos": 0.05,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_modo_disabled_no_acepta_tokens_demo",
+        "duracion_segundos": 0.117,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_api",
+        "caso": "test_cors_configurable_y_memoria_aislada",
+        "duracion_segundos": 0.13,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_arquitectura",
+        "caso": "test_dominio_y_aplicacion_no_importan_infraestructura",
+        "duracion_segundos": 0.02,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_arquitectura",
+        "caso": "test_todos_los_modulos_se_importan_sin_servicios_externos",
+        "duracion_segundos": 0.004,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[crear-True]",
+        "duracion_segundos": 0.034,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[crear-False]",
+        "duracion_segundos": 0.046,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[actualizar-True]",
+        "duracion_segundos": 0.096,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_tipo_inferido_de_plantilla_debe_existir_y_estar_activo[actualizar-False]",
+        "duracion_segundos": 0.167,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_tipo_inferido_activo_sigue_funcionando",
+        "duracion_segundos": 0.049,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_entero_grande_es_finito_y_se_integra_por_rest",
+        "duracion_segundos": 0.043,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_metadatos_describen_estimadores_reales_y_no_precision",
+        "duracion_segundos": 0.131,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_funcion_sql_rechaza_titulos_vacios_segun_el_dominio",
+        "duracion_segundos": 0.557,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_migracion_revierte_si_una_fila_anterior_tiene_titulo_invalido",
+        "duracion_segundos": 0.208,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auditoria_criterios",
+        "caso": "test_funciones_y_trigger_auth_existentes_en_postgres_desechable",
+        "duracion_segundos": 0.243,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_verified_identity_uses_database_roles_not_metadata",
+        "duracion_segundos": 0.087,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_unverified_token_never_reaches_profile[None]",
+        "duracion_segundos": 0.092,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_unverified_token_never_reaches_profile[demo-admin]",
+        "duracion_segundos": 0.079,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_unverified_token_never_reaches_profile[forged]",
+        "duracion_segundos": 0.05,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_unverified_token_never_reaches_profile[expired]",
+        "duracion_segundos": 0.102,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_missing_inactive_or_roleless_profile_denied[missing]",
+        "duracion_segundos": 0.06,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_missing_inactive_or_roleless_profile_denied[inactive]",
+        "duracion_segundos": 0.081,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_missing_inactive_or_roleless_profile_denied[no-roles]",
+        "duracion_segundos": 0.056,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_login_refresh_logout_cookie_and_no_secret_reflection",
+        "duracion_segundos": 0.143,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_cookie_endpoints_reject_csrf[headers0]",
+        "duracion_segundos": 0.06,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_cookie_endpoints_reject_csrf[headers1]",
+        "duracion_segundos": 0.235,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_http_cannot_assign_admin_or_reflect_password",
+        "duracion_segundos": 0.097,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth",
+        "caso": "test_auth_outage_is_503_without_upstream_details",
+        "duracion_segundos": 0.003,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_auth_integration",
+        "caso": "test_real_auth_persistence_restart_and_isolation",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Auth real: requiere .env.local y .env.auth-test"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_crear_y_obtener_con_uuid_y_propietario",
+        "duracion_segundos": 0.003,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_crear_rechaza_asunto_vacio",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_prediccion_usa_puerto_y_no_confirma_automaticamente",
+        "duracion_segundos": 0.767,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_prediccion_confianza_invalida_no_se_persiste",
+        "duracion_segundos": 0.008,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_generar_transmite_plantilla_datos_contexto_instrucciones",
+        "duracion_segundos": 0.011,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_generar_fallo_hace_rollback_incluso_despues_de_guardar_informe",
+        "duracion_segundos": 0.008,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_generar_requiere_datos_obligatorios",
+        "duracion_segundos": 0.004,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_generar_requiere_contexto_confirmado",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_editar_conserva_versiones_y_detecta_edicion_obsoleta",
+        "duracion_segundos": 0.011,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_cambiar_asunto_invalida_contexto",
+        "duracion_segundos": 0.024,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_corregir_contexto_usa_seleccion_usuario_en_generacion",
+        "duracion_segundos": 0.186,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_rechazar_o_repetir_prediccion_bloquea_generacion",
+        "duracion_segundos": 0.009,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_campo_ajeno_y_cambio_plantilla",
+        "duracion_segundos": 0.028,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_cancelacion_impide_operaciones",
+        "duracion_segundos": 0.006,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_acceso_por_propietario_y_rol",
+        "duracion_segundos": 0.005,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_casos_uso",
+        "caso": "test_generaciones_concurrentes_crean_un_solo_informe",
+        "duracion_segundos": 0.015,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_completa_creacion_actualizacion_y_rollback",
+        "duracion_segundos": 0.325,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_completa_rechaza_referencias_desconocidas[tipo_informe_id]",
+        "duracion_segundos": 0.441,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_completa_rechaza_referencias_desconocidas[plantilla_id]",
+        "duracion_segundos": 0.233,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_completa_rechaza_referencias_desconocidas[area_destino_id]",
+        "duracion_segundos": 0.054,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_completa_rechaza_referencias_desconocidas[area_origen_id]",
+        "duracion_segundos": 0.063,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_completa_rechaza_campo_ajeno",
+        "duracion_segundos": 0.067,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_asunto_solo_y_recuperacion_contexto",
+        "duracion_segundos": 0.087,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_pmv1",
+        "caso": "test_mapeo_mdt_sin_inventar_normativas_y_categoria_ausente",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_catalogos_supabase",
+        "caso": "test_seed_idempotente_y_catalogos_rls",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_catalogos_supabase",
+        "caso": "test_piloto_http_validaciones_y_rollback",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_catalogos_supabase",
+        "caso": "test_piloto_sobrevive_otro_proceso",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_compatibilidad_predicciones",
+        "caso": "test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_RF_IA_01]",
+        "duracion_segundos": 0.343,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_compatibilidad_predicciones",
+        "caso": "test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_IA_01]",
+        "duracion_segundos": 0.5,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_etiquetas_coinciden_con_artefacto_entrenado_sin_modificarlo",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_sin_correspondencia_no_convierte_etiqueta_en_documento",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_una_etiqueta_resuelve_una_o_varias_normas[1]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_una_etiqueta_resuelve_una_o_varias_normas[2]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_dos_temas_mismo_documento_conserva_procedencia_sin_duplicar",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios0]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios1]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios2]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios3]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios4]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios5]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_rechaza_curacion_incompleta_inactiva_o_fuente_ajena[cambios6]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_norma_caducada_o_sin_identidad_no_se_propone",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_descartar_recuperar_y_generar_sin_citas_inventadas",
+        "duracion_segundos": 0.08,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_aceptada_confirma_todas_y_rechaza_norma_externa",
+        "duracion_segundos": 0.084,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_revocar_correspondencia_impide_confirmar_o_generar_pero_no_leer",
+        "duracion_segundos": 0.122,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_normativas",
+        "caso": "test_retiro_durante_inferencia_no_guarda_documento_y_permite_reintentar",
+        "duracion_segundos": 0.172,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "caso": "test_migracion_aditiva_idempotente_semilla_y_compatibilidad",
+        "duracion_segundos": 0.339,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "caso": "test_sql_rechaza_verificacion_incompleta_y_semilla_no_sobrescribe",
+        "duracion_segundos": 0.2,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "caso": "test_sql_recupera_descarte_fuentes_y_genera_solo_confirmadas",
+        "duracion_segundos": 0.716,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_correspondencias_postgres",
+        "caso": "test_sklearn_y_ollama_reales_con_semilla_verificada_sin_citas",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama real: opt-in"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_api_genera_edita_recupera_estructura_seleccionada[piloto-demo]",
+        "duracion_segundos": 0.302,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_api_genera_edita_recupera_estructura_seleccionada[ficha-sintetica-demo]",
+        "duracion_segundos": 0.184,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_compatibilidad_version_sin_estructura_aunque_plantilla_cambie",
+        "duracion_segundos": 0.006,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_plantilla_anterior_y_piloto_de_memoria",
+        "duracion_segundos": 0.059,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido0]",
+        "duracion_segundos": 0.009,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido1]",
+        "duracion_segundos": 0.008,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido2]",
+        "duracion_segundos": 0.008,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_generacion_invalida_revierte_solicitud_y_no_guarda_version[contenido3]",
+        "duracion_segundos": 0.017,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_rechaza_definiciones_invalidas[valor0]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_rechaza_definiciones_invalidas[valor1]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_rechaza_definiciones_invalidas[valor2]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_rechaza_definiciones_invalidas[valor3]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_rechaza_definiciones_invalidas[valor4]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_rechaza_definiciones_invalidas[valor5]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_adaptador_postgres_serializa_snapshot_y_null_sql",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_ollama_recibe_estructura_y_valida_respuesta_sin_servicio[demo0]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_ollama_recibe_estructura_y_valida_respuesta_sin_servicio[demo1]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_borrador",
+        "caso": "test_validacion_legacy_y_opcionales",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_postgres",
+        "caso": "test_migracion_preserva_versiones_y_repositorios_recuperan_snapshot",
+        "duracion_segundos": 0.398,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_estructura_postgres",
+        "caso": "test_postgres_rechaza_estructura_invalida_sin_alterar_registros",
+        "duracion_segundos": 0.24,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_metricas_categoria_con_errores_y_clase_sin_soporte",
+        "duracion_segundos": 0.01,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_metricas_multietiqueta_no_confunden_acierto_parcial_con_conjunto_exacto",
+        "duracion_segundos": 0.019,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[vacio]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[duplicado]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[asunto_repetido]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[sin_etiqueta]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[tipo_desconocido]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[tema_desconocido]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[tema_repetido]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_rechaza_evaluaciones_invalidas[sin_procedencia]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_evaluacion_real_es_reproducible_y_no_certifica_independencia",
+        "duracion_segundos": 0.164,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_evaluar_predictor",
+        "caso": "test_cli_genera_hashes_y_no_sobrescribe_evidencia",
+        "duracion_segundos": 4.089,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_exportacion_mdt",
+        "caso": "test_no_interpreta_el_texto_guardado_como_variables_ni_permite_firmas_tecnicas",
+        "duracion_segundos": 0.07,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_exportacion_mdt",
+        "caso": "test_formato_desconocido_o_estructura_distinta_no_se_disfrazan_de_piloto",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "caso": "test_migracion_y_semilla_idempotentes_preservan_plantillas_y_documentos",
+        "duracion_segundos": 0.449,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "caso": "test_generacion_edicion_recuperacion_exportacion[False-False]",
+        "duracion_segundos": 1.04,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "caso": "test_generacion_edicion_recuperacion_exportacion[False-True]",
+        "duracion_segundos": 1.333,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "caso": "test_generacion_edicion_recuperacion_exportacion[True-False]",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama real opt-in"
+      },
+      {
+        "modulo": "tests.test_formato_mdt",
+        "caso": "test_generacion_edicion_recuperacion_exportacion[True-True]",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama real opt-in"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_contexto_enviado_resuelve_nombres_y_solo_normas_aceptadas",
+        "duracion_segundos": 0.016,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_inferencia_fuera_de_transaccion_con_reserva_visible_y_sin_bloquear_lecturas",
+        "duracion_segundos": 0.02,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_resultado_o_fallo_tardio_no_pisa_una_reserva_nueva[False]",
+        "duracion_segundos": 0.033,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_resultado_o_fallo_tardio_no_pisa_una_reserva_nueva[True]",
+        "duracion_segundos": 0.02,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_reserva_abandonada_se_recupera_despues_de_reiniciar_caso_de_uso",
+        "duracion_segundos": 0.018,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_cambio_de_plantilla_durante_inferencia_descarta_resultado_y_libera",
+        "duracion_segundos": 0.01,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_plantilla_retirada_no_deja_solicitud_bloqueada",
+        "duracion_segundos": 0.009,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_concurrencia",
+        "caso": "test_error_inesperado_del_proveedor_se_sanitiza_y_se_puede_reintentar",
+        "duracion_segundos": 0.01,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_generacion_postgres",
+        "caso": "test_inferencia_sin_bloqueo_postgres_y_dos_instancias_no_duplican",
+        "duracion_segundos": 0.403,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Verificar el parque infantil.]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Visitar el parque recreativo.]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Inspeccionar el parque Los Olivos.]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Se realiz\\xf3 una visita.]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Se observ\\xf3 acumulaci\\xf3n de residuos.]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[No se han realizado inspecciones.]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[No existen hallazgos.]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Aplicar la Ley 12345.]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[La visita fue el 2026-09-15.]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Se recomienda retirar los residuos.]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[Hay acumulaci\\xf3n de residuos.]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_rechaza_adiciones_sin_fuente_aunque_se_marquen_pendientes[El c\\xe9sped est\\xe1 en mal estado.]",
+        "duracion_segundos": 0.011,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_con_hechos_y_evidencia_permite_recomendaciones_vinculadas",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_recomendacion_de_verificar_no_se_confunde_con_hallazgo",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_observaciones_parciales_no_desaparecen_ni_se_infiere_contenido[A\\xfan no hay hallazgos confirmados con la informaci\\xf3n aportada.]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_observaciones_parciales_no_desaparecen_ni_se_infiere_contenido[Se observaron dos bolsas con residuos junto al acceso norte.]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_esquema_con_observaciones_no_instruye_ausencia_de_hallazgos",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_encabezado_humano_versionado_recuperacion_exportacion_y_legacy",
+        "duracion_segundos": 0.245,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido",
+        "caso": "test_exportacion_oculta_uuid_legacy_sin_mutar_version",
+        "duracion_segundos": 0.224,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido_real",
+        "caso": "test_generar_editar_recuperar_y_descargar[sin-resultados]",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama y PostgreSQL aislado: opt-in"
+      },
+      {
+        "modulo": "tests.test_inspeccion_contenido_real",
+        "caso": "test_generar_editar_recuperar_y_descargar[con-resultados]",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama y PostgreSQL aislado: opt-in"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_sql_idempotente_preserva_todas_las_filas_tecnicas_y_documentos",
+        "duracion_segundos": 0.294,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_sql_rechaza_conflictos_sin_reactivar_o_sobrescribir[UPDATE public.plantillas SET activa=false WHERE nombre=%s]",
+        "duracion_segundos": 0.274,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_sql_rechaza_conflictos_sin_reactivar_o_sobrescribir[UPDATE public.plantillas SET area_id=NULL WHERE nombre=%s]",
+        "duracion_segundos": 0.245,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_sql_rechaza_conflictos_sin_reactivar_o_sobrescribir[UPDATE public.campos_plantilla SET etiqueta='Campo personalizado' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s)]",
+        "duracion_segundos": 0.269,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_sql_sin_prerrequisito_no_inserta_registros[UPDATE public.areas_municipales SET activo=false WHERE codigo='MDT_SGGA']",
+        "duracion_segundos": 0.31,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_sql_sin_prerrequisito_no_inserta_registros[UPDATE public.tipos_informe SET activo=false WHERE codigo='INFORME_INSPECCION']",
+        "duracion_segundos": 0.266,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_sql_sin_prerrequisito_no_inserta_registros[ALTER TABLE public.versiones_informe DROP COLUMN titulo]",
+        "duracion_segundos": 0.26,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_inspeccion_sin_resultados_reintento_edicion_recuperacion_docx_y_permisos",
+        "duracion_segundos": 1.844,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Sin resultados de inspecci\\xf3n-Notas sin acreditar resultados.-True]",
+        "duracion_segundos": 0.293,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Informaci\\xf3n parcial por verificar--True]",
+        "duracion_segundos": 0.265,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles--True]",
+        "duracion_segundos": 0.247,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles-Acta ficticia de prueba: se aport\\xf3 una medici\\xf3n identificada.-False]",
+        "duracion_segundos": 0.267,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_piloto",
+        "caso": "test_inspeccion_ollama_real_pocos_datos",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama real: opt-in"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_reproduce_42p01_y_semilla_no_depende_de_objetos_entre_conexiones",
+        "duracion_segundos": 0.408,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_respeta_la_transaccion_externa_y_el_rollback",
+        "duracion_segundos": 0.252,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[DELETE FROM public.campos_plantilla WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.256,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET etiqueta='Distinta' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.277,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET tipo_dato='textarea' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.24,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET obligatorio=false WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.235,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET orden=8 WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.252,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET activo=false WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.265,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET clave='otro_campo' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.384,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET configuracion=configuracion-'valores_sin_resultados' WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.342,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET configuracion=configuracion || '{\"extra\":true}'::jsonb WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.256,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.campos_plantilla SET configuracion=jsonb_set(configuracion,'{opciones,0}','\"Otra opcion\"') WHERE plantilla_id IN (SELECT id FROM public.plantillas WHERE nombre=%s) AND clave='estado_resultados']",
+        "duracion_segundos": 0.287,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET tipo_informe_id=(SELECT id FROM public.tipos_informe WHERE codigo='INFORME_TECNICO') WHERE nombre=%s]",
+        "duracion_segundos": 0.421,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET area_id=NULL WHERE nombre=%s]",
+        "duracion_segundos": 0.767,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET activa=false WHERE nombre=%s]",
+        "duracion_segundos": 0.295,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET descripcion='Distinta' WHERE nombre=%s]",
+        "duracion_segundos": 1.049,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=jsonb_set(secciones_salida,'{0,titulo}','\"Distinto\"') WHERE nombre=%s]",
+        "duracion_segundos": 1.833,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=jsonb_set(secciones_salida,'{5,obligatoria}','true') WHERE nombre=%s]",
+        "duracion_segundos": 0.449,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=(secciones_salida->5) || (secciones_salida - 5) WHERE nombre=%s]",
+        "duracion_segundos": 0.246,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_auditoria_y_semilla_detectan_definicion_distinta_sin_repararla[UPDATE public.plantillas SET secciones_salida=secciones_salida - 5 WHERE nombre=%s]",
+        "duracion_segundos": 0.339,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_fallo_al_insertar_campos_revierte_tambien_la_plantilla",
+        "duracion_segundos": 0.363,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_lectura_completa_integra_con_columnas_y_sin_mutaciones",
+        "duracion_segundos": 1.083,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_inspeccion_semilla",
+        "caso": "test_comparador_respeta_tipos_y_orden_pero_no_orden_de_claves",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adapter_envia_esquema_y_configuracion_sin_streaming",
+        "duracion_segundos": 0.015,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_sanitiza_errores_de_red[error0-OLLAMA_NO_DISPONIBLE]",
+        "duracion_segundos": 0.014,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_sanitiza_errores_de_red[error1-OLLAMA_TIMEOUT]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_sanitiza_errores_de_red[error2-OLLAMA_TIMEOUT]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_sanitiza_errores_de_red[error3-OLLAMA_ERROR]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[404-body0-OLLAMA_MODELO_NO_INSTALADO]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[500-body1-OLLAMA_ERROR]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[302-body2-OLLAMA_ERROR]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body3-OLLAMA_RESPUESTA_INVALIDA]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body4-OLLAMA_RESPUESTA_INVALIDA]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body5-OLLAMA_RESPUESTA_INVALIDA]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body6-OLLAMA_RESPUESTA_INVALIDA]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_rechaza_errores_y_sobres_incompletos[200-body7-OLLAMA_RESPUESTA_INVALIDA]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_adaptador_json_http_invalido",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_timeout_total_cancela_peticion_aunque_no_haya_timeout_de_red",
+        "duracion_segundos": 0.011,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_prompt_separa_datos_de_reglas_y_no_atribuye_contenido_juridico",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{}]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[[]]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[```json\\n{}\\n```]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"a\",\"antecedentes\":\"b\"}]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":\"T\",\"conclusiones\":\"C\",\"encabezado\":{}}]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":\" \",\"conclusiones\":\"C\"}]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":null,\"conclusiones\":\"C\"}]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_generador_no_repara_silenciosamente_respuestas_invalidas[{\"antecedentes\":\"A\",\"objetivo\":\"O\",\"analisis_tecnico\":\"T\",\"conclusiones\":\"C\"} texto adicional]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_NO_DISPONIBLE-503]",
+        "duracion_segundos": 0.282,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_MODELO_NO_INSTALADO-503]",
+        "duracion_segundos": 0.146,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_TIMEOUT-504]",
+        "duracion_segundos": 0.303,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_RESPUESTA_INVALIDA-502]",
+        "duracion_segundos": 0.127,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_api_fallos_controlados_conservan_datos_y_admiten_reintento[OLLAMA_ERROR-502]",
+        "duracion_segundos": 0.322,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_backend_se_inyecta_en_contenedor",
+        "duracion_segundos": 0.003,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_BASE_URL-http://usuario:secreto@host]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_BASE_URL-file:///tmp]",
+        "duracion_segundos": 0.002,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_BASE_URL-http://localhost?token=secreto]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_MODEL-]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-nan]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-0]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-1801]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama",
+        "caso": "test_configuracion_invalida_falla_sin_revelar_valores[NAXJI_OLLAMA_TIMEOUT_SECONDS-texto]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_ollama_integration",
+        "caso": "test_flujo_completo_piloto_tecnico_sin_resultados[memory]",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama real: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_ollama_integration",
+        "caso": "test_flujo_completo_piloto_tecnico_sin_resultados[postgres]",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Ollama real: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_fuentes_minimas_ollama_edicion_recuperacion_y_exportacion",
+        "duracion_segundos": 0.675,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_sin_hechos_rechaza_salida_sin_advertencia_y_permite_reintentar",
+        "duracion_segundos": 0.464,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_descarga_aplica_permisos_del_informe[None-401]",
+        "duracion_segundos": 0.424,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_descarga_aplica_permisos_del_informe[invalido-401]",
+        "duracion_segundos": 0.165,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_descarga_aplica_permisos_del_informe[demo-otro-403]",
+        "duracion_segundos": 0.437,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_descarga_aplica_permisos_del_informe[demo-revisor-200]",
+        "duracion_segundos": 0.18,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_descarga_aplica_permisos_del_informe[demo-admin-200]",
+        "duracion_segundos": 0.298,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_descarga_aplica_permisos_del_informe[demo-funcionario-200]",
+        "duracion_segundos": 0.223,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_versiones_inexistentes_y_solicitudes_sin_informe",
+        "duracion_segundos": 0.139,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_exporta_legacy_y_texto_corregido_sin_consultar_plantilla_actual",
+        "duracion_segundos": 0.205,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2",
+        "caso": "test_exportacion_caracteres_no_xml_error_controlado",
+        "duracion_segundos": 0.201,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2_ollama",
+        "caso": "test_piloto_v2_real_pocos_datos_edicion_y_word",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Requiere Ollama real y PostgreSQL local aislado: opt-in"
+      },
+      {
+        "modulo": "tests.test_piloto_v2_postgres",
+        "caso": "test_semilla_aditiva_idempotente_y_persistencia_de_versiones",
+        "duracion_segundos": 5.185,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_piloto_v2_postgres",
+        "caso": "test_semilla_rechaza_definicion_v2_conflictiva_sin_sobrescribir",
+        "duracion_segundos": 0.613,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_config_validates_before_connecting_and_hides_password",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_config_rejects_invalid_values[NAXJI_DB_PORT-invalid]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_config_rejects_invalid_values[NAXJI_DB_PORT-0]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_config_rejects_invalid_values[NAXJI_DB_SSLMODE-disable]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_config_rejects_invalid_values[NAXJI_DB_CONNECT_TIMEOUT-0]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_config_rejects_invalid_values[NAXJI_DB_PASSWORD-[YOUR-PASSWORD]]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_dotenv_absolute_root_preserves_literals_and_os_priority",
+        "duracion_segundos": 0.004,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_uow_rolls_back_and_releases_connection_on_failure",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_postgres_never_falls_back_to_memory_or_exposes_connection_error",
+        "duracion_segundos": 0.071,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_predictor_resolves_real_ids_and_rejects_missing_catalogs",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_postgres",
+        "caso": "test_real_sklearn_predictor_remains_available",
+        "duracion_segundos": 0.214,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "caso": "test_crud_script_and_rollback_after_injected_failure",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "caso": "test_endpoint_reads_actual_postgres_catalog",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "caso": "test_repositories_read_temporary_catalogs_and_rollback",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "caso": "test_endpoint_rejects_nonexistent_profile_and_rolls_back",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "caso": "test_request_survives_two_backend_processes",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_supabase_integration",
+        "caso": "test_full_endpoint_flow_uses_postgres_aggregates",
+        "duracion_segundos": 0.0,
+        "estado": "omitida",
+        "motivo": "Supabase: prueba opt-in"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[text-123]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[textarea-  ]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[date-2026-02-30]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[date-20260925]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[number-True]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[number-nan]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[boolean-1]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_invalidos[select-OTRO]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_validos_incluyen_cero_y_false[text-Texto]",
+        "duracion_segundos": 0.0,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_validos_incluyen_cero_y_false[textarea-Antecedentes]",
+        "duracion_segundos": 0.003,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_validos_incluyen_cero_y_false[date-2026-09-25]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_validos_incluyen_cero_y_false[number-0]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_validos_incluyen_cero_y_false[boolean-False]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      },
+      {
+        "modulo": "tests.test_validaciones",
+        "caso": "test_valores_validos_incluyen_cero_y_false[select-NORMAL]",
+        "duracion_segundos": 0.001,
+        "estado": "aprobada"
+      }
+    ],
+    "salida": "......................................s........................sss...... [ 25%]\n................s.....................................ss................ [ 51%]\n............ss............s............................................. [ 77%]\n................ss...........s.............ssssss..............          [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /workspace/NAXJI---Copilot-Municipal/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nSKIPPED [1] tests/test_auth_integration.py:6: Auth real: requiere .env.local y .env.auth-test\nSKIPPED [1] tests/test_catalogos_supabase.py:49: Supabase: prueba opt-in\nSKIPPED [1] tests/test_catalogos_supabase.py:67: Supabase: prueba opt-in\nSKIPPED [1] tests/test_catalogos_supabase.py:109: Supabase: prueba opt-in\nSKIPPED [1] tests/test_correspondencias_postgres.py:134: Ollama real: opt-in\nSKIPPED [2] tests/test_formato_mdt.py:66: Ollama real opt-in\nSKIPPED [2] tests/test_inspeccion_contenido_real.py:21: Ollama y PostgreSQL aislado: opt-in\nSKIPPED [1] tests/test_inspeccion_piloto.py:260: Ollama real: opt-in\nSKIPPED [2] tests/test_ollama_integration.py:23: Ollama real: prueba opt-in\nSKIPPED [1] tests/test_piloto_v2_ollama.py:25: Requiere Ollama real y PostgreSQL local aislado: opt-in\nSKIPPED [1] tests/test_supabase_integration.py:43: Supabase: prueba opt-in\nSKIPPED [1] tests/test_supabase_integration.py:70: Supabase: prueba opt-in\nSKIPPED [1] tests/test_supabase_integration.py:88: Supabase: prueba opt-in\nSKIPPED [1] tests/test_supabase_integration.py:126: Supabase: prueba opt-in\nSKIPPED [1] tests/test_supabase_integration.py:150: Supabase: prueba opt-in\nSKIPPED [1] tests/test_supabase_integration.py:173: Supabase: prueba opt-in\n260 passed, 19 skipped, 1 warning in 47.08s\n"
+  },
+  "frontend": {
+    "comando": "npm run test:frontend",
+    "aprobadas": 51,
+    "fallidas": 0,
+    "omitidas": 0,
+    "salida": "\n> copilot-municipal-frontend@0.0.0 test:frontend\n> node --test tests/frontend/*.test.mjs\n\n▶ acceso y protección de rutas sin caché de permisos ni tokens persistidos\n  ✔ login real y navegación con DOM a 1440px; un perfil validado por entrada (7421.210769ms)\n  ✔ login real y navegación con DOM a 390px; un perfil validado por entrada (3507.186033ms)\n  ✔ sesión Supabase recuperada en acceso público y en ruta privada (6565.287211ms)\n  ✔ demo conserva selector, acceso y recuperación sin solicitar credenciales reales (8915.733795ms)\n  ✔ configuración fallida permite reintentar; modo deshabilitado impide entrar (8531.074725ms)\n  ✔ credenciales rechazadas conservan correo, limpian contraseña y muestran error (3363.688123ms)\n  ✔ fallo de perfil permite reintento sin mostrar contenido ni cargar catálogos (3786.421907ms)\n  ✔ 403 deniega la ruta y limpia la sesión; no hay bucle de redirección (3685.825328ms)\n  ✔ perfil rechazado después del login conserva el mensaje de error al regresar (3434.754535ms)\n  ✔ un 401 protegido renueva una vez y reintenta con token en memoria (8271.490556ms)\n  ✔ comparte solo consultas simultáneas, nunca reutiliza un perfil resuelto (8870.597308ms)\n  ✔ una respuesta de perfil tardía no restaura un usuario tras cerrar sesión (6665.582306ms)\n  ✔ un fallo de carga del módulo diferido muestra una opción de recuperación (14.239438ms)\n✔ acceso y protección de rutas sin caché de permisos ni tokens persistidos (73913.399082ms)\n✔ inspección v1 no se confunde con técnica v2; avisa solo de una versión compatible de la misma familia (6.066629ms)\n✔ encabezado histórico conserva denominaciones legibles y nunca expone UUIDs (0.67432ms)\n✔ las dos estructuras conservan orden, títulos y obligatoriedad (3.547137ms)\n✔ versiones antiguas conservan secciones de texto adicionales sin convertir metadatos en campos (1.564271ms)\n10:48:21 PM [vite] (client) Re-optimizing dependencies because vite config has changed\n10:48:22 PM [vite] (client) [optimizer] scanning dependencies...\n10:48:24 PM [vite] (client) [optimizer] bundling dependencies...\n✔ editor React presenta encabezado legible y solo edita secciones ordenadas de la versión (4072.282488ms)\n✔ aceptar envía únicamente ID y ACEPTADA, independientemente del orden de las normas (3.256996ms)\n✔ corregir envía los tres campos, incluso sin normas: {\"tipoInformeId\":\"tipo-2\"} (0.348167ms)\n✔ corregir envía los tres campos, incluso sin normas: {\"areaDestinoId\":\"area-2\"} (0.429229ms)\n✔ corregir envía los tres campos, incluso sin normas: {\"normativaIds\":[\"n-2\"]} (0.208474ms)\n✔ corregir envía los tres campos, incluso sin normas: {\"normativaIds\":[]} (0.293594ms)\n✔ impide normas externas, repetidas o contexto incompleto (0.697953ms)\n✔ rechazar no envía campos de corrección (0.19584ms)\n✔ recuperar CORREGIDA usa los IDs guardados y respeta normas descartadas (0.695616ms)\n✔ una plantilla debe estar activa y corresponder al tipo y destino confirmados (0.919339ms)\n✔ recupera valores vigentes sin perder false/cero ni copiar campos ajenos (0.991775ms)\n✔ una respuesta tardía no puede restaurar la predicción tras editar el asunto (0.409282ms)\n✔ presenta temas separados, fuentes y selección recuperada por documento (591.531821ms)\n10:48:28 PM [vite] (client) [optimizer] bundling dependencies...\n▶ inspección v1 piloto: formulario, invalidación, recuperación, reintento y versiones\n  ✔ asunto solo y descarte de una norma habilitan la plantilla tras confirmar (201.781459ms)\n  ✔ campos fallidos se reintentan; datos incompletos bloquean el avance (110.616595ms)\n  ✔ UUID recupera selección y datos; modificar tipo exige reconfirmar (162.942686ms)\n  ✔ editar asunto invalida los pasos y descarta una respuesta tardía (157.188184ms)\n  ✔ fallo de generación controlado, reintento, edición y recuperación de versión 2 (235.235481ms)\n  ✔ vista previa y DOCX usan la versión guardada, excluyen cambios sin guardar y conservan anteriores (101.608242ms)\n  ✔ PROCESANDO mantiene su reintento; los roles de consulta no editan (123.935312ms)\n✔ inspección v1 piloto: formulario, invalidación, recuperación, reintento y versiones (6430.815703ms)\n▶ inspección v2 Anexo 08: formulario, invalidación, recuperación, reintento y versiones\n  ✔ asunto solo y descarte de una norma habilitan la plantilla tras confirmar (81.550898ms)\n  ✔ campos fallidos se reintentan; datos incompletos bloquean el avance (86.297946ms)\n  ✔ UUID recupera selección y datos; modificar tipo exige reconfirmar (120.896177ms)\n  ✔ editar asunto invalida los pasos y descarta una respuesta tardía (152.240271ms)\n  ✔ fallo de generación controlado, reintento, edición y recuperación de versión 2 (263.669449ms)\n  ✔ vista previa y DOCX usan la versión guardada, excluyen cambios sin guardar y conservan anteriores (72.968821ms)\n  ✔ PROCESANDO mantiene su reintento; los roles de consulta no editan (119.75113ms)\n✔ inspección v2 Anexo 08: formulario, invalidación, recuperación, reintento y versiones (4321.538089ms)\n✔ el indicador retrocede al cambiar asunto o perder la confirmación (1.727653ms)\n✔ el borrador exige plantilla compatible, campos cargados, origen y datos obligatorios (0.675958ms)\n✔ recuperación y reintento siguen accesibles aunque la plantilla guardada ya no esté activa (0.280482ms)\n✔ el indicador expone el paso actual y deshabilita los pasos futuros para teclado (448.885542ms)\nℹ tests 51\nℹ suites 0\nℹ pass 51\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 75722.970828\nnpm notice\nnpm notice New major version of npm available! 11.9.0 -> 12.2.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\nnpm notice To update run: npm install -g npm@12.2.1\nnpm notice\n"
+  },
+  "checks": [
+    {
+      "comando": "npm run lint",
+      "codigo_salida": 0,
+      "salida": "\n> copilot-municipal-frontend@0.0.0 lint\n> eslint .\n\nnpm notice\nnpm notice New major version of npm available! 11.9.0 -> 12.2.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\nnpm notice To update run: npm install -g npm@12.2.1\nnpm notice\n"
+    },
+    {
+      "comando": "npm run build",
+      "codigo_salida": 0,
+      "salida": "\n> copilot-municipal-frontend@0.0.0 build\n> vite build\n\nvite v8.3.1 building client environment for production...\ntransforming...\n✓ 105 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                          0.47 kB │ gzip:   0.31 kB\ndist/assets/index-CC7s6jrW.css           9.55 kB │ gzip:   2.60 kB\ndist/assets/NuevoInforme-46CPUzQA.css   14.57 kB │ gzip:   3.63 kB\ndist/assets/NuevoInforme-rPAZ9qT3.js    40.40 kB │ gzip:  12.22 kB\ndist/assets/index-tfOd8TEM.js          323.09 kB │ gzip: 104.94 kB\n\n✓ built in 356ms\nnpm notice\nnpm notice New major version of npm available! 11.9.0 -> 12.2.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\nnpm notice To update run: npm install -g npm@12.2.1\nnpm notice\n"
+    },
+    {
+      "comando": "git diff --check",
+      "codigo_salida": 0,
+      "salida": ""
+    }
+  ],
+  "limitaciones": [
+    "Diez pruebas Supabase real omitidas; no se ejecutó SQL remoto.",
+    "Nueve pruebas Ollama real omitidas.",
+    "No hay corpus independiente para precisión académica.",
+    "No hay especificación de procedimientos CREATE PROCEDURE concretos.",
+    "Pruebas del evaluador con fixtures sintéticos; no métricas oficiales.",
+    "Las peticiones TCP y las inferencias guardadas en la revisión anterior no se repitieron como evidencias nuevas."
+  ]
+}
