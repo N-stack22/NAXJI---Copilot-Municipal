@@ -10,6 +10,7 @@ from docx.text.paragraph import Paragraph
 
 from src.domain.services.errores import DatosInvalidos
 from src.domain.value_objects.encabezado_documento import MARCADOR, datos_oficiales, texto_publico
+from .fuentes_docx import agregar_fuentes
 
 BASE = Path(__file__).parent / 'templates/mdt_anexo08_revision1.docx'
 
@@ -54,6 +55,7 @@ def exportar_mdt(version):
                     parrafo.paragraph_format.keep_with_next = i == len(lineas)-1
                     p._p.addprevious(nuevo)
                 p._p.getparent().remove(p._p)
+        agregar_fuentes(doc, version)
         salida = BytesIO(); doc.save(salida)
         return salida.getvalue()
     except ValueError:

@@ -30,7 +30,7 @@ from src.infrastructure.configuration.database import DatabaseSettings
 class Container:
     """Composición explícita; PostgreSQL nunca cae silenciosamente a memoria."""
 
-    def __init__(self, settings=None, *, database_settings=None, predictor=None, generador=None):
+    def __init__(self, settings=None, *, database_settings=None, predictor=None, generador=None, documentos=None):
         settings = settings or Settings.from_env()
         self.persistence_mode = settings.persistence_mode
 
@@ -109,6 +109,24 @@ class Container:
 
         self.validar_prediccion = ValidarPrediccion(self.servicios)
 
+        self.documentos = documentos
+        self.rag_config = settings.rag
+        if self.documentos is None and settings.rag.enabled:
+            if self.persistence_mode != "postgres":
+                raise ValueError("RAG persistente requiere PostgreSQL; inyecte dobles solo en pruebas")
+            from src.adapters.out.persistence.documentos_postgres import DocumentosPostgres
+            from src.adapters.out.documents.almacen_supabase import AlmacenSupabase
+            from src.adapters.out.documents.extractor import ExtractorArchivos
+            from src.adapters.out.ai.embeddings_ollama import EmbeddingsOllama
+            from src.application.use_cases.documentos import GestionDocumentos
+            from src.infrastructure.configuration.database import environment
+            values = environment()
+            self.documentos = GestionDocumentos(DocumentosPostgres(self.uow), AlmacenSupabase(
+                values.get("NAXJI_SUPABASE_URL", ""), values.get("NAXJI_STORAGE_SERVICE_KEY", ""),
+                settings.rag.storage_bucket, settings.rag.max_bytes), ExtractorArchivos(), EmbeddingsOllama(
+                    settings.ollama_base_url, settings.rag.embedding_model, settings.rag.embedding_dimension,
+                    settings.rag.embedding_timeout), settings.rag)
+
         self.generar_borrador = GenerarBorrador(
             self.servicios,
             self.informes,
@@ -116,12 +134,14 @@ class Container:
                 model=settings.ollama_model, base_url=settings.ollama_base_url,
                 timeout_seconds=settings.ollama_timeout_seconds,
             )),
-            tiempo_maximo=settings.ollama_timeout_seconds,
+            tiempo_maximo=settings.ollama_timeout_seconds + (settings.rag.embedding_timeout if self.documentos else 0),
+            recuperador=self.documentos,
         )
 
         self.obtener_informe = ObtenerInforme(
             self.servicios,
-            self.informes
+            self.informes,
+            documentos=self.documentos,
         )
 
         self.actualizar_borrador = ActualizarBorrador(

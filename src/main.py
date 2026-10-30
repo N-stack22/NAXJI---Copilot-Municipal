@@ -14,6 +14,8 @@ from src.infrastructure.configuration.container import Container
 from src.infrastructure.configuration.settings import Settings
 from src.adapters.out.persistence.postgres import PersistenceError
 from src.infrastructure.auth.supabase import SupabaseAuth, SupabaseAuthSettings, AuthError
+from src.domain.services.errores import ErrorServicio
+LimiteDocumental = importlib.import_module("src.adapters.in.limite_documental").LimiteDocumental
 
 
 logger = logging.getLogger(__name__)
@@ -26,12 +28,13 @@ def health():
 def create_app(settings: Settings | None = None, container: Container | None = None, *, auth=None) -> FastAPI:
     settings = settings or Settings.from_env()
     app = FastAPI(
-        title="NAXJI API", version="1.0.0",
-        description=(f"Backend PMV1. Persistencia configurada: {settings.persistence_mode}. "
+        title="NAXJI API", version="2.0.0",
+        description=(f"Backend PMV1 + PMV2 documental/RAG opcional. Persistencia configurada: {settings.persistence_mode}. "
                      "Predicción IA-01 con estimadores sklearn y generación estructurada con Ollama local. "
                      "Los tokens demo solo están habilitados en memoria. PostgreSQL usa Supabase Auth."),
     )
     app.state.settings = settings
+    app.add_middleware(LimiteDocumental, max_bytes=settings.rag.max_bytes)
     app.state.container = container or Container(settings)
     if app.state.container.persistence_mode != settings.persistence_mode:
         raise ValueError("El contenedor no coincide con el modo de persistencia configurado")
@@ -65,7 +68,7 @@ def create_app(settings: Settings | None = None, container: Container | None = N
     @app.middleware("http")
     async def auth_no_cache(request: Request, call_next):
         response = await call_next(request)
-        if request.url.path.startswith("/auth/"):
+        if request.url.path.startswith(("/auth/", "/documentos", "/informes")):
             response.headers["Cache-Control"] = "no-store"
         return response
 
@@ -76,6 +79,9 @@ def create_app(settings: Settings | None = None, container: Container | None = N
 
     @app.exception_handler(ErrorDominio)
     async def error_dominio(request: Request, error: ErrorDominio):
+        if isinstance(error, ErrorServicio):
+            return JSONResponse(status_code=502 if error.codigo in {"CITA_DESCONOCIDA", "CITA_INVALIDA"} else 503,
+                                content={"detail": str(error), "codigo": error.codigo})
         if isinstance(error, ErrorGeneracion):
             codigo = {"OLLAMA_NO_DISPONIBLE": 503, "OLLAMA_MODELO_NO_INSTALADO": 503,
                       "OLLAMA_TIMEOUT": 504, "OLLAMA_RESPUESTA_INVALIDA": 502,
@@ -93,7 +99,7 @@ def create_app(settings: Settings | None = None, container: Container | None = N
                      exc_info=(type(error), error, error.__traceback__))
         return JSONResponse(status_code=500, content={"detail": "Error interno del servidor"})
 
-    for nombre in ("solicitud", "catalogo", "ia", "informe", "usuario", "auth"):
+    for nombre in ("solicitud", "catalogo", "ia", "informe", "usuario", "auth", "documento"):
         modulo = importlib.import_module(f"src.adapters.in.controllers.{nombre}_controller")
         app.include_router(modulo.router)
     app.add_api_route("/health", health, methods=["GET"], tags=["Estado"])

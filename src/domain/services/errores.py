@@ -18,6 +18,12 @@ class ConflictoEstado(ErrorDominio):
     pass
 
 
+class ErrorServicio(ErrorDominio):
+    def __init__(self, codigo, mensaje):
+        self.codigo = codigo
+        super().__init__(mensaje)
+
+
 class ErrorGeneracion(ErrorDominio):
     MENSAJES = {
         "GENERACION_FALLIDA": "No se pudo generar el borrador",

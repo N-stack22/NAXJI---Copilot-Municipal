@@ -237,3 +237,18 @@
 .informe-encabezado-campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 0 1rem; }
 .informe-encabezado dt { font-weight: 600; }
 .informe-encabezado dd { margin: .2rem 0 .65rem; white-space: pre-wrap; }
+.informe-documentos, .informe-fuentes {
+  margin-block: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid #d5dedc;
+  border-radius: 12px;
+  background: #f8faf9;
+  overflow-wrap: anywhere;
+}
+.informe-documentos fieldset { display: grid; gap: .65rem; padding: 1rem; margin-block: 1rem; }
+.informe-documentos input[type="checkbox"] { width: auto; margin-right: .5rem; }
+.informe-documentos ul { padding-left: 1.2rem; }
+.informe-documentos li, .informe-fuentes details { margin-block: .75rem; }
+.informe-documentos summary, .informe-fuentes summary { cursor: pointer; font-weight: 600; }
+.informe-documentos button { margin: .4rem .6rem .4rem 0; }
+.informe-fuentes blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid #648f83; }

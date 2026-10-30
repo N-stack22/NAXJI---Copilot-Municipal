@@ -1,0 +1,86 @@
+{
+  "tipo": "PostgreSQL+pgvector, embeddings y Ollama reales; Storage y Auth con dobles",
+  "corpus": "SINTETICO-PMV2-REAL-01",
+  "modelo_embeddings": "bge-m3:567m",
+  "dimension": 1024,
+  "intentos": [
+    {
+      "status": 201,
+      "respuesta": {
+        "informe_id": "006eb332-424e-4b94-9050-7bb6a75c6c00",
+        "solicitud_id": "1c7fa9b4-c67a-497e-b110-f24f54c28bc1",
+        "plantilla_id": "bfb8efbf-de38-49c8-bfaa-bbcbf5f60361",
+        "titulo": "Informe Técnico",
+        "titulo_versionado": true,
+        "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+        "plantilla_version": 2,
+        "estado": "BORRADOR",
+        "version_id": "eeac0733-4fe4-4bfa-adc3-2a72533d8cd8",
+        "numero_version": 1,
+        "contenido": {
+          "objetivo": "Delimitar el alcance de la solicitud para verificar la ubicación precisa y la competencia correspondiente, y programar una visita si corresponde.",
+          "encabezado": {
+            "asunto": "PRUEBA NAXJI V2: solicitud de inspección del parque ficticio Aurora, sin resultados",
+            "documento": {
+              "fecha": "",
+              "emisor": "Alcaldía",
+              "numero": "",
+              "firmante": "",
+              "referencia": "",
+              "destinatario": "Alcaldía",
+              "cargo_firmante": ""
+            },
+            "area_origen": "Alcaldía",
+            "area_destino": "Alcaldía",
+            "tipo_documento": "Informe Técnico",
+            "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+            "plantilla_version": 2
+          },
+          "antecedentes": "Pendiente de verificación: no se aportaron antecedentes sobre el parque ficticio Aurora.",
+          "conclusiones": "Pendiente de verificación: no se pueden valorar el estado del parque ficticio Aurora con la información disponible.",
+          "recomendaciones": "Pendiente de verificación: se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias.",
+          "analisis_tecnico": "Pendiente de verificación: no se aportaron datos sobre el estado actual del parque ficticio Aurora."
+        },
+        "secciones_salida": [
+          {
+            "clave": "antecedentes",
+            "titulo": "Antecedentes",
+            "obligatoria": true
+          },
+          {
+            "clave": "objetivo",
+            "titulo": "Objetivo del informe",
+            "obligatoria": true
+          },
+          {
+            "clave": "analisis_tecnico",
+            "titulo": "Análisis técnico",
+            "obligatoria": true
+          },
+          {
+            "clave": "conclusiones",
+            "titulo": "Conclusiones",
+            "obligatoria": true
+          },
+          {
+            "clave": "recomendaciones",
+            "titulo": "Recomendaciones",
+            "obligatoria": false
+          }
+        ],
+        "estructura_legacy": false,
+        "origen": "IA",
+        "modelo_ia": "qwen2.5:7b",
+        "created_at": "2026-10-30T10:09:12.033782Z",
+        "updated_at": "2026-10-30T10:09:12.033782Z",
+        "sustento": {
+          "estado": "SIN_RESULTADOS",
+          "fuentes": [],
+          "advertencia": "Las citas identifican referencias; requieren revisión humana y no verifican hechos ni vigencia normativa.",
+          "procesamiento": "extract-v1:chars-v1:1200:180:bge-m3:567m:1024:1",
+          "umbral_similitud": 0.5
+        }
+      }
+    }
+  ]
+}

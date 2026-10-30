@@ -38,4 +38,4 @@ def descargar_docx(informe_id: UUID, numero_version: Annotated[int, Path(ge=1)],
 @router.put("/{informe_id}", response_model=InformeResponse, summary="Guardar una nueva versión del borrador")
 def actualizar(informe_id: UUID, request: InformeRequest, usuario: Usuario, deps: Dependencias):
     informe = deps.actualizar_borrador.ejecutar(informe_id, usuario, **request.model_dump())
-    return representar_informe(informe)
+    return representar_informe(deps.obtener_informe.proteger(informe, usuario))

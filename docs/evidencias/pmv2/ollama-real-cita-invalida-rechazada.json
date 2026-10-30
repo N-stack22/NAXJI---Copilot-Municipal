@@ -1,0 +1,22 @@
+{
+  "tipo": "PostgreSQL+pgvector, embeddings y Ollama reales; Storage y Auth con dobles",
+  "corpus": "SINTETICO-PMV2-REAL-01",
+  "modelo_embeddings": "bge-m3:567m",
+  "dimension": 1024,
+  "intentos": [
+    {
+      "status": 502,
+      "respuesta": {
+        "detail": "Una cita no corresponde al pasaje o al texto fuente; no se guardó el borrador",
+        "codigo": "CITA_INVALIDA"
+      }
+    },
+    {
+      "status": 502,
+      "respuesta": {
+        "detail": "Una cita no corresponde al pasaje o al texto fuente; no se guardó el borrador",
+        "codigo": "CITA_INVALIDA"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+warning: in the working copy of 'src/adapters/in/controllers/informe_controller.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/adapters/in/schemas/informe_request.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/adapters/in/schemas/informe_response.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/adapters/in/web/components/VistaPreviaInforme.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/adapters/in/web/pages/NuevoInforme.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/adapters/in/web/styles/nuevoInforme.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/adapters/out/documents/exportador_docx.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/adapters/out/documents/exportador_mdt.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/application/ports/output/generador_borrador.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/application/use_cases/actualizar_borrador.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/application/use_cases/obtener_informe.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/domain/entities/informe.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/domain/services/errores.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_piloto_v2.py', LF will be replaced by CRLF the next time Git touches it

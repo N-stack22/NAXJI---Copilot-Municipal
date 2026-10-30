@@ -24,6 +24,7 @@ class VersionInforme:
     titulo: str | None = None
     # Snapshot inmutable en cada versión. None identifica versiones anteriores al paso 3.
     secciones_salida: list[SeccionSalida] | None = None
+    sustento: dict | None = None
 
 
 @dataclass

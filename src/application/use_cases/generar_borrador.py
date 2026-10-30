@@ -19,6 +19,8 @@ from src.domain.value_objects.estados import OrigenVersion, ResultadoValidacion
 from src.domain.value_objects.seccion_salida import secciones_efectivas
 from src.domain.value_objects.encabezado_documento import crear_encabezado
 from src.application.use_cases.verificar_referencias_normativas import verificar_referencias_normativas
+from src.application.use_cases.documentos import vincular_citas
+from src.domain.services.errores import ErrorServicio
 
 
 logger = logging.getLogger(__name__)
@@ -26,10 +28,11 @@ logger = logging.getLogger(__name__)
 
 class GenerarBorrador:
     def __init__(self, servicios: ServiciosSolicitud, informes: InformeRepository,
-                 generador: GeneradorBorrador, *, tiempo_maximo=300.0, reloj=ahora):
+                 generador: GeneradorBorrador, *, tiempo_maximo=300.0, reloj=ahora, recuperador=None):
         self.s, self.informes, self.generador = servicios, informes, generador
         self.plazo = timedelta(seconds=tiempo_maximo + 30)
         self.reloj = reloj
+        self.recuperador = recuperador
 
     def _vencida(self, solicitud):
         return self.reloj() >= solicitud.updated_at + self.plazo
@@ -114,7 +117,7 @@ class GenerarBorrador:
             # la reserva al vencer; no registra prompts ni excepciones del proveedor.
             logger.warning("No se pudo liberar una reserva de generación; podrá recuperarse al vencer")
 
-    def ejecutar(self, solicitud_id: UUID, usuario: UsuarioActual, instrucciones: str = ""):
+    def ejecutar(self, solicitud_id: UUID, usuario: UsuarioActual, instrucciones: str = "", usar_documentos: bool = False):
         if not isinstance(instrucciones, str):
             raise DatosInvalidos("Las instrucciones deben ser texto")
         self._recuperar_vencida(solicitud_id, usuario)
@@ -123,6 +126,12 @@ class GenerarBorrador:
         claves = {c.id: c.clave for c in plantilla.campos if c.activo}
         datos = {claves[v.campo_plantilla_id]: v.valor for v in solicitud.valores}
         try:
+            recuperacion = None
+            if usar_documentos:
+                if self.recuperador is None:
+                    raise ErrorServicio("RAG_DESACTIVADO", "RAG no está activado; configure migraciones, Storage y embeddings")
+                recuperacion = self.recuperador.recuperar(solicitud.asunto, usuario)
+                contexto = replace(contexto, fuentes=tuple(recuperacion["fuentes"]))
             # Ninguna transacción ni conexión a PostgreSQL vive durante la inferencia.
             try:
                 resultado = self.generador.generar(solicitud.asunto,
@@ -135,6 +144,8 @@ class GenerarBorrador:
             if resultado.contenido.keys() - {s.clave for s in secciones}:
                 raise DatosInvalidos("El generador devolvió secciones ajenas a la plantilla")
             contenido = {s.clave: resultado.contenido[s.clave] for s in secciones if s.clave in resultado.contenido}
+            # También rechaza marcadores cuando no se autorizó contexto documental.
+            sustento = vincular_citas(contenido, recuperacion or {"estado": "NO_SOLICITADO", "fuentes": []}, resultado.citas)
             contenido["encabezado"] = crear_encabezado(
                 solicitud.asunto, plantilla, contexto, areas.get(solicitud.area_origen_id))
             with self.s.uow.transaccion():
@@ -157,6 +168,7 @@ class GenerarBorrador:
                     modelo_ia=resultado.modelo_ia, prompt_version=resultado.prompt_version,
                     titulo=informe.titulo,
                     secciones_salida=deepcopy(secciones),
+                    sustento=sustento if usar_documentos else None,
                 ))
                 informe = self.informes.guardar(informe)
                 actual.estado = EstadoSolicitud.GENERADA

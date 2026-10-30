@@ -1,4 +1,5 @@
 import EncabezadoDocumento from "./EncabezadoDocumento";
+import FuentesInforme from "./FuentesInforme";
 import { seccionesDelBorrador } from "../services/estructuraBorrador";
 import { formatoMdt } from "../services/encabezadoDocumento";
 
@@ -17,5 +18,6 @@ export default function VistaPreviaInforme({ informe }) {
     {seccionesDelBorrador(informe).map(s => <section key={s.clave}>
       <h3>{s.titulo}</h3><p className="informe-texto-guardado">{informe.contenido[s.clave] ?? ""}</p>
     </section>)}
+    <FuentesInforme key={informe.version_id || informe.numero_version} sustento={informe.sustento} />
   </article>;
 }

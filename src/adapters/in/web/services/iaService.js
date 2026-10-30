@@ -23,11 +23,12 @@ export const validarPrediccion = async (solicitudId, prediccion, seleccion, rech
   return response.data;
 };
 
-export const generarBorrador = async (solicitudId, instrucciones) => {
+export const generarBorrador = async (solicitudId, instrucciones, usarDocumentos = false) => {
   const response = await api.post(
     `/solicitudes/${solicitudId}/generar-borrador`,
     {
       instrucciones,
+      usar_documentos: usarDocumentos,
     }
   );
 

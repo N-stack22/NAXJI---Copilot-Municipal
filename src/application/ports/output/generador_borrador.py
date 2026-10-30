@@ -21,6 +21,7 @@ class ContextoConfirmado:
     tipo_informe_nombre: str | None = None
     area_destino_nombre: str | None = None
     normas: tuple[NormaConfirmada, ...] = ()
+    fuentes: tuple[dict, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -28,6 +29,7 @@ class ResultadoBorrador:
     contenido: dict[str, Any]
     modelo_ia: str
     prompt_version: str | None = None
+    citas: tuple[dict, ...] = ()
 
 
 class GeneradorBorrador(ABC):

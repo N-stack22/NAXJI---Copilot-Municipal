@@ -94,7 +94,8 @@ def entity(cls, row, **enums):
 
 def save(connection, table, item, *, omit=(), json_fields=(), extra=None, insert_only=False):
     """Los identificadores provienen solo de clases internas, nunca del cliente HTTP."""
-    values = {f.name: getattr(item, f.name) for f in fields(item) if f.name not in omit}
+    values = {f.name: getattr(item, f.name) for f in fields(item) if f.name not in omit
+              and not (f.name == "sustento" and getattr(item, f.name) is None)}
     values.update(extra or {})
     for key, value in values.items():
         if key == "secciones_salida":
@@ -241,7 +242,17 @@ class InformeRepositoryPostgres(Repository, InformeRepository):
             existing = {r["id"] for r in c.execute("SELECT id FROM public.versiones_informe WHERE informe_id=%s", (informe.id,))}
             for version in informe.versiones:
                 if version.id not in existing:
-                    save(c, "versiones_informe", version, json_fields=("contenido",), insert_only=True)
+                    save(c, "versiones_informe", version,
+                         omit=("sustento",) if version.sustento is None else (),
+                         json_fields=("contenido", "sustento"), insert_only=True)
+                    if version.sustento:
+                        for fuente in version.sustento["fuentes"]:
+                            for cita in fuente["citas"]:
+                                c.execute("""INSERT INTO public.version_citas
+                                    (version_id,documento_id,fragmento_id,seccion,pasaje,estado,snapshot)
+                                    VALUES (%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING""",
+                                    (version.id, UUID(fuente["documento_id"]), UUID(fuente["fragmento_id"]),
+                                     cita["seccion"], cita["pasaje"], cita["estado"], Jsonb(fuente)))
             # El trigger fija updated_at; responder con lo efectivamente guardado.
             return self.load(c, c.execute("SELECT * FROM public.informes WHERE id=%s", (informe.id,)).fetchone())
 

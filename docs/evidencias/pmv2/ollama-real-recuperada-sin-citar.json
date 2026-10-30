@@ -1,0 +1,100 @@
+{
+  "tipo": "PostgreSQL+pgvector, embeddings y Ollama reales; Storage y Auth con dobles",
+  "corpus": "SINTETICO-PMV2-REAL-01",
+  "modelo_embeddings": "bge-m3:567m",
+  "dimension": 1024,
+  "intentos": [
+    {
+      "status": 201,
+      "respuesta": {
+        "informe_id": "06f291aa-adab-423e-ba8c-b430228339cb",
+        "solicitud_id": "5ccdf83f-ea29-46fc-8fbb-15bf15ce6ac9",
+        "plantilla_id": "71dae15f-b6d5-4134-b28d-5dc18747d608",
+        "titulo": "Informe Técnico",
+        "titulo_versionado": true,
+        "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+        "plantilla_version": 2,
+        "estado": "BORRADOR",
+        "version_id": "540f0208-675d-4d8c-b108-b40a179188cb",
+        "numero_version": 1,
+        "contenido": {
+          "objetivo": "Delimitar el alcance de la solicitud para verificar la ubicación precisa y la competencia correspondiente, y programar una visita si corresponde.",
+          "encabezado": {
+            "asunto": "Solicitud de inspección ambiental del parque ficticio Aurora, sin resultados aportados",
+            "documento": {
+              "fecha": "",
+              "emisor": "Alcaldía",
+              "numero": "",
+              "firmante": "",
+              "referencia": "",
+              "destinatario": "Alcaldía",
+              "cargo_firmante": ""
+            },
+            "area_origen": "Alcaldía",
+            "area_destino": "Alcaldía",
+            "tipo_documento": "Informe Técnico",
+            "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+            "plantilla_version": 2
+          },
+          "antecedentes": "Pendiente de verificación: no se aportaron antecedentes sobre inspecciones previas o hallazgos en el parque ficticio Aurora.",
+          "conclusiones": "Pendiente de verificación: no se pueden valorar el estado del parque ficticio Aurora con la información disponible.",
+          "recomendaciones": "Pendiente de verificación: se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias.",
+          "analisis_tecnico": "Pendiente de verificación: no se aportaron datos sobre actuaciones realizadas o hallazgos en el parque ficticio Aurora."
+        },
+        "secciones_salida": [
+          {
+            "clave": "antecedentes",
+            "titulo": "Antecedentes",
+            "obligatoria": true
+          },
+          {
+            "clave": "objetivo",
+            "titulo": "Objetivo del informe",
+            "obligatoria": true
+          },
+          {
+            "clave": "analisis_tecnico",
+            "titulo": "Análisis técnico",
+            "obligatoria": true
+          },
+          {
+            "clave": "conclusiones",
+            "titulo": "Conclusiones",
+            "obligatoria": true
+          },
+          {
+            "clave": "recomendaciones",
+            "titulo": "Recomendaciones",
+            "obligatoria": false
+          }
+        ],
+        "estructura_legacy": false,
+        "origen": "IA",
+        "modelo_ia": "qwen2.5:7b",
+        "created_at": "2026-10-30T10:10:59.239787Z",
+        "updated_at": "2026-10-30T10:10:59.239787Z",
+        "sustento": {
+          "estado": "RECUPERADO",
+          "fuentes": [
+            {
+              "fin": 236,
+              "citas": [],
+              "texto": "Documento ficticio de pruebas. Guía de gestión ambiental para parques. Para valorar residuos en un parque se necesitan observaciones documentadas y ubicación precisa. Esta guía no registra inspecciones ni hallazgos de ningún expediente.",
+              "inicio": 0,
+              "sha256": "975c6867281d3757df711ea165837add45bccf9f7f505172f5672d07098473e2",
+              "titulo": "Guía ambiental ficticia PMV2",
+              "similitud": 0.5589986180662295,
+              "procedencia": "Corpus sintético autorizado para pruebas",
+              "documento_id": "b096ecfa-37f5-4003-8411-df69b0c103b9",
+              "fragmento_id": "640c8633-b2f1-5690-a98e-5fbdfbed6302",
+              "localizacion": "Párrafo 1"
+            }
+          ],
+          "advertencia": "Las citas identifican referencias; requieren revisión humana y no verifican hechos ni vigencia normativa.",
+          "procesamiento": "extract-v1:chars-v1:1200:180:bge-m3:567m:1024:1",
+          "umbral_similitud": 0.5
+        }
+      }
+    }
+  ]
+}

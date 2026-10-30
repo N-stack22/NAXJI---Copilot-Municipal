@@ -1,0 +1,84 @@
+{
+  "rama": "integration/pmv2-rag",
+  "fecha_cliente": "2026-10-30",
+  "pg_aislado": true,
+  "auth_storage": "Dobles; no validar como Supabase real",
+  "resultados": [
+    {
+      "check": "pytest",
+      "comando": [
+        "D:\\NAXJI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-rs"
+      ],
+      "exit_code": 0,
+      "inicio_utc": "2026-10-30T10:28:14.136020+00:00",
+      "segundos": 37.46946,
+      "log": "pytest.txt"
+    },
+    {
+      "check": "frontend",
+      "comando": [
+        "npm.cmd",
+        "run",
+        "test:frontend"
+      ],
+      "exit_code": 0,
+      "inicio_utc": "2026-10-30T10:23:13.746029+00:00",
+      "segundos": 72.316467,
+      "log": "frontend.txt"
+    },
+    {
+      "check": "lint",
+      "comando": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "inicio_utc": "2026-10-30T10:24:26.062496+00:00",
+      "segundos": 1.925004,
+      "log": "lint.txt"
+    },
+    {
+      "check": "build",
+      "comando": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "inicio_utc": "2026-10-30T10:24:27.987500+00:00",
+      "segundos": 0.558508,
+      "log": "build.txt"
+    },
+    {
+      "check": "diff-check",
+      "comando": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "inicio_utc": "2026-10-30T10:24:28.546008+00:00",
+      "segundos": 0.036163,
+      "log": "diff-check.txt"
+    },
+    {
+      "check": "pmv2-real",
+      "comando": [
+        "D:\\NAXJI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_pmv2_postgres.py"
+      ],
+      "exit_code": 0,
+      "inicio_utc": "2026-10-30T10:24:28.582171+00:00",
+      "segundos": 48.740221,
+      "log": "pmv2-real.txt"
+    }
+  ]
+}

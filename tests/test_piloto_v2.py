@@ -18,8 +18,8 @@ from tests.test_api import flujo_hasta_generar
 ASUNTO = "PRUEBA NAXJI V2: solicitud de inspección del parque ficticio Aurora, sin resultados"
 
 
-def preparar_v2(client):
-    r = client.post("/solicitudes", json={"asunto": ASUNTO})
+def preparar_v2(client, asunto=ASUNTO):
+    r = client.post("/solicitudes", json={"asunto": asunto})
     assert r.status_code == 201, r.text
     sid = r.json()["id"]
     url = f"/solicitudes/{sid}"
@@ -37,7 +37,7 @@ def preparar_v2(client):
     assert not {c["clave"] for c in campos} & {s["clave"] for s in plantilla["secciones_salida"]}
     valores = [{"campo_plantilla_id": c["id"], "valor": "Sin resultados de inspección"}
                for c in campos if c["clave"] == "estado_resultados"]
-    body = {"asunto": ASUNTO, "tipo_informe_id": tipo["id"], "area_destino_id": area,
+    body = {"asunto": asunto, "tipo_informe_id": tipo["id"], "area_destino_id": area,
             "area_origen_id": area, "plantilla_id": plantilla["id"], "valores": valores}
     assert client.put(url + "/completa", json={**body, "valores": []}).status_code == 400
     guardada = client.put(url + "/completa", json=body)

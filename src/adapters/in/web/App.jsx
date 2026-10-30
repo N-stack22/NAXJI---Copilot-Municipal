@@ -12,6 +12,7 @@ import "./styles/identidad.css";
 import "./styles/acceso.css";
 
 const NuevoInforme = lazy(cargarFormulario);
+const Documentos = lazy(() => import("./pages/Documentos"));
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           path="/nuevo-informe"
           element={<NuevoInforme />}
         />
+        <Route path="/documentos" element={<Documentos />} />
       </Route>
     </Routes>
   );

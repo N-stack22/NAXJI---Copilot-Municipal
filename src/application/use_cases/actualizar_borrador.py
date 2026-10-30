@@ -12,6 +12,7 @@ from src.domain.services.informe_service import validar_contenido
 from src.domain.value_objects.estados import EstadoInforme, OrigenVersion
 from src.domain.value_objects.seccion_salida import CLAVES_TECNICAS, secciones_efectivas
 from src.domain.value_objects.encabezado_documento import actualizar_datos_oficiales
+from src.application.use_cases.documentos import sustento_editado
 
 
 class ActualizarBorrador:
@@ -24,7 +25,7 @@ class ActualizarBorrador:
         if titulo is not None and not titulo.strip():
             raise DatosInvalidos("El título no puede estar vacío")
         with self.s.uow.transaccion():
-            informe = ObtenerInforme(self.s, self.informes).ejecutar(informe_id, usuario)
+            informe = ObtenerInforme(self.s, self.informes, proteger_fuentes=False).ejecutar(informe_id, usuario)
             if informe.estado != EstadoInforme.BORRADOR:
                 raise ConflictoEstado("Solo se puede editar un informe en BORRADOR")
             anterior = max(informe.versiones, key=lambda v: v.numero_version)
@@ -51,6 +52,7 @@ class ActualizarBorrador:
                 informe.id, anterior.numero_version + 1, contenido, OrigenVersion.USUARIO, usuario.id,
                 titulo=informe.titulo,
                 secciones_salida=deepcopy(anterior.secciones_salida),
+                sustento=sustento_editado(anterior, contenido),
             ))
             informe.updated_at = ahora()
             return self.informes.guardar(informe)

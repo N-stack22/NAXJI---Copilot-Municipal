@@ -1,7 +1,8 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from math import isfinite
 from urllib.parse import urlsplit
 from src.infrastructure.configuration.database import environment
+from src.infrastructure.configuration.rag import RagSettings
 
 
 @dataclass(frozen=True)
@@ -12,6 +13,7 @@ class Settings:
     ollama_base_url: str = "http://localhost:11434"
     ollama_model: str = "qwen2.5:7b"
     ollama_timeout_seconds: float = 300.0
+    rag: RagSettings = field(default_factory=RagSettings)
 
     def __post_init__(self):
         try:
@@ -47,4 +49,4 @@ class Settings:
         return cls(auth_mode=modo, cors_origins=origins, persistence_mode=persistence,
                    ollama_base_url=values.get("NAXJI_OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/"),
                    ollama_model=values.get("NAXJI_OLLAMA_MODEL", "qwen2.5:7b"),
-                   ollama_timeout_seconds=timeout)
+                   ollama_timeout_seconds=timeout, rag=RagSettings.from_values(values))

@@ -21,6 +21,9 @@ function MainLayout() {
           >
             <span className="menu-icon" aria-hidden="true">▤</span> Nuevo informe
           </NavLink>
+          <NavLink to="/documentos" className={({ isActive }) => isActive ? "menu-item active" : "menu-item"}>
+            <span className="menu-icon" aria-hidden="true">▥</span> Documentos
+          </NavLink>
           </nav>
           <div className="sidebar-note"><strong>De la idea al documento</strong><p>Asistencia para elaborar informes con estructura y revisión humana.</p></div>
         </aside>

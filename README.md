@@ -1,4 +1,19 @@
-# NAXJI — Copilot Municipal: backend PMV1
+# NAXJI — Copilot Municipal: PMV1 + PMV2 documental/RAG
+
+PMV2 implementa biblioteca autenticada `/documentos`, archivos privados, extracción
+PDF/DOCX/TXT, embeddings locales `bge-m3:567m`, recuperación PostgreSQL + pgvector
+y citas con snapshots por versión. En el paso 3 de Nuevo informe active
+**Elaborar con documentos autorizados**. Los cuatro pasos, edición y Word piloto
+se conservan. La activación externa permanece deshabilitada por defecto.
+
+- [Implementación, permisos y contratos PMV2](docs/PMV2_IMPLEMENTACION.md).
+- [Pruebas, métricas y límites de la validación](docs/PMV2_PRUEBAS.md).
+- [Instalación y activación explícita](docs/PMV2_GUIA_EJECUCION.md).
+
+No se aplicaron migraciones ni se desplegó sobre Supabase compartido. Las pruebas
+reales usan PostgreSQL/pgvector desechable y Ollama local; Auth y Storage de ese
+recorrido son dobles. Falta validar el bucket privado y los permisos del entorno
+institucional, además de la revisión humana de pertinencia de citas.
 
 API FastAPI con arquitectura hexagonal, React, PostgreSQL y Supabase Auth.
 Permite crear una solicitud, confirmar/corregir contexto, completar una plantilla,
@@ -26,8 +41,7 @@ Requiere Python 3.11 o superior. Desde la raíz del repositorio:
 ```powershell
 # Solo si el entorno todavía no existe:
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m pip install -r requirements-export.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements-pmv2.txt
 $env:NAXJI_PERSISTENCE_MODE = 'postgres'
 $env:NAXJI_AUTH_MODE = 'supabase'
 $env:NAXJI_AUTH_COOKIE_SECURE = 'false' # Solo desarrollo HTTP local
@@ -73,7 +87,9 @@ automática por mock cuando falla el servicio.
 Los datos ingresados sirven para redactar, no para modificar las reglas del modelo.
 Sin resultados de inspección, análisis y conclusiones deben quedar pendientes de
 verificación. Las normas aceptadas se transmiten por código y título de catálogo;
-no son citas jurídicas verificadas y no se recupera su texto. Aún no hay RAG.
+no son citas jurídicas verificadas. Con PMV2 activado y documentos procesados,
+RAG recupera texto autorizado; seleccionar una norma del catálogo por sí solo
+no recupera su contenido.
 El borrador requiere revisión humana: un esquema válido no demuestra veracidad.
 
 Las migraciones del [paso 3](docs/paso3-estructura-borradores.md) deben estar ya
@@ -208,7 +224,8 @@ aunque se escriban notas. Sin hechos, Ollama recibe un esquema que exige
 Las instrucciones distinguen datos no aportados de actividades no realizadas;
 las conclusiones y recomendaciones las propone Ollama a partir de la evidencia,
 no se solicitan previamente al funcionario. Un prefijo no prueba la verdad de
-una oración: se mantiene la revisión humana y no hay RAG ni verificación jurídica.
+una oración: se mantiene la revisión humana. El RAG opcional aporta referencias
+documentales; no verifica jurídicamente el borrador ni acredita inspecciones.
 
 **Estado verificado de esta base y semilla corregida:**
 

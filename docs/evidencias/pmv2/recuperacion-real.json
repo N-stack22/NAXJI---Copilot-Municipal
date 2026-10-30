@@ -1,0 +1,3916 @@
+{
+  "fecha_utc": "2026-10-30T10:08:39.982820+00:00",
+  "corpus": "NAXJI-PMV2-SINTETICO-01",
+  "corpus_sha256": "dc21f6a6fc76415f57c88816e1167f982460997a47feec86bc52f27c978a27b1",
+  "modelo": "bge-m3:567m",
+  "dimension": 1024,
+  "tipo": "Embeddings reales; ranking coseno exhaustivo en Python, sin PostgreSQL ni LLM",
+  "limite": "Calibración sobre el mismo corpus sintético pequeño; no estima calidad institucional ni precisión de citas.",
+  "evaluaciones": [
+    {
+      "umbral_similitud": 0.4,
+      "top_k": 1,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.4,
+      "top_k": 3,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 0.38888888888888884,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            }
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            }
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.4,
+      "top_k": 6,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 0.38888888888888884,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            }
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            }
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.5,
+      "top_k": 1,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.5,
+      "top_k": 3,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.5,
+      "top_k": 6,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.55,
+      "top_k": 1,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.55,
+      "top_k": 3,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.55,
+      "top_k": 6,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.6,
+      "top_k": 1,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.6,
+      "top_k": 3,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.6,
+      "top_k": 6,
+      "hit_at_1": 1.0,
+      "macro_recall_at_k": 1.0,
+      "macro_precision_at_k": 1.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.65,
+      "top_k": 1,
+      "hit_at_1": 0.5,
+      "macro_recall_at_k": 0.5,
+      "macro_precision_at_k": 0.5,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.65,
+      "top_k": 3,
+      "hit_at_1": 0.5,
+      "macro_recall_at_k": 0.5,
+      "macro_precision_at_k": 0.5,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.65,
+      "top_k": 6,
+      "hit_at_1": 0.5,
+      "macro_recall_at_k": 0.5,
+      "macro_precision_at_k": 0.5,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            }
+          ],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.7,
+      "top_k": 1,
+      "hit_at_1": 0.0,
+      "macro_recall_at_k": 0.0,
+      "macro_precision_at_k": 0.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.7,
+      "top_k": 3,
+      "hit_at_1": 0.0,
+      "macro_recall_at_k": 0.0,
+      "macro_precision_at_k": 0.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    },
+    {
+      "umbral_similitud": 0.7,
+      "top_k": 6,
+      "hit_at_1": 0.0,
+      "macro_recall_at_k": 0.0,
+      "macro_precision_at_k": 0.0,
+      "rechazo_negativas": 1.0,
+      "consultas": [
+        {
+          "consulta_id": "q1",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6844300039759348
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4258945571406345
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40259881821098076
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q2",
+          "relevantes": [
+            "ambiente"
+          ],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.6200115772210568
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4238639110901509
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.39698719871532395
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q3",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.6751457876736642
+            },
+            {
+              "id": "obras",
+              "similitud": 0.4330236057845533
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4206202482537324
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q4",
+          "relevantes": [
+            "tributos"
+          ],
+          "ranking": [
+            {
+              "id": "tributos",
+              "similitud": 0.634121185754248
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4260923856963318
+            },
+            {
+              "id": "obras",
+              "similitud": 0.40483267057264793
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q5",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6859757982013532
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.4521775763035828
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.4156634116247608
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q6",
+          "relevantes": [
+            "obras"
+          ],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.6103380173428129
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.42006527912423597
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.3940452011672587
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": 0.0
+        },
+        {
+          "consulta_id": "q7",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "ambiente",
+              "similitud": 0.27725899788084146
+            },
+            {
+              "id": "obras",
+              "similitud": 0.24982917347368191
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.214588676294148
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        },
+        {
+          "consulta_id": "q8",
+          "relevantes": [],
+          "ranking": [
+            {
+              "id": "obras",
+              "similitud": 0.233164637853645
+            },
+            {
+              "id": "tributos",
+              "similitud": 0.17304811956580587
+            },
+            {
+              "id": "ambiente",
+              "similitud": 0.1471982169775495
+            }
+          ],
+          "seleccion": [],
+          "precision": 0,
+          "recall": null
+        }
+      ]
+    }
+  ]
+}

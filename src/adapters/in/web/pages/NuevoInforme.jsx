@@ -5,6 +5,8 @@ import EditorBorrador from "../components/EditorBorrador";
 import VistaPreviaInforme from "../components/VistaPreviaInforme";
 import NormativasSugeridas from "../components/NormativasSugeridas";
 import PasosInforme from "../components/PasosInforme";
+import DocumentosInforme from "../components/DocumentosInforme";
+import FuentesInforme from "../components/FuentesInforme";
 import { progresoInforme } from "../services/progresoInforme";
 import { seccionesDePlantilla, validarSeccionesBorrador } from "../services/estructuraBorrador";
 import { datosOficiales, plantillaPosterior } from "../services/encabezadoDocumento";
@@ -58,6 +60,7 @@ function FormularioInforme({ solicitudId, informeInicialId }) {
   const [estadoPlantillas, setEstadoPlantillas] = useState("pendiente");
   const [avisoPlantilla, setAvisoPlantilla] = useState("");
   const [instrucciones, setInstrucciones] = useState(INSTRUCCIONES);
+  const [usarDocumentos, setUsarDocumentos] = useState(false);
   const [informe, setInforme] = useState(null);
   const [versionVista, setVersionVista] = useState(null);
   const [informeId, setInformeId] = useState(informeInicialId);
@@ -357,7 +360,7 @@ function FormularioInforme({ solicitudId, informeInicialId }) {
 
   async function solicitarBorrador(actual, vigente) {
     try {
-      const resultado = await generarBorrador(actual.id, instrucciones.trim() || INSTRUCCIONES);
+      const resultado = await generarBorrador(actual.id, instrucciones.trim() || INSTRUCCIONES, usarDocumentos);
       if (!vigente()) return;
       mostrarInforme(resultado);
       setPasoElegido(3);
@@ -565,6 +568,8 @@ function FormularioInforme({ solicitudId, informeInicialId }) {
         </fieldset>
       </>}
     <div className="informe-propuesta">
+      {!informe && <DocumentosInforme usarDocumentos={usarDocumentos} onChange={setUsarDocumentos}
+        disabled={ocupado} puedeCargar={elaboracionPermitida} />}
       <h3>{informe ? "Revise y edite la propuesta" : "Generar la propuesta"}</h3>
       {!informe && solicitud?.estado === "PROCESANDO" && <div>
         <p>Hay una generación en curso. Si se interrumpió, puede reintentar cuando venza su tiempo de espera. Se utilizarán los datos ya guardados.</p>
@@ -601,6 +606,7 @@ function FormularioInforme({ solicitudId, informeInicialId }) {
           encabezadoOficial={encabezadoOficial}
           onEncabezadoChange={(clave, valor) => setEncabezadoOficial(prev => ({ ...prev, [clave]: valor }))}
           onChange={(clave, valor) => setContenido(prev => ({ ...prev, [clave]: valor }))} />
+        <FuentesInforme key={informe.version_id || informe.numero_version} sustento={informe.sustento} />
         <div className="informe-acciones"><button type="button" className="btn-primary" onClick={guardarEdicion}>Guardar borrador</button></div>
       </fieldset>}
       {cambiosSinGuardar && <p className="warning-inline" role="status">Hay cambios sin guardar. La vista previa y el Word muestran únicamente la versión guardada.</p>}

@@ -13,6 +13,7 @@ from src.domain.value_objects.seccion_salida import CLAVES_TECNICAS, secciones_e
 from src.domain.value_objects.encabezado_documento import datos_oficiales, texto_publico, MARCADOR
 from src.domain.value_objects.encabezado_documento import FORMATO_MDT
 from .exportador_mdt import exportar_mdt
+from .fuentes_docx import agregar_fuentes
 
 
 AVISO_PILOTO = "Formato Word piloto NAXJI. No es un formato institucional aprobado."
@@ -141,6 +142,7 @@ class ExportadorDocx(ExportadorInforme):
             firma.add_run(oficiales["cargo_firmante"] or MARCADOR)
             if grupos:
                 grupos[-1][-1].paragraph_format.keep_with_next = True
+            agregar_fuentes(documento, version)
             salida = BytesIO()
             documento.save(salida)
             return salida.getvalue()

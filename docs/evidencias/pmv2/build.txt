@@ -1,0 +1,20 @@
+
+> copilot-municipal-frontend@0.0.0 build
+> vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 109 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                             0.65 kB │ gzip:  0.37 kB
+dist/assets/index-CC7s6jrW.css              9.55 kB │ gzip:  2.60 kB
+dist/assets/nuevoInforme-DeSrX_y3.css      15.23 kB │ gzip:  3.76 kB
+dist/assets/Documentos-DJ-wripD.js          0.45 kB │ gzip:  0.31 kB
+dist/assets/rolldown-runtime-hePW80VL.js    0.71 kB │ gzip:  0.42 kB
+dist/assets/nuevoInforme-D706OAVs.js        6.18 kB │ gzip:  2.51 kB
+dist/assets/NuevoInforme-Bsy1xKul.js       42.97 kB │ gzip: 13.02 kB
+dist/assets/jsx-runtime-CWpAXzfv.js        61.91 kB │ gzip: 22.96 kB
+dist/assets/index-BR9LHO-e.js             260.90 kB │ gzip: 82.84 kB
+
+✓ built in 119ms

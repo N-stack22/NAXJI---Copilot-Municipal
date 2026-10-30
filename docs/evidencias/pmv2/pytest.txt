@@ -1,0 +1,31 @@
+......................................s........................sss...... [ 22%]
+................s.....................................ss................ [ 45%]
+............ss............s............................................. [ 68%]
+................ss...........s.....................................ss... [ 91%]
+........ssssss..............                                             [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  D:\NAXJI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_auth_integration.py:6: Auth real: requiere .env.local y .env.auth-test
+SKIPPED [1] tests\test_catalogos_supabase.py:49: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:67: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:109: Supabase: prueba opt-in
+SKIPPED [1] tests\test_correspondencias_postgres.py:134: Ollama real: opt-in
+SKIPPED [2] tests\test_formato_mdt.py:66: Ollama real opt-in
+SKIPPED [2] tests\test_inspeccion_contenido_real.py:21: Ollama y PostgreSQL aislado: opt-in
+SKIPPED [1] tests\test_inspeccion_piloto.py:260: Ollama real: opt-in
+SKIPPED [2] tests\test_ollama_integration.py:23: Ollama real: prueba opt-in
+SKIPPED [1] tests\test_piloto_v2_ollama.py:25: Requiere Ollama real y PostgreSQL local aislado: opt-in
+SKIPPED [1] tests\test_pmv2_postgres.py:144: Embeddings y Ollama reales: opt-in
+SKIPPED [1] tests\test_pmv2_postgres.py:202: Embeddings reales y pgvector: opt-in
+SKIPPED [1] tests\test_supabase_integration.py:43: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:70: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:88: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:126: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:150: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:173: Supabase: prueba opt-in
+295 passed, 21 skipped, 1 warning in 35.17s

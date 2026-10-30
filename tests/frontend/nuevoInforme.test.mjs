@@ -210,11 +210,13 @@ for (const esMdt of [false, true]) test(`inspección ${esMdt ? "v2 Anexo 08" : "
       await pulsar(boton("Guardar datos fuente")); actual(3);
     });
     await t.test("fallo de generación controlado, reintento, edición y recuperación de versión 2", async () => {
+      await pulsar(document.querySelector('.informe-documentos input[type="checkbox"]'));
       fallarGeneracion = true;
       await pulsar(boton("Generar propuesta con Ollama"));
       assert.match(texto(), /Generador no disponible/); actual(3);
       fallarGeneracion = false;
       await pulsar(boton("Generar propuesta con Ollama")); actual(3);
+      assert.equal(requests.findLast(r => r.url.endsWith("/generar-borrador")).data.usar_documentos, true);
       assert.equal(paso(4).disabled, false);
       assert.equal(document.getElementById("contenido-encabezado"), null);
       assert.deepEqual([...document.querySelectorAll('textarea[id^="contenido-"]')].map(el => el.id),

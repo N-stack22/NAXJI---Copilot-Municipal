@@ -29,6 +29,7 @@ class InformeResponse(ResponseModel):
     modelo_ia: str | None
     created_at: datetime
     updated_at: datetime
+    sustento: dict[str, JsonValue] | None = None
 
 
 def representar_informe(informe: Informe, numero_version: int | None = None) -> InformeResponse:
@@ -46,4 +47,5 @@ def representar_informe(informe: Informe, numero_version: int | None = None) -> 
         estructura_legacy=version.secciones_salida is None,
         origen=version.origen, modelo_ia=version.modelo_ia,
         created_at=informe.created_at, updated_at=informe.updated_at,
+        sustento=version.sustento,
     )

@@ -5,6 +5,8 @@ from .base import RequestModel, Texto
 
 class GenerarBorradorRequest(RequestModel):
     instrucciones: Texto = "Respetar los datos y la plantilla seleccionada."
+    usar_documentos: bool = Field(default=False, strict=True,
+        description="Recuperar fuentes autorizadas con pgvector antes de generar; un fallo técnico impide guardar")
 
 
 class InformeRequest(RequestModel):

@@ -1,0 +1,19 @@
+{
+  "id": "NAXJI-PMV2-SINTETICO-01",
+  "advertencia": "Textos ficticios para evaluación técnica, sin valor normativo municipal.",
+  "documentos": [
+    {"id": "ambiente", "titulo": "Guía ficticia de residuos en parques", "texto": "Guía ficticia de gestión ambiental municipal. La atención de reportes de residuos en parques requiere identificar la ubicación precisa, registrar observaciones y documentar evidencias. Una referencia normativa no demuestra que una visita de inspección se haya realizado. Si faltan resultados aportados, se debe mantener pendiente la valoración del estado del parque."},
+    {"id": "tributos", "titulo": "Guía ficticia de impuesto predial", "texto": "Guía ficticia de administración tributaria. El impuesto predial grava el valor de los predios urbanos y rústicos. Para orientar una consulta de deuda tributaria se identifica al contribuyente, el predio y el período consultado. Los pagos y notificaciones deben contrastarse con los registros correspondientes. Esta guía no acredita deudas individuales."},
+    {"id": "obras", "titulo": "Guía ficticia de licencias de edificación", "texto": "Guía ficticia de desarrollo urbano. La tramitación de una licencia de edificación requiere identificar el inmueble y la modalidad de construcción, revisar el expediente técnico y los planos aportados. Las observaciones sobre obras se documentan antes de recomendar actuaciones. Esta guía no acredita que se haya autorizado ninguna obra concreta."}
+  ],
+  "consultas": [
+    {"id": "q1", "texto": "¿Qué datos se necesitan para atender residuos en un parque municipal?", "relevantes": ["ambiente"]},
+    {"id": "q2", "texto": "Faltan resultados de inspección ambiental del parque; ¿se puede valorar su estado?", "relevantes": ["ambiente"]},
+    {"id": "q3", "texto": "¿Cómo orientar una consulta por deuda del impuesto predial?", "relevantes": ["tributos"]},
+    {"id": "q4", "texto": "Revisar pagos de un contribuyente y el período de su predio", "relevantes": ["tributos"]},
+    {"id": "q5", "texto": "¿Qué información revisar para tramitar una licencia de edificación?", "relevantes": ["obras"]},
+    {"id": "q6", "texto": "Expediente técnico, planos e inmueble para una construcción", "relevantes": ["obras"]},
+    {"id": "q7", "texto": "¿Cuál es la dosis de un antibiótico para tratar una neumonía?", "relevantes": []},
+    {"id": "q8", "texto": "Receta para hornear una torta de chocolate con mantequilla", "relevantes": []}
+  ]
+}
