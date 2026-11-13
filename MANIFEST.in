@@ -1,0 +1,3 @@
+recursive-include src/adapters/out/persistence/sql *.sql
+recursive-include src/infrastructure/ai/models *.joblib *.json
+recursive-include src/adapters/out/documents/templates *.docx

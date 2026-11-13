@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "naxji-copilot-municipal-backend"
+version = "0.1.0"
+description = "Backend de NAXJI Copilot Municipal"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "uvicorn>=0.30,<1.0",
+    "pydantic>=2.9,<3.0",
+    "httpx>=0.28,<1",
+    "scikit-learn==1.6.1",
+    "joblib",
+    "psycopg[binary]>=3.2,<4",
+    "python-dotenv>=1,<2",
+    "python-docx>=1.2,<2",
+    "pypdf>=6,<7",
+    "python-multipart>=0.0.22,<1",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src", "src.*"]
+namespaces = true
+
+[tool.setuptools.package-data]
+"src.adapters.out.persistence" = ["sql/*/*.sql"]
+"src.infrastructure.ai" = ["models/*.joblib", "models/*.json"]
+"src.adapters.out.documents" = ["templates/*.docx"]
