@@ -11,6 +11,7 @@ from psycopg import sql
 from psycopg.rows import dict_row
 from psycopg.types.json import Jsonb
 
+from src.adapters.out.persistence.sql_resources import consulta
 from src.application.ports.output.unidad_trabajo import UnidadTrabajo
 from src.application.ports.output.catalogo_repository import CatalogoRepository
 from src.application.ports.output.plantilla_repository import PlantillaRepository
@@ -74,7 +75,7 @@ class PostgresUnidadTrabajo(UnidadTrabajo):
         else:
             try:
                 with self.settings.connect(row_factory=dict_row) as connection:
-                    connection.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY")
+                    connection.execute(consulta("postgres", "lectura_consistente"))
                     yield connection
             except psycopg.Error as error:
                 raise PersistenceError(database_error(error)) from None
@@ -106,14 +107,14 @@ def save(connection, table, item, *, omit=(), json_fields=(), extra=None, insert
         elif isinstance(value, Enum):
             values[key] = value.value
     columns = list(values)
-    statement = sql.SQL("INSERT INTO public.{} ({}) VALUES ({})").format(
+    statement = sql.SQL(consulta("postgres", "save_insert")).format(
         sql.Identifier(table), sql.SQL(", ").join(map(sql.Identifier, columns)),
         sql.SQL(", ").join(sql.Placeholder() for _ in columns),
     )
     if not insert_only:
         updates = [c for c in columns if c not in {"id", "created_at"}]
-        statement += sql.SQL(" ON CONFLICT (id) DO UPDATE SET ") + sql.SQL(", ").join(
-            sql.SQL("{} = EXCLUDED.{}").format(sql.Identifier(c), sql.Identifier(c)) for c in updates
+        statement += sql.SQL(" " + consulta("postgres", "save_upsert") + " ") + sql.SQL(", ").join(
+            sql.SQL(consulta("postgres", "save_assignment")).format(sql.Identifier(c), sql.Identifier(c)) for c in updates
         )
     connection.execute(statement, list(values.values()))
 
@@ -123,7 +124,7 @@ class Repository:
         self.uow = uow
 
     def lock(self):
-        return " FOR UPDATE" if self.uow.active else ""
+        return " " + consulta("postgres", "bloquear") if self.uow.active else ""
 
 
 class CatalogoRepositoryPostgres(Repository, CatalogoRepository):
@@ -132,12 +133,9 @@ class CatalogoRepositoryPostgres(Repository, CatalogoRepository):
             return []
         with self.uow.connection() as c:
             # Despliegue aditivo: hasta aplicar la migración solo se muestran temas.
-            if c.execute("SELECT to_regclass('public.normativa_correspondencias') AS tabla").fetchone()["tabla"] is None:
+            if c.execute(consulta("postgres", "existe_correspondencias")).fetchone()["tabla"] is None:
                 return []
-            rows = c.execute("""SELECT m.*, to_jsonb(n) AS documento
-                FROM public.normativa_correspondencias m
-                JOIN public.normativas n ON n.id=m.normativa_id
-                WHERE m.etiqueta=ANY(%s) ORDER BY m.etiqueta,n.codigo,n.id""", (etiquetas,)).fetchall()
+            rows = c.execute(consulta("postgres", "correspondencias"), (etiquetas,)).fetchall()
             resultado = []
             for row in rows:
                 documento = row.pop("documento")
@@ -151,20 +149,20 @@ class CatalogoRepositoryPostgres(Repository, CatalogoRepository):
 
     def tipos_informe(self):
         with self.uow.connection() as c:
-            return [entity(TipoInforme, r) for r in c.execute("SELECT * FROM public.tipos_informe ORDER BY codigo")]
+            return [entity(TipoInforme, r) for r in c.execute(consulta("postgres", "tipos_informe"))]
 
     def areas(self):
         with self.uow.connection() as c:
-            return [entity(AreaMunicipal, r) for r in c.execute("SELECT * FROM public.areas_municipales ORDER BY codigo")]
+            return [entity(AreaMunicipal, r) for r in c.execute(consulta("postgres", "areas"))]
 
     def normativa(self, normativa_id):
         with self.uow.connection() as c:
-            row = c.execute("SELECT * FROM public.normativas WHERE id=%s", (normativa_id,)).fetchone()
+            row = c.execute(consulta("postgres", "normativa"), (normativa_id,)).fetchone()
             return entity(Normativa, row) if row else None
 
     def normativa_por_codigo(self, codigo):
         with self.uow.connection() as c:
-            row = c.execute("SELECT * FROM public.normativas WHERE codigo=%s AND activo", (codigo,)).fetchone()
+            row = c.execute(consulta("postgres", "normativa_por_codigo"), (codigo,)).fetchone()
             return entity(Normativa, row) if row else None
 
 
@@ -173,17 +171,17 @@ class PlantillaRepositoryPostgres(Repository, PlantillaRepository):
     def load(c, row):
         item = entity(Plantilla, row)
         item.campos = [entity(CampoPlantilla, r, tipo_dato=TipoDato) for r in c.execute(
-            "SELECT * FROM public.campos_plantilla WHERE plantilla_id=%s ORDER BY orden", (item.id,))]
+            consulta("postgres", "campos_plantilla"), (item.id,))]
         return item
 
     def listar(self):
         with self.uow.connection() as c:
-            rows = c.execute("SELECT * FROM public.plantillas WHERE activa ORDER BY nombre, version").fetchall()
+            rows = c.execute(consulta("postgres", "plantillas")).fetchall()
             return [self.load(c, row) for row in rows]
 
     def obtener_por_id(self, plantilla_id):
         with self.uow.connection() as c:
-            row = c.execute("SELECT * FROM public.plantillas WHERE id=%s", (plantilla_id,)).fetchone()
+            row = c.execute(consulta("postgres", "plantilla"), (plantilla_id,)).fetchone()
             return self.load(c, row) if row else None
 
 
@@ -191,7 +189,7 @@ class SolicitudRepositoryPostgres(Repository, SolicitudRepository):
     def guardar(self, solicitud):
         with self.uow.connection(write=True) as c:
             save(c, "solicitudes", solicitud, omit=("valores",))
-            c.execute("DELETE FROM public.solicitud_valores WHERE solicitud_id=%s AND NOT (id=ANY(%s::uuid[]))",
+            c.execute(consulta("postgres", "eliminar_valores_ausentes"),
                       (solicitud.id, [v.id for v in solicitud.valores]))
             for value in solicitud.valores:
                 save(c, "solicitud_valores", value, json_fields=("valor",))
@@ -201,12 +199,12 @@ class SolicitudRepositoryPostgres(Repository, SolicitudRepository):
 
     def obtener_por_id(self, solicitud_id):
         with self.uow.connection() as c:
-            row = c.execute("SELECT * FROM public.solicitudes WHERE id=%s" + self.lock(), (solicitud_id,)).fetchone()
+            row = c.execute(consulta("postgres", "solicitud") + self.lock(), (solicitud_id,)).fetchone()
             if row is None:
                 return None
             item = entity(Solicitud, row, estado=EstadoSolicitud)
             item.valores = [entity(SolicitudValor, r) for r in c.execute(
-                "SELECT * FROM public.solicitud_valores WHERE solicitud_id=%s ORDER BY created_at, id", (item.id,))]
+                consulta("postgres", "valores_solicitud"), (item.id,))]
             return item
 
 
@@ -214,7 +212,7 @@ class PrediccionRepositoryPostgres(Repository, PrediccionRepository):
     def guardar(self, prediccion):
         with self.uow.connection(write=True) as c:
             save(c, "predicciones_ia", prediccion, omit=("normativas",), json_fields=("parametros",))
-            c.execute("DELETE FROM public.prediccion_normativas WHERE prediccion_id=%s AND NOT (id=ANY(%s::uuid[]))",
+            c.execute(consulta("postgres", "eliminar_normativas_ausentes"),
                       (prediccion.id, [n.id for n in prediccion.normativas]))
             for norma in prediccion.normativas:
                 save(c, "prediccion_normativas", norma, extra={"prediccion_id": prediccion.id})
@@ -222,13 +220,12 @@ class PrediccionRepositoryPostgres(Repository, PrediccionRepository):
 
     def ultima(self, solicitud_id):
         with self.uow.connection() as c:
-            row = c.execute("SELECT * FROM public.predicciones_ia WHERE solicitud_id=%s "
-                            "ORDER BY created_at DESC, id DESC LIMIT 1" + self.lock(), (solicitud_id,)).fetchone()
+            row = c.execute(consulta("postgres", "ultima_prediccion") + self.lock(), (solicitud_id,)).fetchone()
             if row is None:
                 return None
             item = entity(PrediccionContexto, row, resultado_validacion=ResultadoValidacion)
             item.normativas = [entity(NormativaPredicha, r) for r in c.execute(
-                "SELECT * FROM public.prediccion_normativas WHERE prediccion_id=%s ORDER BY orden, id", (item.id,))]
+                consulta("postgres", "normativas_prediccion"), (item.id,))]
             return item
 
 
@@ -239,7 +236,7 @@ class InformeRepositoryPostgres(Repository, InformeRepository):
             raise ConflictoEstado("Número de versión inválido o duplicado")
         with self.uow.connection(write=True) as c:
             save(c, "informes", informe, omit=("versiones",))
-            existing = {r["id"] for r in c.execute("SELECT id FROM public.versiones_informe WHERE informe_id=%s", (informe.id,))}
+            existing = {r["id"] for r in c.execute(consulta("postgres", "versiones_existentes"), (informe.id,))}
             for version in informe.versiones:
                 if version.id not in existing:
                     save(c, "versiones_informe", version,
@@ -248,13 +245,11 @@ class InformeRepositoryPostgres(Repository, InformeRepository):
                     if version.sustento:
                         for fuente in version.sustento["fuentes"]:
                             for cita in fuente["citas"]:
-                                c.execute("""INSERT INTO public.version_citas
-                                    (version_id,documento_id,fragmento_id,seccion,pasaje,estado,snapshot)
-                                    VALUES (%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING""",
+                                c.execute(consulta("postgres", "insertar_cita"),
                                     (version.id, UUID(fuente["documento_id"]), UUID(fuente["fragmento_id"]),
                                      cita["seccion"], cita["pasaje"], cita["estado"], Jsonb(fuente)))
             # El trigger fija updated_at; responder con lo efectivamente guardado.
-            return self.load(c, c.execute("SELECT * FROM public.informes WHERE id=%s", (informe.id,)).fetchone())
+            return self.load(c, c.execute(consulta("postgres", "informe"), (informe.id,)).fetchone())
 
     @staticmethod
     def load(c, row):
@@ -262,13 +257,13 @@ class InformeRepositoryPostgres(Repository, InformeRepository):
             return None
         item = entity(Informe, row, estado=EstadoInforme)
         item.versiones = [entity(VersionInforme, r, origen=OrigenVersion) for r in c.execute(
-            "SELECT * FROM public.versiones_informe WHERE informe_id=%s ORDER BY numero_version", (item.id,))]
+            consulta("postgres", "versiones_informe"), (item.id,))]
         return item
 
     def obtener_por_id(self, informe_id):
         with self.uow.connection() as c:
-            return self.load(c, c.execute("SELECT * FROM public.informes WHERE id=%s" + self.lock(), (informe_id,)).fetchone())
+            return self.load(c, c.execute(consulta("postgres", "informe") + self.lock(), (informe_id,)).fetchone())
 
     def obtener_por_solicitud(self, solicitud_id):
         with self.uow.connection() as c:
-            return self.load(c, c.execute("SELECT * FROM public.informes WHERE solicitud_id=%s" + self.lock(), (solicitud_id,)).fetchone())
+            return self.load(c, c.execute(consulta("postgres", "informe_por_solicitud") + self.lock(), (solicitud_id,)).fetchone())

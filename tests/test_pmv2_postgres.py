@@ -129,6 +129,91 @@ def test_pg_reservas_no_permiten_resultado_tardio(pmv2_db):
     assert gestor.obtener(doc.id, usuario).intento == intento
 
 
+def fragmento_prueba(orden, vector):
+    return {"id": uuid4(), "orden": orden, "texto": f"Fragmento sintetico {orden}",
+            "localizacion": f"Parrafo {orden + 1}", "inicio": 0, "fin": 20, "vector": vector}
+
+
+def test_finalizar_revierte_todos_los_fragmentos_si_falla_un_insert(pmv2_db):
+    from src.adapters.out.persistence.postgres import PersistenceError
+    settings, gestor, _, usuario, _ = pmv2_db
+    doc = cargar(gestor, usuario); gestor.procesar(doc.id, usuario)
+    with settings.connect() as c:
+        antes = c.execute("SELECT to_jsonb(f) FROM public.documento_fragmentos f WHERE documento_id=%s ORDER BY orden", (doc.id,)).fetchall()
+    intento = uuid4()
+    gestor.repo.reservar(doc.id, "PROCESANDO", intento, ahora() + timedelta(minutes=1))
+    # El primer INSERT es valido; el segundo falla por dimension vectorial.
+    fragmentos = [fragmento_prueba(0, [1.] + [0.]*1023), fragmento_prueba(1, [1., 0.])]
+    with pytest.raises(PersistenceError):
+        gestor.repo.finalizar(doc.id, intento, "INDEXADO", fragmentos=fragmentos, procesamiento="revision-fallida")
+    with settings.connect() as c:
+        assert c.execute("SELECT to_jsonb(f) FROM public.documento_fragmentos f WHERE documento_id=%s ORDER BY orden", (doc.id,)).fetchall() == antes
+    guardado = gestor.repo.obtener(doc.id)
+    assert (guardado.estado, guardado.intento, guardado.fragmentos, guardado.procesamiento) == ("PROCESANDO", intento, 1, gestor.procesamiento)
+
+
+def test_finalizar_retiene_bloqueo_y_publica_fragmentos_con_estado_atomicamente(pmv2_db):
+    import psycopg
+    settings, gestor, _, usuario, _ = pmv2_db
+    doc = cargar(gestor, usuario); gestor.procesar(doc.id, usuario)
+    intento = uuid4()
+    gestor.repo.reservar(doc.id, "PROCESANDO", intento, ahora() + timedelta(minutes=1))
+    fragmentos = [fragmento_prueba(i, [1.] + [0.]*1023) for i in range(2)]
+    with gestor.repo.uow.transaccion():
+        gestor.repo.finalizar(doc.id, intento, "INDEXADO", fragmentos=fragmentos, procesamiento="revision-atomica")
+        with settings.connect() as c:
+            assert c.execute("SELECT estado,fragmentos,procesamiento FROM public.documentos WHERE id=%s", (doc.id,)).fetchone() == ("PROCESANDO", 1, gestor.procesamiento)
+            assert c.execute("SELECT count(*) FROM public.documento_fragmentos WHERE documento_id=%s", (doc.id,)).fetchone()[0] == 1
+        with pytest.raises(psycopg.errors.LockNotAvailable):
+            with settings.connect() as c:
+                c.execute("SELECT id FROM public.documentos WHERE id=%s FOR UPDATE NOWAIT", (doc.id,))
+    with settings.connect() as c:
+        assert c.execute("SELECT estado,fragmentos,procesamiento,intento,reserva_hasta FROM public.documentos WHERE id=%s", (doc.id,)).fetchone() == ("INDEXADO", 2, "revision-atomica", None, None)
+        assert c.execute("SELECT id FROM public.documento_fragmentos WHERE documento_id=%s ORDER BY orden", (doc.id,)).fetchall() == [(f["id"],) for f in fragmentos]
+
+
+def test_buscar_filtra_permisos_y_revision_antes_de_top_k(pmv2_db):
+    settings, gestor, _, usuario, _ = pmv2_db
+    area = usuario.area_id
+    other_id = uuid4()
+    area_owner_id = uuid4()
+    with settings.connect() as c:
+        for uid in (other_id, area_owner_id):
+            c.execute("INSERT INTO auth.users VALUES (%s)", (uid,))
+            c.execute("INSERT INTO public.perfiles(id,nombres,apellidos) VALUES (%s,'QA','Otro')", (uid,))
+    ajeno = replace(usuario, id=other_id, area_id=None)
+    query = [1.] + [0.]*1023
+    visible_vector = [.8, .6] + [0.]*1022
+    docs = {}
+    for key, owner, scope, vector, processing in [
+        ("propio", usuario, "PRIVADO", visible_vector, "vigente"),
+        ("privado_ajeno", ajeno, "PRIVADO", query, "vigente"),
+        ("area", replace(usuario, id=area_owner_id), "AREA", query, "vigente"),
+        ("institucional", replace(usuario, roles=frozenset({Rol.ADMINISTRADOR})), "INSTITUCIONAL", query, "vigente"),
+        ("antiguo", usuario, "PRIVADO", query, "anterior"),
+    ]:
+        doc = cargar(gestor, owner, texto="Referencia sintetica " + key, ambito=scope)
+        intento = uuid4()
+        gestor.repo.reservar(doc.id, "PROCESANDO", intento, ahora() + timedelta(minutes=1))
+        gestor.repo.finalizar(doc.id, intento, "INDEXADO", fragmentos=[fragmento_prueba(0, vector)], procesamiento=processing)
+        docs[key] = doc.id
+    # El vecino privado mas cercano debe excluirse ANTES de LIMIT 1.
+    lector = replace(usuario, area_id=None)
+    institucional = docs["institucional"]
+    # Primera consulta confirma el acceso institucional independiente de propietario/area.
+    assert {r["documento_id"] for r in gestor.repo.buscar(ajeno, query, "vigente", 10, .1)} == {str(docs["privado_ajeno"]), str(institucional)}
+    # Desactivar el institucional deja como unico candidato autorizado el propio, mas lejano.
+    with settings.connect() as c:
+        c.execute("UPDATE public.documentos SET estado='CARGADO' WHERE id=%s", (institucional,))
+    results = gestor.repo.buscar(lector, query, "vigente", 1, .1)
+    assert [r["documento_id"] for r in results] == [str(docs["propio"])]
+    assert results[0]["similitud"] == pytest.approx(.8)
+    par = replace(ajeno, area_id=area)
+    assert {r["documento_id"] for r in gestor.repo.buscar(par, query, "vigente", 10, .1)} == {str(docs["privado_ajeno"]), str(docs["area"])}
+    admin = replace(lector, roles=frozenset({Rol.ADMINISTRADOR}))
+    assert len(gestor.repo.buscar(admin, query, "vigente", 10, .1)) == 3
+
+
 def test_pgvector_instalado_en_extensions_conserva_esquema(db_local):
     settings, uid, _, _, _ = db_local
     with settings.connect() as c:
