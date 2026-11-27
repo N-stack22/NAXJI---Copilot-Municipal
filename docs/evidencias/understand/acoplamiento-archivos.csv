@@ -1,0 +1,150 @@
+archivo,capa,DirectFanIn,DirectFanOut
+deploy/preflight.py,Arranque y despliegue,1,1
+deploy/start.py,Arranque y despliegue,1,1
+index.html,Arranque y despliegue,1,1
+src/adapters/in/controllers/auth_controller.py,Adaptadores de entrada,1,3
+src/adapters/in/controllers/catalogo_controller.py,Adaptadores de entrada,1,4
+src/adapters/in/controllers/documento_controller.py,Adaptadores de entrada,1,4
+src/adapters/in/controllers/ia_controller.py,Adaptadores de entrada,1,7
+src/adapters/in/controllers/informe_controller.py,Adaptadores de entrada,1,5
+src/adapters/in/controllers/operacion_controller.py,Adaptadores de entrada,1,6
+src/adapters/in/controllers/revision_controller.py,Adaptadores de entrada,1,3
+src/adapters/in/controllers/solicitud_controller.py,Adaptadores de entrada,1,7
+src/adapters/in/controllers/usuario_controller.py,Adaptadores de entrada,1,5
+src/adapters/in/limite_documental.py,Adaptadores de entrada,1,1
+src/adapters/in/schemas/base.py,Adaptadores de entrada,12,1
+src/adapters/in/schemas/catalogo_response.py,Adaptadores de entrada,2,5
+src/adapters/in/schemas/error_response.py,Adaptadores de entrada,7,1
+src/adapters/in/schemas/informe_request.py,Adaptadores de entrada,3,2
+src/adapters/in/schemas/informe_response.py,Adaptadores de entrada,4,7
+src/adapters/in/schemas/prediccion_request.py,Adaptadores de entrada,2,3
+src/adapters/in/schemas/prediccion_response.py,Adaptadores de entrada,2,5
+src/adapters/in/schemas/seccion_response.py,Adaptadores de entrada,3,2
+src/adapters/in/schemas/solicitud_request.py,Adaptadores de entrada,2,3
+src/adapters/in/schemas/solicitud_response.py,Adaptadores de entrada,2,3
+src/adapters/in/web/App.jsx,Frontend,2,11
+src/adapters/in/web/components/DocumentosInforme.jsx,Frontend,3,4
+src/adapters/in/web/components/EditorBorrador.jsx,Frontend,2,3
+src/adapters/in/web/components/EncabezadoDocumento.jsx,Frontend,4,2
+src/adapters/in/web/components/EstadoAcceso.jsx,Frontend,3,1
+src/adapters/in/web/components/FuentesInforme.jsx,Frontend,4,3
+src/adapters/in/web/components/Header.jsx,Frontend,2,3
+src/adapters/in/web/components/NormativasSugeridas.jsx,Frontend,2,1
+src/adapters/in/web/components/PasosInforme.jsx,Frontend,2,1
+src/adapters/in/web/components/ProtectedRoute.jsx,Frontend,2,6
+src/adapters/in/web/components/VistaPreviaInforme.jsx,Frontend,2,5
+src/adapters/in/web/layouts/MainLayout.jsx,Frontend,2,2
+src/adapters/in/web/main.jsx,Frontend,1,2
+src/adapters/in/web/pages/Documentos.jsx,Frontend,2,4
+src/adapters/in/web/pages/Login.jsx,Frontend,2,5
+src/adapters/in/web/pages/NuevoInforme.jsx,Frontend,2,18
+src/adapters/in/web/pages/RevisionInformes.jsx,Frontend,2,6
+src/adapters/in/web/services/api.js,Frontend,14,2
+src/adapters/in/web/services/authService.js,Frontend,8,3
+src/adapters/in/web/services/cargarFormulario.js,Frontend,4,2
+src/adapters/in/web/services/catalogoService.js,Frontend,2,2
+src/adapters/in/web/services/documentoService.js,Frontend,3,2
+src/adapters/in/web/services/encabezadoDocumento.js,Frontend,4,1
+src/adapters/in/web/services/estructuraBorrador.js,Frontend,4,1
+src/adapters/in/web/services/flujoInforme.js,Frontend,4,1
+src/adapters/in/web/services/iaService.js,Frontend,2,3
+src/adapters/in/web/services/informeService.js,Frontend,2,2
+src/adapters/in/web/services/progresoInforme.js,Frontend,2,2
+src/adapters/in/web/services/session.js,Frontend,5,1
+src/adapters/in/web/services/solicitudService.js,Frontend,2,2
+src/adapters/in/web/styles/acceso.css,Frontend,2,1
+src/adapters/in/web/styles/app.css,Frontend,2,1
+src/adapters/in/web/styles/identidad.css,Frontend,2,1
+src/adapters/in/web/styles/nuevoInforme.css,Frontend,3,1
+src/adapters/in/web/styles/revision.css,Frontend,2,1
+src/adapters/out/ai/context_predictor_catalogo.py,Adaptadores de salida,2,6
+src/adapters/out/ai/context_predictor_mock.py,Adaptadores de salida,1,5
+src/adapters/out/ai/embeddings_ollama.py,Adaptadores de salida,2,2
+src/adapters/out/ai/fidelidad_inspeccion.py,Adaptadores de salida,2,2
+src/adapters/out/ai/generador_borrador_mock.py,Adaptadores de salida,1,4
+src/adapters/out/ai/generador_borrador_ollama.py,Adaptadores de salida,2,8
+src/adapters/out/ai/integridad_modelos.py,Adaptadores de salida,2,1
+src/adapters/out/ai/ollama_adapter.py,Adaptadores de salida,3,3
+src/adapters/out/ai/sklearn_context_predictor.py,Adaptadores de salida,2,4
+src/adapters/out/documents/__init__.py,Adaptadores de salida,2,1
+src/adapters/out/documents/almacen_supabase.py,Adaptadores de salida,2,2
+src/adapters/out/documents/exportador_docx.py,Adaptadores de salida,3,8
+src/adapters/out/documents/exportador_mdt.py,Adaptadores de salida,2,4
+src/adapters/out/documents/exportador_pdf.py,Adaptadores de salida,2,3
+src/adapters/out/documents/extractor.py,Adaptadores de salida,2,2
+src/adapters/out/documents/fuentes_docx.py,Adaptadores de salida,3,1
+src/adapters/out/persistence/__init__.py,Adaptadores de salida,7,1
+src/adapters/out/persistence/catalogo_repository_memory.py,Adaptadores de salida,2,3
+src/adapters/out/persistence/datos_demo.py,Adaptadores de salida,6,6
+src/adapters/out/persistence/documentos_postgres.py,Adaptadores de salida,2,7
+src/adapters/out/persistence/estado_postgres.py,Adaptadores de salida,2,2
+src/adapters/out/persistence/informe_auditado.py,Adaptadores de salida,2,3
+src/adapters/out/persistence/informe_repository_memory.py,Adaptadores de salida,2,5
+src/adapters/out/persistence/memoria.py,Adaptadores de salida,5,5
+src/adapters/out/persistence/perfil_repository_postgres.py,Adaptadores de salida,2,5
+src/adapters/out/persistence/plantilla_repository_memory.py,Adaptadores de salida,2,3
+src/adapters/out/persistence/postgres.py,Adaptadores de salida,4,19
+src/adapters/out/persistence/prediccion_repository_memory.py,Adaptadores de salida,2,4
+src/adapters/out/persistence/revision_memory.py,Adaptadores de salida,2,3
+src/adapters/out/persistence/revision_postgres.py,Adaptadores de salida,2,4
+src/adapters/out/persistence/solicitud_repository_memory.py,Adaptadores de salida,2,4
+src/adapters/out/persistence/sql_resources.py,Adaptadores de salida,6,1
+src/application/ports/input/solicitud_use_case.py,Aplicacion,3,3
+src/application/ports/output/catalogo_repository.py,Aplicacion,6,3
+src/application/ports/output/context_predictor.py,Aplicacion,5,2
+src/application/ports/output/documentos.py,Aplicacion,2,1
+src/application/ports/output/exportador_informe.py,Aplicacion,3,2
+src/application/ports/output/generador_borrador.py,Aplicacion,4,2
+src/application/ports/output/informe_repository.py,Aplicacion,7,2
+src/application/ports/output/llm_port.py,Aplicacion,2,1
+src/application/ports/output/perfil_repository.py,Aplicacion,2,2
+src/application/ports/output/plantilla_repository.py,Aplicacion,5,2
+src/application/ports/output/prediccion_repository.py,Aplicacion,4,2
+src/application/ports/output/revision_repository.py,Aplicacion,3,1
+src/application/ports/output/solicitud_repository.py,Aplicacion,4,2
+src/application/ports/output/unidad_trabajo.py,Aplicacion,4,1
+src/application/use_cases/actualizar_borrador.py,Aplicacion,2,13
+src/application/use_cases/actualizar_solicitud.py,Aplicacion,3,7
+src/application/use_cases/consultar_catalogos.py,Aplicacion,2,6
+src/application/use_cases/crear_solicitud.py,Aplicacion,3,5
+src/application/use_cases/documentos.py,Aplicacion,5,7
+src/application/use_cases/exportar_informe.py,Aplicacion,4,2
+src/application/use_cases/generar_borrador.py,Aplicacion,2,16
+src/application/use_cases/guardar_solicitud_completa.py,Aplicacion,2,6
+src/application/use_cases/guardar_valores_solicitud.py,Aplicacion,3,6
+src/application/use_cases/obtener_contexto.py,Aplicacion,2,1
+src/application/use_cases/obtener_informe.py,Aplicacion,3,5
+src/application/use_cases/obtener_solicitud.py,Aplicacion,2,3
+src/application/use_cases/predecir_contexto.py,Aplicacion,2,8
+src/application/use_cases/revision_informes.py,Aplicacion,2,10
+src/application/use_cases/servicios_solicitud.py,Aplicacion,15,12
+src/application/use_cases/validar_prediccion.py,Aplicacion,2,8
+src/application/use_cases/verificar_referencias_normativas.py,Aplicacion,3,2
+src/domain/entities/catalogo.py,Dominio,5,1
+src/domain/entities/correspondencia_normativa.py,Dominio,3,2
+src/domain/entities/documento.py,Dominio,3,3
+src/domain/entities/informe.py,Dominio,10,4
+src/domain/entities/plantilla.py,Dominio,9,3
+src/domain/entities/prediccion_contexto.py,Dominio,10,3
+src/domain/entities/solicitud.py,Dominio,20,2
+src/domain/entities/usuario_actual.py,Dominio,17,2
+src/domain/services/errores.py,Dominio,34,1
+src/domain/services/informe_service.py,Dominio,5,3
+src/domain/services/respaldo.py,Dominio,2,2
+src/domain/services/solicitud_service.py,Dominio,8,6
+src/domain/value_objects/encabezado_documento.py,Dominio,5,2
+src/domain/value_objects/estado_solicitud.py,Dominio,10,1
+src/domain/value_objects/estados.py,Dominio,30,1
+src/domain/value_objects/estructura_piloto.py,Dominio,2,2
+src/domain/value_objects/fuentes_piloto.py,Dominio,2,3
+src/domain/value_objects/seccion_salida.py,Dominio,14,2
+src/infrastructure/auth/mock.py,Infraestructura,2,5
+src/infrastructure/auth/supabase.py,Infraestructura,3,2
+src/infrastructure/configuration/container.py,Infraestructura,3,42
+src/infrastructure/configuration/database.py,Infraestructura,5,1
+src/infrastructure/configuration/rag.py,Infraestructura,2,1
+src/infrastructure/configuration/settings.py,Infraestructura,3,3
+src/infrastructure/dependencies.py,Infraestructura,9,3
+src/infrastructure/diagnostico.py,Infraestructura,2,3
+src/main.py,Arranque y despliegue,1,8
+vite.config.js,Arranque y despliegue,1,1

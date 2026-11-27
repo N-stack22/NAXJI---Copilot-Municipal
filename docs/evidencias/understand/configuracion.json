@@ -1,0 +1,31 @@
+{
+  "herramienta": "SciTools Understand",
+  "version": "8.1.1269",
+  "sistema": "Windows",
+  "lenguajes": [
+    "Python",
+    "Web"
+  ],
+  "PythonSetVersion": "Python3",
+  "PythonUseInstalledStandard": "Off",
+  "PythonUseBuiltinStandard": "On",
+  "PythonImportPaths": "<REPO>",
+  "AddFoundImportedJSFiles": "Off",
+  "alcance": "alcance-archivos.json",
+  "archivos_propios": 149,
+  "archivos_simbolicos_estandar": 5,
+  "exclusiones": [
+    "node_modules",
+    ".venv",
+    "venv",
+    "dist",
+    "build",
+    "tests",
+    "docs",
+    "scripts QA",
+    "plantillas",
+    "modelos binarios",
+    ".env"
+  ],
+  "licencia": "Operativa por ejecucion exitosa; no se consultan ni publican codigos de activacion"
+}

@@ -10,7 +10,7 @@ Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre aca
 | Corregir cabeceras confirmadas | nosniff en API; CSP/marcos/nosniff en archivo estático | 6 regresiones y reescaneo | Cerrada localmente |
 | Comprobar entrega | pytest/frontend/lint/build/wheel/sdist/Docker/CI | Logs con commit y resultado; prueba de imagen sin red | Ejecutada; ver resultados por corrida |
 | Repetir rendimiento HTTP | Mantener el arnés y sus dobles declarados | 750/750 con status esperado, 0 fallos inesperados | Cerrada en laboratorio |
-| Medir con Understand | Comprobar instalación y licencia; ejecutar solo si disponibles | PATH, rutas y registro; guía oficial manual | Bloqueada, no simulada |
+| Medir con Understand | Ejecutado el27/11/2026 con Understand8.1.1269 sobre main67d9db2; alcance explícito backend/frontend | [149 archivos propios, métricas y diagramas reales](evidencias/understand/README.md); 0 errores/224 advertencias documentadas | C-06 cerrada; límites de resolución y métricas no disponibles declarados |
 
 Rollback de estas correcciones: volver al commit anterior de la rama o a una imagen previa compatible. No se borran informes/versiones/eventos ni se aplican migraciones. Los modos y banderas de PMV mantienen su política existente.
 

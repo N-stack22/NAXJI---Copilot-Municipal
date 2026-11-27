@@ -1,0 +1,3 @@
+Name,CountDeclMethod,CountClassCoupled,PercentLackOfCohesion
+container.Container,1,45,
+generar_borrador.GenerarBorrador,9,22,

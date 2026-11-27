@@ -1,5 +1,7 @@
 # Alcance académico vigente
 
+Actualización27/11/2026: se completa **C-06**, ejecución real de SciTools Understand8.1.1269 sobre main67d9db2. [Evidencia íntegra, métricas, diagramas y límites](evidencias/understand/README.md). Se actualizan los informes técnicos FURPS+,ICACIT,ingeniería inversa y cierre; **no se modifica el informe académico final ni se recalifican rúbricas**. Los diagnósticos históricos que indicaban ausencia de Understand quedan superados únicamente en ese punto; no se inventan encuestas,actas,ahorro ni validación institucional.
+
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
 No se modifica el informe académico final ni se genera otra calificación. La aceptación de los PMV/HU proviene del usuario, no de una encuesta, acta o nota del profesor inventada. Los puntajes orientativos y la observación sobre artículo inglés del análisis histórico siguiente se conservan como antecedentes; no reabren requerimientos de producto ni constituyen un bloqueo de esta misión. Resultados de seguridad, pruebas y despliegue se actualizan en [resultados](RESULTADOS_CIERRE.md) y [observaciones](MATRIZ_OBSERVACIONES_CIERRE.md).

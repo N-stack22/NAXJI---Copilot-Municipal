@@ -2,7 +2,7 @@
 
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
-C-01…C-12 se documentan en [matriz de observaciones](MATRIZ_OBSERVACIONES_CIERRE.md). Se cerraron las guardias de imports/SQL y las cabeceras ZAP confirmadas. No se encontraron infracciones productivas de capas/SQL que justificaran tocar adaptadores. Understand permanece bloqueado. Las observaciones institucionales de la tabla histórica siguiente están fuera de esta misión, no bloquean el cierre académico.
+C-01…C-12 se documentan en [matriz de observaciones](MATRIZ_OBSERVACIONES_CIERRE.md). Se cerraron las guardias de imports/SQL y las cabeceras ZAP confirmadas. No se encontraron infracciones productivas de capas/SQL que justificaran tocar adaptadores. **C-06 cerrada el27/11/2026 con Understand8.1.1269 real** sobre main67d9db2:149 archivos,CSV/HTML/diagramas;0 errores/224 advertencias de resolución explicadas. [Análisis de complejidad,mantenibilidad y acoplamiento](evidencias/understand/README.md). Las cifras altas identifican candidatos de revisión, sin defecto funcional confirmado ni refactor autorizado por esa sola razón. Las observaciones institucionales de la tabla histórica siguiente están fuera de esta misión, no bloquean el cierre académico; su estado histórico de Understand queda superado.
 
 ---
 

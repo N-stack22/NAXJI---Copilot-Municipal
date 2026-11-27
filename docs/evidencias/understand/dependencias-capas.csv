@@ -1,0 +1,20 @@
+origen,destino,pares_archivos
+Adaptadores de entrada,Adaptadores de entrada,29
+Adaptadores de entrada,Aplicacion,4
+Adaptadores de entrada,Dominio,14
+Adaptadores de entrada,Infraestructura,10
+Adaptadores de salida,Adaptadores de salida,22
+Adaptadores de salida,Aplicacion,24
+Adaptadores de salida,Dominio,52
+Adaptadores de salida,Infraestructura,1
+Aplicacion,Aplicacion,36
+Aplicacion,Dominio,76
+Arranque y despliegue,Adaptadores de salida,2
+Arranque y despliegue,Dominio,1
+Arranque y despliegue,Infraestructura,4
+Dominio,Dominio,25
+Frontend,Frontend,71
+Infraestructura,Adaptadores de salida,27
+Infraestructura,Aplicacion,16
+Infraestructura,Dominio,3
+Infraestructura,Infraestructura,6

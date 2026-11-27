@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<svg width="1074" height="249" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <rect width="100%" height="100%" fill="#ffffff"/>
+ <polygon points="4,245 4,4 1070,4 1070,245 4,245" stroke-opacity="0" stroke="#fffffe" fill-opacity="0" fill="#fffffe"/>
+ <polygon points="892,174 802,174 799,177 799,200 890,200 892,197 892,174" stroke="#90c4e4" fill="#ffffff"/>
+ <polyline points="890,177 799,177" stroke="#90c4e4" fill="none"/>
+ <polyline points="890,177 890,200" stroke="#90c4e4" fill="none"/>
+ <polyline points="890,177 892,174" stroke="#90c4e4" fill="none"/>
+ <g transform="translate(808,176)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">Aplicacion </text>
+</g>
+</g></g>
+ <polygon points="1070,122 994,122 991,125 991,148 1067,148 1070,145 1070,122" stroke="#90c4e4" fill="#ffffff"/>
+ <polyline points="1067,125 991,125" stroke="#90c4e4" fill="none"/>
+ <polyline points="1067,125 1067,148" stroke="#90c4e4" fill="none"/>
+ <polyline points="1067,125 1070,122" stroke="#90c4e4" fill="none"/>
+ <g transform="translate(1000,124)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">Dominio </text>
+</g>
+</g></g>
+ <path d="M 893 181 C 912 177, 935 173, 955 167 C 969 162, 984 156, 997 150" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(929,147)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">461</text>
+</g>
+</g></g>
+ <polygon points="996,149 1002,148 998,152 996,149" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="457,117 268,117 265,120 265,143 454,143 457,140 457,117" stroke="#90c4e4" fill="#ffffff"/>
+ <polyline points="454,120 265,120" stroke="#90c4e4" fill="none"/>
+ <polyline points="454,120 454,143" stroke="#90c4e4" fill="none"/>
+ <polyline points="454,120 457,117" stroke="#90c4e4" fill="none"/>
+ <g transform="translate(273,119)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">Adaptadores de entrada </text>
+</g>
+</g></g>
+ <path d="M 424 143 C 466 152, 525 163, 577 170 C 652 179, 739 183, 793 185" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(630,150)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">14</text>
+</g>
+</g></g>
+ <polygon points="793,184 798,185 793,187 793,184" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <path d="M 429 116 C 450 113, 472 109, 493 108 C 670 93, 716 97, 892 111 C 924 113, 959 119, 985 125" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(741,81)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">41</text>
+</g>
+</g></g>
+ <polygon points="985,123 990,126 985,127 985,123" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="701,117 580,117 577,120 577,143 698,143 701,140 701,117" stroke="#90c4e4" fill="#ffffff"/>
+ <polyline points="698,120 577,120" stroke="#90c4e4" fill="none"/>
+ <polyline points="698,120 698,143" stroke="#90c4e4" fill="none"/>
+ <polyline points="698,120 701,117" stroke="#90c4e4" fill="none"/>
+ <g transform="translate(585,119)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">Infraestructura </text>
+</g>
+</g></g>
+ <path d="M 457 130 C 495 130, 537 130, 571 130" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(504,110)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">105</text>
+</g>
+</g></g>
+ <polygon points="571,128 576,130 571,131 571,128" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <path d="M 683 143 C 700 148, 719 154, 737 159 C 755 164, 775 169, 793 174" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(741,139)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">48</text>
+</g>
+</g></g>
+ <polygon points="793,172 798,175 793,176 793,172" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <path d="M 701 130 C 780 131, 915 133, 985 134" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(837,113)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">27</text>
+</g>
+</g></g>
+ <polygon points="985,132 990,134 985,136 985,132" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="451,203 274,203 272,206 272,229 448,229 451,226 451,203" stroke="#90c4e4" fill="#ffffff"/>
+ <polyline points="448,206 272,206" stroke="#90c4e4" fill="none"/>
+ <polyline points="448,206 448,229" stroke="#90c4e4" fill="none"/>
+ <polyline points="448,206 451,203" stroke="#90c4e4" fill="none"/>
+ <g transform="translate(279,205)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">Adaptadores de salida </text>
+</g>
+</g></g>
+ <path d="M 452 222 C 520 225, 616 227, 701 219 C 729 216, 735 213, 763 207 C 773 205, 783 202, 793 200" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(630,199)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">82</text>
+</g>
+</g></g>
+ <polygon points="792,198 798,198 793,201 792,198" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <path d="M 438 229 C 543 245, 738 261, 892 209 C 934 194, 978 168, 1005 151" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(737,218)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">291</text>
+</g>
+</g></g>
+ <polygon points="1004,149 1009,148 1005,152 1004,149" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <path d="M 412 200 C 462 185, 538 161, 588 145" stroke="#cd0000" fill="none"/>
+ <g transform="translate(493,141)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">6 / 110</text>
+</g>
+</g></g>
+ <polygon points="588,145 591,146 594,143 590,142 588,145" stroke="#cd0000" fill="#cd0000"/>
+ <polygon points="412,200 408,199 406,202 410,203 412,200" stroke="#cd0000" fill="#cd0000"/>
+ <polygon points="184,55 7,55 4,58 4,81 182,81 184,78 184,55" stroke="#90c4e4" fill="#ffffff"/>
+ <polyline points="182,58 4,58" stroke="#90c4e4" fill="none"/>
+ <polyline points="182,58 182,81" stroke="#90c4e4" fill="none"/>
+ <polyline points="182,58 184,55" stroke="#90c4e4" fill="none"/>
+ <g transform="translate(12,57)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">Arranque y despliegue </text>
+</g>
+</g></g>
+ <path d="M 158 54 C 224 41, 322 22, 360 22 C 360 22, 360 22, 847 22 C 919 22, 986 86, 1015 117" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(630,2)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">18</text>
+</g>
+</g></g>
+ <polygon points="1015,115 1017,120 1013,118 1015,115" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <path d="M 185 72 C 275 78, 418 88, 541 108 C 553 110, 566 112, 579 115" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(352,59)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">21</text>
+</g>
+</g></g>
+ <polygon points="579,113 584,116 578,117 579,113" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <path d="M 119 81 C 168 108, 279 170, 331 199" stroke="#4e8cb9" fill="none"/>
+ <g transform="translate(221,122)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">5</text>
+</g>
+</g></g>
+ <polygon points="332,198 335,202 330,201 332,198" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="136,11 55,11 52,14 52,37 134,37 136,34 136,11" stroke="#90c4e4" fill="#ffffff"/>
+ <polyline points="134,14 52,14" stroke="#90c4e4" fill="none"/>
+ <polyline points="134,14 134,37" stroke="#90c4e4" fill="none"/>
+ <polyline points="134,14 136,11" stroke="#90c4e4" fill="none"/>
+ <g transform="translate(60,13)">
+<defs>
+</defs><g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">
+
+<g fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)" font-family="Segoe UI" font-size="9" font-weight="400" font-style="normal">
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="14.4844" font-family="Arial" font-size="12" font-weight="400" font-style="normal">Frontend </text>
+</g>
+</g></g>
+</svg>

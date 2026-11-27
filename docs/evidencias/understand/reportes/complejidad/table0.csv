@@ -1,0 +1,8 @@
+Name,SumCyclomatic,SumCyclomaticModified,SumCyclomaticStrict,SumEssential,MaxNesting
+Adaptadores de entrada,103,103,115,80,2
+Adaptadores de salida,342,342,426,218,6
+Aplicacion,274,274,369,220,4
+Arranque y despliegue,43,43,55,19,3
+Dominio,82,82,142,60,3
+Frontend,611,611,894,439,4
+Infraestructura,94,94,145,73,3

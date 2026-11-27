@@ -1,0 +1,8 @@
+Name,Lines,Code Lines,Comment Lines,Inactive Lines,Preprocessor Lines,Blank Lines,Ratio Comment to Code
+Adaptadores de entrada,941,710,8,0,0,223,0.01
+Adaptadores de salida,2284,1863,124,0,0,297,0.07
+Aplicacion,1303,1078,47,0,0,179,0.04
+Arranque y despliegue,202,158,4,0,0,27,0.03
+Dominio,661,528,18,0,0,115,0.03
+Frontend,2832,1886,34,0,0,171,0.02
+Infraestructura,584,496,13,0,0,75,0.03

@@ -1,0 +1,150 @@
+archivo,capa,lenguaje,CountLine,CountLineCode,CountLineComment,CountDeclClass,CountDeclFunction,CountDeclMethod,Cyclomatic,CyclomaticStrict,AvgCyclomatic,MaxCyclomatic,SumCyclomatic,HalsteadMaintainIdx,CountClassCoupled,DirectFanIn,DirectFanOut
+deploy/preflight.py,Arranque y despliegue,Python,38,33,1,0,1,,2,2,7,11,13,83.00064973452783,,1,1
+deploy/start.py,Arranque y despliegue,Python,15,10,1,0,1,,2,2,2,2,4,126.90267013392713,,1,1
+index.html,Arranque y despliegue,Web,13,0,0,0,0,,0,0,0,0,0,0.0,,1,1
+src/adapters/in/controllers/auth_controller.py,Adaptadores de entrada,Python,98,75,4,1,7,,1,1,3,6,21,67.4325974041598,,1,3
+src/adapters/in/controllers/catalogo_controller.py,Adaptadores de entrada,Python,31,19,0,0,4,,1,1,1,1,5,85.31969344299692,,1,4
+src/adapters/in/controllers/documento_controller.py,Adaptadores de entrada,Python,151,115,0,6,10,,1,1,1,2,14,45.02339842024362,,1,4
+src/adapters/in/controllers/ia_controller.py,Adaptadores de entrada,Python,43,31,0,0,4,,1,1,1,2,6,74.75576064391456,,1,7
+src/adapters/in/controllers/informe_controller.py,Adaptadores de entrada,Python,42,30,0,0,4,,1,1,1,2,6,74.5165678830636,,1,5
+src/adapters/in/controllers/operacion_controller.py,Adaptadores de entrada,Python,19,16,0,0,1,,1,1,2,3,4,90.17010097075747,,1,6
+src/adapters/in/controllers/revision_controller.py,Adaptadores de entrada,Python,76,49,0,3,9,,1,1,1,2,12,62.46420361413974,,1,3
+src/adapters/in/controllers/solicitud_controller.py,Adaptadores de entrada,Python,62,44,0,0,7,,1,1,1,1,8,65.94071719523004,,1,7
+src/adapters/in/controllers/usuario_controller.py,Adaptadores de entrada,Python,28,20,0,1,1,,1,1,1,1,2,87.66227944505887,,1,5
+src/adapters/in/limite_documental.py,Adaptadores de entrada,Python,32,28,1,1,3,,0,0,2,4,7,93.33213600728394,,1,1
+src/adapters/in/schemas/base.py,Adaptadores de entrada,Python,14,7,0,2,0,,1,1,1,1,1,110.24335851494214,,12,1
+src/adapters/in/schemas/catalogo_response.py,Adaptadores de entrada,Python,55,43,0,4,1,,0,0,1,1,1,72.19358791312447,,2,5
+src/adapters/in/schemas/error_response.py,Adaptadores de entrada,Python,18,14,0,1,0,,1,1,1,1,1,96.33994329296144,,7,1
+src/adapters/in/schemas/informe_request.py,Adaptadores de entrada,Python,17,12,0,2,0,,0,0,0,0,0,98.37080699707809,,3,2
+src/adapters/in/schemas/informe_response.py,Adaptadores de entrada,Python,56,48,2,1,1,,0,0,4,4,4,82.15548163355339,,4,7
+src/adapters/in/schemas/prediccion_request.py,Adaptadores de entrada,Python,12,9,0,1,0,,0,0,0,0,0,106.7116323774484,,2,3
+src/adapters/in/schemas/prediccion_response.py,Adaptadores de entrada,Python,95,81,0,5,2,,0,0,3,3,5,55.12345596360767,,2,5
+src/adapters/in/schemas/seccion_response.py,Adaptadores de entrada,Python,7,5,0,1,0,,0,0,0,0,0,122.66396267723513,,3,2
+src/adapters/in/schemas/solicitud_request.py,Adaptadores de entrada,Python,55,40,1,5,2,,0,0,3,4,6,85.08529613323952,,2,3
+src/adapters/in/schemas/solicitud_response.py,Adaptadores de entrada,Python,30,24,0,2,0,,0,0,0,0,0,87.01596370398559,,2,3
+src/adapters/in/web/App.jsx,Frontend,Web,45,39,0,0,3,,0,0,1,1,3,74.29967307734321,,2,11
+src/adapters/in/web/components/DocumentosInforme.jsx,Frontend,Web,118,116,0,0,32,,0,0,2,5,49,28.10610574291428,,3,4
+src/adapters/in/web/components/EditorBorrador.jsx,Frontend,Web,31,29,0,0,9,,0,0,2,7,16,70.40672291309721,,2,3
+src/adapters/in/web/components/EncabezadoDocumento.jsx,Frontend,Web,19,18,0,0,4,,0,0,2,3,7,80.8338398194134,,4,2
+src/adapters/in/web/components/EstadoAcceso.jsx,Frontend,Web,24,21,1,1,4,,0,0,2,3,7,101.40659923441439,,3,1
+src/adapters/in/web/components/FuentesInforme.jsx,Frontend,Web,41,39,0,0,9,,0,0,2,5,17,63.20890085822567,,4,3
+src/adapters/in/web/components/Header.jsx,Frontend,Web,39,32,0,0,2,,0,0,2,2,3,77.88549167205561,,2,3
+src/adapters/in/web/components/NormativasSugeridas.jsx,Frontend,Web,40,38,0,0,8,,0,0,2,2,12,64.96056041191349,,2,1
+src/adapters/in/web/components/PasosInforme.jsx,Frontend,Web,25,24,0,0,3,,0,0,4,9,11,78.612195843884,,2,1
+src/adapters/in/web/components/ProtectedRoute.jsx,Frontend,Web,53,45,0,0,9,,0,0,2,5,16,65.73617514538175,,2,6
+src/adapters/in/web/components/VistaPreviaInforme.jsx,Frontend,Web,23,22,0,0,2,,0,0,1,1,2,80.02111956164438,,2,5
+src/adapters/in/web/layouts/MainLayout.jsx,Frontend,Web,42,36,0,0,4,,0,0,2,2,7,73.29263837393749,,2,2
+src/adapters/in/web/main.jsx,Frontend,Web,13,11,0,0,0,,1,1,1,1,1,103.9454927441879,,1,2
+src/adapters/in/web/pages/Documentos.jsx,Frontend,Web,11,10,0,0,1,,0,0,1,1,1,102.35778199816811,,2,4
+src/adapters/in/web/pages/Login.jsx,Frontend,Web,136,126,2,0,13,,0,0,2,8,29,45.644332021016275,,2,5
+src/adapters/in/web/pages/NuevoInforme.jsx,Frontend,Web,662,621,8,0,104,,0,0,2,18,201,-55.42002329987412,,2,18
+src/adapters/in/web/pages/RevisionInformes.jsx,Frontend,Web,124,119,0,0,56,,0,0,1,2,63,20.11962610694117,,2,6
+src/adapters/in/web/services/api.js,Frontend,Web,80,65,2,0,5,,1,2,3,6,18,70.12411916610753,,14,2
+src/adapters/in/web/services/authService.js,Frontend,Web,96,82,3,0,9,,0,0,2,3,16,69.93897328121375,,8,3
+src/adapters/in/web/services/cargarFormulario.js,Frontend,Web,3,1,2,0,1,,0,0,1,1,1,263.20702841599945,,4,2
+src/adapters/in/web/services/catalogoService.js,Frontend,Web,30,24,0,0,4,,0,0,1,1,4,84.0671615787837,,2,2
+src/adapters/in/web/services/documentoService.js,Frontend,Web,34,33,1,0,6,,0,0,2,4,9,86.68261098434766,,3,2
+src/adapters/in/web/services/encabezadoDocumento.js,Frontend,Web,29,29,0,0,8,,0,0,1,2,10,72.61609821677055,,4,1
+src/adapters/in/web/services/estructuraBorrador.js,Frontend,Web,40,34,2,0,8,,0,0,2,4,12,88.14512847909319,,4,1
+src/adapters/in/web/services/flujoInforme.js,Frontend,Web,77,65,3,0,22,,0,0,2,7,36,64.83207671329257,,4,1
+src/adapters/in/web/services/iaService.js,Frontend,Web,36,28,0,0,4,,0,0,1,1,4,80.20783383227429,,2,3
+src/adapters/in/web/services/informeService.js,Frontend,Web,58,50,1,0,7,,0,0,2,4,12,76.32107771987604,,2,2
+src/adapters/in/web/services/progresoInforme.js,Frontend,Web,21,17,3,0,3,,0,0,2,5,7,115.13786977927381,,2,2
+src/adapters/in/web/services/session.js,Frontend,Web,98,81,6,0,17,,1,2,2,5,31,68.8405970412948,,5,1
+src/adapters/in/web/services/solicitudService.js,Frontend,Web,38,31,0,0,5,,0,0,1,2,6,78.10217572533418,,2,2
+src/adapters/in/web/styles/acceso.css,Frontend,Web,102,0,0,0,0,,0,0,0,0,0,0.0,,2,1
+src/adapters/in/web/styles/app.css,Frontend,Web,366,0,0,0,0,,0,0,0,0,0,0.0,,2,1
+src/adapters/in/web/styles/identidad.css,Frontend,Web,8,0,0,0,0,,0,0,0,0,0,0.0,,2,1
+src/adapters/in/web/styles/nuevoInforme.css,Frontend,Web,254,0,0,0,0,,0,0,0,0,0,0.0,,3,1
+src/adapters/in/web/styles/revision.css,Frontend,Web,16,0,0,0,0,,0,0,0,0,0,0.0,,2,1
+src/adapters/out/ai/context_predictor_catalogo.py,Adaptadores de salida,Python,85,76,5,1,3,,0,0,6,15,19,71.08256577252834,,2,6
+src/adapters/out/ai/context_predictor_mock.py,Adaptadores de salida,Python,20,15,1,1,1,,0,0,1,1,1,113.04028214609339,,1,5
+src/adapters/out/ai/embeddings_ollama.py,Adaptadores de salida,Python,35,30,0,1,2,,0,0,4,6,7,74.89237561738057,,2,2
+src/adapters/out/ai/fidelidad_inspeccion.py,Adaptadores de salida,Python,91,71,10,0,4,,0,0,7,20,27,78.80011656709878,,2,2
+src/adapters/out/ai/generador_borrador_mock.py,Adaptadores de salida,Python,19,17,0,1,1,,0,0,4,4,4,88.65412262259312,,1,4
+src/adapters/out/ai/generador_borrador_ollama.py,Adaptadores de salida,Python,244,228,6,1,4,,1,1,6,22,30,38.16925492467539,,2,8
+src/adapters/out/ai/integridad_modelos.py,Adaptadores de salida,Python,22,16,3,0,1,,1,1,3,4,5,126.9191936221878,,2,1
+src/adapters/out/ai/ollama_adapter.py,Adaptadores de salida,Python,54,45,2,1,4,,0,0,3,8,11,80.1204552784634,,3,3
+src/adapters/out/ai/sklearn_context_predictor.py,Adaptadores de salida,Python,329,224,34,1,4,,1,1,3,6,13,65.89950815111129,,2,4
+src/adapters/out/documents/__init__.py,Adaptadores de salida,Python,1,0,1,0,0,,0,0,0,0,0,0.0,,2,1
+src/adapters/out/documents/almacen_supabase.py,Adaptadores de salida,Python,60,48,1,1,6,,1,1,2,4,14,73.01176813666889,,2,2
+src/adapters/out/documents/exportador_docx.py,Adaptadores de salida,Python,153,134,9,1,3,,1,1,8,26,30,55.62589650164536,,3,8
+src/adapters/out/documents/exportador_mdt.py,Adaptadores de salida,Python,62,53,4,0,1,,1,1,7,13,14,83.12905742451628,,2,4
+src/adapters/out/documents/exportador_pdf.py,Adaptadores de salida,Python,50,42,3,1,2,,1,1,4,9,11,86.51451108203881,,2,3
+src/adapters/out/documents/extractor.py,Adaptadores de salida,Python,63,58,2,1,1,,0,0,18,18,18,71.67149225858583,,2,2
+src/adapters/out/documents/fuentes_docx.py,Adaptadores de salida,Python,17,16,1,0,1,,0,0,6,6,6,110.10243143703197,,3,1
+src/adapters/out/persistence/__init__.py,Adaptadores de salida,Python,1,0,1,0,0,,0,0,0,0,0,0.0,,7,1
+src/adapters/out/persistence/catalogo_repository_memory.py,Adaptadores de salida,Python,44,35,0,1,5,,0,0,1,2,6,76.65504999537454,,2,3
+src/adapters/out/persistence/datos_demo.py,Adaptadores de salida,Python,319,255,25,0,2,,1,1,2,4,6,61.77055697471497,,6,6
+src/adapters/out/persistence/documentos_postgres.py,Adaptadores de salida,Python,88,73,3,1,10,,0,0,2,4,16,67.23710158676539,,2,7
+src/adapters/out/persistence/estado_postgres.py,Adaptadores de salida,Python,7,5,0,0,1,,0,0,1,1,1,116.34762138567339,,2,2
+src/adapters/out/persistence/informe_auditado.py,Adaptadores de salida,Python,27,21,1,1,4,,0,0,2,4,7,100.32722576252823,,2,3
+src/adapters/out/persistence/informe_repository_memory.py,Adaptadores de salida,Python,32,26,0,1,4,,0,0,2,3,6,78.21342769448901,,2,5
+src/adapters/out/persistence/memoria.py,Adaptadores de salida,Python,31,27,0,1,1,,0,0,2,2,2,80.58431486623203,,5,5
+src/adapters/out/persistence/perfil_repository_postgres.py,Adaptadores de salida,Python,28,25,0,1,2,,0,0,2,2,3,81.09884886172371,,2,5
+src/adapters/out/persistence/plantilla_repository_memory.py,Adaptadores de salida,Python,16,11,0,1,3,,0,0,1,1,3,98.80760210631416,,2,3
+src/adapters/out/persistence/postgres.py,Adaptadores de salida,Python,269,222,10,8,24,,0,0,3,8,62,35.03580881655632,,4,19
+src/adapters/out/persistence/prediccion_repository_memory.py,Adaptadores de salida,Python,22,17,0,1,3,,0,0,1,1,3,88.91618417718055,,2,4
+src/adapters/out/persistence/revision_memory.py,Adaptadores de salida,Python,34,28,0,1,5,,0,0,1,3,7,74.81526435730426,,2,3
+src/adapters/out/persistence/revision_postgres.py,Adaptadores de salida,Python,29,23,0,1,5,,0,0,1,1,5,80.59506160341425,,2,4
+src/adapters/out/persistence/solicitud_repository_memory.py,Adaptadores de salida,Python,22,16,0,1,3,,0,0,1,2,4,90.224101030657,,2,4
+src/adapters/out/persistence/sql_resources.py,Adaptadores de salida,Python,10,6,2,0,1,,0,0,1,1,1,157.2641219298298,,6,1
+src/application/ports/input/solicitud_use_case.py,Aplicacion,Python,21,16,0,2,1,,0,0,1,1,1,93.21772657546516,,3,3
+src/application/ports/output/catalogo_repository.py,Aplicacion,Python,20,13,1,1,4,,0,0,1,1,4,117.71663804270655,,6,3
+src/application/ports/output/context_predictor.py,Aplicacion,Python,9,6,0,1,1,,0,0,1,1,1,113.72686154505655,,5,2
+src/application/ports/output/documentos.py,Aplicacion,Python,32,21,0,5,13,,0,0,1,1,13,80.61855601383525,,2,1
+src/application/ports/output/exportador_informe.py,Aplicacion,Python,10,6,1,1,1,,0,0,1,1,1,146.2352325609155,,3,2
+src/application/ports/output/generador_borrador.py,Aplicacion,Python,48,32,6,4,1,,0,0,1,1,1,112.3368911392509,,4,2
+src/application/ports/output/informe_repository.py,Aplicacion,Python,17,11,1,1,3,,0,0,1,1,3,123.81831991239929,,7,2
+src/application/ports/output/llm_port.py,Aplicacion,Python,18,9,5,1,2,,0,0,1,1,2,164.8202823940141,,2,1
+src/application/ports/output/perfil_repository.py,Aplicacion,Python,10,6,1,1,1,,0,0,1,1,1,145.67611337156129,,2,2
+src/application/ports/output/plantilla_repository.py,Aplicacion,Python,12,8,0,1,2,,0,0,1,1,2,107.37852191780425,,5,2
+src/application/ports/output/prediccion_repository.py,Aplicacion,Python,14,9,1,1,2,,0,0,1,1,2,131.222146253526,,4,2
+src/application/ports/output/revision_repository.py,Aplicacion,Python,17,10,1,1,4,,0,0,1,1,4,127.2309514181818,,3,1
+src/application/ports/output/solicitud_repository.py,Aplicacion,Python,17,11,1,1,2,,0,0,1,1,2,125.43835671446146,,4,2
+src/application/ports/output/unidad_trabajo.py,Aplicacion,Python,13,6,4,1,1,,0,0,1,1,1,180.30377316215518,,4,1
+src/application/use_cases/actualizar_borrador.py,Aplicacion,Python,58,53,1,1,2,,0,0,5,9,10,71.50605436073978,,2,13
+src/application/use_cases/actualizar_solicitud.py,Aplicacion,Python,44,40,0,1,2,,0,0,5,9,10,67.48918619926312,,3,7
+src/application/use_cases/consultar_catalogos.py,Aplicacion,Python,32,25,0,1,5,,0,0,1,2,6,78.64149306621884,,2,6
+src/application/use_cases/crear_solicitud.py,Aplicacion,Python,21,17,0,1,2,,0,0,2,2,3,88.97201457655885,,3,5
+src/application/use_cases/documentos.py,Aplicacion,Python,207,183,5,1,12,,1,1,5,11,63,31.02956191896454,,5,7
+src/application/use_cases/exportar_informe.py,Aplicacion,Python,20,13,2,1,3,,0,0,1,2,4,125.80027424868672,,4,2
+src/application/use_cases/generar_borrador.py,Aplicacion,Python,180,158,9,1,9,,1,1,3,12,34,49.988085018142314,,2,16
+src/application/use_cases/guardar_solicitud_completa.py,Aplicacion,Python,26,22,1,1,2,,0,0,2,3,4,100.92432846697827,,2,6
+src/application/use_cases/guardar_valores_solicitud.py,Aplicacion,Python,32,27,1,1,2,,0,0,2,3,4,93.78388818620468,,3,6
+src/application/use_cases/obtener_contexto.py,Aplicacion,Python,8,7,0,1,2,,0,0,1,1,2,110.59662678048713,,2,1
+src/application/use_cases/obtener_informe.py,Aplicacion,Python,40,34,0,1,4,,0,0,3,5,10,73.10634694229975,,3,5
+src/application/use_cases/obtener_solicitud.py,Aplicacion,Python,12,8,0,1,2,,0,0,1,1,2,107.0076158151432,,2,3
+src/application/use_cases/predecir_contexto.py,Aplicacion,Python,47,43,0,1,2,,0,0,4,7,8,64.07930307349713,,2,8
+src/application/use_cases/revision_informes.py,Aplicacion,Python,149,135,1,1,11,,0,0,3,7,32,40.655210174984944,,2,10
+src/application/use_cases/servicios_solicitud.py,Aplicacion,Python,87,76,2,1,6,,0,0,4,9,22,62.977379555095844,,15,12
+src/application/use_cases/validar_prediccion.py,Aplicacion,Python,66,60,2,1,2,,0,0,9,17,18,69.14273949566402,,2,8
+src/application/use_cases/verificar_referencias_normativas.py,Aplicacion,Python,16,13,1,0,1,,0,0,4,4,4,114.92119290877322,,3,2
+src/domain/entities/catalogo.py,Dominio,Python,36,30,0,3,0,,0,0,0,0,0,81.44298543818354,,5,1
+src/domain/entities/correspondencia_normativa.py,Dominio,Python,53,45,1,1,3,,0,0,1,2,4,72.15581111094252,,3,2
+src/domain/entities/documento.py,Dominio,Python,38,32,1,1,1,,0,0,1,1,1,89.5414805341602,,3,3
+src/domain/entities/informe.py,Dominio,Python,40,33,2,2,0,,0,0,0,0,0,96.61816618056291,,10,4
+src/domain/entities/plantilla.py,Dominio,Python,36,28,3,2,0,,0,0,0,0,0,108.06074910686645,,9,3
+src/domain/entities/prediccion_contexto.py,Dominio,Python,34,29,0,2,0,,0,0,0,0,0,80.42265501244833,,10,3
+src/domain/entities/solicitud.py,Dominio,Python,35,28,0,2,1,,0,0,1,1,1,80.92105828620494,,20,2
+src/domain/entities/usuario_actual.py,Dominio,Python,17,14,0,1,0,,0,0,0,0,0,96.8305085639505,,17,2
+src/domain/services/errores.py,Dominio,Python,41,26,2,7,2,,0,0,2,2,3,105.55746784576932,,34,1
+src/domain/services/informe_service.py,Dominio,Python,19,16,0,0,1,,0,0,6,6,6,89.14725662477865,,5,3
+src/domain/services/respaldo.py,Dominio,Python,34,29,1,0,2,,0,0,4,6,8,88.39200991932265,,2,2
+src/domain/services/solicitud_service.py,Dominio,Python,58,50,1,1,4,,0,0,5,9,18,71.45995996949793,,8,6
+src/domain/value_objects/encabezado_documento.py,Dominio,Python,67,52,3,0,5,,1,1,4,10,21,78.46675166068754,,5,2
+src/domain/value_objects/estado_solicitud.py,Dominio,Python,9,7,0,1,0,,0,0,0,0,0,114.83889731997564,,10,1
+src/domain/value_objects/estados.py,Dominio,Python,40,30,0,5,0,,0,0,0,0,0,82.11362423885927,,30,1
+src/domain/value_objects/estructura_piloto.py,Dominio,Python,12,9,1,0,1,,0,0,1,1,1,132.6532736161724,,2,2
+src/domain/value_objects/fuentes_piloto.py,Dominio,Python,33,27,1,0,1,,1,1,1,1,2,95.96689520415134,,2,3
+src/domain/value_objects/seccion_salida.py,Dominio,Python,59,43,2,1,5,,1,1,3,5,17,82.24884386446297,,14,2
+src/infrastructure/auth/mock.py,Infraestructura,Python,15,12,1,0,1,,0,0,1,1,1,116.92409359562414,,2,5
+src/infrastructure/auth/supabase.py,Infraestructura,Python,116,95,5,3,9,,0,0,3,8,28,59.93490358300861,,3,2
+src/infrastructure/configuration/container.py,Infraestructura,Python,173,146,1,1,1,,0,0,11,11,11,47.88831403613567,,3,42
+src/infrastructure/configuration/database.py,Infraestructura,Python,83,68,4,1,4,,1,1,3,6,14,75.78625982526717,,5,1
+src/infrastructure/configuration/rag.py,Infraestructura,Python,56,52,0,1,3,,0,0,4,8,11,60.468787223743334,,2,1
+src/infrastructure/configuration/settings.py,Infraestructura,Python,61,57,0,1,2,,0,0,6,6,12,56.86439912139252,,3,3
+src/infrastructure/dependencies.py,Infraestructura,Python,38,28,0,0,2,,1,1,3,6,8,75.32756670069874,,9,3
+src/infrastructure/diagnostico.py,Infraestructura,Python,42,38,2,0,1,,0,0,9,9,9,88.14054843919678,,2,3
+src/main.py,Arranque y despliegue,Python,120,101,2,0,8,,1,1,3,10,25,54.17369010829915,,1,8
+vite.config.js,Arranque y despliegue,Web,16,14,0,0,1,,0,0,1,1,1,98.7220742688205,,1,1

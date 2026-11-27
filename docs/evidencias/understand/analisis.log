@@ -1,0 +1,758 @@
+  Python
+    Analyze Pass1
+      <REPO>\deploy\preflight.py
+        <SCITOOLS>\conf\understand\python\python3\builtins.py
+        Warning: unable to find import module json
+          File: <REPO>\deploy\preflight.py Line: 2
+        Warning: unable to find import module os
+          File: <REPO>\deploy\preflight.py Line: 3
+        Warning: unable to find import module urllib.parse
+          File: <REPO>\deploy\preflight.py Line: 4
+      <REPO>\deploy\start.py
+        Warning: unable to find import module os
+          File: <REPO>\deploy\start.py Line: 2
+        Warning: unable to find import module uvicorn
+          File: <REPO>\deploy\start.py Line: 3
+      <REPO>\src\adapters\in\controllers\auth_controller.py
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\auth_controller.py Line: 2
+        Warning: unable to find import module pydantic
+          File: <REPO>\src\adapters\in\controllers\auth_controller.py Line: 3
+        <REPO>\src\infrastructure\auth\supabase.py
+          Warning: unable to find import module base64
+            File: <REPO>\src\infrastructure\auth\supabase.py Line: 6
+          Warning: unable to find import module dataclasses
+            File: <REPO>\src\infrastructure\auth\supabase.py Line: 7
+          Warning: unable to find import module json
+            File: <REPO>\src\infrastructure\auth\supabase.py Line: 8
+          Warning: unable to find import module urllib.parse
+            File: <REPO>\src\infrastructure\auth\supabase.py Line: 9
+          Warning: unable to find import module uuid
+            File: <REPO>\src\infrastructure\auth\supabase.py Line: 10
+          Warning: unable to find import module httpx
+            File: <REPO>\src\infrastructure\auth\supabase.py Line: 12
+          <REPO>\src\infrastructure\configuration\database.py
+            Warning: unable to find import module dataclasses
+              File: <REPO>\src\infrastructure\configuration\database.py Line: 2
+            Warning: unable to find import module logging
+              File: <REPO>\src\infrastructure\configuration\database.py Line: 3
+            Warning: unable to find import module os
+              File: <REPO>\src\infrastructure\configuration\database.py Line: 4
+            Warning: unable to find import module pathlib
+              File: <REPO>\src\infrastructure\configuration\database.py Line: 5
+            Warning: unable to find import module dotenv
+              File: <REPO>\src\infrastructure\configuration\database.py Line: 7
+            Warning: unable to find import module psycopg
+              File: <REPO>\src\infrastructure\configuration\database.py Line: 8
+        <REPO>\src\adapters\in\schemas\base.py
+          Warning: unable to find import module typing
+            File: <REPO>\src\adapters\in\schemas\base.py Line: 1
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\base.py Line: 3
+      <REPO>\src\adapters\in\controllers\catalogo_controller.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\in\controllers\catalogo_controller.py Line: 1
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\catalogo_controller.py Line: 3
+        <REPO>\src\infrastructure\dependencies.py
+          Warning: unable to find import module typing
+            File: <REPO>\src\infrastructure\dependencies.py Line: 1
+          Warning: unable to find import module fastapi
+            File: <REPO>\src\infrastructure\dependencies.py Line: 3
+          Warning: unable to find import module fastapi.security
+            File: <REPO>\src\infrastructure\dependencies.py Line: 4
+          <REPO>\src\domain\entities\usuario_actual.py
+            Warning: unable to find import module dataclasses
+              File: <REPO>\src\domain\entities\usuario_actual.py Line: 1
+            Warning: unable to find import module uuid
+              File: <REPO>\src\domain\entities\usuario_actual.py Line: 2
+            <REPO>\src\domain\value_objects\estados.py
+              Warning: unable to find import module enum
+                File: <REPO>\src\domain\value_objects\estados.py Line: 1
+          <REPO>\src\infrastructure\configuration\container.py
+            <REPO>\src\adapters\out\ai\sklearn_context_predictor.py
+              Warning: unable to find import module json
+                File: <REPO>\src\adapters\out\ai\sklearn_context_predictor.py Line: 1
+              Warning: unable to find import module pathlib
+                File: <REPO>\src\adapters\out\ai\sklearn_context_predictor.py Line: 2
+              Warning: unable to find import module uuid
+                File: <REPO>\src\adapters\out\ai\sklearn_context_predictor.py Line: 3
+              Warning: unable to find import module joblib
+                File: <REPO>\src\adapters\out\ai\sklearn_context_predictor.py Line: 5
+              <REPO>\src\adapters\out\ai\integridad_modelos.py
+                Warning: unable to find import module hashlib
+                  File: <REPO>\src\adapters\out\ai\integridad_modelos.py Line: 2
+              <REPO>\src\application\ports\output\context_predictor.py
+                <SCITOOLS>\conf\understand\python\python3\abc.py
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\output\context_predictor.py Line: 2
+                <REPO>\src\domain\entities\prediccion_contexto.py
+                  Warning: unable to find import module dataclasses
+                    File: <REPO>\src\domain\entities\prediccion_contexto.py Line: 1
+                  <SCITOOLS>\conf\understand\python\python3\datetime.py
+                  Warning: unable to find import module typing
+                    File: <REPO>\src\domain\entities\prediccion_contexto.py Line: 3
+                  Warning: unable to find import module uuid
+                    File: <REPO>\src\domain\entities\prediccion_contexto.py Line: 4
+                  <REPO>\src\domain\entities\solicitud.py
+                    Warning: unable to find import module dataclasses
+                      File: <REPO>\src\domain\entities\solicitud.py Line: 1
+                    Warning: unable to find import module typing
+                      File: <REPO>\src\domain\entities\solicitud.py Line: 3
+                    Warning: unable to find import module uuid
+                      File: <REPO>\src\domain\entities\solicitud.py Line: 4
+                    <REPO>\src\domain\value_objects\estado_solicitud.py
+                      Warning: unable to find import module enum
+                        File: <REPO>\src\domain\value_objects\estado_solicitud.py Line: 1
+            <REPO>\src\adapters\out\ai\generador_borrador_ollama.py
+              Warning: unable to find import module json
+                File: <REPO>\src\adapters\out\ai\generador_borrador_ollama.py Line: 1
+              <REPO>\src\application\ports\output\generador_borrador.py
+                Warning: unable to find import module dataclasses
+                  File: <REPO>\src\application\ports\output\generador_borrador.py Line: 2
+                Warning: unable to find import module typing
+                  File: <REPO>\src\application\ports\output\generador_borrador.py Line: 3
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\output\generador_borrador.py Line: 4
+                <REPO>\src\domain\entities\plantilla.py
+                  Warning: unable to find import module dataclasses
+                    File: <REPO>\src\domain\entities\plantilla.py Line: 1
+                  Warning: unable to find import module typing
+                    File: <REPO>\src\domain\entities\plantilla.py Line: 2
+                  Warning: unable to find import module uuid
+                    File: <REPO>\src\domain\entities\plantilla.py Line: 3
+                  <REPO>\src\domain\value_objects\seccion_salida.py
+                    Warning: unable to find import module dataclasses
+                      File: <REPO>\src\domain\value_objects\seccion_salida.py Line: 2
+                    Warning: unable to find import module re
+                      File: <REPO>\src\domain\value_objects\seccion_salida.py Line: 3
+                    <REPO>\src\domain\services\errores.py
+              <REPO>\src\adapters\out\ai\ollama_adapter.py
+                Warning: unable to find import module asyncio
+                  File: <REPO>\src\adapters\out\ai\ollama_adapter.py Line: 1
+                Warning: unable to find import module httpx
+                  File: <REPO>\src\adapters\out\ai\ollama_adapter.py Line: 3
+                <REPO>\src\application\ports\output\llm_port.py
+              <REPO>\src\adapters\out\ai\fidelidad_inspeccion.py
+                Warning: unable to find import module json
+                  File: <REPO>\src\adapters\out\ai\fidelidad_inspeccion.py Line: 2
+                Warning: unable to find import module re
+                  File: <REPO>\src\adapters\out\ai\fidelidad_inspeccion.py Line: 3
+                <SCITOOLS>\conf\understand\python\python3\unicodedata.py
+              <REPO>\src\domain\services\informe_service.py
+                Warning: unable to find import module json
+                  File: <REPO>\src\domain\services\informe_service.py Line: 1
+            <REPO>\src\adapters\out\persistence\__init__.py
+            <REPO>\src\adapters\out\persistence\catalogo_repository_memory.py
+              Warning: unable to find import module copy
+                File: <REPO>\src\adapters\out\persistence\catalogo_repository_memory.py Line: 1
+              Warning: unable to find import module uuid
+                File: <REPO>\src\adapters\out\persistence\catalogo_repository_memory.py Line: 2
+              <REPO>\src\adapters\out\persistence\datos_demo.py
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\adapters\out\persistence\datos_demo.py Line: 9
+                <REPO>\src\domain\entities\catalogo.py
+                  Warning: unable to find import module dataclasses
+                    File: <REPO>\src\domain\entities\catalogo.py Line: 1
+                  Warning: unable to find import module uuid
+                    File: <REPO>\src\domain\entities\catalogo.py Line: 3
+              <REPO>\src\application\ports\output\catalogo_repository.py
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\output\catalogo_repository.py Line: 2
+                <REPO>\src\domain\entities\correspondencia_normativa.py
+                  Warning: unable to find import module dataclasses
+                    File: <REPO>\src\domain\entities\correspondencia_normativa.py Line: 2
+                  Warning: unable to find import module urllib.parse
+                    File: <REPO>\src\domain\entities\correspondencia_normativa.py Line: 4
+            <REPO>\src\adapters\out\persistence\informe_repository_memory.py
+              Warning: unable to find import module copy
+                File: <REPO>\src\adapters\out\persistence\informe_repository_memory.py Line: 1
+              Warning: unable to find import module uuid
+                File: <REPO>\src\adapters\out\persistence\informe_repository_memory.py Line: 2
+              <REPO>\src\adapters\out\persistence\memoria.py
+                Warning: unable to find import module contextlib
+                  File: <REPO>\src\adapters\out\persistence\memoria.py Line: 1
+                Warning: unable to find import module copy
+                  File: <REPO>\src\adapters\out\persistence\memoria.py Line: 2
+                Warning: unable to find import module dataclasses
+                  File: <REPO>\src\adapters\out\persistence\memoria.py Line: 3
+                Warning: unable to find import module threading
+                  File: <REPO>\src\adapters\out\persistence\memoria.py Line: 4
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\adapters\out\persistence\memoria.py Line: 5
+                <REPO>\src\application\ports\output\unidad_trabajo.py
+                  Warning: unable to find import module contextlib
+                    File: <REPO>\src\application\ports\output\unidad_trabajo.py Line: 2
+                <REPO>\src\domain\entities\informe.py
+                  Warning: unable to find import module dataclasses
+                    File: <REPO>\src\domain\entities\informe.py Line: 1
+                  Warning: unable to find import module typing
+                    File: <REPO>\src\domain\entities\informe.py Line: 3
+                  Warning: unable to find import module uuid
+                    File: <REPO>\src\domain\entities\informe.py Line: 4
+              <REPO>\src\application\ports\output\informe_repository.py
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\output\informe_repository.py Line: 2
+            <REPO>\src\adapters\out\persistence\plantilla_repository_memory.py
+              Warning: unable to find import module copy
+                File: <REPO>\src\adapters\out\persistence\plantilla_repository_memory.py Line: 1
+              Warning: unable to find import module uuid
+                File: <REPO>\src\adapters\out\persistence\plantilla_repository_memory.py Line: 2
+              <REPO>\src\application\ports\output\plantilla_repository.py
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\output\plantilla_repository.py Line: 2
+            <REPO>\src\adapters\out\persistence\prediccion_repository_memory.py
+              Warning: unable to find import module copy
+                File: <REPO>\src\adapters\out\persistence\prediccion_repository_memory.py Line: 1
+              Warning: unable to find import module uuid
+                File: <REPO>\src\adapters\out\persistence\prediccion_repository_memory.py Line: 2
+              <REPO>\src\application\ports\output\prediccion_repository.py
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\output\prediccion_repository.py Line: 2
+            <REPO>\src\adapters\out\persistence\solicitud_repository_memory.py
+              Warning: unable to find import module typing
+                File: <REPO>\src\adapters\out\persistence\solicitud_repository_memory.py Line: 1
+              Warning: unable to find import module copy
+                File: <REPO>\src\adapters\out\persistence\solicitud_repository_memory.py Line: 2
+              Warning: unable to find import module uuid
+                File: <REPO>\src\adapters\out\persistence\solicitud_repository_memory.py Line: 3
+              <REPO>\src\application\ports\output\solicitud_repository.py
+                Warning: unable to find import module typing
+                  File: <REPO>\src\application\ports\output\solicitud_repository.py Line: 2
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\output\solicitud_repository.py Line: 3
+            <REPO>\src\application\use_cases\actualizar_borrador.py
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\actualizar_borrador.py Line: 1
+              Warning: unable to find import module copy
+                File: <REPO>\src\application\use_cases\actualizar_borrador.py Line: 2
+              <REPO>\src\application\use_cases\obtener_informe.py
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\use_cases\obtener_informe.py Line: 1
+                Warning: unable to find import module copy
+                  File: <REPO>\src\application\use_cases\obtener_informe.py Line: 2
+                <REPO>\src\application\use_cases\servicios_solicitud.py
+                  Warning: unable to find import module dataclasses
+                    File: <REPO>\src\application\use_cases\servicios_solicitud.py Line: 2
+                  Warning: unable to find import module uuid
+                    File: <REPO>\src\application\use_cases\servicios_solicitud.py Line: 3
+                  <REPO>\src\domain\services\solicitud_service.py
+                    <SCITOOLS>\conf\understand\python\python3\math.py
+                    Warning: unable to find import module typing
+                      File: <REPO>\src\domain\services\solicitud_service.py Line: 3
+              <REPO>\src\domain\value_objects\encabezado_documento.py
+                Warning: unable to find import module copy
+                  File: <REPO>\src\domain\value_objects\encabezado_documento.py Line: 2
+                Warning: unable to find import module re
+                  File: <REPO>\src\domain\value_objects\encabezado_documento.py Line: 4
+              <REPO>\src\application\use_cases\documentos.py
+                Warning: unable to find import module copy
+                  File: <REPO>\src\application\use_cases\documentos.py Line: 1
+                Warning: unable to find import module hashlib
+                  File: <REPO>\src\application\use_cases\documentos.py Line: 3
+                Warning: unable to find import module re
+                  File: <REPO>\src\application\use_cases\documentos.py Line: 4
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\use_cases\documentos.py Line: 5
+                <REPO>\src\application\ports\output\documentos.py
+                  Warning: unable to find import module typing
+                    File: <REPO>\src\application\ports\output\documentos.py Line: 1
+                <REPO>\src\domain\entities\documento.py
+                  Warning: unable to find import module dataclasses
+                    File: <REPO>\src\domain\entities\documento.py Line: 2
+                  Warning: unable to find import module uuid
+                    File: <REPO>\src\domain\entities\documento.py Line: 4
+            <REPO>\src\application\use_cases\actualizar_solicitud.py
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\actualizar_solicitud.py Line: 1
+            <REPO>\src\application\use_cases\consultar_catalogos.py
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\consultar_catalogos.py Line: 1
+            <REPO>\src\application\use_cases\crear_solicitud.py
+              Warning: unable to find import module dataclasses
+                File: <REPO>\src\application\use_cases\crear_solicitud.py Line: 1
+              <REPO>\src\application\ports\input\solicitud_use_case.py
+                Warning: unable to find import module dataclasses
+                  File: <REPO>\src\application\ports\input\solicitud_use_case.py Line: 2
+                Warning: unable to find import module uuid
+                  File: <REPO>\src\application\ports\input\solicitud_use_case.py Line: 3
+            <REPO>\src\application\use_cases\generar_borrador.py
+              Warning: unable to find import module copy
+                File: <REPO>\src\application\use_cases\generar_borrador.py Line: 1
+              Warning: unable to find import module dataclasses
+                File: <REPO>\src\application\use_cases\generar_borrador.py Line: 2
+              Warning: unable to find import module logging
+                File: <REPO>\src\application\use_cases\generar_borrador.py Line: 4
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\generar_borrador.py Line: 6
+              <REPO>\src\application\use_cases\verificar_referencias_normativas.py
+            <REPO>\src\application\use_cases\guardar_valores_solicitud.py
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\guardar_valores_solicitud.py Line: 1
+            <REPO>\src\application\use_cases\guardar_solicitud_completa.py
+            <REPO>\src\application\use_cases\exportar_informe.py
+            <REPO>\src\adapters\out\documents\__init__.py
+            <REPO>\src\adapters\out\documents\exportador_docx.py
+              Warning: unable to find import module io
+                File: <REPO>\src\adapters\out\documents\exportador_docx.py Line: 2
+              Warning: unable to find import module types
+                File: <REPO>\src\adapters\out\documents\exportador_docx.py Line: 3
+              Warning: unable to find import module docx
+                File: <REPO>\src\adapters\out\documents\exportador_docx.py Line: 5
+              Warning: unable to find import module docx.shared
+                File: <REPO>\src\adapters\out\documents\exportador_docx.py Line: 6
+              Warning: unable to find import module docx.oxml
+                File: <REPO>\src\adapters\out\documents\exportador_docx.py Line: 7
+              Warning: unable to find import module docx.oxml.ns
+                File: <REPO>\src\adapters\out\documents\exportador_docx.py Line: 8
+              <REPO>\src\application\ports\output\exportador_informe.py
+              <REPO>\src\adapters\out\documents\exportador_mdt.py
+                Warning: unable to find import module copy
+                  File: <REPO>\src\adapters\out\documents\exportador_mdt.py Line: 2
+                Warning: unable to find import module io
+                  File: <REPO>\src\adapters\out\documents\exportador_mdt.py Line: 4
+                Warning: unable to find import module pathlib
+                  File: <REPO>\src\adapters\out\documents\exportador_mdt.py Line: 5
+                Warning: unable to find import module re
+                  File: <REPO>\src\adapters\out\documents\exportador_mdt.py Line: 6
+                Warning: unable to find import module docx
+                  File: <REPO>\src\adapters\out\documents\exportador_mdt.py Line: 8
+                Warning: unable to find import module docx.text.paragraph
+                  File: <REPO>\src\adapters\out\documents\exportador_mdt.py Line: 9
+                <REPO>\src\adapters\out\documents\fuentes_docx.py
+            <REPO>\src\application\use_cases\obtener_solicitud.py
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\obtener_solicitud.py Line: 1
+            <REPO>\src\application\use_cases\obtener_contexto.py
+            <REPO>\src\application\use_cases\predecir_contexto.py
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\predecir_contexto.py Line: 2
+            <REPO>\src\application\use_cases\validar_prediccion.py
+              Warning: unable to find import module uuid
+                File: <REPO>\src\application\use_cases\validar_prediccion.py Line: 1
+            <REPO>\src\infrastructure\configuration\settings.py
+              Warning: unable to find import module dataclasses
+                File: <REPO>\src\infrastructure\configuration\settings.py Line: 1
+              Warning: unable to find import module urllib.parse
+                File: <REPO>\src\infrastructure\configuration\settings.py Line: 3
+              <REPO>\src\infrastructure\configuration\rag.py
+                Warning: unable to find import module dataclasses
+                  File: <REPO>\src\infrastructure\configuration\rag.py Line: 1
+        <REPO>\src\adapters\in\schemas\catalogo_response.py
+          Warning: unable to find import module uuid
+            File: <REPO>\src\adapters\in\schemas\catalogo_response.py Line: 1
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\catalogo_response.py Line: 3
+          <REPO>\src\adapters\in\schemas\seccion_response.py
+        <REPO>\src\adapters\in\schemas\error_response.py
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\error_response.py Line: 1
+      <REPO>\src\adapters\in\controllers\documento_controller.py
+        Warning: unable to find import module typing
+          File: <REPO>\src\adapters\in\controllers\documento_controller.py Line: 1
+        Warning: unable to find import module typing
+          File: <REPO>\src\adapters\in\controllers\documento_controller.py Line: 2
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\in\controllers\documento_controller.py Line: 4
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\documento_controller.py Line: 6
+        Warning: unable to find import module pydantic
+          File: <REPO>\src\adapters\in\controllers\documento_controller.py Line: 7
+      <REPO>\src\adapters\in\controllers\ia_controller.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\in\controllers\ia_controller.py Line: 1
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\ia_controller.py Line: 3
+        <REPO>\src\adapters\in\schemas\informe_request.py
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\informe_request.py Line: 1
+        <REPO>\src\adapters\in\schemas\informe_response.py
+          Warning: unable to find import module uuid
+            File: <REPO>\src\adapters\in\schemas\informe_response.py Line: 2
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\informe_response.py Line: 4
+        <REPO>\src\adapters\in\schemas\prediccion_request.py
+          Warning: unable to find import module uuid
+            File: <REPO>\src\adapters\in\schemas\prediccion_request.py Line: 1
+        <REPO>\src\adapters\in\schemas\prediccion_response.py
+          Warning: unable to find import module uuid
+            File: <REPO>\src\adapters\in\schemas\prediccion_response.py Line: 2
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\prediccion_response.py Line: 4
+      <REPO>\src\adapters\in\controllers\informe_controller.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\in\controllers\informe_controller.py Line: 1
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\informe_controller.py Line: 3
+        Warning: unable to find import module typing
+          File: <REPO>\src\adapters\in\controllers\informe_controller.py Line: 4
+      <REPO>\src\adapters\in\controllers\operacion_controller.py
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\operacion_controller.py Line: 1
+        Warning: unable to find import module fastapi.responses
+          File: <REPO>\src\adapters\in\controllers\operacion_controller.py Line: 2
+        <REPO>\src\infrastructure\diagnostico.py
+          Warning: unable to find import module httpx
+            File: <REPO>\src\infrastructure\diagnostico.py Line: 2
+          <REPO>\src\adapters\out\persistence\estado_postgres.py
+            Warning: unable to find import module dataclasses
+              File: <REPO>\src\adapters\out\persistence\estado_postgres.py Line: 1
+            <REPO>\src\adapters\out\persistence\sql_resources.py
+              Warning: unable to find import module functools
+                File: <REPO>\src\adapters\out\persistence\sql_resources.py Line: 2
+              Warning: unable to find import module importlib.resources
+                File: <REPO>\src\adapters\out\persistence\sql_resources.py Line: 3
+      <REPO>\src\adapters\in\controllers\revision_controller.py
+        Warning: unable to find import module typing
+          File: <REPO>\src\adapters\in\controllers\revision_controller.py Line: 1
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\in\controllers\revision_controller.py Line: 2
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\revision_controller.py Line: 4
+        Warning: unable to find import module pydantic
+          File: <REPO>\src\adapters\in\controllers\revision_controller.py Line: 5
+      <REPO>\src\adapters\in\controllers\solicitud_controller.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\in\controllers\solicitud_controller.py Line: 1
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\solicitud_controller.py Line: 3
+        <REPO>\src\adapters\in\schemas\solicitud_request.py
+          Warning: unable to find import module uuid
+            File: <REPO>\src\adapters\in\schemas\solicitud_request.py Line: 1
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\solicitud_request.py Line: 3
+        <REPO>\src\adapters\in\schemas\solicitud_response.py
+          Warning: unable to find import module uuid
+            File: <REPO>\src\adapters\in\schemas\solicitud_response.py Line: 2
+          Warning: unable to find import module pydantic
+            File: <REPO>\src\adapters\in\schemas\solicitud_response.py Line: 4
+      <REPO>\src\adapters\in\controllers\usuario_controller.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\in\controllers\usuario_controller.py Line: 1
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\controllers\usuario_controller.py Line: 3
+      <REPO>\src\adapters\in\limite_documental.py
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\adapters\in\limite_documental.py Line: 2
+        Warning: unable to find import module fastapi.responses
+          File: <REPO>\src\adapters\in\limite_documental.py Line: 3
+      <REPO>\src\adapters\out\ai\context_predictor_catalogo.py
+      <REPO>\src\adapters\out\ai\context_predictor_mock.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\out\ai\context_predictor_mock.py Line: 1
+      <REPO>\src\adapters\out\ai\embeddings_ollama.py
+        Warning: unable to find import module httpx
+          File: <REPO>\src\adapters\out\ai\embeddings_ollama.py Line: 3
+      <REPO>\src\adapters\out\ai\generador_borrador_mock.py
+      <REPO>\src\adapters\out\documents\almacen_supabase.py
+        Warning: unable to find import module urllib.parse
+          File: <REPO>\src\adapters\out\documents\almacen_supabase.py Line: 1
+        Warning: unable to find import module httpx
+          File: <REPO>\src\adapters\out\documents\almacen_supabase.py Line: 3
+      <REPO>\src\adapters\out\documents\exportador_pdf.py
+        Warning: unable to find import module io
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 2
+        Warning: unable to find import module pathlib
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 3
+        Warning: unable to find import module xml.sax.saxutils
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 4
+        Warning: unable to find import module threading
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 5
+        Warning: unable to find import module reportlab
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 7
+        Warning: unable to find import module docx
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 8
+        Warning: unable to find import module reportlab.lib
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 9
+        Warning: unable to find import module reportlab.lib.pagesizes
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 10
+        Warning: unable to find import module reportlab.lib.styles
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 11
+        Warning: unable to find import module reportlab.pdfbase
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 12
+        Warning: unable to find import module reportlab.pdfbase.ttfonts
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 13
+        Warning: unable to find import module reportlab.platypus
+          File: <REPO>\src\adapters\out\documents\exportador_pdf.py Line: 14
+      <REPO>\src\adapters\out\documents\extractor.py
+        Warning: unable to find import module io
+          File: <REPO>\src\adapters\out\documents\extractor.py Line: 1
+        Warning: unable to find import module zipfile
+          File: <REPO>\src\adapters\out\documents\extractor.py Line: 2
+      <REPO>\src\adapters\out\persistence\documentos_postgres.py
+        Warning: unable to find import module json
+          File: <REPO>\src\adapters\out\persistence\documentos_postgres.py Line: 1
+        <REPO>\src\adapters\out\persistence\postgres.py
+          Warning: unable to find import module contextlib
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 2
+          Warning: unable to find import module contextvars
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 3
+          Warning: unable to find import module dataclasses
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 4
+          Warning: unable to find import module enum
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 6
+          Warning: unable to find import module uuid
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 7
+          Warning: unable to find import module psycopg
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 9
+          Warning: unable to find import module psycopg
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 10
+          Warning: unable to find import module psycopg.rows
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 11
+          Warning: unable to find import module psycopg.types.json
+            File: <REPO>\src\adapters\out\persistence\postgres.py Line: 12
+      <REPO>\src\adapters\out\persistence\informe_auditado.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\adapters\out\persistence\informe_auditado.py Line: 1
+      <REPO>\src\adapters\out\persistence\perfil_repository_postgres.py
+        <REPO>\src\application\ports\output\perfil_repository.py
+          Warning: unable to find import module uuid
+            File: <REPO>\src\application\ports\output\perfil_repository.py Line: 2
+      <REPO>\src\adapters\out\persistence\revision_memory.py
+        Warning: unable to find import module copy
+          File: <REPO>\src\adapters\out\persistence\revision_memory.py Line: 1
+        <REPO>\src\application\ports\output\revision_repository.py
+      <REPO>\src\adapters\out\persistence\revision_postgres.py
+        Warning: unable to find import module psycopg.types.json
+          File: <REPO>\src\adapters\out\persistence\revision_postgres.py Line: 1
+      <REPO>\src\application\use_cases\revision_informes.py
+        Warning: unable to find import module copy
+          File: <REPO>\src\application\use_cases\revision_informes.py Line: 1
+        Warning: unable to find import module uuid
+          File: <REPO>\src\application\use_cases\revision_informes.py Line: 2
+        <REPO>\src\domain\services\respaldo.py
+          Warning: unable to find import module re
+            File: <REPO>\src\domain\services\respaldo.py Line: 1
+      <REPO>\src\domain\value_objects\estructura_piloto.py
+      <REPO>\src\domain\value_objects\fuentes_piloto.py
+        Warning: unable to find import module uuid
+          File: <REPO>\src\domain\value_objects\fuentes_piloto.py Line: 2
+      <REPO>\src\infrastructure\auth\mock.py
+      <REPO>\src\main.py
+        Warning: unable to find import module importlib
+          File: <REPO>\src\main.py Line: 1
+        Warning: unable to find import module logging
+          File: <REPO>\src\main.py Line: 2
+        Warning: unable to find import module fastapi
+          File: <REPO>\src\main.py Line: 4
+        Warning: unable to find import module fastapi.middleware.cors
+          File: <REPO>\src\main.py Line: 5
+        Warning: unable to find import module fastapi.responses
+          File: <REPO>\src\main.py Line: 6
+        Warning: unable to find import module fastapi.exceptions
+          File: <REPO>\src\main.py Line: 7
+    Analyze Pass2
+      <REPO>\deploy\preflight.py
+      <REPO>\deploy\start.py
+      <REPO>\src\adapters\in\controllers\auth_controller.py
+      <REPO>\src\adapters\in\controllers\catalogo_controller.py
+      <REPO>\src\adapters\in\controllers\documento_controller.py
+      <REPO>\src\adapters\in\controllers\ia_controller.py
+      <REPO>\src\adapters\in\controllers\informe_controller.py
+      <REPO>\src\adapters\in\controllers\operacion_controller.py
+      <REPO>\src\adapters\in\controllers\revision_controller.py
+      <REPO>\src\adapters\in\controllers\solicitud_controller.py
+      <REPO>\src\adapters\in\controllers\usuario_controller.py
+      <REPO>\src\adapters\in\limite_documental.py
+      <REPO>\src\adapters\in\schemas\base.py
+      <REPO>\src\adapters\in\schemas\catalogo_response.py
+      <REPO>\src\adapters\in\schemas\error_response.py
+      <REPO>\src\adapters\in\schemas\informe_request.py
+      <REPO>\src\adapters\in\schemas\informe_response.py
+      <REPO>\src\adapters\in\schemas\prediccion_request.py
+      <REPO>\src\adapters\in\schemas\prediccion_response.py
+      <REPO>\src\adapters\in\schemas\seccion_response.py
+      <REPO>\src\adapters\in\schemas\solicitud_request.py
+      <REPO>\src\adapters\in\schemas\solicitud_response.py
+      <REPO>\src\adapters\out\ai\context_predictor_catalogo.py
+      <REPO>\src\adapters\out\ai\context_predictor_mock.py
+      <REPO>\src\adapters\out\ai\embeddings_ollama.py
+      <REPO>\src\adapters\out\ai\fidelidad_inspeccion.py
+      <REPO>\src\adapters\out\ai\generador_borrador_mock.py
+      <REPO>\src\adapters\out\ai\generador_borrador_ollama.py
+      <REPO>\src\adapters\out\ai\integridad_modelos.py
+      <REPO>\src\adapters\out\ai\ollama_adapter.py
+      <REPO>\src\adapters\out\ai\sklearn_context_predictor.py
+      <REPO>\src\adapters\out\documents\__init__.py
+      <REPO>\src\adapters\out\documents\almacen_supabase.py
+      <REPO>\src\adapters\out\documents\exportador_docx.py
+      <REPO>\src\adapters\out\documents\exportador_mdt.py
+      <REPO>\src\adapters\out\documents\exportador_pdf.py
+      <REPO>\src\adapters\out\documents\extractor.py
+        Warning: unable to find import module docx
+          File: <REPO>\src\adapters\out\documents\extractor.py Line: 24
+        Warning: unable to find import module docx.table
+          File: <REPO>\src\adapters\out\documents\extractor.py Line: 25
+        Warning: unable to find import module docx.text.paragraph
+          File: <REPO>\src\adapters\out\documents\extractor.py Line: 26
+        Warning: unable to find import module pypdf
+          File: <REPO>\src\adapters\out\documents\extractor.py Line: 42
+      <REPO>\src\adapters\out\documents\fuentes_docx.py
+      <REPO>\src\adapters\out\persistence\__init__.py
+      <REPO>\src\adapters\out\persistence\catalogo_repository_memory.py
+      <REPO>\src\adapters\out\persistence\datos_demo.py
+      <REPO>\src\adapters\out\persistence\documentos_postgres.py
+      <REPO>\src\adapters\out\persistence\estado_postgres.py
+      <REPO>\src\adapters\out\persistence\informe_auditado.py
+      <REPO>\src\adapters\out\persistence\informe_repository_memory.py
+      <REPO>\src\adapters\out\persistence\memoria.py
+      <REPO>\src\adapters\out\persistence\perfil_repository_postgres.py
+      <REPO>\src\adapters\out\persistence\plantilla_repository_memory.py
+      <REPO>\src\adapters\out\persistence\postgres.py
+      <REPO>\src\adapters\out\persistence\prediccion_repository_memory.py
+      <REPO>\src\adapters\out\persistence\revision_memory.py
+      <REPO>\src\adapters\out\persistence\revision_postgres.py
+      <REPO>\src\adapters\out\persistence\solicitud_repository_memory.py
+      <REPO>\src\adapters\out\persistence\sql_resources.py
+      <REPO>\src\application\ports\input\solicitud_use_case.py
+      <REPO>\src\application\ports\output\catalogo_repository.py
+      <REPO>\src\application\ports\output\context_predictor.py
+      <REPO>\src\application\ports\output\documentos.py
+      <REPO>\src\application\ports\output\exportador_informe.py
+      <REPO>\src\application\ports\output\generador_borrador.py
+      <REPO>\src\application\ports\output\informe_repository.py
+      <REPO>\src\application\ports\output\llm_port.py
+      <REPO>\src\application\ports\output\perfil_repository.py
+      <REPO>\src\application\ports\output\plantilla_repository.py
+      <REPO>\src\application\ports\output\prediccion_repository.py
+      <REPO>\src\application\ports\output\revision_repository.py
+      <REPO>\src\application\ports\output\solicitud_repository.py
+      <REPO>\src\application\ports\output\unidad_trabajo.py
+      <REPO>\src\application\use_cases\actualizar_borrador.py
+      <REPO>\src\application\use_cases\actualizar_solicitud.py
+      <REPO>\src\application\use_cases\consultar_catalogos.py
+      <REPO>\src\application\use_cases\crear_solicitud.py
+      <REPO>\src\application\use_cases\documentos.py
+      <REPO>\src\application\use_cases\exportar_informe.py
+      <REPO>\src\application\use_cases\generar_borrador.py
+      <REPO>\src\application\use_cases\guardar_solicitud_completa.py
+        Warning: unable to find import module dataclasses
+          File: <REPO>\src\application\use_cases\guardar_solicitud_completa.py Line: 16
+      <REPO>\src\application\use_cases\guardar_valores_solicitud.py
+      <REPO>\src\application\use_cases\obtener_contexto.py
+      <REPO>\src\application\use_cases\obtener_informe.py
+      <REPO>\src\application\use_cases\obtener_solicitud.py
+      <REPO>\src\application\use_cases\predecir_contexto.py
+      <REPO>\src\application\use_cases\revision_informes.py
+      <REPO>\src\application\use_cases\servicios_solicitud.py
+      <REPO>\src\application\use_cases\validar_prediccion.py
+      <REPO>\src\application\use_cases\verificar_referencias_normativas.py
+      <REPO>\src\domain\entities\catalogo.py
+      <REPO>\src\domain\entities\correspondencia_normativa.py
+      <REPO>\src\domain\entities\documento.py
+      <REPO>\src\domain\entities\informe.py
+      <REPO>\src\domain\entities\plantilla.py
+      <REPO>\src\domain\entities\prediccion_contexto.py
+      <REPO>\src\domain\entities\solicitud.py
+      <REPO>\src\domain\entities\usuario_actual.py
+      <REPO>\src\domain\services\errores.py
+      <REPO>\src\domain\services\informe_service.py
+      <REPO>\src\domain\services\respaldo.py
+      <REPO>\src\domain\services\solicitud_service.py
+      <REPO>\src\domain\value_objects\encabezado_documento.py
+      <REPO>\src\domain\value_objects\estado_solicitud.py
+      <REPO>\src\domain\value_objects\estados.py
+      <REPO>\src\domain\value_objects\estructura_piloto.py
+      <REPO>\src\domain\value_objects\fuentes_piloto.py
+      <REPO>\src\domain\value_objects\seccion_salida.py
+      <REPO>\src\infrastructure\auth\mock.py
+      <REPO>\src\infrastructure\auth\supabase.py
+      <REPO>\src\infrastructure\configuration\container.py
+      <REPO>\src\infrastructure\configuration\database.py
+      <REPO>\src\infrastructure\configuration\rag.py
+      <REPO>\src\infrastructure\configuration\settings.py
+      <REPO>\src\infrastructure\dependencies.py
+      <REPO>\src\infrastructure\diagnostico.py
+      <REPO>\src\main.py
+  Web
+    Analyze Pass1
+      <REPO>\index.html
+        Warning: Unable to src file '/src/adapters/in/web/main.jsx'
+          File: <REPO>\index.html Line: 11
+      <REPO>\src\adapters\in\web\App.jsx
+      <REPO>\src\adapters\in\web\components\DocumentosInforme.jsx
+      <REPO>\src\adapters\in\web\components\EditorBorrador.jsx
+      <REPO>\src\adapters\in\web\components\EncabezadoDocumento.jsx
+      <REPO>\src\adapters\in\web\components\EstadoAcceso.jsx
+      <REPO>\src\adapters\in\web\components\FuentesInforme.jsx
+      <REPO>\src\adapters\in\web\components\Header.jsx
+      <REPO>\src\adapters\in\web\components\NormativasSugeridas.jsx
+      <REPO>\src\adapters\in\web\components\PasosInforme.jsx
+      <REPO>\src\adapters\in\web\components\ProtectedRoute.jsx
+      <REPO>\src\adapters\in\web\components\VistaPreviaInforme.jsx
+      <REPO>\src\adapters\in\web\layouts\MainLayout.jsx
+      <REPO>\src\adapters\in\web\main.jsx
+      <REPO>\src\adapters\in\web\pages\Documentos.jsx
+      <REPO>\src\adapters\in\web\pages\Login.jsx
+      <REPO>\src\adapters\in\web\pages\NuevoInforme.jsx
+      <REPO>\src\adapters\in\web\pages\RevisionInformes.jsx
+      <REPO>\src\adapters\in\web\services\api.js
+      <REPO>\src\adapters\in\web\services\authService.js
+      <REPO>\src\adapters\in\web\services\cargarFormulario.js
+      <REPO>\src\adapters\in\web\services\catalogoService.js
+      <REPO>\src\adapters\in\web\services\documentoService.js
+      <REPO>\src\adapters\in\web\services\encabezadoDocumento.js
+      <REPO>\src\adapters\in\web\services\estructuraBorrador.js
+      <REPO>\src\adapters\in\web\services\flujoInforme.js
+      <REPO>\src\adapters\in\web\services\iaService.js
+      <REPO>\src\adapters\in\web\services\informeService.js
+      <REPO>\src\adapters\in\web\services\progresoInforme.js
+      <REPO>\src\adapters\in\web\services\session.js
+      <REPO>\src\adapters\in\web\services\solicitudService.js
+      <REPO>\vite.config.js
+      <REPO>\src\adapters\in\web\styles\acceso.css
+      <REPO>\src\adapters\in\web\styles\app.css
+      <REPO>\src\adapters\in\web\styles\identidad.css
+      <REPO>\src\adapters\in\web\styles\nuevoInforme.css
+      <REPO>\src\adapters\in\web\styles\revision.css
+    Analyze Pass2
+      <REPO>\index.html
+      <REPO>\src\adapters\in\web\styles\acceso.css
+      <REPO>\src\adapters\in\web\styles\app.css
+      <REPO>\src\adapters\in\web\styles\identidad.css
+      <REPO>\src\adapters\in\web\styles\nuevoInforme.css
+      <REPO>\src\adapters\in\web\styles\revision.css
+      <REPO>\src\adapters\in\web\components\NormativasSugeridas.jsx
+      <REPO>\src\adapters\in\web\components\PasosInforme.jsx
+      <REPO>\src\adapters\in\web\services\cargarFormulario.js
+      <REPO>\src\adapters\in\web\services\encabezadoDocumento.js
+      <REPO>\src\adapters\in\web\components\EncabezadoDocumento.jsx
+      <REPO>\src\adapters\in\web\services\estructuraBorrador.js
+      <REPO>\src\adapters\in\web\components\EditorBorrador.jsx
+      <REPO>\src\adapters\in\web\components\VistaPreviaInforme.jsx
+      <REPO>\src\adapters\in\web\services\flujoInforme.js
+      <REPO>\src\adapters\in\web\services\progresoInforme.js
+      <REPO>\src\adapters\in\web\services\session.js
+      <REPO>\src\adapters\in\web\services\api.js
+      <REPO>\src\adapters\in\web\services\authService.js
+      <REPO>\src\adapters\in\web\services\catalogoService.js
+      <REPO>\src\adapters\in\web\services\documentoService.js
+      <REPO>\src\adapters\in\web\services\iaService.js
+      <REPO>\src\adapters\in\web\services\informeService.js
+      <REPO>\src\adapters\in\web\services\solicitudService.js
+      <REPO>\src\adapters\in\web\components\DocumentosInforme.jsx
+      <REPO>\src\adapters\in\web\components\EstadoAcceso.jsx
+      <REPO>\src\adapters\in\web\components\FuentesInforme.jsx
+      <REPO>\src\adapters\in\web\pages\Documentos.jsx
+      <REPO>\src\adapters\in\web\components\Header.jsx
+      <REPO>\src\adapters\in\web\components\ProtectedRoute.jsx
+        Warning: Unable to import file 'axios'
+          File: <REPO>\src\adapters\in\web\components\ProtectedRoute.jsx Line: 3
+      <REPO>\src\adapters\in\web\layouts\MainLayout.jsx
+      <REPO>\src\adapters\in\web\App.jsx
+        Warning: Unable to import file 'react-router-dom'
+          File: <REPO>\src\adapters\in\web\App.jsx Line: 1
+        Warning: Unable to import file 'react'
+          File: <REPO>\src\adapters\in\web\App.jsx Line: 2
+      <REPO>\src\adapters\in\web\main.jsx
+        Warning: Unable to import file 'react-dom/client'
+          File: <REPO>\src\adapters\in\web\main.jsx Line: 2
+      <REPO>\src\adapters\in\web\pages\Login.jsx
+      <REPO>\src\adapters\in\web\pages\NuevoInforme.jsx
+      <REPO>\src\adapters\in\web\pages\RevisionInformes.jsx
+      <REPO>\vite.config.js
+        Warning: Unable to import file 'vite'
+          File: <REPO>\vite.config.js Line: 1
+        Warning: Unable to import file '@vitejs/plugin-react'
+          File: <REPO>\vite.config.js Line: 2
+Analyze Completed (Errors:0 Warnings:224)

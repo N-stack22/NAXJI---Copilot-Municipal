@@ -13,7 +13,7 @@ Se organiza la evidencia ya producida para las consignas suministradas, sin agre
 |7|Análisis de logs|`evidencias/ingenieria-inversa/ejecucion/{backend_logs,frontend_logs,endpoints_detectados}.md`|Línea base, nueva suite, carga, ZAP y CI con fallos conservados|
 |8|Reconstrucción arquitectónica|`evidencias/ingenieria-inversa/analisis/arquitectura_real.md`|Sin cambios de negocio; solo cabeceras HTTP y entrega/QA|
 |9|Reconstrucción del dominio|`evidencias/ingenieria-inversa/analisis/dominio.md`|Entidades/estados/reglas y HU-IA-04 sin diff respecto de 7359a67|
-|10|Evaluación arquitectónica|`evidencias/ingenieria-inversa/analisis/calidad_arquitectura.md`|Guardias reforzadas; Understand bloqueado, sin métricas inventadas|
+|10|Evaluación arquitectónica|`evidencias/ingenieria-inversa/analisis/calidad_arquitectura.md` y [C-06 Understand](evidencias/understand/README.md)|Guardias reforzadas; Understand8.1.1269 sobre main67d9db2:149 archivos,CSV/HTML/diagramas y 423 relaciones propias;0 infracciones resueltas del núcleo;límites explícitos|
 |11|Hallazgos|`evidencias/ingenieria-inversa/analisis/hallazgos.md` y `hallazgos_y_correcciones.md`|C-01…C-12 con cerrados, informativos, bloqueados y fuera de alcance|
 |12|Generador final / informe integrado|`ingenieria_inversa.md`|Consolida arquitectura, FURPS+, OWASP2021, ICACIT y referencias a resultados actuales|
 

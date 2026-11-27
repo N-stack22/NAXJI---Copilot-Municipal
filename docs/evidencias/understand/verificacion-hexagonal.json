@@ -1,0 +1,10 @@
+{
+  "metodo": "Dependencias de archivos resueltas por Understand; grupos por ruta, no verificación dinámica",
+  "reglas": [
+    "Dominio depende solo de Dominio",
+    "Aplicacion depende solo de Aplicacion y Dominio"
+  ],
+  "infracciones_resueltas": [],
+  "pares_archivos_propios": 423,
+  "limites": "No prueba ausencia de dependencias dinámicas ni valida proveedores externos excluidos"
+}

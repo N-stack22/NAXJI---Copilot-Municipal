@@ -8,7 +8,7 @@ Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre aca
 | U | 55 frontend aprobadas; JSX y pantallas sin cambios | JSDOM no es evaluación por usuarios |
 | R | Persistencia/transacciones y permisos siguen verdes; imagen en solo lectura, usuario10001, PORT 8088 y salud200 | Salud es liveness; servicios externos no conectados |
 | P | 750 llamadas: 0 fallos inesperados; 125 rechazos previstos; p95=294,60ms; throughput16,37/s | Dobles Auth/Storage/LLM/embeddings; sin comparación causal con otro equipo ni SLO productivo |
-| S | 110 módulos/599 referencias revisados; 16 módulos persistencia; 46 SQL; wheel/sdist y Linux Docker/CI | Complejidad y mantenibilidad de Understand no medidas |
+| S | Guardias AST/SQL, wheel/sdist y Linux Docker/CI históricos; Understand8.1.1269 ejecutado sobre main67d9db2:149 archivos, complejidad máxima26 y mantenibilidad Sonargraph84,44774960712785 | [CSV/HTML y diagramas](evidencias/understand/README.md); Halstead global no disponible; 224 advertencias de resolución declaradas; no certifica mantenibilidad institucional |
 | + | Docker/railway.toml/preflight/_headers y procedimiento de reversión | Configuración de destino y promoción no ejecutadas |
 
 No se asigna una nueva nota FURPS a partir de estas pruebas. La advertencia Starlette/TestClient/httpx sigue registrada en QA. Se preservan pilotos y artefactos de modelos; no se altera la recuperación para mejorar una métrica.

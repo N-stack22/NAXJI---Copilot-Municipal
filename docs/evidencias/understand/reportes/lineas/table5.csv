@@ -1,0 +1,19 @@
+Name,Lines,Code Lines,Comment Lines,Inactive Lines,Preprocessor Lines,Blank Lines,Ratio Comment to Code
+catalogo.py,36,30,0,,,6,0.00
+correspondencia_normativa.py,53,45,1,,,7,0.02
+documento.py,38,32,1,,,5,0.03
+encabezado_documento.py,67,52,3,,,12,0.06
+errores.py,41,26,2,,,13,0.08
+estado_solicitud.py,9,7,0,,,2,0.00
+estados.py,40,30,0,,,10,0.00
+estructura_piloto.py,12,9,1,,,2,0.11
+fuentes_piloto.py,33,27,1,,,5,0.04
+informe.py,40,33,2,,,5,0.06
+informe_service.py,19,16,0,,,3,0.00
+plantilla.py,36,28,3,,,5,0.11
+prediccion_contexto.py,34,29,0,,,5,0.00
+respaldo.py,34,29,1,,,4,0.03
+seccion_salida.py,59,43,2,,,14,0.05
+solicitud.py,35,28,0,,,7,0.00
+solicitud_service.py,58,50,1,,,7,0.02
+usuario_actual.py,17,14,0,,,3,0.00

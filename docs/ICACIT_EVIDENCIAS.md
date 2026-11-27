@@ -12,6 +12,6 @@ Se vinculan los siete atributos solicitados a evidencias disponibles; no se afir
 | Gestión de proyectos | Rama independiente, commits, matriz C-01…C-12, logs previos y fallo/repetición CI | Trazabilidad real; no actas, reuniones ni burndown fabricados |
 | Diseño y desarrollo | 10 HU aceptadas, producto sin reimplementación; corrección mínima de cabeceras confirmadas | Regresión375/21 y 55 frontend; límites de la evidencia explícitos |
 | Análisis de problemas | Diagnóstico de límites de guardias, token ZAP mal acotado, checkout superficial y timeout PyPI | Causas contrastadas y corregidas; fallos preservados |
-| Herramientas modernas | pytest, Node, PGvector, ZAP 2.17.0, Docker, wheel/sdist, CI y 750 HTTP | Herramientas ejecutadas diferenciadas de dobles; Understand bloqueado, no simulado |
+| Herramientas modernas | pytest, Node, PGvector, ZAP2.17.0, Docker, wheel/sdist, CI y750 HTTP históricos; Understand8.1.1269 real el27/11/2026 | [C-06: CSV/HTML, métricas y diagramas](evidencias/understand/README.md) sobre main67d9db2; 149 archivos propios, 0 errores/224 advertencias; no se publica licencia ni se acreditan resultados institucionales |
 
 [Resultados](RESULTADOS_CIERRE.md), [12 entregables](INDICE_12_ENTREGABLES.md), [observaciones](MATRIZ_OBSERVACIONES_CIERRE.md) y [Understand](UNDERSTAND_PENDIENTE.md). No se calcula un porcentaje de acreditación a partir de pruebas de software.

@@ -1,0 +1,620 @@
+{
+  "estado": "validado_con_limitaciones_nativas_declaradas",
+  "fecha_corte": "2026-11-27",
+  "archivos_propios_verificados": 149,
+  "funciones_exportadas": 696,
+  "clases_exportadas": 141,
+  "lineas_codigo": 6719,
+  "complejidad_maxima": 26,
+  "html_nativos_revisados": 21,
+  "enlaces_html_nativos_sin_detalle_exportado": [
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_26.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_15.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_27.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_11.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_8.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_10.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_18.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_19.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_9.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_14.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_17.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_23.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_22.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_24.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_25.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_20.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_21.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_12.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_13.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_1.html",
+      "enlace": "path_16.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_41.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_44.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_52.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_37.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_43.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_42.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_40.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_51.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_54.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_47.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_46.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_29.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_56.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_53.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_35.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_31.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_58.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_49.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_55.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_30.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_57.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_45.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_33.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_28.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_36.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_48.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_38.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_50.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_59.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_32.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_34.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_2.html",
+      "enlace": "path_39.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_83.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_67.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_86.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_69.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_84.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_70.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_74.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_87.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_62.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_76.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_63.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_71.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_77.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_72.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_89.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_60.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_73.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_90.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_79.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_68.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_64.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_80.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_65.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_82.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_61.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_78.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_75.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_88.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_66.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_81.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_3.html",
+      "enlace": "path_85.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_4.html",
+      "enlace": "path_94.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_4.html",
+      "enlace": "path_92.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_4.html",
+      "enlace": "path_93.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_4.html",
+      "enlace": "path_95.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_4.html",
+      "enlace": "path_91.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_113.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_98.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_109.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_104.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_111.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_96.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_102.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_105.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_106.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_112.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_99.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_107.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_103.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_108.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_100.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_110.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_97.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_5.html",
+      "enlace": "path_101.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_116.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_123.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_132.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_127.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_146.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_120.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_133.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_125.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_141.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_118.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_129.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_131.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_130.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_119.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_124.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_128.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_115.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_143.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_121.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_114.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_148.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_136.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_147.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_144.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_135.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_139.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_138.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_122.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_137.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_126.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_142.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_134.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_117.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_145.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_6.html",
+      "enlace": "path_140.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_150.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_154.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_151.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_152.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_149.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_153.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_156.html"
+    },
+    {
+      "pagina": "reportes/complejidad/path_7.html",
+      "enlace": "path_155.html"
+    }
+  ],
+  "limite_enlaces": "La exportacion nativa de complejidad no genera paginas por archivo; se preserva, se declara y se entrega detalle en CSV e index.html derivado",
+  "huellas_fuentes_coinciden": true,
+  "exportador_sintaxis_python": "correcta",
+  "exportador_ejecucion": "exit 0 con upython y und 8.1.1269",
+  "regresion_complementaria": {
+    "comando": "python -m pytest -q -ra tests/test_arquitectura.py tests/test_sql_resources.py",
+    "aprobadas": 27,
+    "omitidas": 0,
+    "advertencias": 1,
+    "limite": "StarletteDeprecationWarning de dependencia; log preservado"
+  },
+  "producto_modificado": false
+}

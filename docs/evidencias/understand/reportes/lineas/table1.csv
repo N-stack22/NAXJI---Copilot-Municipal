@@ -1,0 +1,21 @@
+Name,Lines,Code Lines,Comment Lines,Inactive Lines,Preprocessor Lines,Blank Lines,Ratio Comment to Code
+auth_controller.py,98,75,4,,,19,0.05
+base.py,14,7,0,,,7,0.00
+catalogo_controller.py,31,19,0,,,12,0.00
+catalogo_response.py,55,43,0,,,12,0.00
+documento_controller.py,151,115,0,,,36,0.00
+error_response.py,18,14,0,,,4,0.00
+ia_controller.py,43,31,0,,,12,0.00
+informe_controller.py,42,30,0,,,12,0.00
+informe_request.py,17,12,0,,,5,0.00
+informe_response.py,56,48,2,,,6,0.04
+limite_documental.py,32,28,1,,,3,0.04
+operacion_controller.py,19,16,0,,,3,0.00
+prediccion_request.py,12,9,0,,,3,0.00
+prediccion_response.py,95,81,0,,,14,0.00
+revision_controller.py,76,49,0,,,27,0.00
+seccion_response.py,7,5,0,,,2,0.00
+solicitud_controller.py,62,44,0,,,18,0.00
+solicitud_request.py,55,40,1,,,14,0.03
+solicitud_response.py,30,24,0,,,6,0.00
+usuario_controller.py,28,20,0,,,8,0.00

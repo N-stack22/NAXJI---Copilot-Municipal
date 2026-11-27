@@ -1,0 +1,424 @@
+origen,destino,capa_origen,capa_destino,referencias,tipos
+src/adapters/in/controllers/auth_controller.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Inherit
+src/adapters/in/controllers/auth_controller.py,src/infrastructure/auth/supabase.py,Adaptadores de entrada,Infraestructura,6,Import;Import From;Raise;Use
+src/adapters/in/controllers/catalogo_controller.py,src/adapters/in/schemas/catalogo_response.py,Adaptadores de entrada,Adaptadores de entrada,12,Call;Import;Import From;Use
+src/adapters/in/controllers/catalogo_controller.py,src/adapters/in/schemas/error_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/controllers/catalogo_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,11,Import;Import From;Typed
+src/adapters/in/controllers/documento_controller.py,src/adapters/in/schemas/error_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/controllers/documento_controller.py,src/domain/services/errores.py,Adaptadores de entrada,Dominio,5,Import;Import From;Raise
+src/adapters/in/controllers/documento_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,19,Import;Import From;Typed
+src/adapters/in/controllers/ia_controller.py,src/adapters/in/schemas/error_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/controllers/ia_controller.py,src/adapters/in/schemas/informe_request.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Typed
+src/adapters/in/controllers/ia_controller.py,src/adapters/in/schemas/informe_response.py,Adaptadores de entrada,Adaptadores de entrada,5,Call;Import;Import From;Use
+src/adapters/in/controllers/ia_controller.py,src/adapters/in/schemas/prediccion_request.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Typed
+src/adapters/in/controllers/ia_controller.py,src/adapters/in/schemas/prediccion_response.py,Adaptadores de entrada,Adaptadores de entrada,9,Call;Import;Import From;Use
+src/adapters/in/controllers/ia_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,11,Import;Import From;Typed
+src/adapters/in/controllers/informe_controller.py,src/adapters/in/schemas/error_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/controllers/informe_controller.py,src/adapters/in/schemas/informe_request.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Typed
+src/adapters/in/controllers/informe_controller.py,src/adapters/in/schemas/informe_response.py,Adaptadores de entrada,Adaptadores de entrada,9,Call;Import;Import From;Use
+src/adapters/in/controllers/informe_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,11,Import;Import From;Typed
+src/adapters/in/controllers/operacion_controller.py,src/application/use_cases/servicios_solicitud.py,Adaptadores de entrada,Aplicacion,3,Call;Import;Import From
+src/adapters/in/controllers/operacion_controller.py,src/domain/services/errores.py,Adaptadores de entrada,Dominio,3,Import;Import From;Raise
+src/adapters/in/controllers/operacion_controller.py,src/domain/value_objects/estados.py,Adaptadores de entrada,Dominio,4,Import;Import From;Use
+src/adapters/in/controllers/operacion_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,5,Import;Import From;Typed
+src/adapters/in/controllers/operacion_controller.py,src/infrastructure/diagnostico.py,Adaptadores de entrada,Infraestructura,3,Call;Import;Import From
+src/adapters/in/controllers/revision_controller.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Inherit
+src/adapters/in/controllers/revision_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,19,Import;Import From;Typed
+src/adapters/in/controllers/solicitud_controller.py,src/adapters/in/schemas/error_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/controllers/solicitud_controller.py,src/adapters/in/schemas/informe_response.py,Adaptadores de entrada,Adaptadores de entrada,5,Call;Import;Import From;Use
+src/adapters/in/controllers/solicitud_controller.py,src/adapters/in/schemas/solicitud_request.py,Adaptadores de entrada,Adaptadores de entrada,10,Import;Import From;Typed
+src/adapters/in/controllers/solicitud_controller.py,src/adapters/in/schemas/solicitud_response.py,Adaptadores de entrada,Adaptadores de entrada,9,Import;Import From;Use
+src/adapters/in/controllers/solicitud_controller.py,src/application/ports/input/solicitud_use_case.py,Adaptadores de entrada,Aplicacion,5,Call;Import;Import From
+src/adapters/in/controllers/solicitud_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,17,Import;Import From;Typed
+src/adapters/in/controllers/usuario_controller.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Inherit
+src/adapters/in/controllers/usuario_controller.py,src/adapters/in/schemas/error_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/controllers/usuario_controller.py,src/domain/value_objects/estados.py,Adaptadores de entrada,Dominio,3,Import;Import From;Use
+src/adapters/in/controllers/usuario_controller.py,src/infrastructure/dependencies.py,Adaptadores de entrada,Infraestructura,3,Import;Import From;Typed
+src/adapters/in/schemas/catalogo_response.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,5,Import;Import From;Inherit
+src/adapters/in/schemas/catalogo_response.py,src/adapters/in/schemas/seccion_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/schemas/catalogo_response.py,src/domain/value_objects/estados.py,Adaptadores de entrada,Dominio,2,Import;Import From
+src/adapters/in/schemas/catalogo_response.py,src/domain/value_objects/seccion_salida.py,Adaptadores de entrada,Dominio,3,Call;Import;Import From
+src/adapters/in/schemas/informe_request.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,7,Import;Import From;Inherit;Typed;Use
+src/adapters/in/schemas/informe_response.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Inherit
+src/adapters/in/schemas/informe_response.py,src/adapters/in/schemas/seccion_response.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Use
+src/adapters/in/schemas/informe_response.py,src/application/use_cases/exportar_informe.py,Adaptadores de entrada,Aplicacion,3,Call;Import;Import From
+src/adapters/in/schemas/informe_response.py,src/domain/entities/informe.py,Adaptadores de entrada,Dominio,3,Import;Import From;Typed
+src/adapters/in/schemas/informe_response.py,src/domain/value_objects/estados.py,Adaptadores de entrada,Dominio,3,Import;Import From
+src/adapters/in/schemas/informe_response.py,src/domain/value_objects/seccion_salida.py,Adaptadores de entrada,Dominio,3,Call;Import;Import From
+src/adapters/in/schemas/prediccion_request.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Inherit
+src/adapters/in/schemas/prediccion_request.py,src/domain/value_objects/estados.py,Adaptadores de entrada,Dominio,2,Import;Import From
+src/adapters/in/schemas/prediccion_response.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,7,Import;Import From;Inherit
+src/adapters/in/schemas/prediccion_response.py,src/application/ports/output/catalogo_repository.py,Adaptadores de entrada,Aplicacion,3,Import;Import From;Typed
+src/adapters/in/schemas/prediccion_response.py,src/domain/entities/prediccion_contexto.py,Adaptadores de entrada,Dominio,3,Import;Import From;Typed
+src/adapters/in/schemas/prediccion_response.py,src/domain/value_objects/estados.py,Adaptadores de entrada,Dominio,2,Import;Import From
+src/adapters/in/schemas/seccion_response.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,3,Import;Import From;Inherit
+src/adapters/in/schemas/solicitud_request.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,8,Import;Import From;Inherit;Use
+src/adapters/in/schemas/solicitud_request.py,src/domain/value_objects/estado_solicitud.py,Adaptadores de entrada,Dominio,3,Import;Import From;Use
+src/adapters/in/schemas/solicitud_response.py,src/adapters/in/schemas/base.py,Adaptadores de entrada,Adaptadores de entrada,4,Import;Import From;Inherit
+src/adapters/in/schemas/solicitud_response.py,src/domain/value_objects/estado_solicitud.py,Adaptadores de entrada,Dominio,2,Import;Import From
+src/adapters/in/web/App.jsx,src/adapters/in/web/components/EstadoAcceso.jsx,Frontend,Frontend,5,Javascript Import;Javascript Import From;Javascript Use
+src/adapters/in/web/App.jsx,src/adapters/in/web/components/ProtectedRoute.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/App.jsx,src/adapters/in/web/layouts/MainLayout.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/App.jsx,src/adapters/in/web/pages/Documentos.jsx,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/App.jsx,src/adapters/in/web/pages/Login.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/App.jsx,src/adapters/in/web/pages/RevisionInformes.jsx,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/App.jsx,src/adapters/in/web/services/cargarFormulario.js,Frontend,Frontend,3,Javascript Import;Javascript Import From;Javascript Pointer
+src/adapters/in/web/App.jsx,src/adapters/in/web/styles/acceso.css,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/App.jsx,src/adapters/in/web/styles/app.css,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/App.jsx,src/adapters/in/web/styles/identidad.css,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/components/DocumentosInforme.jsx,src/adapters/in/web/services/api.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/DocumentosInforme.jsx,src/adapters/in/web/services/authService.js,Frontend,Frontend,4,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/DocumentosInforme.jsx,src/adapters/in/web/services/documentoService.js,Frontend,Frontend,14,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/EditorBorrador.jsx,src/adapters/in/web/components/EncabezadoDocumento.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/components/EditorBorrador.jsx,src/adapters/in/web/services/estructuraBorrador.js,Frontend,Frontend,6,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/EncabezadoDocumento.jsx,src/adapters/in/web/services/encabezadoDocumento.js,Frontend,Frontend,9,Javascript Call;Javascript Import;Javascript Import From;Javascript Use
+src/adapters/in/web/components/FuentesInforme.jsx,src/adapters/in/web/services/api.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/FuentesInforme.jsx,src/adapters/in/web/services/documentoService.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/Header.jsx,src/adapters/in/web/services/api.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/Header.jsx,src/adapters/in/web/services/authService.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/ProtectedRoute.jsx,src/adapters/in/web/components/EstadoAcceso.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/components/ProtectedRoute.jsx,src/adapters/in/web/services/api.js,Frontend,Frontend,4,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/ProtectedRoute.jsx,src/adapters/in/web/services/authService.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/ProtectedRoute.jsx,src/adapters/in/web/services/cargarFormulario.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/ProtectedRoute.jsx,src/adapters/in/web/services/session.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/components/VistaPreviaInforme.jsx,src/adapters/in/web/components/EncabezadoDocumento.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/components/VistaPreviaInforme.jsx,src/adapters/in/web/components/FuentesInforme.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/components/VistaPreviaInforme.jsx,src/adapters/in/web/services/encabezadoDocumento.js,Frontend,Frontend,3,Javascript Import;Javascript Import From;Javascript Use
+src/adapters/in/web/components/VistaPreviaInforme.jsx,src/adapters/in/web/services/estructuraBorrador.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/layouts/MainLayout.jsx,src/adapters/in/web/components/Header.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/main.jsx,src/adapters/in/web/App.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/Documentos.jsx,src/adapters/in/web/components/DocumentosInforme.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/Documentos.jsx,src/adapters/in/web/services/authService.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/Documentos.jsx,src/adapters/in/web/styles/nuevoInforme.css,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/pages/Login.jsx,src/adapters/in/web/services/api.js,Frontend,Frontend,4,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/Login.jsx,src/adapters/in/web/services/authService.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From;Javascript Use
+src/adapters/in/web/pages/Login.jsx,src/adapters/in/web/services/cargarFormulario.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/Login.jsx,src/adapters/in/web/services/session.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/components/DocumentosInforme.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/components/EditorBorrador.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/components/FuentesInforme.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/components/NormativasSugeridas.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/components/PasosInforme.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/components/VistaPreviaInforme.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/api.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/authService.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/catalogoService.js,Frontend,Frontend,10,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/encabezadoDocumento.js,Frontend,Frontend,7,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/estructuraBorrador.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/flujoInforme.js,Frontend,Frontend,27,Javascript Call;Javascript Import;Javascript Import From;Javascript Pointer
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/iaService.js,Frontend,Frontend,9,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/informeService.js,Frontend,Frontend,15,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/progresoInforme.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/services/solicitudService.js,Frontend,Frontend,11,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/NuevoInforme.jsx,src/adapters/in/web/styles/nuevoInforme.css,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/pages/RevisionInformes.jsx,src/adapters/in/web/components/EncabezadoDocumento.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/RevisionInformes.jsx,src/adapters/in/web/components/FuentesInforme.jsx,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/pages/RevisionInformes.jsx,src/adapters/in/web/services/api.js,Frontend,Frontend,6,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/RevisionInformes.jsx,src/adapters/in/web/services/authService.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/pages/RevisionInformes.jsx,src/adapters/in/web/styles/revision.css,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/services/api.js,src/adapters/in/web/services/session.js,Frontend,Frontend,13,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/services/authService.js,src/adapters/in/web/services/api.js,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/services/authService.js,src/adapters/in/web/services/session.js,Frontend,Frontend,14,Javascript Call;Javascript Import;Javascript Import From;Javascript Pointer
+src/adapters/in/web/services/cargarFormulario.js,src/adapters/in/web/pages/NuevoInforme.jsx,Frontend,Frontend,1,Javascript Import
+src/adapters/in/web/services/catalogoService.js,src/adapters/in/web/services/api.js,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/services/documentoService.js,src/adapters/in/web/services/api.js,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/services/iaService.js,src/adapters/in/web/services/api.js,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/services/iaService.js,src/adapters/in/web/services/flujoInforme.js,Frontend,Frontend,3,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/services/informeService.js,src/adapters/in/web/services/api.js,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/in/web/services/progresoInforme.js,src/adapters/in/web/services/flujoInforme.js,Frontend,Frontend,5,Javascript Call;Javascript Import;Javascript Import From
+src/adapters/in/web/services/solicitudService.js,src/adapters/in/web/services/api.js,Frontend,Frontend,2,Javascript Import;Javascript Import From
+src/adapters/out/ai/context_predictor_catalogo.py,src/adapters/out/persistence/__init__.py,Adaptadores de salida,Adaptadores de salida,1,Import Implicit
+src/adapters/out/ai/context_predictor_catalogo.py,src/adapters/out/persistence/datos_demo.py,Adaptadores de salida,Adaptadores de salida,8,Import;Import From;Use
+src/adapters/out/ai/context_predictor_catalogo.py,src/application/ports/output/context_predictor.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/ai/context_predictor_catalogo.py,src/domain/entities/prediccion_contexto.py,Adaptadores de salida,Dominio,3,Call;Import;Import From
+src/adapters/out/ai/context_predictor_catalogo.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,5,Import;Import From;Raise;Use
+src/adapters/out/ai/context_predictor_mock.py,src/adapters/out/persistence/__init__.py,Adaptadores de salida,Adaptadores de salida,1,Import Implicit
+src/adapters/out/ai/context_predictor_mock.py,src/adapters/out/persistence/datos_demo.py,Adaptadores de salida,Adaptadores de salida,7,Import;Import From;Use
+src/adapters/out/ai/context_predictor_mock.py,src/application/ports/output/context_predictor.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/ai/context_predictor_mock.py,src/domain/entities/prediccion_contexto.py,Adaptadores de salida,Dominio,6,Call;Import;Import From;Typed
+src/adapters/out/ai/embeddings_ollama.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,3,Import;Import From;Raise
+src/adapters/out/ai/fidelidad_inspeccion.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,12,Import;Import From;Raise
+src/adapters/out/ai/generador_borrador_mock.py,src/application/ports/output/generador_borrador.py,Adaptadores de salida,Aplicacion,8,Call;Import;Import From;Inherit;Typed
+src/adapters/out/ai/generador_borrador_mock.py,src/domain/entities/plantilla.py,Adaptadores de salida,Dominio,3,Import;Import From;Typed
+src/adapters/out/ai/generador_borrador_mock.py,src/domain/value_objects/seccion_salida.py,Adaptadores de salida,Dominio,3,Call;Import;Import From
+src/adapters/out/ai/generador_borrador_ollama.py,src/adapters/out/ai/fidelidad_inspeccion.py,Adaptadores de salida,Adaptadores de salida,9,Call;Import;Import From
+src/adapters/out/ai/generador_borrador_ollama.py,src/adapters/out/ai/ollama_adapter.py,Adaptadores de salida,Adaptadores de salida,3,Call;Import;Import From
+src/adapters/out/ai/generador_borrador_ollama.py,src/application/ports/output/generador_borrador.py,Adaptadores de salida,Aplicacion,8,Call;Import;Import From;Inherit;Typed
+src/adapters/out/ai/generador_borrador_ollama.py,src/domain/entities/plantilla.py,Adaptadores de salida,Dominio,3,Import;Import From;Typed
+src/adapters/out/ai/generador_borrador_ollama.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,8,Import;Import From;Raise;Use
+src/adapters/out/ai/generador_borrador_ollama.py,src/domain/services/informe_service.py,Adaptadores de salida,Dominio,3,Call;Import;Import From
+src/adapters/out/ai/generador_borrador_ollama.py,src/domain/value_objects/seccion_salida.py,Adaptadores de salida,Dominio,3,Call;Import;Import From
+src/adapters/out/ai/ollama_adapter.py,src/application/ports/output/llm_port.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/ai/ollama_adapter.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,9,Import;Import From;Raise
+src/adapters/out/ai/sklearn_context_predictor.py,src/adapters/out/ai/integridad_modelos.py,Adaptadores de salida,Adaptadores de salida,3,Call;Import;Import From
+src/adapters/out/ai/sklearn_context_predictor.py,src/application/ports/output/context_predictor.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/ai/sklearn_context_predictor.py,src/domain/entities/prediccion_contexto.py,Adaptadores de salida,Dominio,6,Call;Import;Import From;Typed
+src/adapters/out/documents/almacen_supabase.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,4,Import;Import From;Raise
+src/adapters/out/documents/exportador_docx.py,src/adapters/out/documents/exportador_mdt.py,Adaptadores de salida,Adaptadores de salida,3,Call;Import;Import From
+src/adapters/out/documents/exportador_docx.py,src/adapters/out/documents/fuentes_docx.py,Adaptadores de salida,Adaptadores de salida,3,Call;Import;Import From
+src/adapters/out/documents/exportador_docx.py,src/application/ports/output/exportador_informe.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/documents/exportador_docx.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,5,Import;Import From;Raise
+src/adapters/out/documents/exportador_docx.py,src/domain/value_objects/encabezado_documento.py,Adaptadores de salida,Dominio,13,Call;Import;Import From;Use
+src/adapters/out/documents/exportador_docx.py,src/domain/value_objects/estados.py,Adaptadores de salida,Dominio,6,Import;Import From;Use
+src/adapters/out/documents/exportador_docx.py,src/domain/value_objects/seccion_salida.py,Adaptadores de salida,Dominio,5,Call;Import;Import From;Use
+src/adapters/out/documents/exportador_mdt.py,src/adapters/out/documents/fuentes_docx.py,Adaptadores de salida,Adaptadores de salida,3,Call;Import;Import From
+src/adapters/out/documents/exportador_mdt.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,6,Import;Import From;Raise
+src/adapters/out/documents/exportador_mdt.py,src/domain/value_objects/encabezado_documento.py,Adaptadores de salida,Dominio,7,Call;Import;Import From;Use
+src/adapters/out/documents/exportador_pdf.py,src/adapters/out/documents/exportador_docx.py,Adaptadores de salida,Adaptadores de salida,6,Call;Import;Import From;Use
+src/adapters/out/documents/exportador_pdf.py,src/application/ports/output/exportador_informe.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/documents/extractor.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,5,Import;Import From;Raise;Use
+src/adapters/out/persistence/catalogo_repository_memory.py,src/adapters/out/persistence/datos_demo.py,Adaptadores de salida,Adaptadores de salida,7,Import;Import From;Use
+src/adapters/out/persistence/catalogo_repository_memory.py,src/application/ports/output/catalogo_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/datos_demo.py,src/domain/entities/catalogo.py,Adaptadores de salida,Dominio,22,Call;Import;Import From
+src/adapters/out/persistence/datos_demo.py,src/domain/entities/plantilla.py,Adaptadores de salida,Dominio,7,Call;Import;Import From;Use
+src/adapters/out/persistence/datos_demo.py,src/domain/value_objects/estados.py,Adaptadores de salida,Dominio,14,Import;Import From;Use
+src/adapters/out/persistence/datos_demo.py,src/domain/value_objects/estructura_piloto.py,Adaptadores de salida,Dominio,4,Call;Import;Import From
+src/adapters/out/persistence/datos_demo.py,src/domain/value_objects/fuentes_piloto.py,Adaptadores de salida,Dominio,3,Call;Import;Import From
+src/adapters/out/persistence/documentos_postgres.py,src/adapters/out/persistence/postgres.py,Adaptadores de salida,Adaptadores de salida,7,Call;Import;Import From
+src/adapters/out/persistence/documentos_postgres.py,src/adapters/out/persistence/sql_resources.py,Adaptadores de salida,Adaptadores de salida,17,Call;Import;Import From
+src/adapters/out/persistence/documentos_postgres.py,src/domain/entities/documento.py,Adaptadores de salida,Dominio,5,Import;Import From;Use
+src/adapters/out/persistence/documentos_postgres.py,src/domain/entities/solicitud.py,Adaptadores de salida,Dominio,4,Call;Import;Import From
+src/adapters/out/persistence/documentos_postgres.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,4,Import;Import From;Raise
+src/adapters/out/persistence/documentos_postgres.py,src/domain/value_objects/estados.py,Adaptadores de salida,Dominio,4,Import;Import From;Use
+src/adapters/out/persistence/estado_postgres.py,src/adapters/out/persistence/sql_resources.py,Adaptadores de salida,Adaptadores de salida,3,Call;Import;Import From
+src/adapters/out/persistence/informe_auditado.py,src/application/ports/output/informe_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/informe_auditado.py,src/domain/entities/solicitud.py,Adaptadores de salida,Dominio,3,Call;Import;Import From
+src/adapters/out/persistence/informe_repository_memory.py,src/adapters/out/persistence/memoria.py,Adaptadores de salida,Adaptadores de salida,3,Import;Import From;Typed
+src/adapters/out/persistence/informe_repository_memory.py,src/application/ports/output/informe_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/informe_repository_memory.py,src/domain/entities/informe.py,Adaptadores de salida,Dominio,6,Import;Import From;Typed;Use
+src/adapters/out/persistence/informe_repository_memory.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,4,Import;Import From;Raise
+src/adapters/out/persistence/memoria.py,src/application/ports/output/unidad_trabajo.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/memoria.py,src/domain/entities/informe.py,Adaptadores de salida,Dominio,3,Import;Import From;Use
+src/adapters/out/persistence/memoria.py,src/domain/entities/prediccion_contexto.py,Adaptadores de salida,Dominio,3,Import;Import From;Use
+src/adapters/out/persistence/memoria.py,src/domain/entities/solicitud.py,Adaptadores de salida,Dominio,3,Import;Import From;Use
+src/adapters/out/persistence/perfil_repository_postgres.py,src/adapters/out/persistence/sql_resources.py,Adaptadores de salida,Adaptadores de salida,4,Call;Import;Import From
+src/adapters/out/persistence/perfil_repository_postgres.py,src/application/ports/output/perfil_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/perfil_repository_postgres.py,src/domain/entities/usuario_actual.py,Adaptadores de salida,Dominio,3,Call;Import;Import From
+src/adapters/out/persistence/perfil_repository_postgres.py,src/domain/value_objects/estados.py,Adaptadores de salida,Dominio,4,Call;Import;Import From;Use
+src/adapters/out/persistence/plantilla_repository_memory.py,src/adapters/out/persistence/datos_demo.py,Adaptadores de salida,Adaptadores de salida,3,Call;Import;Import From
+src/adapters/out/persistence/plantilla_repository_memory.py,src/application/ports/output/plantilla_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/postgres.py,src/adapters/out/persistence/sql_resources.py,Adaptadores de salida,Adaptadores de salida,28,Call;Import;Import From
+src/adapters/out/persistence/postgres.py,src/application/ports/output/catalogo_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/postgres.py,src/application/ports/output/informe_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/postgres.py,src/application/ports/output/plantilla_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/postgres.py,src/application/ports/output/prediccion_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/postgres.py,src/application/ports/output/solicitud_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/postgres.py,src/application/ports/output/unidad_trabajo.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/postgres.py,src/domain/entities/catalogo.py,Adaptadores de salida,Dominio,9,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/entities/correspondencia_normativa.py,Adaptadores de salida,Dominio,3,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/entities/informe.py,Adaptadores de salida,Dominio,5,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/entities/plantilla.py,Adaptadores de salida,Dominio,5,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/entities/prediccion_contexto.py,Adaptadores de salida,Dominio,5,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/entities/solicitud.py,Adaptadores de salida,Dominio,5,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/services/errores.py,Adaptadores de salida,Dominio,6,Import;Import From;Raise
+src/adapters/out/persistence/postgres.py,src/domain/value_objects/estado_solicitud.py,Adaptadores de salida,Dominio,3,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/value_objects/estados.py,Adaptadores de salida,Dominio,9,Import;Import From;Use
+src/adapters/out/persistence/postgres.py,src/domain/value_objects/seccion_salida.py,Adaptadores de salida,Dominio,5,Call;Import;Import From
+src/adapters/out/persistence/postgres.py,src/infrastructure/configuration/database.py,Adaptadores de salida,Infraestructura,6,Call;Import;Import From;Typed
+src/adapters/out/persistence/prediccion_repository_memory.py,src/adapters/out/persistence/memoria.py,Adaptadores de salida,Adaptadores de salida,3,Import;Import From;Typed
+src/adapters/out/persistence/prediccion_repository_memory.py,src/application/ports/output/prediccion_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/prediccion_repository_memory.py,src/domain/entities/prediccion_contexto.py,Adaptadores de salida,Dominio,5,Import;Import From;Typed;Use
+src/adapters/out/persistence/revision_memory.py,src/application/ports/output/revision_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/revision_memory.py,src/domain/value_objects/estados.py,Adaptadores de salida,Dominio,6,Import;Import From;Use
+src/adapters/out/persistence/revision_postgres.py,src/adapters/out/persistence/sql_resources.py,Adaptadores de salida,Adaptadores de salida,6,Call;Import;Import From
+src/adapters/out/persistence/revision_postgres.py,src/application/ports/output/revision_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/revision_postgres.py,src/domain/value_objects/estados.py,Adaptadores de salida,Dominio,6,Import;Import From;Use
+src/adapters/out/persistence/solicitud_repository_memory.py,src/adapters/out/persistence/memoria.py,Adaptadores de salida,Adaptadores de salida,4,Call;Import;Import From;Use
+src/adapters/out/persistence/solicitud_repository_memory.py,src/application/ports/output/solicitud_repository.py,Adaptadores de salida,Aplicacion,3,Import;Import From;Inherit
+src/adapters/out/persistence/solicitud_repository_memory.py,src/domain/entities/solicitud.py,Adaptadores de salida,Dominio,5,Import;Import From;Typed;Use
+src/application/ports/input/solicitud_use_case.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/ports/input/solicitud_use_case.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/ports/output/catalogo_repository.py,src/domain/entities/catalogo.py,Aplicacion,Dominio,7,Import;Import From;Use
+src/application/ports/output/catalogo_repository.py,src/domain/entities/correspondencia_normativa.py,Aplicacion,Dominio,3,Import;Import From;Use
+src/application/ports/output/context_predictor.py,src/domain/entities/prediccion_contexto.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/ports/output/exportador_informe.py,src/domain/entities/informe.py,Aplicacion,Dominio,5,Import;Import From;Typed
+src/application/ports/output/generador_borrador.py,src/domain/entities/plantilla.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/ports/output/informe_repository.py,src/domain/entities/informe.py,Aplicacion,Dominio,6,Import;Import From;Typed;Use
+src/application/ports/output/perfil_repository.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Use
+src/application/ports/output/plantilla_repository.py,src/domain/entities/plantilla.py,Aplicacion,Dominio,4,Import;Import From;Use
+src/application/ports/output/prediccion_repository.py,src/domain/entities/prediccion_contexto.py,Aplicacion,Dominio,5,Import;Import From;Typed;Use
+src/application/ports/output/solicitud_repository.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,5,Import;Import From;Typed;Use
+src/application/use_cases/actualizar_borrador.py,src/application/ports/output/informe_repository.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/actualizar_borrador.py,src/application/use_cases/documentos.py,Aplicacion,Aplicacion,3,Call;Import;Import From
+src/application/use_cases/actualizar_borrador.py,src/application/use_cases/obtener_informe.py,Aplicacion,Aplicacion,4,Call;Import;Import From
+src/application/use_cases/actualizar_borrador.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,5,Call;Import;Import From;Typed
+src/application/use_cases/actualizar_borrador.py,src/domain/entities/informe.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/actualizar_borrador.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/actualizar_borrador.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/actualizar_borrador.py,src/domain/services/errores.py,Aplicacion,Dominio,8,Import;Import From;Raise
+src/application/use_cases/actualizar_borrador.py,src/domain/services/informe_service.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/actualizar_borrador.py,src/domain/value_objects/encabezado_documento.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/actualizar_borrador.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,7,Import;Import From;Use
+src/application/use_cases/actualizar_borrador.py,src/domain/value_objects/seccion_salida.py,Aplicacion,Dominio,5,Call;Import;Import From;Use
+src/application/use_cases/actualizar_solicitud.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/actualizar_solicitud.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/actualizar_solicitud.py,src/domain/services/errores.py,Aplicacion,Dominio,5,Import;Import From;Raise
+src/application/use_cases/actualizar_solicitud.py,src/domain/services/solicitud_service.py,Aplicacion,Dominio,4,Call;Import;Import From;Use
+src/application/use_cases/actualizar_solicitud.py,src/domain/value_objects/estado_solicitud.py,Aplicacion,Dominio,8,Import;Import From;Use
+src/application/use_cases/actualizar_solicitud.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,4,Import;Import From;Use
+src/application/use_cases/consultar_catalogos.py,src/application/ports/output/catalogo_repository.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/consultar_catalogos.py,src/application/ports/output/plantilla_repository.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/consultar_catalogos.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,6,Call;Import;Import From
+src/application/use_cases/consultar_catalogos.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,6,Import;Import From;Typed
+src/application/use_cases/consultar_catalogos.py,src/domain/services/errores.py,Aplicacion,Dominio,3,Import;Import From;Raise
+src/application/use_cases/crear_solicitud.py,src/application/ports/input/solicitud_use_case.py,Aplicacion,Aplicacion,5,Import;Import From;Inherit;Typed
+src/application/use_cases/crear_solicitud.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,5,Call;Import;Import From;Typed
+src/application/use_cases/crear_solicitud.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,4,Call;Import;Import From;Typed
+src/application/use_cases/crear_solicitud.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/documentos.py,src/application/ports/output/documentos.py,Aplicacion,Aplicacion,9,Import;Import From;Typed
+src/application/use_cases/documentos.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,6,Call;Import;Import From
+src/application/use_cases/documentos.py,src/domain/entities/documento.py,Aplicacion,Dominio,6,Call;Import;Import From
+src/application/use_cases/documentos.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,4,Call;Import;Import From
+src/application/use_cases/documentos.py,src/domain/services/errores.py,Aplicacion,Dominio,30,Import;Import From;Raise;Use
+src/application/use_cases/documentos.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,6,Import;Import From;Use
+src/application/use_cases/exportar_informe.py,src/domain/services/errores.py,Aplicacion,Dominio,3,Import;Import From;Raise
+src/application/use_cases/generar_borrador.py,src/application/ports/output/generador_borrador.py,Aplicacion,Aplicacion,7,Call;Import;Import From;Typed
+src/application/use_cases/generar_borrador.py,src/application/ports/output/informe_repository.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/generar_borrador.py,src/application/use_cases/documentos.py,Aplicacion,Aplicacion,3,Call;Import;Import From
+src/application/use_cases/generar_borrador.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/generar_borrador.py,src/application/use_cases/verificar_referencias_normativas.py,Aplicacion,Aplicacion,4,Call;Import;Import From
+src/application/use_cases/generar_borrador.py,src/domain/entities/informe.py,Aplicacion,Dominio,5,Call;Import;Import From
+src/application/use_cases/generar_borrador.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,3,Import;Import From;Use
+src/application/use_cases/generar_borrador.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/generar_borrador.py,src/domain/services/errores.py,Aplicacion,Dominio,23,Import;Import From;Raise;Use
+src/application/use_cases/generar_borrador.py,src/domain/services/informe_service.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/generar_borrador.py,src/domain/services/solicitud_service.py,Aplicacion,Dominio,6,Call;Import;Import From;Use
+src/application/use_cases/generar_borrador.py,src/domain/value_objects/encabezado_documento.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/generar_borrador.py,src/domain/value_objects/estado_solicitud.py,Aplicacion,Dominio,18,Import;Import From;Use
+src/application/use_cases/generar_borrador.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,9,Import;Import From;Use
+src/application/use_cases/generar_borrador.py,src/domain/value_objects/seccion_salida.py,Aplicacion,Dominio,4,Call;Import;Import From
+src/application/use_cases/guardar_solicitud_completa.py,src/application/use_cases/actualizar_solicitud.py,Aplicacion,Aplicacion,4,Call;Import;Import From
+src/application/use_cases/guardar_solicitud_completa.py,src/application/use_cases/crear_solicitud.py,Aplicacion,Aplicacion,4,Call;Import;Import From
+src/application/use_cases/guardar_solicitud_completa.py,src/application/use_cases/guardar_valores_solicitud.py,Aplicacion,Aplicacion,4,Call;Import;Import From
+src/application/use_cases/guardar_solicitud_completa.py,src/domain/services/errores.py,Aplicacion,Dominio,3,Import;Import From;Raise
+src/application/use_cases/guardar_solicitud_completa.py,src/domain/services/solicitud_service.py,Aplicacion,Dominio,4,Call;Import;Import From;Use
+src/application/use_cases/guardar_valores_solicitud.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/guardar_valores_solicitud.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,5,Call;Import;Import From
+src/application/use_cases/guardar_valores_solicitud.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/guardar_valores_solicitud.py,src/domain/services/errores.py,Aplicacion,Dominio,3,Import;Import From;Raise
+src/application/use_cases/guardar_valores_solicitud.py,src/domain/services/solicitud_service.py,Aplicacion,Dominio,6,Call;Import;Import From;Use
+src/application/use_cases/obtener_informe.py,src/application/ports/output/informe_repository.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/obtener_informe.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/obtener_informe.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,4,Import;Import From;Typed
+src/application/use_cases/obtener_informe.py,src/domain/services/errores.py,Aplicacion,Dominio,4,Import;Import From;Raise
+src/application/use_cases/obtener_solicitud.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/obtener_solicitud.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/predecir_contexto.py,src/application/ports/output/context_predictor.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/predecir_contexto.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/predecir_contexto.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/predecir_contexto.py,src/domain/services/errores.py,Aplicacion,Dominio,7,Import;Import From;Raise
+src/application/use_cases/predecir_contexto.py,src/domain/services/solicitud_service.py,Aplicacion,Dominio,4,Call;Import;Import From;Use
+src/application/use_cases/predecir_contexto.py,src/domain/value_objects/estado_solicitud.py,Aplicacion,Dominio,4,Import;Import From;Use
+src/application/use_cases/predecir_contexto.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,4,Import;Import From;Use
+src/application/use_cases/revision_informes.py,src/application/use_cases/documentos.py,Aplicacion,Aplicacion,3,Call;Import;Import From
+src/application/use_cases/revision_informes.py,src/application/use_cases/exportar_informe.py,Aplicacion,Aplicacion,4,Call;Import;Import From
+src/application/use_cases/revision_informes.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,6,Call;Import;Import From
+src/application/use_cases/revision_informes.py,src/domain/entities/informe.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/revision_informes.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/revision_informes.py,src/domain/services/errores.py,Aplicacion,Dominio,21,Import;Import From;Raise
+src/application/use_cases/revision_informes.py,src/domain/services/informe_service.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/revision_informes.py,src/domain/services/respaldo.py,Aplicacion,Dominio,7,Call;Import;Import From
+src/application/use_cases/revision_informes.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,21,Call;Import;Import From;Use
+src/application/use_cases/servicios_solicitud.py,src/application/ports/output/catalogo_repository.py,Aplicacion,Aplicacion,2,Import;Import From
+src/application/use_cases/servicios_solicitud.py,src/application/ports/output/plantilla_repository.py,Aplicacion,Aplicacion,2,Import;Import From
+src/application/use_cases/servicios_solicitud.py,src/application/ports/output/prediccion_repository.py,Aplicacion,Aplicacion,2,Import;Import From
+src/application/use_cases/servicios_solicitud.py,src/application/ports/output/solicitud_repository.py,Aplicacion,Aplicacion,2,Import;Import From
+src/application/use_cases/servicios_solicitud.py,src/application/ports/output/unidad_trabajo.py,Aplicacion,Aplicacion,2,Import;Import From
+src/application/use_cases/servicios_solicitud.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,9,Call;Import;Import From;Typed
+src/application/use_cases/servicios_solicitud.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,4,Import;Import From;Typed
+src/application/use_cases/servicios_solicitud.py,src/domain/services/errores.py,Aplicacion,Dominio,15,Import;Import From;Raise;Use
+src/application/use_cases/servicios_solicitud.py,src/domain/services/solicitud_service.py,Aplicacion,Dominio,6,Call;Import;Import From;Use
+src/application/use_cases/servicios_solicitud.py,src/domain/value_objects/estado_solicitud.py,Aplicacion,Dominio,6,Import;Import From;Use
+src/application/use_cases/servicios_solicitud.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,13,Import;Import From;Use
+src/application/use_cases/validar_prediccion.py,src/application/use_cases/servicios_solicitud.py,Aplicacion,Aplicacion,3,Import;Import From;Typed
+src/application/use_cases/validar_prediccion.py,src/application/use_cases/verificar_referencias_normativas.py,Aplicacion,Aplicacion,3,Call;Import;Import From
+src/application/use_cases/validar_prediccion.py,src/domain/entities/solicitud.py,Aplicacion,Dominio,3,Call;Import;Import From
+src/application/use_cases/validar_prediccion.py,src/domain/entities/usuario_actual.py,Aplicacion,Dominio,3,Import;Import From;Typed
+src/application/use_cases/validar_prediccion.py,src/domain/services/errores.py,Aplicacion,Dominio,14,Import;Import From;Raise
+src/application/use_cases/validar_prediccion.py,src/domain/services/solicitud_service.py,Aplicacion,Dominio,4,Call;Import;Import From;Use
+src/application/use_cases/validar_prediccion.py,src/domain/value_objects/estados.py,Aplicacion,Dominio,15,Import;Import From;Typed;Use
+src/application/use_cases/verificar_referencias_normativas.py,src/domain/services/errores.py,Aplicacion,Dominio,3,Import;Import From;Raise
+src/domain/entities/correspondencia_normativa.py,src/domain/entities/catalogo.py,Dominio,Dominio,2,Import;Import From
+src/domain/entities/documento.py,src/domain/entities/solicitud.py,Dominio,Dominio,4,Import;Import From;Use
+src/domain/entities/documento.py,src/domain/value_objects/estados.py,Dominio,Dominio,4,Import;Import From;Use
+src/domain/entities/informe.py,src/domain/entities/solicitud.py,Dominio,Dominio,5,Import;Import From;Use
+src/domain/entities/informe.py,src/domain/value_objects/estados.py,Dominio,Dominio,6,Import;Import From;Typed;Use
+src/domain/entities/informe.py,src/domain/value_objects/seccion_salida.py,Dominio,Dominio,3,Import;Import From;Use
+src/domain/entities/plantilla.py,src/domain/value_objects/estados.py,Dominio,Dominio,2,Import;Import From
+src/domain/entities/plantilla.py,src/domain/value_objects/seccion_salida.py,Dominio,Dominio,3,Import;Import From;Use
+src/domain/entities/prediccion_contexto.py,src/domain/entities/solicitud.py,Dominio,Dominio,3,Import;Import From;Use
+src/domain/entities/prediccion_contexto.py,src/domain/value_objects/estados.py,Dominio,Dominio,5,Import;Import From;Typed;Use
+src/domain/entities/solicitud.py,src/domain/value_objects/estado_solicitud.py,Dominio,Dominio,5,Import;Import From;Typed;Use
+src/domain/entities/usuario_actual.py,src/domain/value_objects/estados.py,Dominio,Dominio,3,Import;Import From;Use
+src/domain/services/informe_service.py,src/domain/services/errores.py,Dominio,Dominio,6,Import;Import From;Raise
+src/domain/services/informe_service.py,src/domain/value_objects/seccion_salida.py,Dominio,Dominio,5,Call;Import;Import From;Use
+src/domain/services/respaldo.py,src/domain/value_objects/seccion_salida.py,Dominio,Dominio,5,Call;Import;Import From;Use
+src/domain/services/solicitud_service.py,src/domain/entities/plantilla.py,Dominio,Dominio,5,Import;Import From;Typed
+src/domain/services/solicitud_service.py,src/domain/entities/solicitud.py,Dominio,Dominio,5,Import;Import From;Typed
+src/domain/services/solicitud_service.py,src/domain/services/errores.py,Dominio,Dominio,9,Import;Import From;Raise
+src/domain/services/solicitud_service.py,src/domain/value_objects/estado_solicitud.py,Dominio,Dominio,6,Import;Import From;Use
+src/domain/services/solicitud_service.py,src/domain/value_objects/estados.py,Dominio,Dominio,14,Import;Import From;Use
+src/domain/value_objects/encabezado_documento.py,src/domain/services/errores.py,Dominio,Dominio,7,Import;Import From;Raise
+src/domain/value_objects/estructura_piloto.py,src/domain/value_objects/seccion_salida.py,Dominio,Dominio,7,Call;Import;Import From
+src/domain/value_objects/fuentes_piloto.py,src/domain/entities/plantilla.py,Dominio,Dominio,3,Call;Import;Import From
+src/domain/value_objects/fuentes_piloto.py,src/domain/value_objects/estados.py,Dominio,Dominio,14,Import;Import From;Use
+src/domain/value_objects/seccion_salida.py,src/domain/services/errores.py,Dominio,Dominio,10,Import;Import From;Raise
+src/infrastructure/auth/mock.py,src/adapters/out/persistence/__init__.py,Infraestructura,Adaptadores de salida,1,Import Implicit
+src/infrastructure/auth/mock.py,src/adapters/out/persistence/datos_demo.py,Infraestructura,Adaptadores de salida,15,Call;Import;Import From;Use
+src/infrastructure/auth/mock.py,src/domain/entities/usuario_actual.py,Infraestructura,Dominio,9,Call;Import;Import From;Use
+src/infrastructure/auth/mock.py,src/domain/value_objects/estados.py,Infraestructura,Dominio,14,Import;Import From;Use
+src/infrastructure/auth/supabase.py,src/infrastructure/configuration/database.py,Infraestructura,Infraestructura,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/ai/context_predictor_catalogo.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/ai/embeddings_ollama.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/ai/generador_borrador_ollama.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/ai/ollama_adapter.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/ai/sklearn_context_predictor.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/documents/__init__.py,Infraestructura,Adaptadores de salida,4,Import Implicit
+src/infrastructure/configuration/container.py,src/adapters/out/documents/almacen_supabase.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/documents/exportador_docx.py,Infraestructura,Adaptadores de salida,4,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/documents/exportador_pdf.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/documents/extractor.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/__init__.py,Infraestructura,Adaptadores de salida,12,Import Implicit
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/catalogo_repository_memory.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/documentos_postgres.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/informe_auditado.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/informe_repository_memory.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/memoria.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/perfil_repository_postgres.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/plantilla_repository_memory.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/postgres.py,Infraestructura,Adaptadores de salida,13,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/prediccion_repository_memory.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/revision_memory.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/revision_postgres.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/adapters/out/persistence/solicitud_repository_memory.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/actualizar_borrador.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/actualizar_solicitud.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/consultar_catalogos.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/crear_solicitud.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/documentos.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/exportar_informe.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/generar_borrador.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/guardar_solicitud_completa.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/guardar_valores_solicitud.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/obtener_contexto.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/obtener_informe.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/obtener_solicitud.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/predecir_contexto.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/revision_informes.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/servicios_solicitud.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/application/use_cases/validar_prediccion.py,Infraestructura,Aplicacion,3,Call;Import;Import From
+src/infrastructure/configuration/container.py,src/infrastructure/configuration/database.py,Infraestructura,Infraestructura,7,Call;Import;Import From;Use
+src/infrastructure/configuration/container.py,src/infrastructure/configuration/settings.py,Infraestructura,Infraestructura,4,Call;Import;Import From;Use
+src/infrastructure/configuration/settings.py,src/infrastructure/configuration/database.py,Infraestructura,Infraestructura,3,Call;Import;Import From
+src/infrastructure/configuration/settings.py,src/infrastructure/configuration/rag.py,Infraestructura,Infraestructura,6,Call;Import;Import From;Typed;Use
+src/infrastructure/dependencies.py,src/domain/entities/usuario_actual.py,Infraestructura,Dominio,4,Import;Import From;Typed;Use
+src/infrastructure/dependencies.py,src/infrastructure/configuration/container.py,Infraestructura,Infraestructura,4,Import;Import From;Typed;Use
+src/infrastructure/diagnostico.py,src/adapters/out/persistence/__init__.py,Infraestructura,Adaptadores de salida,1,Import Implicit
+src/infrastructure/diagnostico.py,src/adapters/out/persistence/estado_postgres.py,Infraestructura,Adaptadores de salida,3,Call;Import;Import From
+src/main.py,src/adapters/out/persistence/__init__.py,Arranque y despliegue,Adaptadores de salida,1,Import Implicit
+src/main.py,src/adapters/out/persistence/postgres.py,Arranque y despliegue,Adaptadores de salida,4,Import;Import From;Typed;Use
+src/main.py,src/domain/services/errores.py,Arranque y despliegue,Dominio,18,Import;Import From;Typed;Use
+src/main.py,src/infrastructure/auth/mock.py,Arranque y despliegue,Infraestructura,3,Call;Import;Import From
+src/main.py,src/infrastructure/auth/supabase.py,Arranque y despliegue,Infraestructura,9,Call;Import;Import From;Typed;Use
+src/main.py,src/infrastructure/configuration/container.py,Arranque y despliegue,Infraestructura,4,Call;Import;Import From;Use
+src/main.py,src/infrastructure/configuration/settings.py,Arranque y despliegue,Infraestructura,5,Call;Import;Import From;Use

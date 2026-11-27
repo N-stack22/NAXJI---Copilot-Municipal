@@ -1,5 +1,7 @@
 # Auditoría FURPS+: línea base y alcance académico
 
+Actualización27/11/2026: **C-06 ejecutada con Understand8.1.1269** sobre main67d9db2. La dimensión soporte/mantenibilidad cuenta ahora con métricas reales del backend y frontend:149 archivos,141 clases,696 funciones,6.719 líneas de código;complejidad máxima26 y SonargraphMaintainability84,44774960712785. Halstead por archivo, fan-in/fan-out y acoplamiento de clases se entregan sin rellenar valores no disponibles. [CSV/HTML/diagramas y límites](evidencias/understand/README.md). No se cambian producto ni evaluación de funcionalidad/usabilidad/rendimiento; las mediciones anteriores conservan su corte.
+
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
 Línea base de esta misión: **346 pruebas backend aprobadas, 21 omitidas**, 55 frontend, lint/build/diff correctos; `7359a67`. No se atribuyen a esta corrida las 11 integraciones IA reales del cierre anterior.

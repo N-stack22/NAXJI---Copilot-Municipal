@@ -1,5 +1,15 @@
 # Resultados del cierre académico y preparación de despliegue
 
+## Actualización C-06 — 27/11/2026
+
+**Understand ejecutado, C-06 cerrada.** Último main analizado **67d9db2f5591c1b08cb85cfe5f81dbd0ad311da9**, herramienta8.1.1269 instalada/licenciada en Windows. [Evidencias completas](evidencias/understand/README.md):149 archivos propios (112Python/37Web),6.719 líneas de código,141 clases,696 funciones,complejidad máxima26;SonargraphMaintainability84,44774960712785. Halstead original se entrega por archivo/función; no existe valor global disponible. CSV,7 reportes HTML con sus tablas/gráficos disponibles,SVG/PNG nativos y XML de arquitectura.423 relaciones propias resueltas;0 infracciones de las reglas dominio/aplicación.0 errores y224 advertencias de resolución explicadas.
+
+No se confirma un defecto funcional que justifique cambiar código de producto. Solo se añaden evidencia, exportador reproducible e informes; no se toca PMV,plantillas,ML,RAG,esquema,`.env`,Supabase ni informe académico final. **27 pruebas de arquitectura/SQL aprobadas,0 omitidas** en la comprobación complementaria; [log](evidencias/understand/pruebas-arquitectura-sql.log). La ejecución integral de GitHub Actions de esta entrega se enlaza desde el índice de evidencias una vez comprobada. Las375/21 y55 de abajo son resultados del corte anterior, no pruebas nuevas de esta sesión. No se repite carga750 porque no cambia rendimiento ni producto.
+
+Las referencias a Understand bloqueado del anexo histórico se conservan como estado de aquel corte; quedan superadas por esta ejecución. La validación institucional y de servicios externos sigue fuera del alcance; ninguna omitida pasa a aprobada.
+
+## Corte anterior: seguridad y preparación de despliegue
+
 Corte:26/11/2026, América/Lima. Base `main` **7359a67**; rama **feature/cierre-seguridad-despliegue**. Los **3 PMV y 10 HU se aceptan para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Esta aceptación no transforma omitidas en aprobadas ni autoriza afirmar resultados no medidos.
 
 ## Cambios y componentes conservados
@@ -49,7 +59,7 @@ PG/pgvector, HTTP, sklearn y DOCX/PDF reales; Auth/Storage/LLM/embeddings y deci
 
 ## Understand y pendientes reales
 
-**Understand bloqueado**: no ejecutable en PATH, seis rutas o registro; licencia no verificable. No se exportaron métricas de complejidad ni mantenibilidad de esa herramienta. El inventario AST propio no se presenta como Understand. [Comandos/pasos manuales](UNDERSTAND_PENDIENTE.md).
+El bloqueo de Understand registrado el26/11 queda superado el27/11 por la ejecución C-06 detallada al inicio. [Resultados y límites](evidencias/understand/README.md); el inventario AST anterior sigue identificado como una herramienta distinta.
 
 La configuración/credenciales/servicio IA estable del destino y su validación operativa quedan pendientes de quien despliegue; fuera del cierre académico. No hay encuestas, actas, métricas ambientales, aceptación institucional ni evaluación humana nuevas. El artículo inglés y las puntuaciones históricas permanecen como antecedentes, sin modificar el manuscrito académico.
 

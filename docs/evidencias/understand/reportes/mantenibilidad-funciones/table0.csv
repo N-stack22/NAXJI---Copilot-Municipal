@@ -1,0 +1,13 @@
+Name,Cyclomatic,CountLine,MaxNesting
+DocumentosInforme,2,112,0
+FormularioInforme,18,618,1
+Login,8,128,0
+RevisionInformes,1,115,0
+container.Container.__init__,11,141,2
+documents.exportador_docx.ExportadorDocx.exportar,26,113,3
+documents.exportador_mdt.exportar_mdt,13,45,5
+generador_borrador_ollama.GeneradorBorradorOllama.generar,22,134,3
+persistence.postgres.InformeRepositoryPostgres.guardar,8,20,6
+documents.almacen_supabase.AlmacenSupabase.leer,4,15,5
+sklearn_context_predictor.SklearnContextPredictor.predecir,6,178,2
+fidelidad_inspeccion.validar_fidelidad_inspeccion,20,44,3

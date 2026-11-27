@@ -1,0 +1,9 @@
+Name,Lines,Code Lines,Comment Lines,Inactive Lines,Preprocessor Lines,Blank Lines,Ratio Comment to Code
+container.py,173,146,1,,,26,0.01
+database.py,83,68,4,,,11,0.06
+dependencies.py,38,28,0,,,10,0.00
+diagnostico.py,42,38,2,,,2,0.05
+mock.py,15,12,1,,,2,0.08
+rag.py,56,52,0,,,4,0.00
+settings.py,61,57,0,,,4,0.00
+supabase.py,116,95,5,,,16,0.05
