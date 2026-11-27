@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "../styles/nuevoInforme.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import EditorBorrador from "../components/EditorBorrador";
 import VistaPreviaInforme from "../components/VistaPreviaInforme";
 import NormativasSugeridas from "../components/NormativasSugeridas";
@@ -610,6 +610,7 @@ function FormularioInforme({ solicitudId, informeInicialId }) {
         <div className="informe-acciones"><button type="button" className="btn-primary" onClick={guardarEdicion}>Guardar borrador</button></div>
       </fieldset>}
       {cambiosSinGuardar && <p className="warning-inline" role="status">Hay cambios sin guardar. La vista previa y el Word muestran únicamente la versión guardada.</p>}
+      {informe && <p><Link to={`/revision?informe=${informe.informe_id}`}>Abrir revisión e historial para enviar y exportar la versión aprobada</Link></p>}
     </div>
     </section>
     <section id="panel-paso-4" className="informe-panel" hidden={pasoActual !== 4} aria-labelledby="titulo-paso">

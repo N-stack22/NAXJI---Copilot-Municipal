@@ -50,7 +50,7 @@ class ExtractorArchivos:
                     texto = pagina.extract_text() or ""
                     # Rechaza también PDFs mixtos; no publica silenciosamente páginas omitidas.
                     if not texto.strip():
-                        raise DatosInvalidos(f"PDF sin texto extraíble en página {i}; requiere OCR no disponible en PMV2")
+                        raise DatosInvalidos(f"PDF sin texto extraíble en página {i}. Aplique OCR externo a esa página y cargue una copia con texto seleccionable en todas sus páginas; reintentar el mismo archivo no lo corrige.")
                     unidades.append({"texto": texto, "localizacion": f"Página {i}"})
             else:
                 raise ValueError("formato")

@@ -14,6 +14,7 @@ from src.domain.value_objects.encabezado_documento import datos_oficiales, texto
 from src.domain.value_objects.encabezado_documento import FORMATO_MDT
 from .exportador_mdt import exportar_mdt
 from .fuentes_docx import agregar_fuentes
+from src.domain.value_objects.estados import EstadoInforme
 
 
 AVISO_PILOTO = "Formato Word piloto NAXJI. No es un formato institucional aprobado."
@@ -93,7 +94,8 @@ class ExportadorDocx(ExportadorInforme):
             origen = texto_publico(h.get("plantilla_nombre")) or "Plantilla histórica"
             revision = h.get("plantilla_version")
             revision = str(revision) if isinstance(revision, int) else "no registrada"
-            detalle = documento.add_paragraph(f"{origen} · Versión de plantilla {revision}\nVersión guardada {version.numero_version} del borrador · Sujeto a revisión humana")
+            estado = "Contenido aprobado mediante revisión humana" if informe.estado == EstadoInforme.APROBADO else "Borrador sujeto a revisión humana"
+            detalle = documento.add_paragraph(f"{origen} · Versión de plantilla {revision}\nVersión guardada {version.numero_version} · {estado}")
             detalle.runs[0].font.size = Pt(9)
             detalle.paragraph_format.keep_with_next = True
             if version.titulo is None:

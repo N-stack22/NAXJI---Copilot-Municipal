@@ -3,6 +3,7 @@ from pathlib import Path
 from uuid import UUID, NAMESPACE_URL, uuid5
 
 from joblib import load
+from src.adapters.out.ai.integridad_modelos import verificar_artefactos
 
 from src.application.ports.output.context_predictor import ContextPredictor
 from src.domain.entities.prediccion_contexto import (
@@ -64,6 +65,7 @@ class SklearnContextPredictor(ContextPredictor):
             / "models"
         )
 
+        verificar_artefactos(models_path)
         self.modelo_tipo = load(
             models_path / "modelo_tipo.joblib"
         )

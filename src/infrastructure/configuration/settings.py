@@ -14,8 +14,15 @@ class Settings:
     ollama_model: str = "qwen2.5:7b"
     ollama_timeout_seconds: float = 300.0
     rag: RagSettings = field(default_factory=RagSettings)
+    pmv3_enabled: bool = False
+    api_docs_enabled: bool = True
 
     def __post_init__(self):
+        if any("*" in origin or urlsplit(origin).scheme not in {"http", "https"}
+               or not urlsplit(origin).hostname or urlsplit(origin).path not in {"", "/"}
+               or urlsplit(origin).query or urlsplit(origin).fragment or urlsplit(origin).username
+               for origin in self.cors_origins):
+            raise ValueError("NAXJI_CORS_ORIGINS requiere orígenes HTTP(S) explícitos sin comodines")
         try:
             url = urlsplit(self.ollama_base_url)
             valida = (url.scheme in {"http", "https"} and url.hostname and not url.username
@@ -49,4 +56,6 @@ class Settings:
         return cls(auth_mode=modo, cors_origins=origins, persistence_mode=persistence,
                    ollama_base_url=values.get("NAXJI_OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/"),
                    ollama_model=values.get("NAXJI_OLLAMA_MODEL", "qwen2.5:7b"),
-                   ollama_timeout_seconds=timeout, rag=RagSettings.from_values(values))
+                   ollama_timeout_seconds=timeout, rag=RagSettings.from_values(values),
+                   pmv3_enabled=values.get("NAXJI_PMV3_ENABLED", "false").lower() == "true",
+                   api_docs_enabled=values.get("NAXJI_API_DOCS_ENABLED", "true").lower() == "true")

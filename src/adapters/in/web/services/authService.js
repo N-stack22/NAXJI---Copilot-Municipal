@@ -21,6 +21,10 @@ export const USUARIOS_DEMO = [
     etiqueta: "Administrador",
   },
   {
+    token: "demo-revisor-pmv3",
+    etiqueta: "Revisor PMV3 (identidad independiente)",
+  },
+  {
     token: "demo-revisor",
     etiqueta: "Revisor (solo lectura)",
   },

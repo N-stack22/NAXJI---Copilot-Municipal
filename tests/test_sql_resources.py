@@ -8,7 +8,7 @@ from src.adapters.out.persistence.sql_resources import consulta
 
 ROOT = Path(__file__).resolve().parents[1]
 PERSISTENCE = ROOT / "src/adapters/out/persistence"
-ADAPTERS = ("documentos_postgres", "postgres", "perfil_repository_postgres")
+ADAPTERS = ("documentos_postgres", "postgres", "perfil_repository_postgres", "revision_postgres", "estado_postgres")
 
 
 def test_adaptadores_no_contienen_sentencias_sql_en_python():

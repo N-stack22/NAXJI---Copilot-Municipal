@@ -1,10 +1,3 @@
-fastapi>=0.115,<1.0
-uvicorn>=0.30,<1.0
-pydantic>=2.9,<3.0
-pytest>=8.3,<10.0
-httpx>=0.27,<1.0
-scikit-learn==1.6.1
-joblib
-psycopg[binary]>=3.2,<4
-python-dotenv>=1,<2
-python-docx>=1.2,<2
+# Entrada can?nica: dependencias declaradas en pyproject.toml
+-e .
+pytest>=8.3,<10

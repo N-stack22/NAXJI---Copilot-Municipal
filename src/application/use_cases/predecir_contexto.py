@@ -27,7 +27,9 @@ class PredecirContexto:
                 raise DatosInvalidos("La confianza del predictor debe estar entre 0 y 1")
             tipos = {t.id for t in self.s.catalogos.tipos_informe() if t.activo}
             areas = {a.id for a in self.s.catalogos.areas() if a.activo}
-            if prediccion.tipo_informe_predicho_id not in tipos or prediccion.area_destino_predicha_id not in areas:
+            area_pendiente = (prediccion.area_destino_predicha_id is None
+                              and prediccion.parametros.get("area_pendiente_confirmacion") is True and bool(areas))
+            if prediccion.tipo_informe_predicho_id not in tipos or (prediccion.area_destino_predicha_id not in areas and not area_pendiente):
                 raise DatosInvalidos("El predictor devolvió referencias de catálogo desconocidas")
             ids = [n.normativa_id for n in prediccion.normativas]
             if len(set(ids)) != len(ids):

@@ -72,6 +72,17 @@ class Container:
         else:
             raise ValueError("Modo de persistencia desconocido")
 
+        self.revision = None
+        if settings.pmv3_enabled:
+            from src.adapters.out.persistence.informe_auditado import InformeAuditado
+            if self.persistence_mode == "memory":
+                from src.adapters.out.persistence.revision_memory import RevisionMemory
+                self.revisiones = RevisionMemory(self.memoria)
+            else:
+                from src.adapters.out.persistence.revision_postgres import RevisionPostgres
+                self.revisiones = RevisionPostgres(self.uow)
+            self.informes = InformeAuditado(self.informes, self.revisiones, self.uow)
+
         self.servicios = ServiciosSolicitud(
             self.solicitudes,
             self.plantillas,
@@ -150,6 +161,11 @@ class Container:
         )
 
         self.exportar_informe = ExportarInforme(self.obtener_informe, ExportadorDocx())
+        if settings.pmv3_enabled:
+            from src.application.use_cases.revision_informes import RevisionInformes
+            from src.adapters.out.documents.exportador_pdf import ExportadorPdf
+            self.revision = RevisionInformes(self.servicios, self.informes, self.revisiones,
+                self.obtener_informe, {"docx": ExportadorDocx(), "pdf": ExportadorPdf()})
 
         self.consultar_catalogos = ConsultarCatalogos(
             self.catalogos,

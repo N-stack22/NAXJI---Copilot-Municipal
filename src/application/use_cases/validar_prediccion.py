@@ -41,6 +41,8 @@ class ValidarPrediccion:
                 raise DatosInvalidos("Use CORREGIDA para modificar el contexto")
             if resultado == ResultadoValidacion.ACEPTADA and seleccionadas != predichas:
                 raise DatosInvalidos("Use CORREGIDA para cambiar las normativas confirmadas")
+            if resultado == ResultadoValidacion.ACEPTADA and (p.tipo_informe_predicho_id is None or p.area_destino_predicha_id is None):
+                raise DatosInvalidos("Seleccione tipo y área mediante CORREGIDA antes de confirmar")
             if resultado != ResultadoValidacion.RECHAZADA:
                 verificar_referencias_normativas(self.s.catalogos, p, seleccionadas)
                 solicitud.tipo_informe_id = tipo_informe_id or p.tipo_informe_predicho_id

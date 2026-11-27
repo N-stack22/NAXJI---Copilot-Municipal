@@ -36,9 +36,17 @@ class ContextPredictorCatalogo(ContextPredictor):
         areas = self.catalogos.areas()
         # Los tests existentes pueden usar sus propios catálogos con códigos PoC.
         aliases = self.AREAS_MDT if any(a.codigo.startswith('MDT_') for a in areas if a.codigo) else {}
-        result.area_destino_predicha_id = self.resolve(
-            result.area_destino_predicha_id, AREAS, areas, aliases)
         warnings, resolved, temas, evidencias = [], {}, [], {}
+        try:
+            result.area_destino_predicha_id = self.resolve(result.area_destino_predicha_id, AREAS, areas, aliases)
+        except DatosInvalidos:
+            # No inventar una equivalencia orgánica para una clase sin código institucional.
+            codigo = next((a.codigo for a in AREAS if a.id == result.area_destino_predicha_id), None)
+            if not aliases or codigo != "AREA_RIESGO_DESASTRES":
+                raise
+            result.area_destino_predicha_id = None
+            result.parametros["area_pendiente_confirmacion"] = True
+            warnings.append("El modelo propuso Gestión del Riesgo de Desastres, sin correspondencia institucional verificada. Seleccione y confirme el área de destino.")
         etiquetas = {n.id: n for n in NORMATIVAS}
         codigos = [etiquetas[n.normativa_id].codigo for n in result.normativas if n.normativa_id in etiquetas]
         correspondencias = self.catalogos.correspondencias_normativas(codigos)

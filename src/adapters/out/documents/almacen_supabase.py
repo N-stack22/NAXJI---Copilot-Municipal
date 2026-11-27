@@ -13,7 +13,7 @@ class AlmacenSupabase:
     """Bucket privado existente. No crea buckets ni escribe SQL al arrancar."""
     def __init__(self, url, clave, bucket, max_bytes, transport=None):
         parsed = urlsplit(url)
-        if (parsed.scheme not in {"http", "https"} or not parsed.hostname or parsed.username
+        if (parsed.scheme != "https" or not parsed.hostname or parsed.username
                 or parsed.password or parsed.query or parsed.fragment or not clave):
             raise ValueError("Configure URL Supabase y clave privada de Storage en el backend")
         self.url, self.clave, self.bucket = url.rstrip("/"), clave, bucket

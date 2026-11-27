@@ -63,9 +63,9 @@ export default function DocumentosInforme({ usarDocumentos, onChange, disabled, 
       {ocupado && <p role="status">Procesando solicitud documental…</p>}
       {error && <p role="alert" className="error-message">{error}</p>}
       {aviso && <p role="status">{aviso}</p>}
-      {config && !config.habilitado && <p role="status">Gestión documental pendiente de activación en el servidor. Revise la guía PMV2.</p>}
+      {config && !config.habilitado && <p role="status">La biblioteca documental no está habilitada en este entorno. Solicite su activación al administrador.</p>}
       {config?.habilitado && <>
-        <p>Formatos: {config.formatos.join(", ").toUpperCase()} · Máximo {(config.max_bytes / 1048576).toFixed(0)} MB. Los PDF escaneados necesitan OCR externo.</p>
+        <p>Formatos: {config.formatos.join(", ").toUpperCase()} · Máximo {(config.max_bytes / 1048576).toFixed(0)} MB. Todas las páginas del PDF deben tener texto seleccionable. Si alguna está escaneada, aplique OCR externo y cargue la copia corregida.</p>
         {puedeCargar && <form onSubmit={cargar}>
           <fieldset disabled={ocupado || disabled}>
             <legend>Incorporar documento autorizado</legend>

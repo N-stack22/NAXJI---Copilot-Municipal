@@ -21,6 +21,9 @@ function MainLayout() {
           >
             <span className="menu-icon" aria-hidden="true">▤</span> Nuevo informe
           </NavLink>
+          <NavLink to="/revision" className={({ isActive }) => isActive ? "menu-item active" : "menu-item"}>
+            <span className="menu-icon" aria-hidden="true">✓</span> Revisión e historial
+          </NavLink>
           <NavLink to="/documentos" className={({ isActive }) => isActive ? "menu-item active" : "menu-item"}>
             <span className="menu-icon" aria-hidden="true">▥</span> Documentos
           </NavLink>

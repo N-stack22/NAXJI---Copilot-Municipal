@@ -9,6 +9,7 @@ def usuarios_demo() -> dict[str, UsuarioActual]:
         "demo-funcionario": UsuarioActual(demo_id("usuario"), frozenset({Rol.FUNCIONARIO}), AREAS[0].id),
         "demo-otro": UsuarioActual(demo_id("otro-usuario"), frozenset({Rol.FUNCIONARIO}), AREAS[1].id),
         "demo-revisor": UsuarioActual(demo_id("usuario"), frozenset({Rol.REVISOR}), AREAS[0].id),
+        "demo-revisor-pmv3": UsuarioActual(demo_id("revisor-pmv3"), frozenset({Rol.REVISOR}), AREAS[0].id),
         "demo-aprobador": UsuarioActual(demo_id("usuario"), frozenset({Rol.APROBADOR}), AREAS[0].id),
         "demo-admin": UsuarioActual(demo_id("admin"), frozenset({Rol.ADMINISTRADOR}), AREAS[0].id),
     }

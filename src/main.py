@@ -29,6 +29,9 @@ def create_app(settings: Settings | None = None, container: Container | None = N
     settings = settings or Settings.from_env()
     app = FastAPI(
         title="NAXJI API", version="2.0.0",
+        docs_url="/docs" if settings.api_docs_enabled else None,
+        redoc_url="/redoc" if settings.api_docs_enabled else None,
+        openapi_url="/openapi.json" if settings.api_docs_enabled else None,
         description=(f"Backend PMV1 + PMV2 documental/RAG opcional. Persistencia configurada: {settings.persistence_mode}. "
                      "Predicción IA-01 con estimadores sklearn y generación estructurada con Ollama local. "
                      "Los tokens demo solo están habilitados en memoria. PostgreSQL usa Supabase Auth."),
@@ -68,8 +71,12 @@ def create_app(settings: Settings | None = None, container: Container | None = N
     @app.middleware("http")
     async def auth_no_cache(request: Request, call_next):
         response = await call_next(request)
-        if request.url.path.startswith(("/auth/", "/documentos", "/informes")):
+        if request.url.path.startswith(("/auth/", "/documentos", "/informes", "/solicitudes", "/revision", "/auditoria")):
             response.headers["Cache-Control"] = "no-store"
+        if response.status_code in {401, 403, 429}:
+            route = request.scope.get("route")
+            logger.warning("seguridad metodo=%s ruta=%s estado=%s", request.method,
+                           getattr(route, "path", "no_identificada"), response.status_code)
         return response
 
     @app.exception_handler(PersistenceError)
@@ -99,7 +106,7 @@ def create_app(settings: Settings | None = None, container: Container | None = N
                      exc_info=(type(error), error, error.__traceback__))
         return JSONResponse(status_code=500, content={"detail": "Error interno del servidor"})
 
-    for nombre in ("solicitud", "catalogo", "ia", "informe", "usuario", "auth", "documento"):
+    for nombre in ("solicitud", "catalogo", "ia", "informe", "usuario", "auth", "documento", "revision", "operacion"):
         modulo = importlib.import_module(f"src.adapters.in.controllers.{nombre}_controller")
         app.include_router(modulo.router)
     app.add_api_route("/health", health, methods=["GET"], tags=["Estado"])

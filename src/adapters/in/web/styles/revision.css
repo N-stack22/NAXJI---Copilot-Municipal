@@ -1,0 +1,15 @@
+.revision-pagina { max-width: 1100px; margin: auto; padding: 1.5rem; color: #17363d; }
+.revision-pagina section { background: white; border: 1px solid #cad8da; border-radius: 12px; padding: 1.3rem; margin: 1.2rem 0; }
+.revision-pagina button { padding: .65rem 1rem; margin: .35rem; border: 1px solid #708b90; border-radius: 6px; background: #f4f9f8; color: #17363d; cursor: pointer; }
+.revision-pagina button:disabled { opacity: .5; cursor: default; }
+.revision-pagina button:focus-visible, .revision-pagina textarea:focus-visible, .revision-pagina select:focus-visible { outline: 3px solid #007d71; outline-offset: 2px; }
+.revision-pagina textarea, .revision-pagina select { width: 100%; max-width: 100%; padding: .7rem; border: 1px solid #8ca3a7; border-radius: 6px; font: inherit; box-sizing: border-box; }
+.revision-pagina fieldset { min-width: 0; border: 1px solid #cad8da; padding: 1rem; }
+.revision-seccion { display: block; margin: 1rem 0; }
+.revision-seccion label { display: block; font-weight: 600; margin-bottom: .5rem; }
+.revision-texto { white-space: pre-wrap; overflow-wrap: anywhere; }
+.revision-advertencia { background: #fff3d7; border-left: 4px solid #a76500; padding: .7rem; }
+.revision-alerta { background: #ffe5e5; padding: 1rem; border-radius: 6px; }
+.revision-tabla { overflow-x: auto; }
+.revision-tabla td, .revision-tabla th { padding: .6rem; text-align: left; border-bottom: 1px solid #cad8da; }
+@media(max-width: 640px) { .revision-pagina { padding: .6rem; } .revision-pagina section { padding: .7rem; } }

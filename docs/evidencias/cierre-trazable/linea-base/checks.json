@@ -1,0 +1,70 @@
+{
+  "start_utc": "2026-11-27T00:42:54.067803+00:00",
+  "commit": "d99f96088ec68f7381b143e38553a6fcce924895",
+  "results": [
+    {
+      "check": "pytest",
+      "command": [
+        "D:\\NAXJI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra"
+      ],
+      "start_utc": "2026-11-27T00:42:54.092319+00:00",
+      "seconds": 35.206611,
+      "exit_code": 0,
+      "log": "pytest.txt"
+    },
+    {
+      "check": "frontend",
+      "command": [
+        "npm.cmd",
+        "run",
+        "test:frontend"
+      ],
+      "start_utc": "2026-11-27T00:43:29.298930+00:00",
+      "seconds": 7.159179,
+      "exit_code": 0,
+      "log": "frontend.txt"
+    },
+    {
+      "check": "lint",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "start_utc": "2026-11-27T00:43:36.458109+00:00",
+      "seconds": 2.400304,
+      "exit_code": 0,
+      "log": "lint.txt"
+    },
+    {
+      "check": "build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "start_utc": "2026-11-27T00:43:38.858413+00:00",
+      "seconds": 0.763345,
+      "exit_code": 0,
+      "log": "build.txt"
+    },
+    {
+      "check": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "start_utc": "2026-11-27T00:43:39.621758+00:00",
+      "seconds": 0.089823,
+      "exit_code": 0,
+      "log": "diff-check.txt"
+    }
+  ],
+  "supabase": "No conectado",
+  "pg": "Contenedor desechable en loopback:15432"
+}

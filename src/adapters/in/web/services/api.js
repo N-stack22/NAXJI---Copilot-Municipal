@@ -69,7 +69,9 @@ export const mensajeError = (error, respaldo) => {
   }
 
   if (!error?.response) {
-    return "No se pudo conectar con el backend. Verifique que esté encendido en http://127.0.0.1:8000.";
+    return import.meta.env.DEV
+      ? "No se pudo conectar con el backend local. Revise que esté iniciado y reintente."
+      : "No se pudo conectar con el servicio. Conserve sus datos y reintente en unos momentos.";
   }
 
   return respaldo;
