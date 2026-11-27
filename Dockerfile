@@ -1,8 +1,11 @@
 FROM python:3.11-slim@sha256:61e01f72680f86a5279ad510818ab7b2ee9f049822589d4e34e33e044360356c AS build
 WORKDIR /build
 COPY pyproject.toml requirements-runtime.lock.txt ./
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python -m pip wheel --timeout 120 --retries 3 --wheel-dir /wheels -r requirements-runtime.lock.txt
 COPY src ./src
-RUN python -m pip wheel --no-cache-dir --wheel-dir /wheels -r requirements-runtime.lock.txt .
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python -m pip wheel --timeout 120 --retries 3 --no-deps --wheel-dir /wheels .
 
 FROM python:3.11-slim@sha256:61e01f72680f86a5279ad510818ab7b2ee9f049822589d4e34e33e044360356c AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PORT=8000 \
