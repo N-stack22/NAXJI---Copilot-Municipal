@@ -23,6 +23,28 @@ def politica_inspeccion(plantilla, datos, sin_hechos):
             "permite_recomendaciones_especificas": not sin_hechos and not pendientes}
 
 
+def atribuir_datos_aportados(contenido, datos, politica):
+    """Conserva la fuente explícita aunque el LLM omita su identificador al resumir.
+
+    Copia datos del solicitante como atribución, sin declararlos verificados ni
+    inferir contenido de fotografías, normas o documentos no disponibles.
+    """
+    if not politica or not politica.get("observaciones_aportadas"):
+        return contenido
+    identificadores = re.findall(r"\b[A-Z][A-Z0-9_-]{0,30}(?=:)", str(datos.get("referencias_conocidas", "")))
+    texto = " ".join(contenido.values()).casefold()
+    if not identificadores or all(i.casefold() in texto for i in identificadores):
+        return contenido
+    clave = next((c for c in ("actuaciones", "antecedentes", "cuerpo") if c in contenido), None)
+    if clave is None:
+        return contenido
+    entradas = [("Fecha aportada", "fecha_inspeccion"), ("Lugar aportado", "lugar_inspeccion"),
+                ("Observaciones aportadas", "resultados_observados"), ("Referencias aportadas", "referencias_conocidas")]
+    atribucion = "\n\nDatos aportados por el solicitante; no corroborados automáticamente:\n" + "\n".join(
+        etiqueta + ": " + str(datos[campo]).strip() for etiqueta, campo in entradas if str(datos.get(campo, "")).strip())
+    return {**contenido, clave: contenido[clave] + atribucion}
+
+
 def validar_fidelidad_inspeccion(contenido, asunto, datos, contexto, politica):
     if politica is None:
         return

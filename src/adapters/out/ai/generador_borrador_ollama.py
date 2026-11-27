@@ -3,7 +3,7 @@ import json
 from src.application.ports.output.generador_borrador import ContextoConfirmado, GeneradorBorrador, ResultadoBorrador
 from src.domain.entities.plantilla import Plantilla
 from src.adapters.out.ai.ollama_adapter import OllamaAdapter
-from src.adapters.out.ai.fidelidad_inspeccion import politica_inspeccion, validar_fidelidad_inspeccion, normalizar
+from src.adapters.out.ai.fidelidad_inspeccion import politica_inspeccion, validar_fidelidad_inspeccion, normalizar, atribuir_datos_aportados
 from src.domain.services.errores import DatosInvalidos, ErrorGeneracion
 from src.domain.services.informe_service import validar_contenido
 from src.domain.value_objects.seccion_salida import secciones_efectivas
@@ -236,6 +236,7 @@ class GeneradorBorradorOllama(GeneradorBorrador):
             if politica and "recomendaciones" in esquema["properties"] and not contenido.get("recomendaciones", "").strip():
                 raise DatosInvalidos("Falta la propuesta de recomendaciones")
             validar_fidelidad_inspeccion(contenido, asunto, datos, contexto, politica)
+            contenido = atribuir_datos_aportados(contenido, datos, politica)
         except (ValueError, TypeError, DatosInvalidos):
             raise ErrorGeneracion(codigo="OLLAMA_RESPUESTA_INVALIDA") from None
         # JSONB no conserva orden de objetos: la lista de secciones es la autoridad.
