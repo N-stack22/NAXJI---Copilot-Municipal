@@ -24,7 +24,7 @@ Los valores sin redondear, las métricas no disponibles y las agregaciones se di
 
 ## Archivos y reportes
 
-Para consultar las métricas y navegar el conjunto sin depender de GitHub, descargar [reportes-understand.zip](reportes-understand.zip), extraerlo y abrir `index.html`; también está disponible [la carpeta completa](.). Esta vista está identificada como derivada de los valores API; no sustituye los reportes nativos. Las [huellas de los artefactos](SHA256SUMS.json) permiten comprobar los archivos descargados.
+Para consultar las métricas y navegar el conjunto sin depender de GitHub, descargar [reportes-understand.zip](reportes-understand.zip), extraerlo y abrir `index.html`; también está disponible [la carpeta completa](.). Esta vista está identificada como derivada de los valores API; no sustituye los reportes nativos. Las [huellas de los artefactos publicadas en GitHub](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/evidencias/understand/SHA256SUMS.json) permiten comprobar los archivos descargados. El ZIP contiene las evidencias de esta carpeta salvo el propio ZIP y su manifiesto exterior de huellas.
 
 | Resultado | Enlaces |
 |---|---|
@@ -39,6 +39,7 @@ Para consultar las métricas y navegar el conjunto sin depender de GitHub, desca
 | Arquitectura exportada | [XML nativo](arquitectura-nativa.xml) |
 | Configuración, ejecución y limitaciones | [Configuración](configuracion.json), [log de análisis](analisis.log), [advertencias](advertencias.json), [reproducción](REPRODUCIR.md) |
 | Validación complementaria | [27 pruebas de arquitectura/SQL](pruebas-arquitectura-sql.log), [verificación de artefactos](verificacion-artefactos.json) |
+| GitHub Actions de la entrega | [Resultados375/21 backend,55 frontend y comprobaciones](CI.md), [pasos recibidos de GitHub](ci-main.json), [extracto literal](ci-main-extracto.log) |
 
 Los HTML se descargan y abren localmente, conservando sus archivos hermanos `path_*.html`, `image*.png` y `table*.csv`. GitHub muestra el código HTML. Los PNG/CSV disponibles en cada carpeta son exportaciones nativas; los reportes sin gráfico no producen PNG. Los reportes «Low Maintainability» aplican las reglas propias del reporte, no constituyen un índice Halstead global. El XML conserva las referencias relativas de la base privada original; para otra ubicación conviene reconstruir los grupos con el exportador.
 
@@ -63,3 +64,7 @@ La exportación CLI de dependencias de una arquitectura personalizada devolvió 
 El HTML nativo de complejidad exporta la portada y las siete capas, pero conserva enlaces a páginas de detalle por archivo que no genera. Se preserva el original y se registra el límite en la verificación de artefactos. El detalle completo está disponible en los CSV y en la vista derivada `index.html`; no se afirma que esos enlaces nativos funcionen.
 
 Fuentes de interpretación: [catálogo oficial Halstead](https://docs.scitools.com/metrics/HalsteadMaintainIdx.html), [fan-out oficial](https://docs.scitools.com/metrics/DirectFanOut.html), ayuda local `und help report/export/metrics` e implementación instalada `plugins/Metric/sonargraph_maintainability.upy` (ML2, sin copiar el plugin).
+
+## Informes técnicos actualizados en main
+
+[FURPS+ auditoría](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/01_auditoria_furps.md), [plan](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/02_plan_furps.md), [verificación](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/03_auditoria_implementacion_furps.md), [dictamen final](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/07_auditoria_final.md), [ICACIT](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/ICACIT_EVIDENCIAS.md), [ingeniería inversa](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/ingenieria_inversa.md), [12 entregables](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/INDICE_12_ENTREGABLES.md), [resultados de cierre](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/RESULTADOS_CIERRE.md) y [matriz de observaciones](https://github.com/N-stack22/NAXJI---Copilot-Municipal/blob/main/docs/MATRIZ_OBSERVACIONES_CIERRE.md). El informe académico final permanece intacto.

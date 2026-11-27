@@ -1,0 +1,29 @@
+# Extracto literal del job 140586034437; no incluye instalación, tokens ni configuración de licencia.
+# Origen: https://github.com/N-stack22/NAXJI---Copilot-Municipal/actions/runs/46022681356
+2026-11-27T15:12:47.1250914Z SKIPPED [1] tests/test_auth_integration.py:6: Auth real: requiere .env.local y .env.auth-test
+2026-11-27T15:12:47.1251292Z SKIPPED [1] tests/test_catalogos_supabase.py:49: Supabase: prueba opt-in
+2026-11-27T15:12:47.1251634Z SKIPPED [1] tests/test_catalogos_supabase.py:67: Supabase: prueba opt-in
+2026-11-27T15:12:47.1251957Z SKIPPED [1] tests/test_catalogos_supabase.py:109: Supabase: prueba opt-in
+2026-11-27T15:12:47.1252290Z SKIPPED [1] tests/test_correspondencias_postgres.py:134: Ollama real: opt-in
+2026-11-27T15:12:47.1252637Z SKIPPED [2] tests/test_formato_mdt.py:66: Ollama real opt-in
+2026-11-27T15:12:47.1252991Z SKIPPED [2] tests/test_inspeccion_contenido_real.py:21: Ollama y PostgreSQL aislado: opt-in
+2026-11-27T15:12:47.1253346Z SKIPPED [1] tests/test_inspeccion_piloto.py:260: Ollama real: opt-in
+2026-11-27T15:12:47.1253670Z SKIPPED [2] tests/test_ollama_integration.py:23: Ollama real: prueba opt-in
+2026-11-27T15:12:47.1254061Z SKIPPED [1] tests/test_piloto_v2_ollama.py:25: Requiere Ollama real y PostgreSQL local aislado: opt-in
+2026-11-27T15:12:47.1254453Z SKIPPED [1] tests/test_pmv2_postgres.py:229: Embeddings y Ollama reales: opt-in
+2026-11-27T15:12:47.1255370Z SKIPPED [1] tests/test_pmv2_postgres.py:287: Embeddings reales y pgvector: opt-in
+2026-11-27T15:12:47.1255850Z SKIPPED [1] tests/test_supabase_integration.py:43: Supabase: prueba opt-in
+2026-11-27T15:12:47.1256175Z SKIPPED [1] tests/test_supabase_integration.py:70: Supabase: prueba opt-in
+2026-11-27T15:12:47.1256496Z SKIPPED [1] tests/test_supabase_integration.py:88: Supabase: prueba opt-in
+2026-11-27T15:12:47.1256820Z SKIPPED [1] tests/test_supabase_integration.py:126: Supabase: prueba opt-in
+2026-11-27T15:12:47.1257148Z SKIPPED [1] tests/test_supabase_integration.py:150: Supabase: prueba opt-in
+2026-11-27T15:12:47.1257473Z SKIPPED [1] tests/test_supabase_integration.py:173: Supabase: prueba opt-in
+2026-11-27T15:12:47.1257744Z 375 passed, 21 skipped, 1 warning in 27.93s
+2026-11-27T15:12:56.9673454Z ℹ tests 55
+2026-11-27T15:12:56.9673697Z ℹ suites 0
+2026-11-27T15:12:56.9673909Z ℹ pass 55
+2026-11-27T15:12:56.9674116Z ℹ fail 0
+2026-11-27T15:12:56.9674636Z ℹ cancelled 0
+2026-11-27T15:12:56.9675104Z ℹ skipped 0
+2026-11-27T15:12:56.9675319Z ℹ todo 0
+2026-11-27T15:13:02.7619928Z Successfully built naxji_copilot_municipal_backend-0.1.0.tar.gz and naxji_copilot_municipal_backend-0.1.0-py3-none-any.whl
