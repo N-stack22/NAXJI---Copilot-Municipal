@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import sys
 from uuid import NAMESPACE_URL, uuid5
+from time import perf_counter
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -58,14 +59,16 @@ def validar_datos(datos, etiquetas):
     return casos
 
 
-def inferir(predictor, asuntos):
+def inferir(predictor, asuntos, medir=False):
     etiquetas = [str(e) for e in predictor.mlb.classes_]
     nombres = {demo_id(f"NORMATIVA:{e}"): e for e in etiquetas}
     resultados = []
     for asunto in asuntos:
         # Reproduce la normalización de CrearSolicitud antes de invocar el puerto.
         texto = asunto.strip()
+        inicio = perf_counter()
         p = predictor.predecir(texto, uuid5(NAMESPACE_URL, "naxji:evaluacion:" + texto))
+        duracion = perf_counter()-inicio
         probabilidades = predictor.modelo_normas.predict_proba(predictor.features_norm.transform([texto]))[0]
         resultados.append({
             "entrada": asunto, "entrada_normalizada": texto,
@@ -77,6 +80,8 @@ def inferir(predictor, asuntos):
             "algoritmos": p.parametros["algoritmos"], "umbral_normas": predictor.umbral_normas,
             "validacion_humana": p.resultado_validacion.value,
         })
+        if medir:
+            resultados[-1]["inferencia_ms"] = duracion*1000
     return resultados
 
 
@@ -106,11 +111,11 @@ def metricas_temas(reales, predichas, etiquetas):
     }
 
 
-def evaluar(datos, predictor=None):
+def evaluar(datos, predictor=None, *, medir=False):
     predictor = predictor or SklearnContextPredictor()
     etiquetas = [str(e) for e in predictor.mlb.classes_]
     casos = validar_datos(datos, etiquetas)
-    predicciones = inferir(predictor, [c["asunto"] for c in casos])
+    predicciones = inferir(predictor, [c["asunto"] for c in casos], medir)
     for caso, prediccion in zip(casos, predicciones, strict=True):
         prediccion["id"] = caso["id"]
         prediccion["referencia_etiquetada"] = {k: caso[k] for k in ("tipo_informe", "area_destino", "temas_normativos")}
@@ -125,6 +130,8 @@ def evaluar(datos, predictor=None):
         ],
         "clases_entrenadas": {"tipo_informe": list(map(str, predictor.modelo_tipo.classes_)),
                               "area_destino": list(map(str, predictor.modelo_area.classes_)), "temas": etiquetas},
+        "cobertura_tipos": {"presentes": sorted({c["tipo_informe"] for c in casos}),
+                            "sin_casos": sorted(set(TIPOS)-{c["tipo_informe"] for c in casos})},
         "metricas": {
             "tipo_informe": metricas_categoria([c["tipo_informe"] for c in casos], [p["tipo_informe"] for p in predicciones], list(TIPOS)),
             "area_destino": metricas_categoria([c["area_destino"] for c in casos], [p["area_destino"] for p in predicciones], list(AREAS)),
@@ -141,7 +148,9 @@ def main(argv=None):
     try:
         raw = args.datos.read_bytes()
         datos = json.loads(raw)
-        resultado = evaluar(datos)
+        resultado = evaluar(datos, medir=True)
+        tiempos = [p["inferencia_ms"] for p in resultado["predicciones"]]
+        resultado["latencia_inferencia_ms"] = dict(zip(["p50", "p95", "p99"], map(float, np.percentile(tiempos, [50, 95, 99]))))
         resultado["sha256_datos"] = sha256(raw).hexdigest()
         modelos = ROOT / "src/infrastructure/ai/models"
         resultado["sha256_artefactos"] = {p.name: sha256(p.read_bytes()).hexdigest() for p in sorted(modelos.iterdir()) if p.suffix in {".joblib", ".json"}}

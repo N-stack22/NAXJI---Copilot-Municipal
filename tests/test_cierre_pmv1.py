@@ -1,5 +1,6 @@
 from dataclasses import replace
 from pathlib import Path
+import json
 from unittest.mock import Mock
 from uuid import uuid4
 
@@ -11,6 +12,9 @@ from src.adapters.out.ai.integridad_modelos import HUELLAS, verificar_artefactos
 from src.adapters.out.persistence.datos_demo import AREAS, TIPOS, demo_id
 from src.application.ports.input.solicitud_use_case import DatosSolicitud
 from src.domain.services.errores import DatosInvalidos
+from src.domain.services.errores import ErrorGeneracion
+from src.adapters.out.ai.generador_borrador_ollama import GeneradorBorradorOllama
+from src.application.ports.output.generador_borrador import ContextoConfirmado
 from src.domain.value_objects.estados import ResultadoValidacion
 
 
@@ -51,3 +55,28 @@ def test_huellas_detectan_modificacion_antes_de_deserializar(tmp_path):
     (tmp_path / 'modelo_tipo.joblib').write_bytes(b'alterado')
     with pytest.raises(ValueError, match='huella'):
         verificar_artefactos(tmp_path)
+
+
+def test_plantilla_legacy_declarada_sin_resultados_exige_advertencia(deps, usuario):
+    plantilla = next(p for p in deps.plantillas.listar() if p.version == 1 and "Piloto NAXJI" in p.nombre)
+    contexto = ContextoConfirmado(plantilla.tipo_informe_id, usuario.area_id, ())
+    textos = {s.clave: "Texto sin advertencia sobre los datos ausentes" for s in plantilla.secciones_salida}
+    llm = Mock(model="qwen2.5:7b", generar=Mock(return_value=json.dumps(textos)))
+    generador = GeneradorBorradorOllama(llm)
+    datos = {"detalle": "No se dispone de resultados de inspección, mediciones ni hallazgos."}
+    with pytest.raises(ErrorGeneracion):
+        generador.generar("Caso de prueba", plantilla, datos, contexto, "")
+    entrada = json.loads(llm.generar.call_args.args[0])
+    assert entrada["fuentes_sin_hechos"] is True
+    llm.generar.return_value = json.dumps({s.clave: "Pendiente de verificación: faltan resultados aportados." for s in plantilla.secciones_salida})
+    assert generador.generar("Caso de prueba", plantilla, datos, contexto, "").contenido
+
+
+def test_selector_sin_resultados_prevalece_sobre_notas_en_hechos(deps, usuario):
+    plantilla = next(p for p in deps.plantillas.listar() if p.version == 2 and "Piloto NAXJI" in p.nombre)
+    contexto = ContextoConfirmado(plantilla.tipo_informe_id, usuario.area_id, ())
+    llm = Mock(model="qwen2.5:7b", generar=Mock(return_value=json.dumps({s.clave:"Texto sin advertencia" for s in plantilla.secciones_salida})))
+    with pytest.raises(ErrorGeneracion):
+        GeneradorBorradorOllama(llm).generar("Petición", plantilla,
+            {"estado_resultados":"Sin resultados de inspección", "hechos_conocidos":"Notas preliminares aún no verificadas"}, contexto, "")
+    assert json.loads(llm.generar.call_args.args[0])["fuentes_sin_hechos"] is True

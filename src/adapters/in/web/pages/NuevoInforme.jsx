@@ -500,6 +500,7 @@ function FormularioInforme({ solicitudId, informeInicialId }) {
               <option value="">Seleccione un tipo</option>
               {tipos.map(tipo => <option key={tipo.id} value={tipo.id}>{tipo.nombre}</option>)}
             </select>
+            {tipos.find(t => t.id === form.tipoInformeId)?.codigo === "MEMORANDO" && <p className="hint-text">Memorando se confirma manualmente. El clasificador actual no incluye esta clase entre sus salidas entrenadas.</p>}
           </div>
           <div className="form-group"><label htmlFor="area-destino">Área de destino a confirmar *</label>
             <select id="area-destino" required value={form.areaDestinoId} onChange={e => cambiarContexto({ areaDestinoId: e.target.value })}>

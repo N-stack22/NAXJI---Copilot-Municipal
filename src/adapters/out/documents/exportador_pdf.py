@@ -14,7 +14,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 
 from src.application.ports.output.exportador_informe import ExportadorInforme
-from src.adapters.out.documents.exportador_docx import ExportadorDocx
+from src.adapters.out.documents.exportador_docx import ExportadorDocx, AVISO_PILOTO
 
 _lock = Lock()
 
@@ -37,6 +37,8 @@ class ExportadorPdf(ExportadorInforme):
             for parrafo in ([p] if p.tag.endswith("}p") else p.iter("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p")):
                 texto = "".join(n.text or "" if n.tag.endswith("}t") else "\n" if n.tag.endswith("}br") else "\t"
                                 for n in parrafo.iter() if n.tag.rsplit("}", 1)[-1] in {"t", "br", "tab"})
+                if texto == AVISO_PILOTO:
+                    texto = texto.replace("Formato Word", "Formato PDF", 1)
                 if texto:
                     bloques.append(Paragraph(escape(texto).replace("\n", "<br/>"), estilo))
                 else:

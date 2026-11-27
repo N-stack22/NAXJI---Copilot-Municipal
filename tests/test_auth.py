@@ -94,6 +94,23 @@ def test_cookie_endpoints_reject_csrf(auth_app, headers):
     assert calls == []
 
 
+def test_cookie_cross_site_configurable_requiere_https_y_conserva_csrf(auth_app):
+    client, _, _, _ = auth_app
+    auth = client.app.state.auth
+    auth.settings = replace(auth.settings, cookie_samesite="none", cookie_secure=True,
+                            allowed_origins=("https://naxji.pages.dev",))
+    headers = {"X-NAXJI-Client": "web", "Origin": "https://naxji.pages.dev"}
+    response = client.post("/auth/login", headers=headers, json={"email":"test@example.invalid", "password":"prueba"})
+    assert response.status_code == 200
+    assert "SameSite=none" in response.headers["set-cookie"] and "Secure" in response.headers["set-cookie"]
+    assert client.post("/auth/refresh", headers={**headers, "Origin":"https://ajeno.invalid"}).status_code == 403
+    assert client.post("/auth/refresh", headers=headers).status_code == 200
+    response = client.post("/auth/logout", headers={**headers, "Authorization":"Bearer access-test"})
+    assert response.status_code == 204 and "SameSite=none" in response.headers["set-cookie"]
+    with pytest.raises(ValueError, match="Secure"):
+        replace(auth.settings, cookie_secure=False)
+
+
 def test_http_cannot_assign_admin_or_reflect_password(auth_app):
     client, _, _, calls = auth_app
     response = client.post("/auth/login", headers={"X-NAXJI-Client": "web"},

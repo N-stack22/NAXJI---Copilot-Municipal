@@ -95,7 +95,8 @@ class ExportadorDocx(ExportadorInforme):
             revision = h.get("plantilla_version")
             revision = str(revision) if isinstance(revision, int) else "no registrada"
             estado = "Contenido aprobado mediante revisión humana" if informe.estado == EstadoInforme.APROBADO else "Borrador sujeto a revisión humana"
-            detalle = documento.add_paragraph(f"{origen} · Versión de plantilla {revision}\nVersión guardada {version.numero_version} · {estado}")
+            etiqueta_version = f"Versión guardada {version.numero_version}" + ("" if informe.estado == EstadoInforme.APROBADO else " del borrador")
+            detalle = documento.add_paragraph(f"{origen} · Versión de plantilla {revision}\n{etiqueta_version} · {estado}")
             detalle.runs[0].font.size = Pt(9)
             detalle.paragraph_format.keep_with_next = True
             if version.titulo is None:

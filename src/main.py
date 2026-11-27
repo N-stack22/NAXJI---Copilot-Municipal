@@ -59,7 +59,9 @@ def create_app(settings: Settings | None = None, container: Container | None = N
             headers["WWW-Authenticate"] = "Bearer"
         response = JSONResponse(status_code=error.status, content={"detail": error.detail}, headers=headers)
         if request.url.path == "/auth/refresh" and error.status in (401, 403):
-            response.delete_cookie("naxji_refresh", path="/")
+            conf = request.app.state.auth.settings
+            response.delete_cookie("naxji_refresh", path="/", httponly=True,
+                                   secure=conf.cookie_secure, samesite=conf.cookie_samesite)
         return response
 
     @app.exception_handler(RequestValidationError)

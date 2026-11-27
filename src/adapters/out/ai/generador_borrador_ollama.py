@@ -3,7 +3,7 @@ import json
 from src.application.ports.output.generador_borrador import ContextoConfirmado, GeneradorBorrador, ResultadoBorrador
 from src.domain.entities.plantilla import Plantilla
 from src.adapters.out.ai.ollama_adapter import OllamaAdapter
-from src.adapters.out.ai.fidelidad_inspeccion import politica_inspeccion, validar_fidelidad_inspeccion
+from src.adapters.out.ai.fidelidad_inspeccion import politica_inspeccion, validar_fidelidad_inspeccion, normalizar
 from src.domain.services.errores import DatosInvalidos, ErrorGeneracion
 from src.domain.services.informe_service import validar_contenido
 from src.domain.value_objects.seccion_salida import secciones_efectivas
@@ -116,6 +116,14 @@ class GeneradorBorradorOllama(GeneradorBorrador):
         # La declaración explícita prevalece aunque se hayan escrito notas en observaciones.
         sin_resultados = any(datos.get(c.clave) in c.configuracion.get("valores_sin_resultados", [])
                              for c in plantilla.campos if c.activo)
+        sin_resultados = sin_resultados or any(c.clave == "estado_resultados" and c.activo
+            and datos.get(c.clave) == "Sin resultados de inspección" for c in plantilla.campos)
+        # Compatibilidad con la plantilla técnica v1, anterior al selector estado_resultados.
+        # Reconoce una declaración explícita de ausencia, no infiere hechos del asunto.
+        declaracion_legacy = normalizar(str(datos.get("detalle", "")))
+        sin_resultados = sin_resultados or ("Piloto NAXJI" in plantilla.nombre
+            and not any(c.clave == "estado_resultados" for c in plantilla.campos)
+            and declaracion_legacy.startswith("no se dispone de resultados de inspeccion"))
         sin_hechos = sin_resultados or (bool(campos_hechos) and not any(str(datos.get(c.clave, "")).strip() for c in campos_hechos))
         politica = politica_inspeccion(plantilla, datos, sin_hechos)
         if politica and "recomendaciones" in esquema["properties"]:

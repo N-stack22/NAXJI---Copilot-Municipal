@@ -26,6 +26,13 @@ class SupabaseAuthSettings:
     publishable_key: str = field(repr=False)
     cookie_secure: bool = True
     allowed_origins: tuple[str, ...] = ("http://127.0.0.1:5173", "http://localhost:5173")
+    cookie_samesite: str = "strict"
+
+    def __post_init__(self):
+        if self.cookie_samesite not in {"strict", "lax", "none"}:
+            raise ValueError("NAXJI_AUTH_COOKIE_SAMESITE debe ser strict, lax o none")
+        if self.cookie_samesite == "none" and not self.cookie_secure:
+            raise ValueError("SameSite=none requiere cookie Secure y HTTPS")
 
     @classmethod
     def from_env(cls):
@@ -50,9 +57,9 @@ class SupabaseAuthSettings:
         origins = tuple(o.strip().rstrip("/") for o in values.get(
             "NAXJI_AUTH_ALLOWED_ORIGINS", "http://127.0.0.1:5173,http://localhost:5173"
         ).split(",") if o.strip())
-        if "*" in origins:
+        if any("*" in origin for origin in origins):
             raise ValueError("Los orígenes de autenticación deben ser explícitos")
-        return cls(url, key, secure == "true", origins)
+        return cls(url, key, secure == "true", origins, values.get("NAXJI_AUTH_COOKIE_SAMESITE", "strict").lower())
 
 
 class SupabaseAuth:
