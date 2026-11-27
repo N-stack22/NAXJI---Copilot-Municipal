@@ -1,0 +1,13 @@
+{
+  "autor_ground_truth": "Consultas preparadas por Codex a partir de páginas leídas del PDF local; sin evaluación de funcionario ni verificación jurídica",
+  "consultas": [
+    {"id":"MINAM-01","consulta":"¿Qué rango de rendimiento del barrido manual por turno se describe al programar el servicio?","paginas_relevantes":[24]},
+    {"id":"MINAM-02","consulta":"¿Qué información deben contemplar las fichas de programación de limpieza de espacios públicos?","paginas_relevantes":[26]},
+    {"id":"MINAM-03","consulta":"¿En qué se diferencian el barrido a fondo o boleo y el barrido superficial?","paginas_relevantes":[27]},
+    {"id":"MINAM-04","consulta":"¿Qué registro sobre las herramientas se recomienda para optimizar adquisiciones anuales?","paginas_relevantes":[28]},
+    {"id":"MINAM-05","consulta":"¿Qué parámetros se consideran al elegir equipamiento de barrido mecanizado?","paginas_relevantes":[30]},
+    {"id":"MINAM-06","consulta":"¿A quién deben avisar los operarios cuando las herramientas o equipos están deteriorados para descartarlos?","paginas_relevantes":[32]},
+    {"id":"MINAM-07","consulta":"¿Cuál es el período orbital de Neptuno?","paginas_relevantes":[]},
+    {"id":"MINAM-08","consulta":"¿Cómo se juega la defensa siciliana en ajedrez?","paginas_relevantes":[]}
+  ]
+}
