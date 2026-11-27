@@ -1,0 +1,38 @@
+﻿{
+    "fecha_utc":  "2026-11-27T03:57:45.2576912Z",
+    "comandos_en_path":  [
+
+                         ],
+    "rutas_comprobadas":  [
+                              {
+                                  "existe":  false,
+                                  "ruta":  "C:/Program Files/SciTools"
+                              },
+                              {
+                                  "existe":  false,
+                                  "ruta":  "C:/Program Files/Scientific Toolworks"
+                              },
+                              {
+                                  "existe":  false,
+                                  "ruta":  "C:/Program Files/Understand"
+                              },
+                              {
+                                  "existe":  false,
+                                  "ruta":  "C:/Program Files (x86)/SciTools"
+                              },
+                              {
+                                  "existe":  false,
+                                  "ruta":  "C:/Users/Usuario/AppData/Local/Programs/Understand"
+                              },
+                              {
+                                  "existe":  false,
+                                  "ruta":  "D:/SciTools"
+                              }
+                          ],
+    "aplicaciones_registradas":  [
+
+                                 ],
+    "estado":  "BLOQUEADO: ejecutable no localizado; licencia no verificable",
+    "ejecutado":  false,
+    "metricas":  null
+}

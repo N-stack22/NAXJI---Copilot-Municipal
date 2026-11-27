@@ -1,0 +1,12 @@
+{
+  "fecha_utc": "2026-11-27T04:23:51.248572+00:00",
+  "contenedores_retirados": [
+    "71f08a55b05cb458162c9c862786aae770104504148c423bcc475a0bbfcb5de9",
+    "1015dbdcfc7bcc7c89bee66e5731bb8593686e64e00def909de037f963857de6"
+  ],
+  "red_retirada": "dd785ffac460b5be9a2d1d3c0abc9a8147c19ace5cf509cdebe848505fbd8b35",
+  "docker_rm_exit": 0,
+  "network_rm_exit": 0,
+  "imagen_release_conservada": "naxji-cierre-seguridad:release",
+  "servicios_compartidos": "No tocados"
+}

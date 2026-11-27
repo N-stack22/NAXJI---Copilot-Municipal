@@ -1,3 +1,5 @@
+> Actualización de cierre: los 3 PMV/10 HU están aceptados académicamente por instrucción del usuario. Este archivo conserva el corte técnico anterior. La evidencia vigente de guardias completas, ZAP real, CI y entrega Linux/Docker está en `docs/RESULTADOS_CIERRE.md`, `docs/MATRIZ_OBSERVACIONES_CIERRE.md` y `docs/INDICE_12_ENTREGABLES.md`. Understand continúa bloqueado; las omitidas no son aprobadas.
+
 # Evaluación arquitectónica
 
 Valoraciones cualitativas 1–5 según el prompt, no medidas de desempeño: 1 débil, 3 parcial, 5 evidencia completa en lo inspeccionado.

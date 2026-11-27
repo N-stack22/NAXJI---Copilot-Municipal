@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "duracion_s": 47.696751000126824,
+  "motivo": "Timeout de red en descarga PyPI; cache por dependencias y timeout explicito; lock sin cambios"
+}

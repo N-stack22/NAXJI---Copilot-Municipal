@@ -1,0 +1,70 @@
+{
+  "inicio_utc": "2026-11-27T03:50:08.990857+00:00",
+  "commit": "7359a67bed5ba2c2c87f087796f9769d36f00857",
+  "fuentes_manifest_sha256": "831bd2cf2b82ce90244ccbb2d6d3636a1f0c2594d0b24955aed544a91c9b8e29",
+  "postgres": "loopback aislado; bases aleatorias de fixtures",
+  "ollama_real": false,
+  "supabase_compartido": "no conectado",
+  "checks": [
+    {
+      "check": "pytest",
+      "comando": [
+        "D:\\NAXJI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-ra",
+        "--basetemp",
+        "D:\\NAXJI\\.venv\\worktrees\\cierre-seguridad\\docs\\evidencias\\cierre-seguridad-20261126\\linea-base\\temporales"
+      ],
+      "inicio_utc": "2026-11-27T03:50:11.535741+00:00",
+      "duracion_s": 41.197931,
+      "exit_code": 0
+    },
+    {
+      "check": "frontend",
+      "comando": [
+        "npm.cmd",
+        "run",
+        "test:frontend"
+      ],
+      "inicio_utc": "2026-11-27T03:50:52.734180+00:00",
+      "duracion_s": 8.897722,
+      "exit_code": 0
+    },
+    {
+      "check": "lint",
+      "comando": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "inicio_utc": "2026-11-27T03:51:01.631902+00:00",
+      "duracion_s": 2.796174,
+      "exit_code": 0
+    },
+    {
+      "check": "build",
+      "comando": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "inicio_utc": "2026-11-27T03:51:04.428600+00:00",
+      "duracion_s": 0.704765,
+      "exit_code": 0
+    },
+    {
+      "check": "diff-check",
+      "comando": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "inicio_utc": "2026-11-27T03:51:05.133365+00:00",
+      "duracion_s": 0.128819,
+      "exit_code": 0
+    }
+  ],
+  "fin_utc": "2026-11-27T03:51:05.262184+00:00"
+}

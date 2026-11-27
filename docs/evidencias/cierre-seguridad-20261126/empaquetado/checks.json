@@ -1,0 +1,29 @@
+{
+  "commit": "7aff3a11cd8ac98a7c8054de86bd8a1bed44699c",
+  "checks": [
+    {
+      "nombre": "python-build",
+      "comando": [
+        "D:/NAXJI/.venv/Scripts/python.exe",
+        "-m",
+        "build",
+        "--outdir",
+        "D:/NAXJI/.venv/artefactos-cierre-seguridad"
+      ],
+      "exit_code": 0,
+      "duracion_s": 14.645227199885994
+    },
+    {
+      "nombre": "docker-build",
+      "comando": [
+        "docker",
+        "build",
+        "-t",
+        "naxji-cierre-seguridad:release",
+        "."
+      ],
+      "exit_code": 1,
+      "duracion_s": 374.5837044999935
+    }
+  ]
+}

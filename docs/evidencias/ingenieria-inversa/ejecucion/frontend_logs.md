@@ -1,3 +1,5 @@
+> Actualización de cierre: los 3 PMV/10 HU están aceptados académicamente por instrucción del usuario. Este archivo conserva el corte técnico anterior. La evidencia vigente de guardias completas, ZAP real, CI y entrega Linux/Docker está en `docs/RESULTADOS_CIERRE.md`, `docs/MATRIZ_OBSERVACIONES_CIERRE.md` y `docs/INDICE_12_ENTREGABLES.md`. Understand continúa bloqueado; las omitidas no son aprobadas.
+
 # Logs y descubrimiento funcional frontend
 
 La suite Node/JSDOM de final-05 aprobó 55 pruebas, incluidas tres de revisión por funcionario/revisor/administrador; lint y build terminaron con código cero. Los logs originales se conservan en `../../cierre-trazable/verificacion-final-05/`.

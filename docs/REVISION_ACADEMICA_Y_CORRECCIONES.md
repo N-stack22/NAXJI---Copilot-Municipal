@@ -1,3 +1,13 @@
+# Alcance académico vigente
+
+Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
+
+No se modifica el informe académico final ni se genera otra calificación. La aceptación de los PMV/HU proviene del usuario, no de una encuesta, acta o nota del profesor inventada. Los puntajes orientativos y la observación sobre artículo inglés del análisis histórico siguiente se conservan como antecedentes; no reabren requerimientos de producto ni constituyen un bloqueo de esta misión. Resultados de seguridad, pruebas y despliegue se actualizan en [resultados](RESULTADOS_CIERRE.md) y [observaciones](MATRIZ_OBSERVACIONES_CIERRE.md).
+
+---
+
+## Antecedente conservado (corte anterior)
+
 # Aplicación de los cuatro prompts académicos
 
 ## Insumos y alcance

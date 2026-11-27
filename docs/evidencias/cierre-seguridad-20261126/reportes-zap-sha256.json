@@ -1,0 +1,122 @@
+[
+  {
+    "archivo": "zap/antes/api-funcionario.html",
+    "sha256": "1decc6b781e87abd874389953ec8ac3f8253cb555560f371c790de0a9f8b9c62",
+    "bytes": 160027
+  },
+  {
+    "archivo": "zap/antes/api-funcionario.json",
+    "sha256": "82b88f9509f8f0cdc79a9268f9ae2ec415e080681165723c782041ff28be8f6a",
+    "bytes": 51687
+  },
+  {
+    "archivo": "zap/antes/api-funcionario.log",
+    "sha256": "5428e031552b488b99810cd9b0e78bc798534b266b5336faef5049fe65fe53e4",
+    "bytes": 5356
+  },
+  {
+    "archivo": "zap/antes/ejecucion.json",
+    "sha256": "bbba7e856a7aa7e47313a05f770a647e601ef36ab6d688d9d20f5548e75a1098",
+    "bytes": 2595
+  },
+  {
+    "archivo": "zap/antes/frontend.html",
+    "sha256": "ff3e5d0bc1445996583bab77b2afec64c8a3f5403e81846af58bfe3cd9df89d1",
+    "bytes": 48185
+  },
+  {
+    "archivo": "zap/antes/frontend.json",
+    "sha256": "4af394a717f7c6e13c8540a3e2ba92072c43102ae6d74eb6eb88da6c1607b64c",
+    "bytes": 15337
+  },
+  {
+    "archivo": "zap/antes/frontend.log",
+    "sha256": "5be1a31bf2a5fa89732f1c6be54b57b4b26d5cf1d48a0155eb070263e335f7b9",
+    "bytes": 3721
+  },
+  {
+    "archivo": "zap/antes-02/api-funcionario.html",
+    "sha256": "80838ee1d31f143d4d4f5cfb21526fe3dc25f5b0c64b0acc6ab6f3215e01cee3",
+    "bytes": 136780
+  },
+  {
+    "archivo": "zap/antes-02/api-funcionario.json",
+    "sha256": "93a0552f08b692ceff963d6f7b77128dbd2f5b9f119b6f9e032b20761b02a1d1",
+    "bytes": 45014
+  },
+  {
+    "archivo": "zap/antes-02/api-funcionario.log",
+    "sha256": "6f4218d2c3cb4e7499baedffab42c09932d56920ea56135a651b380733ca3a4f",
+    "bytes": 5528
+  },
+  {
+    "archivo": "zap/antes-02/cobertura-http.json",
+    "sha256": "d1770d1ea8c28e30bb90e8c82fa84cfde734240bb3655365da05666f3f2da50c",
+    "bytes": 7146
+  },
+  {
+    "archivo": "zap/antes-02/ejecucion.json",
+    "sha256": "ce025a7a20e15d08df506a585004d4247d53a0b388683f9bc8de6dd193501b3d",
+    "bytes": 2596
+  },
+  {
+    "archivo": "zap/antes-02/frontend.html",
+    "sha256": "f284ead11c073b74f4dbdc41016c0187ae84889c24cfd6af31fc618c1dc980c9",
+    "bytes": 48185
+  },
+  {
+    "archivo": "zap/antes-02/frontend.json",
+    "sha256": "5eccd65ec5a47decd3f9ebf8ffb29aea6e7308521589f83fd9cd807720f48c74",
+    "bytes": 15337
+  },
+  {
+    "archivo": "zap/antes-02/frontend.log",
+    "sha256": "5be1a31bf2a5fa89732f1c6be54b57b4b26d5cf1d48a0155eb070263e335f7b9",
+    "bytes": 3721
+  },
+  {
+    "archivo": "zap/comparacion.json",
+    "sha256": "061271f3a7eeae82a1e201a72a795c23fe794259e7eee5d7e52975fbcf47d207",
+    "bytes": 4863
+  },
+  {
+    "archivo": "zap/despues/api-funcionario.html",
+    "sha256": "6f90729b7a6a0745b2b1f34fa5dcf3667f63b6f569880246461ef9b285e2bbe4",
+    "bytes": 127439
+  },
+  {
+    "archivo": "zap/despues/api-funcionario.json",
+    "sha256": "3c0592bdf5dca0834d98f45fecdfce313ea0eb911ba17bbb3d158ddcfc307371",
+    "bytes": 40012
+  },
+  {
+    "archivo": "zap/despues/api-funcionario.log",
+    "sha256": "3fe2ad70a0ca700ecd6c4c2f579eff24aa5313d00a205712d985b24da94a4791",
+    "bytes": 5219
+  },
+  {
+    "archivo": "zap/despues/cobertura-http.json",
+    "sha256": "d1770d1ea8c28e30bb90e8c82fa84cfde734240bb3655365da05666f3f2da50c",
+    "bytes": 7146
+  },
+  {
+    "archivo": "zap/despues/ejecucion.json",
+    "sha256": "8aed6ba51b3b56a46a6e72fa7d1006fab4f6a244dbbb4ed602a310fedcefdb65",
+    "bytes": 2594
+  },
+  {
+    "archivo": "zap/despues/frontend.html",
+    "sha256": "3f777f98aed925710b55295485fed47ac498730360d04153624e199b0edd92e2",
+    "bytes": 27570
+  },
+  {
+    "archivo": "zap/despues/frontend.json",
+    "sha256": "e0adcdcbd667ac6c6bfa47d3c0685c0bacfb1bdfe8a582cea5ca55d477476229",
+    "bytes": 5741
+  },
+  {
+    "archivo": "zap/despues/frontend.log",
+    "sha256": "f16120a4d5604404efea9cb81e217fd1583c9197ed2f8d110cadef63c68c5db6",
+    "bytes": 3180
+  }
+]

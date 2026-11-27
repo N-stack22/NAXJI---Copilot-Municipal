@@ -1,3 +1,5 @@
+> Actualización de cierre: los 3 PMV/10 HU están aceptados académicamente por instrucción del usuario. Este archivo conserva el corte técnico anterior. La evidencia vigente de guardias completas, ZAP real, CI y entrega Linux/Docker está en `docs/RESULTADOS_CIERRE.md`, `docs/MATRIZ_OBSERVACIONES_CIERRE.md` y `docs/INDICE_12_ENTREGABLES.md`. Understand continúa bloqueado; las omitidas no son aprobadas.
+
 # Casos de uso observados
 
 HU-001: acceso/sesión/perfil; HU-002: configurar tipo/área/plantilla/datos; HU-IA-01: sugerir/confirmar contexto y generar. HU-003: incorporar/procesar fuentes; HU-IA-02: recuperar con permisos; HU-IA-03: mostrar citas/snapshots. HU-IA-04: advertir y revisar respaldo; HU-004: editar/decidir; HU-005: historial y exportación aprobada; HU-006: auditoría administrativa.

@@ -1,0 +1,23 @@
+{
+  "fecha_utc": "2026-11-27T04:16:51.263555+00:00",
+  "imagen": "naxji-cierre-seguridad:release",
+  "red": "none",
+  "puertos_publicados": [],
+  "credenciales_externas": false,
+  "commit": "d257eb6b7b0d1443d998591ea782f6ccabff9645",
+  "contenedor_id": "4dc3599f848a81f3eb8b0948e02e1564dd92dfbb106489e375fbb80242f88086",
+  "uid": "10001",
+  "checks": {
+    "health": 200,
+    "nosniff": true,
+    "docs": 404,
+    "sql_recursos": 46,
+    "predictor_cargado": true,
+    "pdf_importado": true
+  },
+  "image_id": "sha256:b494e2b84de2175d4a7ca239ef1f4a82ee4dec264efbd8bacad15e4f6175fcf0",
+  "read_only": true,
+  "limpieza_exit": 0,
+  "arranque_sin_config_exit": 1,
+  "fallo_cerrado_sin_config": true
+}

@@ -1,13 +1,17 @@
-# Plan FURPS+
+# Plan FURPS+ ejecutado
 
-| Hallazgo | Acción compatible | Validación | Reversión / pendiente |
+Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
+
+| Acción | Implementación mínima | Validación | Estado |
 |---|---|---|---|
-| F-01 | Advertencias estructurales por sección, motivo y comprobaciones humanas; una sola aprobación por versión | Tests PMV3 de edición/rechazo/aprobación, fuentes inaccesibles y snapshots | Desactivar PMV3 conserva eventos; corpus institucional y juicio humano externos pendientes |
-| F-02 | Explicar capa de texto por página y OCR externo antes del reenvío | PDF con texto/mixto/vacío en `test_pmv2.py` | Mantener política de extractor; no simular OCR interno |
-| U-01 | Mensaje remoto accionable y conservación de datos/reintentos | Frontend, HTTP simulado y lint/build | Volver al formateador anterior si hay regresión; conservar errores HTTP específicos |
-| R-01 | `/ready` privado, de lectura y con tiempos acotados; mantener `/health` | Tests de caída, sanitización y permisos | Retirar el monitor nuevo sin alterar liveness |
-| P-01 | Medir HTTP por familias, latencias, throughput y recursos; evaluar RAG real separadamente | 750 llamadas aisladas; PGvector real y bge-m3 | No cambiar ranking/filtros ni afirmar capacidad productiva con dobles |
-| S-01 | Entrada canónica pyproject, compatibilidad requirements y wheel/SQL/modelos/plantilla | Instalación en venv nuevo, importación fuera del repo, pruebas de recursos | Revertir manifiesto/lock como unidad; no tocar entornos privados |
-| X-01 | Guía de activación con migraciones explícitas, bucket privado y perfiles | Suite en bases aleatorias; lista operativa | RAG/PMV3 siguen opt-in; sin despliegue compartido autorizado |
+| Reforzar arquitectura | Resolver imports absolutos/relativos, alias, dominio hacia aplicación y recorridos completos | Casos adversarios y carga de todos los módulos | Cerrada; sin infracciones productivas |
+| Reforzar SQL | Descubrimiento recursivo, comentarios, literales partidos/f-strings y recursos por alias | Adaptador nuevo anidado; 46 recursos legibles fuera del repo | Cerrada; adaptadores intactos |
+| Contrastar seguridad HTTP | ZAP antes/después en red sin salida externa | HTML/JSON y cobertura autenticada de laboratorio | Cerrada en alcance |
+| Corregir cabeceras confirmadas | nosniff en API; CSP/marcos/nosniff en archivo estático | 6 regresiones y reescaneo | Cerrada localmente |
+| Comprobar entrega | pytest/frontend/lint/build/wheel/sdist/Docker/CI | Logs con commit y resultado; prueba de imagen sin red | Ejecutada; ver resultados por corrida |
+| Repetir rendimiento HTTP | Mantener el arnés y sus dobles declarados | 750/750 con status esperado, 0 fallos inesperados | Cerrada en laboratorio |
+| Medir con Understand | Comprobar instalación y licencia; ejecutar solo si disponibles | PATH, rutas y registro; guía oficial manual | Bloqueada, no simulada |
 
-Responsables propuestos por función: desarrollo para código; QA para pruebas; titular de infraestructura para servicios/permisos; revisor institucional para fuentes/formatos. No se asignaron personas ni fechas de aceptación inexistentes. Los bloqueos externos permanecen abiertos hasta obtener evidencia.
+Rollback de estas correcciones: volver al commit anterior de la rama o a una imagen previa compatible. No se borran informes/versiones/eventos ni se aplican migraciones. Los modos y banderas de PMV mantienen su política existente.
+
+Evidencia actual: [resultados](RESULTADOS_CIERRE.md), [observaciones cerradas y pendientes](MATRIZ_OBSERVACIONES_CIERRE.md), [12 entregables](INDICE_12_ENTREGABLES.md) y [preparación de despliegue](PREPARACION_DESPLIEGUE.md). Los logs históricos de `evidencias/cierre-trazable/` se conservan; no se suman suites repetidas para inflar resultados.

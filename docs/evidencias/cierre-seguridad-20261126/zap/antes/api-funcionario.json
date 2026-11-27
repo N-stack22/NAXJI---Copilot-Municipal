@@ -1,0 +1,1513 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.17.0",
+	"@generated": "Fri, 27 Nov 2026 03:58:22",
+	"created": "2026-11-27T03:58:22.222801711Z",
+	"insights":[
+		{
+			"level": "Medium",
+			"reason": "Exceeded High",
+			"site": "http://naxji-api:8000",
+			"key": "insight.code.4xx",
+			"description": "Percentage of responses with status code 4xx",
+			"statistic": "99"
+		},
+		{
+			"level": "Low",
+			"reason": "Warning",
+			"site": "",
+			"key": "insight.log.error",
+			"description": "ZAP errors logged - see the zap.log file for details",
+			"statistic": "46"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "",
+			"key": "insight.network.failure",
+			"description": "Percentage of network failures",
+			"statistic": "100"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://naxji-api:8000",
+			"key": "insight.code.2xx",
+			"description": "Percentage of responses with status code 2xx",
+			"statistic": "5"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://naxji-api:8000",
+			"key": "insight.endpoint.ctype.application/json",
+			"description": "Percentage of endpoints with content type application/json",
+			"statistic": "100"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://naxji-api:8000",
+			"key": "insight.endpoint.method.GET",
+			"description": "Percentage of endpoints with method GET",
+			"statistic": "67"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://naxji-api:8000",
+			"key": "insight.endpoint.method.POST",
+			"description": "Percentage of endpoints with method POST",
+			"statistic": "26"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://naxji-api:8000",
+			"key": "insight.endpoint.method.PUT",
+			"description": "Percentage of endpoints with method PUT",
+			"statistic": "6"
+		},
+		{
+			"level": "Info",
+			"reason": "Informational",
+			"site": "http://naxji-api:8000",
+			"key": "insight.endpoint.total",
+			"description": "Count of total endpoints",
+			"statistic": "133"
+		}
+	],
+	"site":[ 
+		{
+			"@name": "http://naxji-api:8000",
+			"@host": "naxji-api",
+			"@port": "8000",
+			"@ssl": "false",
+			"alerts": [ 
+				{
+					"pluginid": "10021",
+					"alertRef": "10021",
+					"alert": "X-Content-Type-Options Header Missing",
+					"name": "X-Content-Type-Options Header Missing",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+					"instances":[ 
+						{
+							"id": "5008",
+							"uri": "http://naxji-api:8000/auth/config",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/config",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "7446",
+							"uri": "http://naxji-api:8000/health",
+							"nodeName": "http:\/\/naxji-api:8000\/health",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "9",
+							"uri": "http://naxji-api:8000/openapi.json",
+							"nodeName": "http:\/\/naxji-api:8000\/openapi.json",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "32"
+				},
+				{
+					"pluginid": "100000",
+					"alertRef": "100000-1",
+					"alert": "A Client Error response code was returned by the server",
+					"name": "A Client Error response code was returned by the server",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>A response code of 404 was returned by the server.</p><p>This may indicate that the application is failing to handle unexpected input correctly.</p><p>Raised by the 'Alert on HTTP Response Code Error' script</p>",
+					"instances":[ 
+						{
+							"id": "481",
+							"uri": "http://naxji-api:8000",
+							"nodeName": "http:\/\/naxji-api:8000",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6340",
+							"uri": "http://naxji-api:8000/",
+							"nodeName": "http:\/\/naxji-api:8000\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "41",
+							"uri": "http://naxji-api:8000/5970578931213616081",
+							"nodeName": "http:\/\/naxji-api:8000\/5970578931213616081",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "8",
+							"uri": "http://naxji-api:8000/areas",
+							"nodeName": "http:\/\/naxji-api:8000\/areas",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6342",
+							"uri": "http://naxji-api:8000/areas/",
+							"nodeName": "http:\/\/naxji-api:8000\/areas\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6344",
+							"uri": "http://naxji-api:8000/auditoria",
+							"nodeName": "http:\/\/naxji-api:8000\/auditoria",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "39",
+							"uri": "http://naxji-api:8000/auditoria?limite=50&desplazamiento=0&informe_id=ca2f6b2f-4c85-4a55-9b09-a135027c0dd9",
+							"nodeName": "http:\/\/naxji-api:8000\/auditoria (desplazamiento,informe_id,limite)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6345",
+							"uri": "http://naxji-api:8000/auditoria/",
+							"nodeName": "http:\/\/naxji-api:8000\/auditoria\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "570",
+							"uri": "http://naxji-api:8000/auth",
+							"nodeName": "http:\/\/naxji-api:8000\/auth",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6346",
+							"uri": "http://naxji-api:8000/auth/",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "42",
+							"uri": "http://naxji-api:8000/auth/3909842525424326586",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/3909842525424326586",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "7184",
+							"uri": "http://naxji-api:8000/auth/actuator/health",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/actuator\/health",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "20",
+							"uri": "http://naxji-api:8000/auth/me",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/me",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6349",
+							"uri": "http://naxji-api:8000/auth/me/",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/me\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "573",
+							"uri": "http://naxji-api:8000/documentos",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "25",
+							"uri": "http://naxji-api:8000/documentos?limite=100&offset=0",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos (limite,offset)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6354",
+							"uri": "http://naxji-api:8000/documentos/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "43",
+							"uri": "http://naxji-api:8000/documentos/6726630053766153799",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/6726630053766153799",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "28",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6353",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "44",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/1618260529579842505",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/1618260529579842505",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "575",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/fragmentos",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/fragmentos",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6355",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/fragmentos/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/fragmentos\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "45",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/fragmentos/7764678406583589405",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/fragmentos\/7764678406583589405",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "30",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/fragmentos/fragmento_id",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/fragmentos\/fragmento_id",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6357",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/fragmentos/fragmento_id/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/fragmentos\/fragmento_id\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "31",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/original",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/original",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6361",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/original/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/original\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "24",
+							"uri": "http://naxji-api:8000/documentos/configuracion",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/configuracion",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6363",
+							"uri": "http://naxji-api:8000/documentos/configuracion/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/configuracion\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "578",
+							"uri": "http://naxji-api:8000/informes",
+							"nodeName": "http:\/\/naxji-api:8000\/informes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6365",
+							"uri": "http://naxji-api:8000/informes/",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "46",
+							"uri": "http://naxji-api:8000/informes/98181127918752892",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/98181127918752892",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "16",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6369",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "47",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/7286763868407091958",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/7286763868407091958",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "581",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6367",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "18",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6371",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "49",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/574732938598452959",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/574732938598452959",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "19",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/docx",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/docx",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6373",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/docx/",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/docx\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "48",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/7844792766860146514",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/7844792766860146514",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "586",
+							"uri": "http://naxji-api:8000/plantillas",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "10",
+							"uri": "http://naxji-api:8000/plantillas?tipo_informe_id=",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas (tipo_informe_id)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6377",
+							"uri": "http://naxji-api:8000/plantillas/",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "50",
+							"uri": "http://naxji-api:8000/plantillas/7636564026865619087",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas\/7636564026865619087",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "589",
+							"uri": "http://naxji-api:8000/plantillas/plantilla_id",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas\/plantilla_id",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6378",
+							"uri": "http://naxji-api:8000/plantillas/plantilla_id/",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas\/plantilla_id\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "51",
+							"uri": "http://naxji-api:8000/plantillas/plantilla_id/4426428273667323128",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas\/plantilla_id\/4426428273667323128",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "11",
+							"uri": "http://naxji-api:8000/plantillas/plantilla_id/campos",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas\/plantilla_id\/campos",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6380",
+							"uri": "http://naxji-api:8000/plantillas/plantilla_id/campos/",
+							"nodeName": "http:\/\/naxji-api:8000\/plantillas\/plantilla_id\/campos\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "40",
+							"uri": "http://naxji-api:8000/ready",
+							"nodeName": "http:\/\/naxji-api:8000\/ready",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6387",
+							"uri": "http://naxji-api:8000/ready/",
+							"nodeName": "http:\/\/naxji-api:8000\/ready\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "593",
+							"uri": "http://naxji-api:8000/revision",
+							"nodeName": "http:\/\/naxji-api:8000\/revision",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6384",
+							"uri": "http://naxji-api:8000/revision/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "52",
+							"uri": "http://naxji-api:8000/revision/4106121478847416936",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/4106121478847416936",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "32",
+							"uri": "http://naxji-api:8000/revision/config",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/config",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6389",
+							"uri": "http://naxji-api:8000/revision/config/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/config\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "638",
+							"uri": "http://naxji-api:8000/revision/informes",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "33",
+							"uri": "http://naxji-api:8000/revision/informes?limite=25&desplazamiento=0",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes (desplazamiento,limite)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6396",
+							"uri": "http://naxji-api:8000/revision/informes/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "53",
+							"uri": "http://naxji-api:8000/revision/informes/3698497027544711950",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/3698497027544711950",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "34",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6395",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "54",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/6296282384342749657",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/6296282384342749657",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "639",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6392",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "640",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6397",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "56",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/7512166593438752078",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/7512166593438752078",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "6399",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/exportar",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/exportar",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "38",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/exportar?formato=docx",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/exportar (formato)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6400",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/1/exportar/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/1\/exportar\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "55",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/versiones/4355570083267749368",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/versiones\/4355570083267749368",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "641",
+							"uri": "http://naxji-api:8000/solicitudes",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "405",
+							"otherinfo": ""
+						},
+						{
+							"id": "6401",
+							"uri": "http://naxji-api:8000/solicitudes/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "405",
+							"otherinfo": ""
+						},
+						{
+							"id": "57",
+							"uri": "http://naxji-api:8000/solicitudes/1705616006925743171",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/1705616006925743171",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "3",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6405",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "58",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/7037150820090562884",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/7037150820090562884",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "12",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/contexto",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/contexto",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6408",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/contexto/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/contexto\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "5",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/informe",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/informe",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6411",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/informe/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/informe\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "7",
+							"uri": "http://naxji-api:8000/tipos-informe",
+							"nodeName": "http:\/\/naxji-api:8000\/tipos-informe",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6410",
+							"uri": "http://naxji-api:8000/tipos-informe/",
+							"nodeName": "http:\/\/naxji-api:8000\/tipos-informe\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "21",
+							"uri": "http://naxji-api:8000/auth/login",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/login ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "59",
+							"uri": "http://naxji-api:8000/auth/login",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/login ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "422",
+							"otherinfo": ""
+						},
+						{
+							"id": "6308",
+							"uri": "http://naxji-api:8000/auth/login/",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/login\/ ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "23",
+							"uri": "http://naxji-api:8000/auth/logout",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/logout",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "6309",
+							"uri": "http://naxji-api:8000/auth/logout/",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/logout\/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "22",
+							"uri": "http://naxji-api:8000/auth/refresh",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/refresh",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "6311",
+							"uri": "http://naxji-api:8000/auth/refresh/",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/refresh\/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "403",
+							"otherinfo": ""
+						},
+						{
+							"id": "4705",
+							"uri": "http://naxji-api:8000/computeMetadata/v1/",
+							"nodeName": "http:\/\/naxji-api:8000\/computeMetadata\/v1\/ ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "26",
+							"uri": "http://naxji-api:8000/documentos",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos ()(multipart:archivo,titulo,procedencia,ambito)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6313",
+							"uri": "http://naxji-api:8000/documentos/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/ ()(multipart:archivo,titulo,procedencia,ambito)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "29",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/procesar",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/procesar",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6310",
+							"uri": "http://naxji-api:8000/documentos/89e1d77b-260a-42d0-9287-f28edeca2024/procesar/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/89e1d77b-260a-42d0-9287-f28edeca2024\/procesar\/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "27",
+							"uri": "http://naxji-api:8000/documentos/recuperar",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/recuperar ()({consulta})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6318",
+							"uri": "http://naxji-api:8000/documentos/recuperar/",
+							"nodeName": "http:\/\/naxji-api:8000\/documentos\/recuperar\/ ()({consulta})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "4703",
+							"uri": "http://naxji-api:8000/latest/meta-data/",
+							"nodeName": "http:\/\/naxji-api:8000\/latest\/meta-data\/ ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "4724",
+							"uri": "http://naxji-api:8000/metadata/instance",
+							"nodeName": "http:\/\/naxji-api:8000\/metadata\/instance ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "4726",
+							"uri": "http://naxji-api:8000/metadata/v1",
+							"nodeName": "http:\/\/naxji-api:8000\/metadata\/v1 ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "4709",
+							"uri": "http://naxji-api:8000/opc/v1/instance/",
+							"nodeName": "http:\/\/naxji-api:8000\/opc\/v1\/instance\/ ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "4714",
+							"uri": "http://naxji-api:8000/opc/v2/instance/",
+							"nodeName": "http:\/\/naxji-api:8000\/opc\/v2\/instance\/ ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "4729",
+							"uri": "http://naxji-api:8000/openstack/latest/meta_data.json",
+							"nodeName": "http:\/\/naxji-api:8000\/openstack\/latest\/meta_data.json ()({email,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "404",
+							"otherinfo": ""
+						},
+						{
+							"id": "37",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/decidir",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/decidir ()({numero_version,decision,motivo,comprobaciones:{John Doe}})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6317",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/decidir/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/decidir\/ ()({numero_version,decision,motivo,comprobaciones:{John Doe}})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "36",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/editar",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/editar ()({numero_version,contenido:{John Doe}})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6327",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/editar/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/editar\/ ()({numero_version,contenido:{John Doe}})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "35",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/enviar",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/enviar ()({numero_version})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6321",
+							"uri": "http://naxji-api:8000/revision/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/enviar/",
+							"nodeName": "http:\/\/naxji-api:8000\/revision\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/enviar\/ ()({numero_version})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "0",
+							"uri": "http://naxji-api:8000/solicitudes",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes ()({asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6337",
+							"uri": "http://naxji-api:8000/solicitudes/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/ ()({asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "15",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/generar-borrador",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/generar-borrador ()({instrucciones,usar_documentos})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6323",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/generar-borrador/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/generar-borrador\/ ()({instrucciones,usar_documentos})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "13",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/predecir-contexto",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/predecir-contexto",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6329",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/predecir-contexto/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/predecir-contexto\/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "14",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/validar-prediccion",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/validar-prediccion ()({prediccion_id,resultado,tipo_informe_id,area_destino_id,normativa_ids:[]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6334",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/validar-prediccion/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/validar-prediccion\/ ()({prediccion_id,resultado,tipo_informe_id,area_destino_id,normativa_ids:[]})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "1",
+							"uri": "http://naxji-api:8000/solicitudes/completa",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/completa ()({valores:[{campo_plantilla_id,valor}],asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6339",
+							"uri": "http://naxji-api:8000/solicitudes/completa/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/completa\/ ()({valores:[{campo_plantilla_id,valor}],asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "17",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9 ()({contenido:{John Doe},numero_version,titulo,encabezado_oficial:{John Doe}})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6319",
+							"uri": "http://naxji-api:8000/informes/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9/",
+							"nodeName": "http:\/\/naxji-api:8000\/informes\/ca2f6b2f-4c85-4a55-9b09-a135027c0dd9\/ ()({contenido:{John Doe},numero_version,titulo,encabezado_oficial:{John Doe}})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "4",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82 ()({asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id,estado})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6335",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/ ()({asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id,estado})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "2",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/completa",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/completa ()({valores:[{campo_plantilla_id,valor}],asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6326",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/completa/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/completa\/ ()({valores:[{campo_plantilla_id,valor}],asunto,tipo_informe_id,plantilla_id,area_origen_id,area_destino_id})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/valores",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/valores ()({valores:[{campo_plantilla_id,valor}]})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						},
+						{
+							"id": "6333",
+							"uri": "http://naxji-api:8000/solicitudes/7fdf9bb2-120e-450f-9e95-c0db1ff76c82/valores/",
+							"nodeName": "http:\/\/naxji-api:8000\/solicitudes\/7fdf9bb2-120e-450f-9e95-c0db1ff76c82\/valores\/ ()({valores:[{campo_plantilla_id,valor}]})",
+							"method": "PUT",
+							"param": "",
+							"attack": "",
+							"evidence": "401",
+							"otherinfo": ""
+						}
+					],
+					"count": "132",
+					"systemic": false,
+					"solution": "",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "388",
+					"wascid": "20",
+					"sourceid": "520"
+				},
+				{
+					"pluginid": "10111",
+					"alertRef": "10111",
+					"alert": "Authentication Request Identified",
+					"name": "Authentication Request Identified",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
+					"instances":[ 
+						{
+							"id": "6222",
+							"uri": "http://naxji-api:8000/auth/login",
+							"nodeName": "http:\/\/naxji-api:8000\/auth\/login ()({email,password})",
+							"method": "POST",
+							"param": "email",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=email\nuserValue=zaproxy@example.com\npasswordParam=password"
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+					"otherinfo": "<p>userParam=email</p><p>userValue=zaproxy@example.com</p><p>passwordParam=password</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "33"
+				}
+			]
+		}
+	],
+	"sequences":[
+	]
+
+}

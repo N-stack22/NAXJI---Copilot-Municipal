@@ -1,3 +1,13 @@
+# Actualización de hallazgos de cierre
+
+Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
+
+C-01…C-12 se documentan en [matriz de observaciones](MATRIZ_OBSERVACIONES_CIERRE.md). Se cerraron las guardias de imports/SQL y las cabeceras ZAP confirmadas. No se encontraron infracciones productivas de capas/SQL que justificaran tocar adaptadores. Understand permanece bloqueado. Las observaciones institucionales de la tabla histórica siguiente están fuera de esta misión, no bloquean el cierre académico.
+
+---
+
+## Antecedente conservado (corte anterior)
+
 # Hallazgos históricos y correcciones actuales
 
 Fuente: evaluación histórica del 20/11/2026, pp. 25–28. Los estados se refieren al candidato local, no reescriben la evaluación original ni certifican producción.

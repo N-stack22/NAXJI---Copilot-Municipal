@@ -1,18 +1,22 @@
-# Diagnóstico OWASP Top 10:2021
+# Auditoría OWASP Top10:2021
 
-Se adopta 2021 porque es la edición exigida por la guía original. Revisión de código, límites HTTP, transacciones y dependencias del candidato; sin escaneo de servicios compartidos. Los puntajes históricos 10/20 y 14/20 no se registran como resultados actuales.
+Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
-| Categoría | Evidencia / exposición contrastada | Riesgo |
+Se utiliza **OWASP 2021**, como exige el encargo. El escaneo real es ZAP2.17.0 contra un laboratorio Docker interno; nunca producción. Frontend: spider/pasivo sobre build. API: OpenAPI/activo con identidad ficticia de funcionario; memoria y dobles. No demuestra seguridad de PostgreSQL/Supabase/Ollama productivos.
+
+| Categoría2021 | Evidencia actual | Límite conservado |
 |---|---|---|
-| A01 Control de acceso | Propiedad/perfil/área en servidor, filtros antes del ranking; faltaba revisión persistente PMV3 | Alto si no se comprueban roles y RLS reales |
-| A02 Criptografía | Auth/DB exigían TLS; Storage permitía HTTP; faltaba no-store en solicitudes/contexto | Alto para una clave privada mal configurada |
-| A03 Inyección | Parámetros separados, identificadores seguros; archivos/citas validados; documentos pueden contener prompt injection | Medio residual: el LLM no acredita validez del contenido |
-| A04 Diseño inseguro | Límites de archivos/contexto/reservas; sin cuotas operativas acordadas ni capacidad real medida | Medio por consumo de recursos |
-| A05 Configuración | CORS admitía comodín con credenciales; documentación API no era desactivable | Medio; no se presume que producción tuviera esa configuración |
-| A06 Componentes | Auditoría npm inicial: producción 1 alta; árbol completo 5 altas/3 moderadas. Candidato Python con certifi/Pillow vulnerables | Alto; alcance distinto entre navegador, build y servidor |
-| A07 Autenticación | Verificación remota, perfil fresco y cookies; SameSite=strict fijo no permitía renovar entre los dominios informados | Medio; navegador y Auth institucional por verificar |
-| A08 Integridad | Hash documental y lockfile; joblib se deserializaba sin verificar huella | Medio: artefactos de confianza y protección del pipeline necesarios |
-| A09 Registro | Logging de errores sin eventos explícitos 401/403/429 ni auditoría de negocio PMV3 | Medio; alertas/retención no demostradas |
-| A10 SSRF | URLs configuradas en servidor, sin redirecciones; procedencia documental es texto | Bajo en lo inspeccionado; reglas de salida de red pendientes |
+| A01 Acceso | Regresiones de propietario/rol/área y snapshots; API escaneada con token de prueba | RLS y cuentas institucionales fuera de alcance |
+| A02 Criptografía | Contratos TLS/cookies existentes; solo HTTP dentro de red local aislada de escaneo | No se certifica TLS del edge ni del proveedor |
+| A03 Inyección | SQL parametrizado/psycopg.sql intactos; guardia de SQL fijo y escaneo activo de API | API ZAP usa repositorio en memoria; no prueba inyección SQL contra PG ni prompt injection real |
+| A04 Diseño | Límites, reservas, rollback y flujos de revisión existentes sin cambios | No se inventan cuotas ni requisitos |
+| A05 Configuración | Se confirmaron CSP/marcos/nosniff ausentes en el laboratorio | Remediación y reescaneo explícitos |
+| A06 Componentes | Locks/SBOM y auditorías guardadas en base; npm ci actual sin avisos | No es auditoría continua de OS ni garantía futura |
+| A07 Autenticación | Token ficticio verificado en /auth/me200 durante ZAP; contratos y permisos cubiertos | No credenciales/proveedor real ni UI cross-site autenticada |
+| A08 Integridad | Huellas de modelos intactas, wheel instalado y recursos empaquetados | Procedencia institucional externa no se amplía |
+| A09 Logs | Logs de pruebas/ZAP/CI conservados; eventos inmutables y rechazo simulado existentes | Sin afirmar monitoreo operativo o actas |
+| A10 SSRF | Red Docker internal sin salida y sin servicios externos; URLs de configuración conservadas | No pentest de infraestructura productiva |
 
-Auditorías JSON antes/después y SBOM: `evidencias/cierre-trazable/dependencias/`. El informe Python inicial corresponde al entorno candidato con dependencias PDF, no se atribuye retrospectivamente a main.
+La primera corrida `zap/antes/` quedó exploratoria: el filtro inicial del header demo no autenticó la API. La comparación válida usa `antes-02` y `despues`, ambas con /auth/me200 y cobertura registrada. No se esconde esa limitación.
+
+Evidencia actual: [resultados](RESULTADOS_CIERRE.md), [observaciones cerradas y pendientes](MATRIZ_OBSERVACIONES_CIERRE.md), [12 entregables](INDICE_12_ENTREGABLES.md) y [preparación de despliegue](PREPARACION_DESPLIEGUE.md). Los logs históricos de `evidencias/cierre-trazable/` se conservan; no se suman suites repetidas para inflar resultados.

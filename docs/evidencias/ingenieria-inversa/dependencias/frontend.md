@@ -1,3 +1,5 @@
+> Actualización de cierre: los 3 PMV/10 HU están aceptados académicamente por instrucción del usuario. Este archivo conserva el corte técnico anterior. La evidencia vigente de guardias completas, ZAP real, CI y entrega Linux/Docker está en `docs/RESULTADOS_CIERRE.md`, `docs/MATRIZ_OBSERVACIONES_CIERRE.md` y `docs/INDICE_12_ENTREGABLES.md`. Understand continúa bloqueado; las omitidas no son aprobadas.
+
 # Dependencias frontend
 
 React, React DOM, Router y Axios son dependencias de producto. Vite, plugin React, ESLint y JSDOM son herramientas de desarrollo/prueba. `package-lock.json` fija el árbol y `npm ci` se ejecutó en instalación separada de la principal.

@@ -1,3 +1,5 @@
+> Actualización de cierre: los 3 PMV/10 HU están aceptados académicamente por instrucción del usuario. Este archivo conserva el corte técnico anterior. La evidencia vigente de guardias completas, ZAP real, CI y entrega Linux/Docker está en `docs/RESULTADOS_CIERRE.md`, `docs/MATRIZ_OBSERVACIONES_CIERRE.md` y `docs/INDICE_12_ENTREGABLES.md`. Understand continúa bloqueado; las omitidas no son aprobadas.
+
 # Dependencias de infraestructura
 
 PostgreSQL/pgvector se ejecutó en Docker desechable, puerto loopback 15432, rol de pruebas naxji_step3. Cada fixture creó una base aleatoria independiente. Ollama local respondió con qwen2.5:7b y bge-m3:567m en las integraciones reales.

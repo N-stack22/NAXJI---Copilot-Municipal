@@ -1,15 +1,17 @@
-# Siete atributos ICACIT: evidencias y límites
+# ICACIT: siete atributos con evidencia real
 
-Se aplica la consigna `S14. Evaluacion de evidencias de ICACIT (1).docx`, no una acreditación formal. Fuente del requerimiento: Unidad III; ubicación física PDF. La portada enumera seis competencias, mientras la consigna solicita siete: corregir esa discrepancia editorial sin inventar actividades.
+Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
-| Atributo | Fuente / lugar del informe a corregir | Evidencia de ingeniería disponible | Límite y estado |
-|---|---|---|---|
-| Conocimientos de ingeniería | pp. 22–44, requisitos/diseño/arquitectura | Puertos, servicios, SQL parametrizado, transacciones, pruebas de dependencias y PG | **Verificado técnico**; debe explicar decisiones as-built frente al diseño de eventos. |
-| Medio ambiente y sostenibilidad | pp. 12–17 y 20–21 | Medición de recursos del laboratorio y reutilización de versiones/exportación sin nueva inferencia | **Parcial**. CPU/RAM no equivalen a energía, CO₂ ni ahorro de papel. No hay estudio ambiental antes/después. |
-| Ingeniero y sociedad | pp. 17–21, ética/responsabilidad | Acceso por servidor, fuentes protegidas, explicación de incertidumbre y revisión humana | **Parcial**: faltan validación social y aceptación institucional; no hay encuestas nuevas. |
-| Gestión de proyectos | pp. 45–63, acta/Scrum; Trello Sprint 4/5 | Matriz HU/pruebas, commits locales, riesgos y bloqueos documentados | **Parcial**. No se modificó Trello, ni se fabricaron reuniones/actas/burndown. |
-| Diseño y desarrollo | pp. 25–44 y 85 | Revisión de una etapa, historial, auditoría, PDF/Word, migración aditiva y reglas de rol/área | **Verificado en laboratorio**; formatos/políticas requieren ratificación del titular institucional. |
-| Análisis de problemas | pp. 4–16, 76–84 y 93–95 | H/TR contrastados con código; separación entre calidad ML, RAG, pruebas y desempeño HTTP | **Parcial**. Sin corpus externo ni medición municipal no hay evidencia de generalización/ahorro. |
-| Uso de herramientas modernas | pp. 64–75 y 91–92 | pytest/Node, PostgreSQL/pgvector, Ollama, sklearn, auditorías/SBOM, empaquetado y carga HTTP | **Verificado en herramientas ejecutadas**. Understand, ZAP, SonarQube/JMeter no se presentan como ejecutados. |
+Se vinculan los siete atributos solicitados a evidencias disponibles;no se afirma acreditación formal ni se inventan estudios/actas. Las referencias de páginas del informe anterior se conservan en el historial7359a67;el documento académico original no se modifica.
 
-No se asigna un porcentaje de acreditación a partir de resultados de software. Las aprobaciones del arnés son simulaciones de negocio, no decisiones de funcionarios reales. Cada pendiente exige responsable institucional, corpus autorizado, instrumento o licencia; las referencias históricas y firmas existentes no prueban aceptación de este cambio.
+| Atributo | Evidencia actual | Estado/límite |
+|---|---|---|
+| Conocimientos de ingeniería | Arquitectura/SQL,parametrización,permisos,PG/pgvector y guardias110 módulos/599 referencias | Verificado en código y suites;no evidencia institucional nueva |
+| Medio ambiente y sostenibilidad | Reutilización de versiones y exportación sin IA;CPU/RAM medidos en carga aislada | Recursos medidos;energía,CO₂ y ahorro de papel **no medidos** |
+| Ingeniero y sociedad | Advertencias HU-IA-04 conservadas,fuentes protegidas,revisión humana y permisos | Mecanismos técnicos verificados;sin encuestas/aceptación social inventadas |
+| Gestión de proyectos | Rama independiente,commits,matriz C-01…C-12,logs previos y fallo/repetición CI | Trazabilidad real;no actas,reuniones ni burndown fabricados |
+| Diseño y desarrollo | 10 HU aceptadas,producto sin reimplementación;corrección mínima de cabeceras confirmadas | Regresión375/21 y55 frontend;límites de la evidencia explícitos |
+| Análisis de problemas | Diagnóstico de límites de guardias,token ZAP mal acotado,checkout superficial y timeout PyPI | Causas contrastadas y corregidas;fallos preservados |
+| Herramientas modernas | pytest,Node,PGvector,ZAP2.17.0,Docker,wheel/sdist,CI y750 HTTP | Herramientas ejecutadas diferenciadas de dobles;Understand bloqueado,no simulado |
+
+[Resultados](RESULTADOS_CIERRE.md), [12 entregables](INDICE_12_ENTREGABLES.md), [observaciones](MATRIZ_OBSERVACIONES_CIERRE.md) y [Understand](UNDERSTAND_PENDIENTE.md). No se calcula un porcentaje de acreditación a partir de pruebas de software.

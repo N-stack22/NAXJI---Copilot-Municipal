@@ -1,14 +1,17 @@
-# Plan de remediación OWASP
+# Remediación OWASP2021 ejecutada
 
-| ID | Prioridad / componentes | Mitigación y validación | Rollback compatible |
+Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
+
+| ID | Hallazgo confirmado / tratamiento | Archivo | Comprobación |
 |---|---|---|---|
-| OW-01 | Media / middleware | No-store en solicitudes/contexto/revisión/auditoría; comprobar contratos y salud | Conservar no-store en proxy si se revierte aplicación |
-| OW-02 | Alta / Storage | Rechazar HTTP antes de utilizar clave; probar bucket público, subida/lectura y fallos con transporte simulado | Restaurar URL HTTPS válida o pausar carga |
-| OW-03 | Media / Settings/API | CORS explícito; bandera documentación; validar endpoints y origen | Restaurar lista concreta aprobada, sin comodín |
-| OW-04 | Alta / dependencias | Actualizaciones compatibles npm, mínimos corregidos certifi/Pillow; npm ci, pip-audit, SBOM y suites | Revertir locks/manifiesto juntos; detener promoción vulnerable |
-| OW-05 | Media / logs y auditoría | Método/plantilla/estado sin token/ID en logs de rechazo; eventos inmutables PMV3 | Ajustar colector/retención; conservar historial de negocio |
-| OW-06 | Alta / entorno institucional | Validar Auth, revocación, bucket, TLS, RLS y cookies con cuentas de prueba autorizadas | No habilitar flujo si no puede verificarse el ámbito efectivo |
-| OW-07 | Media / capacidad | Medir primero; acordar cuotas por usuario/costo con operador | Detener carga y conservar límites actuales; no imponer cuotas arbitrarias |
-| OW-08 | Media / modelos y pipeline | Huellas antes de joblib, procedencia/particiones y SBOM; comparar artefactos sin reemplazarlos | Restaurar paquete confiable íntegro; no aceptar joblib de usuarios |
+| Z-01 | Content-Security-Policy ausente: política de scripts/estilos propios, sin inline/eval, objetos/base/marcos prohibidos | `public/_headers` | Regla10038 media antes; ausente después |
+| Z-02 | Protección contra marcos ausente: frame-ancestors none y X-Frame-Options DENY | `public/_headers` | Regla10020 media antes; ausente después |
+| Z-03 | nosniff ausente en frontend/API; incluir respuestas y errores500 | `public/_headers`, `src/main.py` | Regla10021 baja antes; ausente después; regresiones200/401/404/422/500 |
+| Z-04 | Comentario del bundle señalado informativamente | Sin editar dependencia ni funciones | Muestra: texto genérico de implementación, sin secreto confirmado |
+| Z-05 | SPA moderna / login / respuestas4xx informativos | Sin suprimir reglas | Se registran como límites de cobertura y respuestas de validación/control |
+| CI-01 | Referencia7359a67 ausente en checkout superficial | `.github/workflows/ci.yml` fetch-depth0 | Fallo real conservado; ejecución repetida exitosa |
+| DEP-01 | Timeout real descargando PyPI en build local | `Dockerfile`: caché por capa, timeout/reintentos | Log fallido y reintento exitoso conservados; lock no cambia |
 
-La sesión entre sitios usa SameSite configurable, con Secure obligatorio para `none`, y conserva cabecera no simple/origen permitido contra CSRF. La configuración de cookies de terceros del navegador sigue siendo una condición externa. No se programó un despliegue ni se crearon secretos.
+No se usan IGNORE ni filtros para esconder alertas. Los códigos de ZAP se interpretan según su herramienta:2 puede significar avisos incluso informativos;0 del API posterior no equivale a certificación. La política del frontend se prueba con una emulación local del archivo de Cloudflare, no contra el servicio publicado.
+
+Evidencia actual: [resultados](RESULTADOS_CIERRE.md), [observaciones cerradas y pendientes](MATRIZ_OBSERVACIONES_CIERRE.md), [12 entregables](INDICE_12_ENTREGABLES.md) y [preparación de despliegue](PREPARACION_DESPLIEGUE.md). Los logs históricos de `evidencias/cierre-trazable/` se conservan; no se suman suites repetidas para inflar resultados.

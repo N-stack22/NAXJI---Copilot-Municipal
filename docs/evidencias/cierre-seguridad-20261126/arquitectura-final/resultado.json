@@ -1,0 +1,213 @@
+{
+  "fecha_utc": "2026-11-27T04:05:51.767539+00:00",
+  "herramienta": "AST Python propio, no Understand",
+  "commit": "e4f4ecfd785b9d52d5ccabd33eabbadaa520478f",
+  "modulos": 110,
+  "por_capa": {
+    "adapters": 52,
+    "application": 31,
+    "domain": 18,
+    "infrastructure": 8,
+    "main": 1
+  },
+  "dependencias_import": 599,
+  "infracciones": [],
+  "imports_dinamicos_exteriores": [
+    {
+      "modulo": "src.main",
+      "linea": 114,
+      "expresion": "f'src.adapters.in.controllers.{nombre}_controller'"
+    }
+  ],
+  "adaptadores_persistencia_descubiertos": 16,
+  "sql_embebido": [],
+  "recursos_sql_referenciados": 46,
+  "recursos": [
+    [
+      "documentos_postgres",
+      "bloquear_deduplicacion"
+    ],
+    [
+      "documentos_postgres",
+      "bloquear_finalizacion"
+    ],
+    [
+      "documentos_postgres",
+      "bloquear_reserva"
+    ],
+    [
+      "documentos_postgres",
+      "buscar"
+    ],
+    [
+      "documentos_postgres",
+      "buscar_duplicado"
+    ],
+    [
+      "documentos_postgres",
+      "configurar_pgvector"
+    ],
+    [
+      "documentos_postgres",
+      "contar"
+    ],
+    [
+      "documentos_postgres",
+      "eliminar_fragmentos"
+    ],
+    [
+      "documentos_postgres",
+      "finalizar"
+    ],
+    [
+      "documentos_postgres",
+      "fragmento"
+    ],
+    [
+      "documentos_postgres",
+      "insertar_fragmento"
+    ],
+    [
+      "documentos_postgres",
+      "listar"
+    ],
+    [
+      "documentos_postgres",
+      "obtener"
+    ],
+    [
+      "documentos_postgres",
+      "reservar"
+    ],
+    [
+      "estado_postgres",
+      "preparacion"
+    ],
+    [
+      "perfil_repository_postgres",
+      "obtener_perfil"
+    ],
+    [
+      "perfil_repository_postgres",
+      "obtener_roles"
+    ],
+    [
+      "postgres",
+      "areas"
+    ],
+    [
+      "postgres",
+      "bloquear"
+    ],
+    [
+      "postgres",
+      "campos_plantilla"
+    ],
+    [
+      "postgres",
+      "correspondencias"
+    ],
+    [
+      "postgres",
+      "eliminar_normativas_ausentes"
+    ],
+    [
+      "postgres",
+      "eliminar_valores_ausentes"
+    ],
+    [
+      "postgres",
+      "existe_correspondencias"
+    ],
+    [
+      "postgres",
+      "informe"
+    ],
+    [
+      "postgres",
+      "informe_por_solicitud"
+    ],
+    [
+      "postgres",
+      "insertar_cita"
+    ],
+    [
+      "postgres",
+      "lectura_consistente"
+    ],
+    [
+      "postgres",
+      "normativa"
+    ],
+    [
+      "postgres",
+      "normativa_por_codigo"
+    ],
+    [
+      "postgres",
+      "normativas_prediccion"
+    ],
+    [
+      "postgres",
+      "plantilla"
+    ],
+    [
+      "postgres",
+      "plantillas"
+    ],
+    [
+      "postgres",
+      "save_assignment"
+    ],
+    [
+      "postgres",
+      "save_insert"
+    ],
+    [
+      "postgres",
+      "save_upsert"
+    ],
+    [
+      "postgres",
+      "solicitud"
+    ],
+    [
+      "postgres",
+      "tipos_informe"
+    ],
+    [
+      "postgres",
+      "ultima_prediccion"
+    ],
+    [
+      "postgres",
+      "valores_solicitud"
+    ],
+    [
+      "postgres",
+      "versiones_existentes"
+    ],
+    [
+      "postgres",
+      "versiones_informe"
+    ],
+    [
+      "revision_postgres",
+      "auditoria"
+    ],
+    [
+      "revision_postgres",
+      "eventos"
+    ],
+    [
+      "revision_postgres",
+      "listar"
+    ],
+    [
+      "revision_postgres",
+      "registrar"
+    ]
+  ],
+  "cambios_en_pilotos_predictor_rag_advertencias": [],
+  "limite": "AST/importaciones no sustituyen análisis de llamadas, complejidad o mantenibilidad de Understand"
+}

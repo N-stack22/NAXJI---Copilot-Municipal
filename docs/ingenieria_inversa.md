@@ -1,3 +1,13 @@
+# Actualización as-built del cierre
+
+Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
+
+Inventario actual:110 módulos Python,599 referencias import;16 módulos de persistencia y46 recursos SQL. Todos se recorren, resolviendo imports relativos, y se importan en pytest. Sin infracciones confirmadas. Solo cambia la entrega HTTP (nosniff) y configuración de despliegue;entidades,casos de uso,pilotos,predictor,RAG y HU-IA-04 no cambian. ZAP2.17.0 se ejecutó en red local Docker internal con informes antes/después;Understand no se ejecutó. Windows y Linux Docker/CI tienen evidencia real, con cortes explícitos. [Índice de12 entregables](INDICE_12_ENTREGABLES.md) y [despliegue](PREPARACION_DESPLIEGUE.md).
+
+---
+
+## Antecedente conservado (corte anterior)
+
 # Ingeniería inversa de NAXJI
 
 ## 1. Resumen ejecutivo

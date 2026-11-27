@@ -1,0 +1,14 @@
+[
+  {
+    "archivo": "naxji_copilot_municipal_backend-0.1.0-py3-none-any.whl",
+    "sha256": "17fa811fe696de64463fd6d786a70c93800a5411acfbbc09a3f931347b3982f5",
+    "bytes": 512196,
+    "sql_recursos": 46
+  },
+  {
+    "archivo": "naxji_copilot_municipal_backend-0.1.0.tar.gz",
+    "sha256": "c043d1003617ee6b70d5605ba507b1d98fd8f9faffd7fe414b710c4e1677464c",
+    "bytes": 551941,
+    "sql_recursos": 46
+  }
+]

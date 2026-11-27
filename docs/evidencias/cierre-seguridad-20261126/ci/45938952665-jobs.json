@@ -1,0 +1,177 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 140308548112,
+      "run_id": 45938952665,
+      "workflow_name": "Calidad aislada",
+      "head_branch": "feature/cierre-seguridad-despliegue",
+      "run_url": "https://api.github.com/repos/N-stack22/NAXJI---Copilot-Municipal/actions/runs/45938952665",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUgsT6s8AAAAgqwqKEA",
+      "head_sha": "d257eb6b7b0d1443d998591ea782f6ccabff9645",
+      "url": "https://api.github.com/repos/N-stack22/NAXJI---Copilot-Municipal/actions/jobs/140308548112",
+      "html_url": "https://github.com/N-stack22/NAXJI---Copilot-Municipal/actions/runs/45938952665/job/140308548112",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T04:16:11Z",
+      "started_at": "2026-11-27T04:16:12Z",
+      "completed_at": "2026-11-27T04:18:07Z",
+      "name": "verificar",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-27T04:16:13Z",
+          "completed_at": "2026-11-27T04:16:14Z"
+        },
+        {
+          "name": "Initialize containers",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-27T04:16:14Z",
+          "completed_at": "2026-11-27T04:16:28Z"
+        },
+        {
+          "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-27T04:16:28Z",
+          "completed_at": "2026-11-27T04:16:29Z"
+        },
+        {
+          "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-27T04:16:29Z",
+          "completed_at": "2026-11-27T04:16:30Z"
+        },
+        {
+          "name": "Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-27T04:16:30Z",
+          "completed_at": "2026-11-27T04:16:34Z"
+        },
+        {
+          "name": "Instalar backend y QA",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-27T04:16:34Z",
+          "completed_at": "2026-11-27T04:16:49Z"
+        },
+        {
+          "name": "Persistencia y arquitectura aisladas",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-27T04:16:49Z",
+          "completed_at": "2026-11-27T04:17:14Z"
+        },
+        {
+          "name": "Instalar frontend reproducible",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-27T04:17:14Z",
+          "completed_at": "2026-11-27T04:17:17Z"
+        },
+        {
+          "name": "Frontend, lint y build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-27T04:17:17Z",
+          "completed_at": "2026-11-27T04:17:26Z"
+        },
+        {
+          "name": "Empaquetar backend",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-27T04:17:26Z",
+          "completed_at": "2026-11-27T04:17:28Z"
+        },
+        {
+          "name": "Auditar todas las dependencias y recursos SQL",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-27T04:17:28Z",
+          "completed_at": "2026-11-27T04:17:28Z"
+        },
+        {
+          "name": "Construir imagen de despliegue sin secretos",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-11-27T04:17:28Z",
+          "completed_at": "2026-11-27T04:18:04Z"
+        },
+        {
+          "name": "Verificar diff",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-11-27T04:18:04Z",
+          "completed_at": "2026-11-27T04:18:04Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23,
+          "started_at": "2026-11-27T04:18:04Z",
+          "completed_at": "2026-11-27T04:18:04Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-11-27T04:18:04Z",
+          "completed_at": "2026-11-27T04:18:04Z"
+        },
+        {
+          "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-11-27T04:18:04Z",
+          "completed_at": "2026-11-27T04:18:05Z"
+        },
+        {
+          "name": "Stop containers",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26,
+          "started_at": "2026-11-27T04:18:05Z",
+          "completed_at": "2026-11-27T04:18:05Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27,
+          "started_at": "2026-11-27T04:18:05Z",
+          "completed_at": "2026-11-27T04:18:05Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/N-stack22/NAXJI---Copilot-Municipal/check-runs/140308548112",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000306,
+      "runner_name": "GitHub Actions 1000000306",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

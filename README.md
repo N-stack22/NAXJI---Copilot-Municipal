@@ -1,5 +1,9 @@
 # NAXJI — Copilot Municipal
 
+## Cierre académico y preparación de despliegue
+
+Los 3 PMV y10 HU están aceptados para el cierre académico por instrucción del usuario. Se conservan pilotos,predictor,RAG y HU-IA-04. [Observaciones cerradas y pendientes](docs/MATRIZ_OBSERVACIONES_CIERRE.md), [resultados y omitidas](docs/RESULTADOS_CIERRE.md), [despliegue Railway/Cloudflare](docs/PREPARACION_DESPLIEGUE.md), [12 entregables](docs/INDICE_12_ENTREGABLES.md) y [Understand pendiente](docs/UNDERSTAND_PENDIENTE.md). Esta rama no modifica producción ni aplica migraciones compartidas.
+
 La implementación incorpora PMV3: revisión por un revisor en una sola etapa, historial,
 auditoría y exportación aprobada Word/PDF sin regenerar con IA. Activación opt-in,
 migración aditiva y validación institucional todavía parcial.

@@ -1,0 +1,70 @@
+
+> copilot-municipal-frontend@0.0.0 test:frontend
+> node --test tests/frontend/*.test.mjs
+
+▶ acceso y protección de rutas sin caché de permisos ni tokens persistidos
+  ✔ login real y navegación con DOM a 1440px; un perfil validado por entrada (818.11ms)
+  ✔ login real y navegación con DOM a 390px; un perfil validado por entrada (528.6819ms)
+  ✔ sesión Supabase recuperada en acceso público y en ruta privada (882.0445ms)
+  ✔ demo conserva selector, acceso y recuperación sin solicitar credenciales reales (855.8462ms)
+  ✔ configuración fallida permite reintentar; modo deshabilitado impide entrar (684.6537ms)
+  ✔ credenciales rechazadas conservan correo, limpian contraseña y muestran error (489.2143ms)
+  ✔ fallo de perfil permite reintento sin mostrar contenido ni cargar catálogos (404.7307ms)
+  ✔ 403 deniega la ruta y limpia la sesión; no hay bucle de redirección (455.0077ms)
+  ✔ perfil rechazado después del login conserva el mensaje de error al regresar (401.6181ms)
+  ✔ un 401 protegido renueva una vez y reintenta con token en memoria (503.5301ms)
+  ✔ comparte solo consultas simultáneas, nunca reutiliza un perfil resuelto (461.8798ms)
+  ✔ una respuesta de perfil tardía no restaura un usuario tras cerrar sesión (479.1677ms)
+  ✔ un fallo de carga del módulo diferido muestra una opción de recuperación (4.4931ms)
+✔ acceso y protección de rutas sin caché de permisos ni tokens persistidos (7265.1093ms)
+✔ inspección v1 no se confunde con técnica v2; avisa solo de una versión compatible de la misma familia (0.9121ms)
+✔ encabezado histórico conserva denominaciones legibles y nunca expone UUIDs (0.3469ms)
+✔ las dos estructuras conservan orden, títulos y obligatoriedad (1.6648ms)
+✔ versiones antiguas conservan secciones de texto adicionales sin convertir metadatos en campos (0.545ms)
+✔ editor React presenta encabezado legible y solo edita secciones ordenadas de la versión (466.847ms)
+✔ aceptar envía únicamente ID y ACEPTADA, independientemente del orden de las normas (1.155ms)
+✔ corregir envía los tres campos, incluso sin normas: {"tipoInformeId":"tipo-2"} (1.205ms)
+✔ corregir envía los tres campos, incluso sin normas: {"areaDestinoId":"area-2"} (0.1986ms)
+✔ corregir envía los tres campos, incluso sin normas: {"normativaIds":["n-2"]} (0.1644ms)
+✔ corregir envía los tres campos, incluso sin normas: {"normativaIds":[]} (0.1185ms)
+✔ impide normas externas, repetidas o contexto incompleto (0.8516ms)
+✔ rechazar no envía campos de corrección (0.1419ms)
+✔ recuperar CORREGIDA usa los IDs guardados y respeta normas descartadas (0.1939ms)
+✔ una plantilla debe estar activa y corresponder al tipo y destino confirmados (0.1262ms)
+✔ recupera valores vigentes sin perder false/cero ni copiar campos ajenos (0.2901ms)
+✔ una respuesta tardía no puede restaurar la predicción tras editar el asunto (0.1959ms)
+✔ presenta temas separados, fuentes y selección recuperada por documento (224.1789ms)
+▶ inspección v1 piloto: formulario, invalidación, recuperación, reintento y versiones
+  ✔ asunto solo y descarte de una norma habilitan la plantilla tras confirmar (116.4391ms)
+  ✔ campos fallidos se reintentan; datos incompletos bloquean el avance (68.3942ms)
+  ✔ UUID recupera selección y datos; modificar tipo exige reconfirmar (103.847ms)
+  ✔ editar asunto invalida los pasos y descarta una respuesta tardía (113.4523ms)
+  ✔ fallo de generación controlado, reintento, edición y recuperación de versión 2 (184.1031ms)
+  ✔ vista previa y DOCX usan la versión guardada, excluyen cambios sin guardar y conservan anteriores (45.7481ms)
+  ✔ PROCESANDO mantiene su reintento; los roles de consulta no editan (82.3258ms)
+✔ inspección v1 piloto: formulario, invalidación, recuperación, reintento y versiones (1649.4051ms)
+▶ inspección v2 Anexo 08: formulario, invalidación, recuperación, reintento y versiones
+  ✔ asunto solo y descarte de una norma habilitan la plantilla tras confirmar (67.0221ms)
+  ✔ campos fallidos se reintentan; datos incompletos bloquean el avance (63.95ms)
+  ✔ UUID recupera selección y datos; modificar tipo exige reconfirmar (92.4284ms)
+  ✔ editar asunto invalida los pasos y descarta una respuesta tardía (104.5672ms)
+  ✔ fallo de generación controlado, reintento, edición y recuperación de versión 2 (176.1236ms)
+  ✔ vista previa y DOCX usan la versión guardada, excluyen cambios sin guardar y conservan anteriores (39.2944ms)
+  ✔ PROCESANDO mantiene su reintento; los roles de consulta no editan (70.8447ms)
+✔ inspección v2 Anexo 08: formulario, invalidación, recuperación, reintento y versiones (992.6449ms)
+✔ gestión documental: carga, error recuperable, reintento y fuentes por versión (879.9753ms)
+✔ el indicador retrocede al cambiar asunto o perder la confirmación (0.8141ms)
+✔ el borrador exige plantilla compatible, campos cargados, origen y datos obligatorios (0.2409ms)
+✔ recuperación y reintento siguen accesibles aunque la plantilla guardada ya no esté activa (0.1274ms)
+✔ el indicador expone el paso actual y deshabilita los pasos futuros para teclado (210.8633ms)
+✔ PMV3: REVISOR, historial, advertencias y acciones (926.6394ms)
+✔ PMV3: FUNCIONARIO, historial, advertencias y acciones (378.1445ms)
+✔ PMV3: ADMINISTRADOR, historial, advertencias y acciones (335.1999ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 55
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8514.9602

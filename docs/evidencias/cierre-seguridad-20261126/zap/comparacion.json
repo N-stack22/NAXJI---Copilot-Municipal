@@ -1,0 +1,204 @@
+{
+  "antes": {
+    "frontend": {
+      "riesgos": {
+        "2": 2,
+        "1": 1,
+        "0": 2
+      },
+      "reglas": [
+        {
+          "id": "10038",
+          "nombre": "Content Security Policy (CSP) Header Not Set",
+          "riesgo": "Medium (High)",
+          "instancias": 3
+        },
+        {
+          "id": "10020",
+          "nombre": "Missing Anti-clickjacking Header",
+          "riesgo": "Medium (Medium)",
+          "instancias": 3
+        },
+        {
+          "id": "10021",
+          "nombre": "X-Content-Type-Options Header Missing",
+          "riesgo": "Low (Medium)",
+          "instancias": 5
+        },
+        {
+          "id": "10027",
+          "nombre": "Information Disclosure - Suspicious Comments",
+          "riesgo": "Informational (Medium)",
+          "instancias": 1
+        },
+        {
+          "id": "10109",
+          "nombre": "Modern Web Application",
+          "riesgo": "Informational (Medium)",
+          "instancias": 3
+        }
+      ]
+    },
+    "api-funcionario": {
+      "riesgos": {
+        "1": 1,
+        "0": 2
+      },
+      "reglas": [
+        {
+          "id": "10021",
+          "nombre": "X-Content-Type-Options Header Missing",
+          "riesgo": "Low (Medium)",
+          "instancias": 3
+        },
+        {
+          "id": "100000",
+          "nombre": "A Client Error response code was returned by the server",
+          "riesgo": "Informational (High)",
+          "instancias": 132
+        },
+        {
+          "id": "10111",
+          "nombre": "Authentication Request Identified",
+          "riesgo": "Informational (High)",
+          "instancias": 1
+        }
+      ]
+    }
+  },
+  "antes-02": {
+    "frontend": {
+      "riesgos": {
+        "2": 2,
+        "1": 1,
+        "0": 2
+      },
+      "reglas": [
+        {
+          "id": "10038",
+          "nombre": "Content Security Policy (CSP) Header Not Set",
+          "riesgo": "Medium (High)",
+          "instancias": 3
+        },
+        {
+          "id": "10020",
+          "nombre": "Missing Anti-clickjacking Header",
+          "riesgo": "Medium (Medium)",
+          "instancias": 3
+        },
+        {
+          "id": "10021",
+          "nombre": "X-Content-Type-Options Header Missing",
+          "riesgo": "Low (Medium)",
+          "instancias": 5
+        },
+        {
+          "id": "10027",
+          "nombre": "Information Disclosure - Suspicious Comments",
+          "riesgo": "Informational (Medium)",
+          "instancias": 1
+        },
+        {
+          "id": "10109",
+          "nombre": "Modern Web Application",
+          "riesgo": "Informational (Medium)",
+          "instancias": 3
+        }
+      ]
+    },
+    "api-funcionario": {
+      "riesgos": {
+        "1": 1,
+        "0": 2
+      },
+      "reglas": [
+        {
+          "id": "10021",
+          "nombre": "X-Content-Type-Options Header Missing",
+          "riesgo": "Low (Medium)",
+          "instancias": 5
+        },
+        {
+          "id": "100000",
+          "nombre": "A Client Error response code was returned by the server",
+          "riesgo": "Informational (High)",
+          "instancias": 103
+        },
+        {
+          "id": "10111",
+          "nombre": "Authentication Request Identified",
+          "riesgo": "Informational (High)",
+          "instancias": 1
+        }
+      ]
+    },
+    "cobertura": {
+      "peticiones": 7465,
+      "con_identidad": 7462,
+      "rutas_distintas": 41,
+      "auth_me": [
+        {
+          "metodo": "GET",
+          "ruta": "/auth/me",
+          "status": 200,
+          "identidad_prueba": true,
+          "peticiones": 2
+        }
+      ]
+    }
+  },
+  "despues": {
+    "frontend": {
+      "riesgos": {
+        "0": 2
+      },
+      "reglas": [
+        {
+          "id": "10027",
+          "nombre": "Information Disclosure - Suspicious Comments",
+          "riesgo": "Informational (Medium)",
+          "instancias": 1
+        },
+        {
+          "id": "10109",
+          "nombre": "Modern Web Application",
+          "riesgo": "Informational (Medium)",
+          "instancias": 2
+        }
+      ]
+    },
+    "api-funcionario": {
+      "riesgos": {
+        "0": 2
+      },
+      "reglas": [
+        {
+          "id": "100000",
+          "nombre": "A Client Error response code was returned by the server",
+          "riesgo": "Informational (High)",
+          "instancias": 103
+        },
+        {
+          "id": "10111",
+          "nombre": "Authentication Request Identified",
+          "riesgo": "Informational (High)",
+          "instancias": 1
+        }
+      ]
+    },
+    "cobertura": {
+      "peticiones": 7465,
+      "con_identidad": 7462,
+      "rutas_distintas": 41,
+      "auth_me": [
+        {
+          "metodo": "GET",
+          "ruta": "/auth/me",
+          "status": 200,
+          "identidad_prueba": true,
+          "peticiones": 2
+        }
+      ]
+    }
+  }
+}
