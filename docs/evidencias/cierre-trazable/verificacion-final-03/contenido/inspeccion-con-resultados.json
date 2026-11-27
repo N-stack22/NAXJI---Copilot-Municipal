@@ -1,0 +1,106 @@
+{
+  "entorno": "PostgreSQL aislado; identidad ficticia inyectada; sklearn y Ollama reales; sin Supabase",
+  "solicitud_id": "764eb85e-4f73-4a88-95ce-f6c83a2a5654",
+  "informe_id": "e131ff00-dde8-46a3-b11a-da8ad5bf239c",
+  "modelo": "qwen2.5:7b",
+  "segundos": 7.95,
+  "asunto": "PRUEBA NAXJI: preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+  "datos_fuente": {
+    "estado_resultados": "Resultados documentados disponibles",
+    "fecha_inspeccion": "2026-09-30",
+    "lugar_inspeccion": "Lugar ficticio de prueba: parque Aurora, entrada norte junto al acceso A, distrito de Huancayo",
+    "alcance_solicitado": "Describir únicamente la observación aportada y proponer su verificación por la unidad competente.",
+    "resultados_observados": "CASO FICTICIO: la ficha E1 del 2026-09-30 registra dos bolsas cerradas junto al acceso A de la entrada norte. No se conoce su contenido, origen ni permanencia. No se evaluó el resto del parque.",
+    "referencias_conocidas": "E1: ficha ficticia de observación del 2026-09-30; extracto aportado: dos bolsas cerradas junto al acceso A. FOTO-E1: referencia a fotografía ficticia, imagen no adjunta ni verificada.",
+    "informacion_pendiente": "Verificar competencia territorial, contenido y permanencia de las bolsas. Contrastar E1 y obtener la fotografía antes de decidir medidas."
+  },
+  "propuesta": {
+    "antecedentes": "Se solicita preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo, específicamente en el parque Aurora, entrada norte junto al acceso A.",
+    "objetivo": "El objetivo de la inspección es verificar la existencia de residuos en el parque Aurora, en el lugar y fecha indicados, y determinar si se requieren medidas adicionales.",
+    "actuaciones": "Pendiente de verificación: la ficha E1 del 2026-09-30 registra dos bolsas cerradas junto al acceso A de la entrada norte. No se conoce su contenido, origen ni permanencia. No se evaluó el resto del parque.",
+    "hallazgos": "Pendiente de verificación: se observaron dos bolsas cerradas junto al acceso A de la entrada norte del parque Aurora, según la ficha E1 del 2026-09-30. No se ha verificado su contenido, origen ni permanencia.",
+    "conclusiones": "No se pueden emitir conclusiones sobre la situación del parque Aurora con la información disponible. Se observaron dos bolsas cerradas, pero su contenido, origen y permanencia no han sido verificados.",
+    "recomendaciones": "Se recomienda verificar la competencia territorial, el contenido y la permanencia de las bolsas. Se debe obtener la fotografía referenciada (FOTO-E1) para documentar la situación y determinar las medidas a tomar."
+  },
+  "version_guardada": {
+    "informe_id": "e131ff00-dde8-46a3-b11a-da8ad5bf239c",
+    "solicitud_id": "764eb85e-4f73-4a88-95ce-f6c83a2a5654",
+    "plantilla_id": "659c4f4d-01f7-4543-a88c-98880a7ee89b",
+    "titulo": "Informe de Inspección",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+    "plantilla_version": 1,
+    "estado": "BORRADOR",
+    "version_id": "2c684b51-c9bd-424d-a523-21e2a58f1dcd",
+    "numero_version": 2,
+    "contenido": {
+      "antecedentes": "Se solicita preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo, específicamente en el parque Aurora, entrada norte junto al acceso A.",
+      "objetivo": "Describir la observación aportada en E1 y precisar las comprobaciones necesarias antes de decidir una actuación.",
+      "actuaciones": "Pendiente de verificación: la ficha E1 del 2026-09-30 registra dos bolsas cerradas junto al acceso A de la entrada norte. No se conoce su contenido, origen ni permanencia. No se evaluó el resto del parque.",
+      "hallazgos": "Pendiente de verificación: se observaron dos bolsas cerradas junto al acceso A de la entrada norte del parque Aurora, según la ficha E1 del 2026-09-30. No se ha verificado su contenido, origen ni permanencia.",
+      "conclusiones": "Según la ficha ficticia E1 aportada, se registran dos bolsas cerradas en la entrada norte, junto al acceso A. Esto no determina su contenido, origen ni permanencia, ni el estado del resto del parque. Se requiere contrastar la fuente y verificar la competencia territorial.\nRevisión humana de prueba: este documento usa datos ficticios y requiere validación antes de cualquier uso.",
+      "recomendaciones": "Se recomienda verificar la competencia territorial, el contenido y la permanencia de las bolsas. Se debe obtener la fotografía referenciada (FOTO-E1) para documentar la situación y determinar las medidas a tomar.",
+      "encabezado": {
+        "asunto": "PRUEBA NAXJI: preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+        "documento": {
+          "fecha": "",
+          "emisor": "Unidad de prueba NAXJI (ficticia)",
+          "numero": "",
+          "firmante": "",
+          "referencia": "Prueba local; sin expediente oficial",
+          "destinatario": "Subgerencia de Gestión Ambiental",
+          "cargo_firmante": ""
+        },
+        "area_origen": "Subgerencia de Gestión Ambiental",
+        "area_destino": "Subgerencia de Gestión Ambiental",
+        "tipo_documento": "Informe de Inspección",
+        "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+        "plantilla_version": 1
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "antecedentes",
+        "titulo": "Antecedentes de la solicitud",
+        "obligatoria": true
+      },
+      {
+        "clave": "objetivo",
+        "titulo": "Objetivo y alcance de la inspección",
+        "obligatoria": true
+      },
+      {
+        "clave": "actuaciones",
+        "titulo": "Actuaciones y fuentes disponibles",
+        "obligatoria": true
+      },
+      {
+        "clave": "hallazgos",
+        "titulo": "Hallazgos y observaciones",
+        "obligatoria": true
+      },
+      {
+        "clave": "conclusiones",
+        "titulo": "Conclusiones",
+        "obligatoria": true
+      },
+      {
+        "clave": "recomendaciones",
+        "titulo": "Recomendaciones y verificaciones pendientes",
+        "obligatoria": false
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "USUARIO",
+    "modelo_ia": null,
+    "created_at": "2026-11-27T01:31:34.946767Z",
+    "updated_at": "2026-11-27T01:31:35.620444Z",
+    "sustento": null
+  },
+  "http": {
+    "generacion": 201,
+    "edicion": 200,
+    "recuperacion": 200,
+    "descarga": 200
+  }
+}

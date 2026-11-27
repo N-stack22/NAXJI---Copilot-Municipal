@@ -1,0 +1,123 @@
+{
+  "entorno": "PostgreSQL aislado; identidad ficticia inyectada; no Supabase",
+  "ollama_real": true,
+  "modelo": "qwen2.5:7b",
+  "segundos": 3.024,
+  "datos_fuente": {
+    "estado_resultados": "Sin resultados de inspección"
+  },
+  "asunto": "PRUEBA NAXJI: inspección de parque",
+  "propuesta": {
+    "informe_id": "77b0d194-01c2-433c-b516-71215f641394",
+    "solicitud_id": "d9696400-9a99-4018-afe5-dd4f44de77c5",
+    "plantilla_id": "b737811f-bbfe-432f-8950-e9df2705554d",
+    "titulo": "Informe de Inspección",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+    "plantilla_version": 2,
+    "estado": "BORRADOR",
+    "version_id": "0294ed7e-330b-44c7-91c7-70b605fbbc79",
+    "numero_version": 1,
+    "contenido": {
+      "cuerpo": "Pendiente de verificación: no se aportaron datos sobre el lugar de inspección, fecha, resultados observados ni referencias conocidas. El alcance solicitado no puede ser evaluado con la información disponible. No se pueden valorar el estado del parque ni sus hallazgos con la información aportada. Se recomienda verificar la ubicación precisa y la competencia correspondiente. Si corresponde, programar una visita para documentar hechos y evidencias.",
+      "encabezado": {
+        "asunto": "PRUEBA NAXJI: inspección de parque",
+        "documento": {
+          "fecha": "",
+          "anexos": "",
+          "copias": "",
+          "emisor": "",
+          "numero": "",
+          "firmante": "",
+          "iniciales": "",
+          "referencia": "",
+          "destinatario": "",
+          "lugar_emision": "",
+          "cargo_firmante": "",
+          "cargo_destinatario": "",
+          "registro_documento": "",
+          "registro_expediente": ""
+        },
+        "area_origen": "Subgerencia de Gestión Ambiental",
+        "area_destino": "Subgerencia de Gestión Ambiental",
+        "tipo_documento": "Informe de Inspección",
+        "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+        "formato_documento": "mdt_informe_anexo08_2019_revision1",
+        "plantilla_version": 2
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "cuerpo",
+        "titulo": "Cuerpo del informe interno",
+        "obligatoria": true
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "IA",
+    "modelo_ia": "qwen2.5:7b",
+    "created_at": "2026-11-27T01:57:17.645303Z",
+    "updated_at": "2026-11-27T01:57:17.645303Z",
+    "sustento": null
+  },
+  "edicion": {
+    "informe_id": "77b0d194-01c2-433c-b516-71215f641394",
+    "solicitud_id": "d9696400-9a99-4018-afe5-dd4f44de77c5",
+    "plantilla_id": "b737811f-bbfe-432f-8950-e9df2705554d",
+    "titulo": "Informe de Inspección",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+    "plantilla_version": 2,
+    "estado": "BORRADOR",
+    "version_id": "2b890c54-aa47-4f4c-9aa1-2e639f9062f7",
+    "numero_version": 2,
+    "contenido": {
+      "cuerpo": "Pendiente de verificación: no se aportaron datos sobre el lugar de inspección, fecha, resultados observados ni referencias conocidas. El alcance solicitado no puede ser evaluado con la información disponible. No se pueden valorar el estado del parque ni sus hallazgos con la información aportada. Se recomienda verificar la ubicación precisa y la competencia correspondiente. Si corresponde, programar una visita para documentar hechos y evidencias.\nRevisión humana de prueba: obtener y cotejar las fuentes documentales antes de incorporarlas como anexos.",
+      "encabezado": {
+        "asunto": "PRUEBA NAXJI: inspección de parque",
+        "documento": {
+          "fecha": "2026-10-01",
+          "anexos": "",
+          "copias": "",
+          "emisor": "",
+          "numero": "",
+          "firmante": "",
+          "iniciales": "",
+          "referencia": "",
+          "destinatario": "",
+          "lugar_emision": "Lugar de prueba NAXJI",
+          "cargo_firmante": "",
+          "cargo_destinatario": "",
+          "registro_documento": "",
+          "registro_expediente": ""
+        },
+        "area_origen": "Subgerencia de Gestión Ambiental",
+        "area_destino": "Subgerencia de Gestión Ambiental",
+        "tipo_documento": "Informe de Inspección",
+        "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+        "formato_documento": "mdt_informe_anexo08_2019_revision1",
+        "plantilla_version": 2
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "cuerpo",
+        "titulo": "Cuerpo del informe interno",
+        "obligatoria": true
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "USUARIO",
+    "modelo_ia": null,
+    "created_at": "2026-11-27T01:57:17.645303Z",
+    "updated_at": "2026-11-27T01:57:17.960043Z",
+    "sustento": null
+  },
+  "http": {
+    "generacion": 201,
+    "edicion": 200,
+    "recuperacion": 200,
+    "descarga": 200,
+    "descarga_ajena": 403
+  }
+}

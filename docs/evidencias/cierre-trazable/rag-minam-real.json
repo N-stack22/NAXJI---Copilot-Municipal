@@ -1,0 +1,192 @@
+{
+  "fecha_utc": "2026-11-27T01:35:28.760285+00:00",
+  "pdf_nombre": "MINAM-guia-limpieza-publica-RM091-2020.pdf",
+  "pdf_sha256": "e9802396dcb7c0f15a87541ff9222860d690af75aa61fcd2b373f9273e0cbd6c",
+  "paginas_fisicas_originales": [
+    23,
+    32
+  ],
+  "casos_sha256": "92a26e60be7af346f7fedbffd95004ed7bded56d3cdb3959d85f521f3273c9b3",
+  "script_sha256": "677708e577709dce4649b5cca70ae57c0d9c64c400f489ceebda1a15d3c0ce21",
+  "ground_truth_declarado": "Consultas preparadas por Codex a partir de páginas leídas del PDF local; sin evaluación de funcionario ni verificación jurídica",
+  "tipo": "PDF real local; PostgreSQL/pgvector y bge-m3 reales; Auth/Storage dobles; sin LLM",
+  "fragmentos_indexados": 26,
+  "tiempo_indexacion_s": 1.440219100099057,
+  "modelo": "bge-m3:567m",
+  "dimension": 1024,
+  "umbral": 0.5,
+  "top_k": 6,
+  "resultados": [
+    {
+      "id": "MINAM-01",
+      "consulta": "¿Qué rango de rendimiento del barrido manual por turno se describe al programar el servicio?",
+      "paginas_relevantes": [
+        24
+      ],
+      "paginas_recuperadas": [
+        29,
+        24,
+        28,
+        25,
+        30,
+        27
+      ],
+      "similitudes": [
+        0.5922743854604481,
+        0.585752777971576,
+        0.5852564151661522,
+        0.5571630499210702,
+        0.5367110255400266,
+        0.5317754903964846
+      ],
+      "estado": "RECUPERADO",
+      "segundos": 0.21178040001541376,
+      "hit_at_1": false,
+      "hit_at_k": true,
+      "recall_paginas": 1.0
+    },
+    {
+      "id": "MINAM-02",
+      "consulta": "¿Qué información deben contemplar las fichas de programación de limpieza de espacios públicos?",
+      "paginas_relevantes": [
+        26
+      ],
+      "paginas_recuperadas": [
+        26,
+        26,
+        30,
+        23,
+        23,
+        23
+      ],
+      "similitudes": [
+        0.737245864025879,
+        0.6051528453826948,
+        0.60109559304092,
+        0.5834465374616715,
+        0.5823049892368917,
+        0.5508610338485866
+      ],
+      "estado": "RECUPERADO",
+      "segundos": 0.2009966999758035,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "recall_paginas": 1.0
+    },
+    {
+      "id": "MINAM-03",
+      "consulta": "¿En qué se diferencian el barrido a fondo o boleo y el barrido superficial?",
+      "paginas_relevantes": [
+        27
+      ],
+      "paginas_recuperadas": [
+        27,
+        31
+      ],
+      "similitudes": [
+        0.6292646527290344,
+        0.508016959071665
+      ],
+      "estado": "RECUPERADO",
+      "segundos": 0.19990699994377792,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "recall_paginas": 1.0
+    },
+    {
+      "id": "MINAM-04",
+      "consulta": "¿Qué registro sobre las herramientas se recomienda para optimizar adquisiciones anuales?",
+      "paginas_relevantes": [
+        28
+      ],
+      "paginas_recuperadas": [],
+      "similitudes": [],
+      "estado": "SIN_RESULTADOS",
+      "segundos": 0.18354000011458993,
+      "hit_at_1": false,
+      "hit_at_k": false,
+      "recall_paginas": 0.0
+    },
+    {
+      "id": "MINAM-05",
+      "consulta": "¿Qué parámetros se consideran al elegir equipamiento de barrido mecanizado?",
+      "paginas_relevantes": [
+        30
+      ],
+      "paginas_recuperadas": [
+        30,
+        29,
+        28,
+        29,
+        24,
+        28
+      ],
+      "similitudes": [
+        0.7548973414240696,
+        0.6227125525474548,
+        0.6136617660522461,
+        0.5915650725364685,
+        0.5914776677774003,
+        0.5713254553869648
+      ],
+      "estado": "RECUPERADO",
+      "segundos": 0.19707120000384748,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "recall_paginas": 1.0
+    },
+    {
+      "id": "MINAM-06",
+      "consulta": "¿A quién deben avisar los operarios cuando las herramientas o equipos están deteriorados para descartarlos?",
+      "paginas_relevantes": [
+        32
+      ],
+      "paginas_recuperadas": [
+        32,
+        31
+      ],
+      "similitudes": [
+        0.5995618283618044,
+        0.5605068039743087
+      ],
+      "estado": "RECUPERADO",
+      "segundos": 0.18264320003800094,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "recall_paginas": 1.0
+    },
+    {
+      "id": "MINAM-07",
+      "consulta": "¿Cuál es el período orbital de Neptuno?",
+      "paginas_relevantes": [],
+      "paginas_recuperadas": [],
+      "similitudes": [],
+      "estado": "SIN_RESULTADOS",
+      "segundos": 2.099093500059098,
+      "hit_at_1": null,
+      "hit_at_k": null,
+      "recall_paginas": null
+    },
+    {
+      "id": "MINAM-08",
+      "consulta": "¿Cómo se juega la defensa siciliana en ajedrez?",
+      "paginas_relevantes": [],
+      "paginas_recuperadas": [],
+      "similitudes": [],
+      "estado": "SIN_RESULTADOS",
+      "segundos": 0.17406890005804598,
+      "hit_at_1": null,
+      "hit_at_k": null,
+      "recall_paginas": null
+    }
+  ],
+  "permiso_ajeno_sin_resultados": true,
+  "metricas": {
+    "positivas": 6,
+    "negativas": 2,
+    "hit_at_1": 0.6666666666666666,
+    "hit_at_k": 0.8333333333333334,
+    "rechazo_negativas": 1.0
+  },
+  "limites": "Muestra pequeña de un extracto, etiquetado técnico asistido y relevancia por página; no pertinencia semántica por afirmación, vigencia jurídica, representatividad ni revisión humana institucional"
+}

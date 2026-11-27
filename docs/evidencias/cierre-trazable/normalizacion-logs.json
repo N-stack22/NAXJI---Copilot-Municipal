@@ -1,0 +1,14 @@
+{
+  "alcance": "Solo saltos de linea, espacios finales y blancos al EOF; contenido de resultados preservado",
+  "archivos": [
+    "docs/evidencias/cierre-trazable/empaquetado/pytest-venv-limpio.txt",
+    "docs/evidencias/cierre-trazable/intermedio-pytest.txt",
+    "docs/evidencias/cierre-trazable/linea-base/lint.txt",
+    "docs/evidencias/cierre-trazable/verificacion-final-01/lint.txt",
+    "docs/evidencias/cierre-trazable/verificacion-final-01/pytest.txt",
+    "docs/evidencias/cierre-trazable/verificacion-final-02/lint.txt",
+    "docs/evidencias/cierre-trazable/verificacion-final-03/lint.txt",
+    "docs/evidencias/cierre-trazable/verificacion-final-04/lint.txt",
+    "docs/evidencias/cierre-trazable/verificacion-final-05/lint.txt"
+  ]
+}

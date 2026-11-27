@@ -1,0 +1,844 @@
+running egg_info
+writing naxji_copilot_municipal_backend.egg-info\PKG-INFO
+writing dependency_links to naxji_copilot_municipal_backend.egg-info\dependency_links.txt
+writing requirements to naxji_copilot_municipal_backend.egg-info\requires.txt
+writing top-level names to naxji_copilot_municipal_backend.egg-info\top_level.txt
+reading manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+running sdist
+running egg_info
+writing naxji_copilot_municipal_backend.egg-info\PKG-INFO
+writing dependency_links to naxji_copilot_municipal_backend.egg-info\dependency_links.txt
+writing requirements to naxji_copilot_municipal_backend.egg-info\requires.txt
+writing top-level names to naxji_copilot_municipal_backend.egg-info\top_level.txt
+reading manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+running check
+creating naxji_copilot_municipal_backend-0.1.0
+creating naxji_copilot_municipal_backend-0.1.0\naxji_copilot_municipal_backend.egg-info
+creating naxji_copilot_municipal_backend-0.1.0\src
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\in
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents\templates
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\estado_postgres
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\perfil_repository_postgres
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+creating naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\revision_postgres
+creating naxji_copilot_municipal_backend-0.1.0\src\application\ports\input
+creating naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+creating naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+creating naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+creating naxji_copilot_municipal_backend-0.1.0\src\domain\services
+creating naxji_copilot_municipal_backend-0.1.0\src\domain\value_objects
+creating naxji_copilot_municipal_backend-0.1.0\src\infrastructure
+creating naxji_copilot_municipal_backend-0.1.0\src\infrastructure\ai\models
+creating naxji_copilot_municipal_backend-0.1.0\src\infrastructure\auth
+creating naxji_copilot_municipal_backend-0.1.0\src\infrastructure\configuration
+creating naxji_copilot_municipal_backend-0.1.0\tests
+copying files to naxji_copilot_municipal_backend-0.1.0...
+copying MANIFEST.in -> naxji_copilot_municipal_backend-0.1.0
+copying README.md -> naxji_copilot_municipal_backend-0.1.0
+copying pyproject.toml -> naxji_copilot_municipal_backend-0.1.0
+copying naxji_copilot_municipal_backend.egg-info\PKG-INFO -> naxji_copilot_municipal_backend-0.1.0\naxji_copilot_municipal_backend.egg-info
+copying naxji_copilot_municipal_backend.egg-info\SOURCES.txt -> naxji_copilot_municipal_backend-0.1.0\naxji_copilot_municipal_backend.egg-info
+copying naxji_copilot_municipal_backend.egg-info\dependency_links.txt -> naxji_copilot_municipal_backend-0.1.0\naxji_copilot_municipal_backend.egg-info
+copying naxji_copilot_municipal_backend.egg-info\requires.txt -> naxji_copilot_municipal_backend-0.1.0\naxji_copilot_municipal_backend.egg-info
+copying naxji_copilot_municipal_backend.egg-info\top_level.txt -> naxji_copilot_municipal_backend-0.1.0\naxji_copilot_municipal_backend.egg-info
+copying src\main.py -> naxji_copilot_municipal_backend-0.1.0\src
+copying src\adapters\in\limite_documental.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in
+copying src\adapters\in\controllers\auth_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\catalogo_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\documento_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\ia_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\informe_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\operacion_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\revision_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\solicitud_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\controllers\usuario_controller.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\controllers
+copying src\adapters\in\schemas\base.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\catalogo_response.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\error_response.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\informe_request.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\informe_response.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\prediccion_request.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\prediccion_response.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\seccion_response.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\solicitud_request.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\in\schemas\solicitud_response.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\in\schemas
+copying src\adapters\out\ai\context_predictor_catalogo.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\context_predictor_mock.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\embeddings_ollama.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\fidelidad_inspeccion.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\generador_borrador_mock.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\generador_borrador_ollama.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\integridad_modelos.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\ollama_adapter.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\ai\sklearn_context_predictor.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\ai
+copying src\adapters\out\documents\__init__.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+copying src\adapters\out\documents\almacen_supabase.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+copying src\adapters\out\documents\exportador_docx.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+copying src\adapters\out\documents\exportador_mdt.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+copying src\adapters\out\documents\exportador_pdf.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+copying src\adapters\out\documents\extractor.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+copying src\adapters\out\documents\fuentes_docx.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents
+copying src\adapters\out\documents\templates\mdt_anexo08_revision1.docx -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\documents\templates
+copying src\adapters\out\persistence\__init__.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\catalogo_repository_memory.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\datos_demo.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\documentos_postgres.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\estado_postgres.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\informe_auditado.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\informe_repository_memory.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\memoria.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\perfil_repository_postgres.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\plantilla_repository_memory.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\postgres.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\prediccion_repository_memory.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\revision_memory.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\revision_postgres.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\solicitud_repository_memory.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\sql_resources.py -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence
+copying src\adapters\out\persistence\sql\documentos_postgres\bloquear_deduplicacion.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\bloquear_finalizacion.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\bloquear_reserva.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\buscar.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\buscar_duplicado.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\configurar_pgvector.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\contar.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\eliminar_fragmentos.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\finalizar.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\fragmento.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\insertar_fragmento.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\listar.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\obtener.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\reservar.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\estado_postgres\preparacion.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\estado_postgres
+copying src\adapters\out\persistence\sql\perfil_repository_postgres\obtener_perfil.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\perfil_repository_postgres
+copying src\adapters\out\persistence\sql\perfil_repository_postgres\obtener_roles.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\perfil_repository_postgres
+copying src\adapters\out\persistence\sql\postgres\areas.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\bloquear.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\campos_plantilla.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\correspondencias.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\eliminar_normativas_ausentes.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\eliminar_valores_ausentes.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\existe_correspondencias.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\informe.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\informe_por_solicitud.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\insertar_cita.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\lectura_consistente.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\normativa.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\normativa_por_codigo.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\normativas_prediccion.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\plantilla.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\plantillas.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\save_assignment.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\save_insert.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\save_upsert.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\solicitud.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\tipos_informe.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\ultima_prediccion.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\valores_solicitud.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\versiones_existentes.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\versiones_informe.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\revision_postgres\auditoria.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\revision_postgres
+copying src\adapters\out\persistence\sql\revision_postgres\eventos.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\revision_postgres
+copying src\adapters\out\persistence\sql\revision_postgres\listar.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\revision_postgres
+copying src\adapters\out\persistence\sql\revision_postgres\registrar.sql -> naxji_copilot_municipal_backend-0.1.0\src\adapters\out\persistence\sql\revision_postgres
+copying src\application\ports\input\solicitud_use_case.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\input
+copying src\application\ports\output\catalogo_repository.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\context_predictor.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\documentos.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\exportador_informe.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\generador_borrador.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\informe_repository.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\llm_port.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\perfil_repository.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\plantilla_repository.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\prediccion_repository.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\revision_repository.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\solicitud_repository.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\ports\output\unidad_trabajo.py -> naxji_copilot_municipal_backend-0.1.0\src\application\ports\output
+copying src\application\use_cases\actualizar_borrador.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\actualizar_solicitud.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\consultar_catalogos.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\crear_solicitud.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\documentos.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\exportar_informe.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\generar_borrador.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\guardar_solicitud_completa.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\guardar_valores_solicitud.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\obtener_contexto.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\obtener_informe.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\obtener_solicitud.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\predecir_contexto.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\revision_informes.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\servicios_solicitud.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\validar_prediccion.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\application\use_cases\verificar_referencias_normativas.py -> naxji_copilot_municipal_backend-0.1.0\src\application\use_cases
+copying src\domain\entities\catalogo.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\entities\correspondencia_normativa.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\entities\documento.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\entities\informe.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\entities\plantilla.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\entities\prediccion_contexto.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\entities\solicitud.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\entities\usuario_actual.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\entities
+copying src\domain\services\errores.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\services
+copying src\domain\services\informe_service.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\services
+copying src\domain\services\respaldo.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\services
+copying src\domain\services\solicitud_service.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\services
+copying src\domain\value_objects\encabezado_documento.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\value_objects
+copying src\domain\value_objects\estado_solicitud.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\value_objects
+copying src\domain\value_objects\estados.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\value_objects
+copying src\domain\value_objects\estructura_piloto.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\value_objects
+copying src\domain\value_objects\fuentes_piloto.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\value_objects
+copying src\domain\value_objects\seccion_salida.py -> naxji_copilot_municipal_backend-0.1.0\src\domain\value_objects
+copying src\infrastructure\dependencies.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure
+copying src\infrastructure\diagnostico.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure
+copying src\infrastructure\ai\models\features_norm.joblib -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\mlb.joblib -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\model_config.json -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\modelo_area.joblib -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\modelo_normas.joblib -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\modelo_tipo.joblib -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\ai\models
+copying src\infrastructure\auth\mock.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\auth
+copying src\infrastructure\auth\supabase.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\auth
+copying src\infrastructure\configuration\container.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\configuration
+copying src\infrastructure\configuration\database.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\configuration
+copying src\infrastructure\configuration\rag.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\configuration
+copying src\infrastructure\configuration\settings.py -> naxji_copilot_municipal_backend-0.1.0\src\infrastructure\configuration
+copying tests\test_api.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_arquitectura.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_atribucion_fuente.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_auditoria_criterios.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_auth.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_auth_integration.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_carga_metricas.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_casos_uso.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_catalogos_pmv1.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_catalogos_supabase.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_cierre_pmv1.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_compatibilidad_predicciones.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_correspondencias_normativas.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_correspondencias_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_estructura_borrador.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_estructura_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_evaluar_predictor.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_evaluar_rag.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_exportacion_mdt.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_formato_mdt.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_generacion_concurrencia.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_generacion_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_inspeccion_contenido.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_inspeccion_contenido_real.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_inspeccion_piloto.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_inspeccion_semilla.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_ollama.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_ollama_integration.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_orden_presentacion.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_perfil_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_piloto_v2.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_piloto_v2_ollama.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_piloto_v2_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_pmv2.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_pmv2_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_pmv3.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_pmv3_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_pmv3_rag_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_postgres.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_procedencia_ml.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_seguridad_cierre.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_sql_resources.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_supabase_integration.py -> naxji_copilot_municipal_backend-0.1.0\tests
+copying tests\test_validaciones.py -> naxji_copilot_municipal_backend-0.1.0\tests
+Writing naxji_copilot_municipal_backend-0.1.0\setup.cfg
+Creating tar archive
+removing 'naxji_copilot_municipal_backend-0.1.0' (and everything under it)
+running egg_info
+writing naxji_copilot_municipal_backend.egg-info\PKG-INFO
+writing dependency_links to naxji_copilot_municipal_backend.egg-info\dependency_links.txt
+writing requirements to naxji_copilot_municipal_backend.egg-info\requires.txt
+writing top-level names to naxji_copilot_municipal_backend.egg-info\top_level.txt
+reading manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+creating build\lib\src
+copying src\main.py -> build\lib\src
+creating build\lib\src\infrastructure
+copying src\infrastructure\dependencies.py -> build\lib\src\infrastructure
+copying src\infrastructure\diagnostico.py -> build\lib\src\infrastructure
+creating build\lib\src\adapters\in
+copying src\adapters\in\limite_documental.py -> build\lib\src\adapters\in
+creating build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\auth_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\catalogo_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\documento_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\ia_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\informe_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\operacion_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\revision_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\solicitud_controller.py -> build\lib\src\adapters\in\controllers
+copying src\adapters\in\controllers\usuario_controller.py -> build\lib\src\adapters\in\controllers
+creating build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\base.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\catalogo_response.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\error_response.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\informe_request.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\informe_response.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\prediccion_request.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\prediccion_response.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\seccion_response.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\solicitud_request.py -> build\lib\src\adapters\in\schemas
+copying src\adapters\in\schemas\solicitud_response.py -> build\lib\src\adapters\in\schemas
+creating build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\context_predictor_catalogo.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\context_predictor_mock.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\embeddings_ollama.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\fidelidad_inspeccion.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\generador_borrador_mock.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\generador_borrador_ollama.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\integridad_modelos.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\ollama_adapter.py -> build\lib\src\adapters\out\ai
+copying src\adapters\out\ai\sklearn_context_predictor.py -> build\lib\src\adapters\out\ai
+creating build\lib\src\adapters\out\documents
+copying src\adapters\out\documents\almacen_supabase.py -> build\lib\src\adapters\out\documents
+copying src\adapters\out\documents\exportador_docx.py -> build\lib\src\adapters\out\documents
+copying src\adapters\out\documents\exportador_mdt.py -> build\lib\src\adapters\out\documents
+copying src\adapters\out\documents\exportador_pdf.py -> build\lib\src\adapters\out\documents
+copying src\adapters\out\documents\extractor.py -> build\lib\src\adapters\out\documents
+copying src\adapters\out\documents\fuentes_docx.py -> build\lib\src\adapters\out\documents
+copying src\adapters\out\documents\__init__.py -> build\lib\src\adapters\out\documents
+creating build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\catalogo_repository_memory.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\datos_demo.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\documentos_postgres.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\estado_postgres.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\informe_auditado.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\informe_repository_memory.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\memoria.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\perfil_repository_postgres.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\plantilla_repository_memory.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\postgres.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\prediccion_repository_memory.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\revision_memory.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\revision_postgres.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\solicitud_repository_memory.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\sql_resources.py -> build\lib\src\adapters\out\persistence
+copying src\adapters\out\persistence\__init__.py -> build\lib\src\adapters\out\persistence
+creating build\lib\src\application\use_cases
+copying src\application\use_cases\actualizar_borrador.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\actualizar_solicitud.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\consultar_catalogos.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\crear_solicitud.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\documentos.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\exportar_informe.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\generar_borrador.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\guardar_solicitud_completa.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\guardar_valores_solicitud.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\obtener_contexto.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\obtener_informe.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\obtener_solicitud.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\predecir_contexto.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\revision_informes.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\servicios_solicitud.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\validar_prediccion.py -> build\lib\src\application\use_cases
+copying src\application\use_cases\verificar_referencias_normativas.py -> build\lib\src\application\use_cases
+creating build\lib\src\application\ports\input
+copying src\application\ports\input\solicitud_use_case.py -> build\lib\src\application\ports\input
+creating build\lib\src\application\ports\output
+copying src\application\ports\output\catalogo_repository.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\context_predictor.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\documentos.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\exportador_informe.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\generador_borrador.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\informe_repository.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\llm_port.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\perfil_repository.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\plantilla_repository.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\prediccion_repository.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\revision_repository.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\solicitud_repository.py -> build\lib\src\application\ports\output
+copying src\application\ports\output\unidad_trabajo.py -> build\lib\src\application\ports\output
+creating build\lib\src\domain\entities
+copying src\domain\entities\catalogo.py -> build\lib\src\domain\entities
+copying src\domain\entities\correspondencia_normativa.py -> build\lib\src\domain\entities
+copying src\domain\entities\documento.py -> build\lib\src\domain\entities
+copying src\domain\entities\informe.py -> build\lib\src\domain\entities
+copying src\domain\entities\plantilla.py -> build\lib\src\domain\entities
+copying src\domain\entities\prediccion_contexto.py -> build\lib\src\domain\entities
+copying src\domain\entities\solicitud.py -> build\lib\src\domain\entities
+copying src\domain\entities\usuario_actual.py -> build\lib\src\domain\entities
+creating build\lib\src\domain\services
+copying src\domain\services\errores.py -> build\lib\src\domain\services
+copying src\domain\services\informe_service.py -> build\lib\src\domain\services
+copying src\domain\services\respaldo.py -> build\lib\src\domain\services
+copying src\domain\services\solicitud_service.py -> build\lib\src\domain\services
+creating build\lib\src\domain\value_objects
+copying src\domain\value_objects\encabezado_documento.py -> build\lib\src\domain\value_objects
+copying src\domain\value_objects\estados.py -> build\lib\src\domain\value_objects
+copying src\domain\value_objects\estado_solicitud.py -> build\lib\src\domain\value_objects
+copying src\domain\value_objects\estructura_piloto.py -> build\lib\src\domain\value_objects
+copying src\domain\value_objects\fuentes_piloto.py -> build\lib\src\domain\value_objects
+copying src\domain\value_objects\seccion_salida.py -> build\lib\src\domain\value_objects
+creating build\lib\src\infrastructure\auth
+copying src\infrastructure\auth\mock.py -> build\lib\src\infrastructure\auth
+copying src\infrastructure\auth\supabase.py -> build\lib\src\infrastructure\auth
+creating build\lib\src\infrastructure\configuration
+copying src\infrastructure\configuration\container.py -> build\lib\src\infrastructure\configuration
+copying src\infrastructure\configuration\database.py -> build\lib\src\infrastructure\configuration
+copying src\infrastructure\configuration\rag.py -> build\lib\src\infrastructure\configuration
+copying src\infrastructure\configuration\settings.py -> build\lib\src\infrastructure\configuration
+running egg_info
+writing naxji_copilot_municipal_backend.egg-info\PKG-INFO
+writing dependency_links to naxji_copilot_municipal_backend.egg-info\dependency_links.txt
+writing requirements to naxji_copilot_municipal_backend.egg-info\requires.txt
+writing top-level names to naxji_copilot_municipal_backend.egg-info\top_level.txt
+reading manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'naxji_copilot_municipal_backend.egg-info\SOURCES.txt'
+creating build\lib\src\adapters\out\documents\templates
+copying src\adapters\out\documents\templates\mdt_anexo08_revision1.docx -> build\lib\src\adapters\out\documents\templates
+creating build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\bloquear_deduplicacion.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\bloquear_finalizacion.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\bloquear_reserva.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\buscar.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\buscar_duplicado.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\configurar_pgvector.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\contar.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\eliminar_fragmentos.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\finalizar.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\fragmento.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\insertar_fragmento.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\listar.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\obtener.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+copying src\adapters\out\persistence\sql\documentos_postgres\reservar.sql -> build\lib\src\adapters\out\persistence\sql\documentos_postgres
+creating build\lib\src\adapters\out\persistence\sql\estado_postgres
+copying src\adapters\out\persistence\sql\estado_postgres\preparacion.sql -> build\lib\src\adapters\out\persistence\sql\estado_postgres
+creating build\lib\src\adapters\out\persistence\sql\perfil_repository_postgres
+copying src\adapters\out\persistence\sql\perfil_repository_postgres\obtener_perfil.sql -> build\lib\src\adapters\out\persistence\sql\perfil_repository_postgres
+copying src\adapters\out\persistence\sql\perfil_repository_postgres\obtener_roles.sql -> build\lib\src\adapters\out\persistence\sql\perfil_repository_postgres
+creating build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\areas.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\bloquear.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\campos_plantilla.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\correspondencias.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\eliminar_normativas_ausentes.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\eliminar_valores_ausentes.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\existe_correspondencias.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\informe.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\informe_por_solicitud.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\insertar_cita.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\lectura_consistente.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\normativa.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\normativas_prediccion.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\normativa_por_codigo.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\plantilla.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\plantillas.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\save_assignment.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\save_insert.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\save_upsert.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\solicitud.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\tipos_informe.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\ultima_prediccion.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\valores_solicitud.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\versiones_existentes.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+copying src\adapters\out\persistence\sql\postgres\versiones_informe.sql -> build\lib\src\adapters\out\persistence\sql\postgres
+creating build\lib\src\adapters\out\persistence\sql\revision_postgres
+copying src\adapters\out\persistence\sql\revision_postgres\auditoria.sql -> build\lib\src\adapters\out\persistence\sql\revision_postgres
+copying src\adapters\out\persistence\sql\revision_postgres\eventos.sql -> build\lib\src\adapters\out\persistence\sql\revision_postgres
+copying src\adapters\out\persistence\sql\revision_postgres\listar.sql -> build\lib\src\adapters\out\persistence\sql\revision_postgres
+copying src\adapters\out\persistence\sql\revision_postgres\registrar.sql -> build\lib\src\adapters\out\persistence\sql\revision_postgres
+creating build\lib\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\features_norm.joblib -> build\lib\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\mlb.joblib -> build\lib\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\modelo_area.joblib -> build\lib\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\modelo_normas.joblib -> build\lib\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\modelo_tipo.joblib -> build\lib\src\infrastructure\ai\models
+copying src\infrastructure\ai\models\model_config.json -> build\lib\src\infrastructure\ai\models
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\src
+creating build\bdist.win-amd64\wheel\src\adapters
+creating build\bdist.win-amd64\wheel\src\adapters\in
+creating build\bdist.win-amd64\wheel\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\auth_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\catalogo_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\documento_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\ia_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\informe_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\operacion_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\revision_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\solicitud_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\controllers\usuario_controller.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\controllers
+copying build\lib\src\adapters\in\limite_documental.py -> build\bdist.win-amd64\wheel\.\src\adapters\in
+creating build\bdist.win-amd64\wheel\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\base.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\catalogo_response.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\error_response.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\informe_request.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\informe_response.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\prediccion_request.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\prediccion_response.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\seccion_response.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\solicitud_request.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+copying build\lib\src\adapters\in\schemas\solicitud_response.py -> build\bdist.win-amd64\wheel\.\src\adapters\in\schemas
+creating build\bdist.win-amd64\wheel\src\adapters\out
+creating build\bdist.win-amd64\wheel\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\context_predictor_catalogo.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\context_predictor_mock.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\embeddings_ollama.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\fidelidad_inspeccion.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\generador_borrador_mock.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\generador_borrador_ollama.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\integridad_modelos.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\ollama_adapter.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+copying build\lib\src\adapters\out\ai\sklearn_context_predictor.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\ai
+creating build\bdist.win-amd64\wheel\src\adapters\out\documents
+copying build\lib\src\adapters\out\documents\almacen_supabase.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents
+copying build\lib\src\adapters\out\documents\exportador_docx.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents
+copying build\lib\src\adapters\out\documents\exportador_mdt.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents
+copying build\lib\src\adapters\out\documents\exportador_pdf.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents
+copying build\lib\src\adapters\out\documents\extractor.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents
+copying build\lib\src\adapters\out\documents\fuentes_docx.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents
+creating build\bdist.win-amd64\wheel\src\adapters\out\documents\templates
+copying build\lib\src\adapters\out\documents\templates\mdt_anexo08_revision1.docx -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents\templates
+copying build\lib\src\adapters\out\documents\__init__.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\documents
+creating build\bdist.win-amd64\wheel\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\catalogo_repository_memory.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\datos_demo.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\documentos_postgres.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\estado_postgres.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\informe_auditado.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\informe_repository_memory.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\memoria.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\perfil_repository_postgres.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\plantilla_repository_memory.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\postgres.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\prediccion_repository_memory.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\revision_memory.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\revision_postgres.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\solicitud_repository_memory.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+creating build\bdist.win-amd64\wheel\src\adapters\out\persistence\sql
+creating build\bdist.win-amd64\wheel\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\bloquear_deduplicacion.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\bloquear_finalizacion.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\bloquear_reserva.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\buscar.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\buscar_duplicado.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\configurar_pgvector.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\contar.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\eliminar_fragmentos.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\finalizar.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\fragmento.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\insertar_fragmento.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\listar.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\obtener.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+copying build\lib\src\adapters\out\persistence\sql\documentos_postgres\reservar.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\documentos_postgres
+creating build\bdist.win-amd64\wheel\src\adapters\out\persistence\sql\estado_postgres
+copying build\lib\src\adapters\out\persistence\sql\estado_postgres\preparacion.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\estado_postgres
+creating build\bdist.win-amd64\wheel\src\adapters\out\persistence\sql\perfil_repository_postgres
+copying build\lib\src\adapters\out\persistence\sql\perfil_repository_postgres\obtener_perfil.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\perfil_repository_postgres
+copying build\lib\src\adapters\out\persistence\sql\perfil_repository_postgres\obtener_roles.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\perfil_repository_postgres
+creating build\bdist.win-amd64\wheel\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\areas.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\bloquear.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\campos_plantilla.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\correspondencias.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\eliminar_normativas_ausentes.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\eliminar_valores_ausentes.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\existe_correspondencias.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\informe.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\informe_por_solicitud.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\insertar_cita.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\lectura_consistente.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\normativa.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\normativas_prediccion.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\normativa_por_codigo.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\plantilla.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\plantillas.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\save_assignment.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\save_insert.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\save_upsert.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\solicitud.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\tipos_informe.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\ultima_prediccion.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\valores_solicitud.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\versiones_existentes.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+copying build\lib\src\adapters\out\persistence\sql\postgres\versiones_informe.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\postgres
+creating build\bdist.win-amd64\wheel\src\adapters\out\persistence\sql\revision_postgres
+copying build\lib\src\adapters\out\persistence\sql\revision_postgres\auditoria.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\revision_postgres
+copying build\lib\src\adapters\out\persistence\sql\revision_postgres\eventos.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\revision_postgres
+copying build\lib\src\adapters\out\persistence\sql\revision_postgres\listar.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\revision_postgres
+copying build\lib\src\adapters\out\persistence\sql\revision_postgres\registrar.sql -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence\sql\revision_postgres
+copying build\lib\src\adapters\out\persistence\sql_resources.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+copying build\lib\src\adapters\out\persistence\__init__.py -> build\bdist.win-amd64\wheel\.\src\adapters\out\persistence
+creating build\bdist.win-amd64\wheel\src\application
+creating build\bdist.win-amd64\wheel\src\application\ports
+creating build\bdist.win-amd64\wheel\src\application\ports\input
+copying build\lib\src\application\ports\input\solicitud_use_case.py -> build\bdist.win-amd64\wheel\.\src\application\ports\input
+creating build\bdist.win-amd64\wheel\src\application\ports\output
+copying build\lib\src\application\ports\output\catalogo_repository.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\context_predictor.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\documentos.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\exportador_informe.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\generador_borrador.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\informe_repository.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\llm_port.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\perfil_repository.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\plantilla_repository.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\prediccion_repository.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\revision_repository.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\solicitud_repository.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+copying build\lib\src\application\ports\output\unidad_trabajo.py -> build\bdist.win-amd64\wheel\.\src\application\ports\output
+creating build\bdist.win-amd64\wheel\src\application\use_cases
+copying build\lib\src\application\use_cases\actualizar_borrador.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\actualizar_solicitud.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\consultar_catalogos.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\crear_solicitud.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\documentos.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\exportar_informe.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\generar_borrador.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\guardar_solicitud_completa.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\guardar_valores_solicitud.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\obtener_contexto.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\obtener_informe.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\obtener_solicitud.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\predecir_contexto.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\revision_informes.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\servicios_solicitud.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\validar_prediccion.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+copying build\lib\src\application\use_cases\verificar_referencias_normativas.py -> build\bdist.win-amd64\wheel\.\src\application\use_cases
+creating build\bdist.win-amd64\wheel\src\domain
+creating build\bdist.win-amd64\wheel\src\domain\entities
+copying build\lib\src\domain\entities\catalogo.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+copying build\lib\src\domain\entities\correspondencia_normativa.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+copying build\lib\src\domain\entities\documento.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+copying build\lib\src\domain\entities\informe.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+copying build\lib\src\domain\entities\plantilla.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+copying build\lib\src\domain\entities\prediccion_contexto.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+copying build\lib\src\domain\entities\solicitud.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+copying build\lib\src\domain\entities\usuario_actual.py -> build\bdist.win-amd64\wheel\.\src\domain\entities
+creating build\bdist.win-amd64\wheel\src\domain\services
+copying build\lib\src\domain\services\errores.py -> build\bdist.win-amd64\wheel\.\src\domain\services
+copying build\lib\src\domain\services\informe_service.py -> build\bdist.win-amd64\wheel\.\src\domain\services
+copying build\lib\src\domain\services\respaldo.py -> build\bdist.win-amd64\wheel\.\src\domain\services
+copying build\lib\src\domain\services\solicitud_service.py -> build\bdist.win-amd64\wheel\.\src\domain\services
+creating build\bdist.win-amd64\wheel\src\domain\value_objects
+copying build\lib\src\domain\value_objects\encabezado_documento.py -> build\bdist.win-amd64\wheel\.\src\domain\value_objects
+copying build\lib\src\domain\value_objects\estados.py -> build\bdist.win-amd64\wheel\.\src\domain\value_objects
+copying build\lib\src\domain\value_objects\estado_solicitud.py -> build\bdist.win-amd64\wheel\.\src\domain\value_objects
+copying build\lib\src\domain\value_objects\estructura_piloto.py -> build\bdist.win-amd64\wheel\.\src\domain\value_objects
+copying build\lib\src\domain\value_objects\fuentes_piloto.py -> build\bdist.win-amd64\wheel\.\src\domain\value_objects
+copying build\lib\src\domain\value_objects\seccion_salida.py -> build\bdist.win-amd64\wheel\.\src\domain\value_objects
+creating build\bdist.win-amd64\wheel\src\infrastructure
+creating build\bdist.win-amd64\wheel\src\infrastructure\ai
+creating build\bdist.win-amd64\wheel\src\infrastructure\ai\models
+copying build\lib\src\infrastructure\ai\models\features_norm.joblib -> build\bdist.win-amd64\wheel\.\src\infrastructure\ai\models
+copying build\lib\src\infrastructure\ai\models\mlb.joblib -> build\bdist.win-amd64\wheel\.\src\infrastructure\ai\models
+copying build\lib\src\infrastructure\ai\models\modelo_area.joblib -> build\bdist.win-amd64\wheel\.\src\infrastructure\ai\models
+copying build\lib\src\infrastructure\ai\models\modelo_normas.joblib -> build\bdist.win-amd64\wheel\.\src\infrastructure\ai\models
+copying build\lib\src\infrastructure\ai\models\modelo_tipo.joblib -> build\bdist.win-amd64\wheel\.\src\infrastructure\ai\models
+copying build\lib\src\infrastructure\ai\models\model_config.json -> build\bdist.win-amd64\wheel\.\src\infrastructure\ai\models
+creating build\bdist.win-amd64\wheel\src\infrastructure\auth
+copying build\lib\src\infrastructure\auth\mock.py -> build\bdist.win-amd64\wheel\.\src\infrastructure\auth
+copying build\lib\src\infrastructure\auth\supabase.py -> build\bdist.win-amd64\wheel\.\src\infrastructure\auth
+creating build\bdist.win-amd64\wheel\src\infrastructure\configuration
+copying build\lib\src\infrastructure\configuration\container.py -> build\bdist.win-amd64\wheel\.\src\infrastructure\configuration
+copying build\lib\src\infrastructure\configuration\database.py -> build\bdist.win-amd64\wheel\.\src\infrastructure\configuration
+copying build\lib\src\infrastructure\configuration\rag.py -> build\bdist.win-amd64\wheel\.\src\infrastructure\configuration
+copying build\lib\src\infrastructure\configuration\settings.py -> build\bdist.win-amd64\wheel\.\src\infrastructure\configuration
+copying build\lib\src\infrastructure\dependencies.py -> build\bdist.win-amd64\wheel\.\src\infrastructure
+copying build\lib\src\infrastructure\diagnostico.py -> build\bdist.win-amd64\wheel\.\src\infrastructure
+copying build\lib\src\main.py -> build\bdist.win-amd64\wheel\.\src
+running install_egg_info
+Copying naxji_copilot_municipal_backend.egg-info to build\bdist.win-amd64\wheel\.\naxji_copilot_municipal_backend-0.1.0-py3.11.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\naxji_copilot_municipal_backend-0.1.0.dist-info\WHEEL
+creating 'D:\\NAXJI\\.venv\\artefactos-pmv-trazable-release\\.tmp-yvcb0hgt\\naxji_copilot_municipal_backend-0.1.0-py3-none-any.whl' and adding 'build\\bdist.win-amd64\\wheel' to it
+adding 'src/main.py'
+adding 'src/adapters/in/limite_documental.py'
+adding 'src/adapters/in/controllers/auth_controller.py'
+adding 'src/adapters/in/controllers/catalogo_controller.py'
+adding 'src/adapters/in/controllers/documento_controller.py'
+adding 'src/adapters/in/controllers/ia_controller.py'
+adding 'src/adapters/in/controllers/informe_controller.py'
+adding 'src/adapters/in/controllers/operacion_controller.py'
+adding 'src/adapters/in/controllers/revision_controller.py'
+adding 'src/adapters/in/controllers/solicitud_controller.py'
+adding 'src/adapters/in/controllers/usuario_controller.py'
+adding 'src/adapters/in/schemas/base.py'
+adding 'src/adapters/in/schemas/catalogo_response.py'
+adding 'src/adapters/in/schemas/error_response.py'
+adding 'src/adapters/in/schemas/informe_request.py'
+adding 'src/adapters/in/schemas/informe_response.py'
+adding 'src/adapters/in/schemas/prediccion_request.py'
+adding 'src/adapters/in/schemas/prediccion_response.py'
+adding 'src/adapters/in/schemas/seccion_response.py'
+adding 'src/adapters/in/schemas/solicitud_request.py'
+adding 'src/adapters/in/schemas/solicitud_response.py'
+adding 'src/adapters/out/ai/context_predictor_catalogo.py'
+adding 'src/adapters/out/ai/context_predictor_mock.py'
+adding 'src/adapters/out/ai/embeddings_ollama.py'
+adding 'src/adapters/out/ai/fidelidad_inspeccion.py'
+adding 'src/adapters/out/ai/generador_borrador_mock.py'
+adding 'src/adapters/out/ai/generador_borrador_ollama.py'
+adding 'src/adapters/out/ai/integridad_modelos.py'
+adding 'src/adapters/out/ai/ollama_adapter.py'
+adding 'src/adapters/out/ai/sklearn_context_predictor.py'
+adding 'src/adapters/out/documents/__init__.py'
+adding 'src/adapters/out/documents/almacen_supabase.py'
+adding 'src/adapters/out/documents/exportador_docx.py'
+adding 'src/adapters/out/documents/exportador_mdt.py'
+adding 'src/adapters/out/documents/exportador_pdf.py'
+adding 'src/adapters/out/documents/extractor.py'
+adding 'src/adapters/out/documents/fuentes_docx.py'
+adding 'src/adapters/out/documents/templates/mdt_anexo08_revision1.docx'
+adding 'src/adapters/out/persistence/__init__.py'
+adding 'src/adapters/out/persistence/catalogo_repository_memory.py'
+adding 'src/adapters/out/persistence/datos_demo.py'
+adding 'src/adapters/out/persistence/documentos_postgres.py'
+adding 'src/adapters/out/persistence/estado_postgres.py'
+adding 'src/adapters/out/persistence/informe_auditado.py'
+adding 'src/adapters/out/persistence/informe_repository_memory.py'
+adding 'src/adapters/out/persistence/memoria.py'
+adding 'src/adapters/out/persistence/perfil_repository_postgres.py'
+adding 'src/adapters/out/persistence/plantilla_repository_memory.py'
+adding 'src/adapters/out/persistence/postgres.py'
+adding 'src/adapters/out/persistence/prediccion_repository_memory.py'
+adding 'src/adapters/out/persistence/revision_memory.py'
+adding 'src/adapters/out/persistence/revision_postgres.py'
+adding 'src/adapters/out/persistence/solicitud_repository_memory.py'
+adding 'src/adapters/out/persistence/sql_resources.py'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/bloquear_deduplicacion.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/bloquear_finalizacion.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/bloquear_reserva.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/buscar.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/buscar_duplicado.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/configurar_pgvector.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/contar.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/eliminar_fragmentos.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/finalizar.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/fragmento.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/insertar_fragmento.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/listar.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/obtener.sql'
+adding 'src/adapters/out/persistence/sql/documentos_postgres/reservar.sql'
+adding 'src/adapters/out/persistence/sql/estado_postgres/preparacion.sql'
+adding 'src/adapters/out/persistence/sql/perfil_repository_postgres/obtener_perfil.sql'
+adding 'src/adapters/out/persistence/sql/perfil_repository_postgres/obtener_roles.sql'
+adding 'src/adapters/out/persistence/sql/postgres/areas.sql'
+adding 'src/adapters/out/persistence/sql/postgres/bloquear.sql'
+adding 'src/adapters/out/persistence/sql/postgres/campos_plantilla.sql'
+adding 'src/adapters/out/persistence/sql/postgres/correspondencias.sql'
+adding 'src/adapters/out/persistence/sql/postgres/eliminar_normativas_ausentes.sql'
+adding 'src/adapters/out/persistence/sql/postgres/eliminar_valores_ausentes.sql'
+adding 'src/adapters/out/persistence/sql/postgres/existe_correspondencias.sql'
+adding 'src/adapters/out/persistence/sql/postgres/informe.sql'
+adding 'src/adapters/out/persistence/sql/postgres/informe_por_solicitud.sql'
+adding 'src/adapters/out/persistence/sql/postgres/insertar_cita.sql'
+adding 'src/adapters/out/persistence/sql/postgres/lectura_consistente.sql'
+adding 'src/adapters/out/persistence/sql/postgres/normativa.sql'
+adding 'src/adapters/out/persistence/sql/postgres/normativa_por_codigo.sql'
+adding 'src/adapters/out/persistence/sql/postgres/normativas_prediccion.sql'
+adding 'src/adapters/out/persistence/sql/postgres/plantilla.sql'
+adding 'src/adapters/out/persistence/sql/postgres/plantillas.sql'
+adding 'src/adapters/out/persistence/sql/postgres/save_assignment.sql'
+adding 'src/adapters/out/persistence/sql/postgres/save_insert.sql'
+adding 'src/adapters/out/persistence/sql/postgres/save_upsert.sql'
+adding 'src/adapters/out/persistence/sql/postgres/solicitud.sql'
+adding 'src/adapters/out/persistence/sql/postgres/tipos_informe.sql'
+adding 'src/adapters/out/persistence/sql/postgres/ultima_prediccion.sql'
+adding 'src/adapters/out/persistence/sql/postgres/valores_solicitud.sql'
+adding 'src/adapters/out/persistence/sql/postgres/versiones_existentes.sql'
+adding 'src/adapters/out/persistence/sql/postgres/versiones_informe.sql'
+adding 'src/adapters/out/persistence/sql/revision_postgres/auditoria.sql'
+adding 'src/adapters/out/persistence/sql/revision_postgres/eventos.sql'
+adding 'src/adapters/out/persistence/sql/revision_postgres/listar.sql'
+adding 'src/adapters/out/persistence/sql/revision_postgres/registrar.sql'
+adding 'src/application/ports/input/solicitud_use_case.py'
+adding 'src/application/ports/output/catalogo_repository.py'
+adding 'src/application/ports/output/context_predictor.py'
+adding 'src/application/ports/output/documentos.py'
+adding 'src/application/ports/output/exportador_informe.py'
+adding 'src/application/ports/output/generador_borrador.py'
+adding 'src/application/ports/output/informe_repository.py'
+adding 'src/application/ports/output/llm_port.py'
+adding 'src/application/ports/output/perfil_repository.py'
+adding 'src/application/ports/output/plantilla_repository.py'
+adding 'src/application/ports/output/prediccion_repository.py'
+adding 'src/application/ports/output/revision_repository.py'
+adding 'src/application/ports/output/solicitud_repository.py'
+adding 'src/application/ports/output/unidad_trabajo.py'
+adding 'src/application/use_cases/actualizar_borrador.py'
+adding 'src/application/use_cases/actualizar_solicitud.py'
+adding 'src/application/use_cases/consultar_catalogos.py'
+adding 'src/application/use_cases/crear_solicitud.py'
+adding 'src/application/use_cases/documentos.py'
+adding 'src/application/use_cases/exportar_informe.py'
+adding 'src/application/use_cases/generar_borrador.py'
+adding 'src/application/use_cases/guardar_solicitud_completa.py'
+adding 'src/application/use_cases/guardar_valores_solicitud.py'
+adding 'src/application/use_cases/obtener_contexto.py'
+adding 'src/application/use_cases/obtener_informe.py'
+adding 'src/application/use_cases/obtener_solicitud.py'
+adding 'src/application/use_cases/predecir_contexto.py'
+adding 'src/application/use_cases/revision_informes.py'
+adding 'src/application/use_cases/servicios_solicitud.py'
+adding 'src/application/use_cases/validar_prediccion.py'
+adding 'src/application/use_cases/verificar_referencias_normativas.py'
+adding 'src/domain/entities/catalogo.py'
+adding 'src/domain/entities/correspondencia_normativa.py'
+adding 'src/domain/entities/documento.py'
+adding 'src/domain/entities/informe.py'
+adding 'src/domain/entities/plantilla.py'
+adding 'src/domain/entities/prediccion_contexto.py'
+adding 'src/domain/entities/solicitud.py'
+adding 'src/domain/entities/usuario_actual.py'
+adding 'src/domain/services/errores.py'
+adding 'src/domain/services/informe_service.py'
+adding 'src/domain/services/respaldo.py'
+adding 'src/domain/services/solicitud_service.py'
+adding 'src/domain/value_objects/encabezado_documento.py'
+adding 'src/domain/value_objects/estado_solicitud.py'
+adding 'src/domain/value_objects/estados.py'
+adding 'src/domain/value_objects/estructura_piloto.py'
+adding 'src/domain/value_objects/fuentes_piloto.py'
+adding 'src/domain/value_objects/seccion_salida.py'
+adding 'src/infrastructure/dependencies.py'
+adding 'src/infrastructure/diagnostico.py'
+adding 'src/infrastructure/ai/models/features_norm.joblib'
+adding 'src/infrastructure/ai/models/mlb.joblib'
+adding 'src/infrastructure/ai/models/model_config.json'
+adding 'src/infrastructure/ai/models/modelo_area.joblib'
+adding 'src/infrastructure/ai/models/modelo_normas.joblib'
+adding 'src/infrastructure/ai/models/modelo_tipo.joblib'
+adding 'src/infrastructure/auth/mock.py'
+adding 'src/infrastructure/auth/supabase.py'
+adding 'src/infrastructure/configuration/container.py'
+adding 'src/infrastructure/configuration/database.py'
+adding 'src/infrastructure/configuration/rag.py'
+adding 'src/infrastructure/configuration/settings.py'
+adding 'naxji_copilot_municipal_backend-0.1.0.dist-info/METADATA'
+adding 'naxji_copilot_municipal_backend-0.1.0.dist-info/WHEEL'
+adding 'naxji_copilot_municipal_backend-0.1.0.dist-info/top_level.txt'
+adding 'naxji_copilot_municipal_backend-0.1.0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built naxji_copilot_municipal_backend-0.1.0.tar.gz and naxji_copilot_municipal_backend-0.1.0-py3-none-any.whl
+* Getting build dependencies for sdist...
+* Building sdist...
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+* Building wheel...

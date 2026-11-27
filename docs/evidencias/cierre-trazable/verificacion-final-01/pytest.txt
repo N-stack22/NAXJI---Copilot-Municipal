@@ -1,0 +1,75 @@
+.......................................s.........................sss.... [ 19%]
+......................F................................................. [ 39%]
+........................................................................ [ 59%]
+........................................................................ [ 79%]
+......................................................ssssss............ [ 99%]
+..                                                                       [100%]
+================================== FAILURES ===================================
+________ test_sklearn_y_ollama_reales_con_semilla_verificada_sin_citas ________
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_26bbf8fc9feb46d39896cfb36816f549', user='naxj...d-4765-bed4-033d5bebdb7e'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+tmp_path = WindowsPath('D:/NAXJI/.venv/worktrees/pmv-trazable/docs/evidencias/cierre-trazable/verificacion-final-01/temporales/test_sklearn_y_ollama_reales_c0')
+
+    @pytest.mark.skipif(os.getenv('NAXJI_RUN_OLLAMA_TESTS') != '1', reason='Ollama real: opt-in')
+    def test_sklearn_y_ollama_reales_con_semilla_verificada_sin_citas(db_local, tmp_path):
+        from time import perf_counter
+        settings, uid, pid, _, _ = db_local
+        with settings.connect(autocommit=True) as c:
+            script(c, MIGRATION)
+            script(c, SEED)
+        config = Settings(persistence_mode='postgres', auth_mode='disabled')
+        deps = Container(config, database_settings=settings)  # Ambos modelos reales.
+        area = deps.catalogos.areas()[0].id
+        app = create_app(config, deps)
+        app.dependency_overrides[get_current_user] = lambda: UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), area)
+        asunto = 'PRUEBA NAXJI: evaluar acumulación de residuos sólidos en un parque ficticio; inspección pendiente sin resultados.'
+        with TestClient(app) as client:
+            url = '/solicitudes/'+client.post('/solicitudes', json={'asunto': asunto}).json()['id']
+            p = client.post(url+'/predecir-contexto').json()
+            assert not p['es_mock'] and p['modelo'] == 'SKLEARN_IA_01'
+            assert len(p['normativas']) == 2
+            elegido = next(n for n in p['normativas'] if n['codigo'] == 'PE_DL_1278')
+            tipo = str(deps.plantillas.obtener_por_id(pid).tipo_informe_id)
+            r = client.post(url+'/validar-prediccion', json={'prediccion_id':p['id'],'resultado':'CORREGIDA',
+                'tipo_informe_id':tipo,'area_destino_id':str(area),'normativa_ids':[elegido['normativa_id']]})
+            assert r.status_code == 200, r.text
+            assert len([n for n in client.get(url+'/contexto').json()['normativas'] if n['aceptada']]) == 1
+            fixture = json.loads(Path('tests/fixtures/inspeccion_parque_sin_resultados.json').read_text(encoding='utf-8'))
+            plantilla = deps.plantillas.obtener_por_id(pid)
+            r = client.put(url+'/completa', json={'asunto':asunto,'tipo_informe_id':tipo,
+                'area_destino_id':str(area),'area_origen_id':str(area),'plantilla_id':str(pid),
+                'valores':[{'campo_plantilla_id':str(c.id),'valor':fixture['datos'][c.clave]} for c in plantilla.campos]})
+            assert r.status_code == 200, r.text
+            start = perf_counter()
+            r = client.post(url+'/generar-borrador', json={'instrucciones':'No añadir hechos ni citas jurídicas. Información no aportada: pendiente de verificación.'})
+            seconds = round(perf_counter()-start,3)
+            assert r.status_code == 201, r.text
+            data = r.json()
+            contenido = {k:v for k,v in data['contenido'].items() if k != 'encabezado'}
+            assert data['modelo_ia'] == 'qwen2.5:7b'
+>           assert list(contenido) == ['antecedentes','objetivo','analisis_tecnico','conclusiones','recomendaciones']
+E           AssertionError: assert ['objetivo', ...isis_tecnico'] == ['antecedente...omendaciones']
+E
+E             At index 0 diff: 'objetivo' != 'antecedentes'
+E             Use -v to get more diff
+
+tests\test_correspondencias_postgres.py:171: AssertionError
+============================== warnings summary ===============================
+..\..\Lib\site-packages\fastapi\testclient.py:1
+  D:\NAXJI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_auth_integration.py:6: Auth real: requiere .env.local y .env.auth-test
+SKIPPED [1] tests\test_catalogos_supabase.py:49: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:67: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:109: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:43: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:70: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:88: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:126: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:150: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:173: Supabase: prueba opt-in
+FAILED tests/test_correspondencias_postgres.py::test_sklearn_y_ollama_reales_con_semilla_verificada_sin_citas
+1 failed, 351 passed, 10 skipped, 1 warning in 133.02s (0:02:13)

@@ -1,0 +1,123 @@
+{
+  "tipo": "Adaptador de recuperación PostgreSQL+pgvector y bge-m3 reales; corpus sintético",
+  "corpus": "NAXJI-PMV2-SINTETICO-01",
+  "sha256": "411cb1ec7a685f199da6f6d6d07c5728724888c57aa0d08b285cfdf943d80e61",
+  "umbral_similitud": 0.5,
+  "top_k": 6,
+  "dimension": 1024,
+  "resultados": [
+    {
+      "id": "q1",
+      "estado": "RECUPERADO",
+      "relevantes": [
+        "ambiente"
+      ],
+      "encontrados": [
+        "ambiente"
+      ],
+      "similitudes": [
+        0.6845530271530151
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "id": "q2",
+      "estado": "RECUPERADO",
+      "relevantes": [
+        "ambiente"
+      ],
+      "encontrados": [
+        "ambiente"
+      ],
+      "similitudes": [
+        0.6199225187301636
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "id": "q3",
+      "estado": "RECUPERADO",
+      "relevantes": [
+        "tributos"
+      ],
+      "encontrados": [
+        "tributos"
+      ],
+      "similitudes": [
+        0.6748262047767639
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "id": "q4",
+      "estado": "RECUPERADO",
+      "relevantes": [
+        "tributos"
+      ],
+      "encontrados": [
+        "tributos"
+      ],
+      "similitudes": [
+        0.6338024735450745
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "id": "q5",
+      "estado": "RECUPERADO",
+      "relevantes": [
+        "obras"
+      ],
+      "encontrados": [
+        "obras"
+      ],
+      "similitudes": [
+        0.6860441957102983
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "id": "q6",
+      "estado": "RECUPERADO",
+      "relevantes": [
+        "obras"
+      ],
+      "encontrados": [
+        "obras"
+      ],
+      "similitudes": [
+        0.6104515427081868
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "id": "q7",
+      "estado": "SIN_RESULTADOS",
+      "relevantes": [],
+      "encontrados": [],
+      "similitudes": [],
+      "precision": 0,
+      "recall": null
+    },
+    {
+      "id": "q8",
+      "estado": "SIN_RESULTADOS",
+      "relevantes": [],
+      "encontrados": [],
+      "similitudes": [],
+      "precision": 0,
+      "recall": null
+    }
+  ],
+  "macro_precision_at_k": 1.0,
+  "macro_recall_at_k": 1.0,
+  "rechazo_negativas": 1.0,
+  "revision_humana_institucional": "Pendiente; no inferir calidad general a partir de este corpus",
+  "pgvector_version": "0.8.7"
+}

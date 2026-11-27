@@ -1,0 +1,139 @@
+{
+  "entorno": "PostgreSQL aislado; identidad de prueba inyectada; sklearn y Ollama reales; sin Supabase",
+  "modelo": "qwen2.5:7b",
+  "generacion_segundos": 5.355,
+  "solicitud_id": "1e1c123d-cdce-49c5-96ae-45fdb0e27964",
+  "informe_id": "cb2c589a-8e4b-404d-8d87-c62bae8429af",
+  "plantilla": {
+    "id": "d62d7092-07a9-430b-8e2e-c66168d0360c",
+    "nombre": "Informe de Inspección – Piloto NAXJI",
+    "tipo_informe_id": "cfd34ad6-632f-4430-8c5a-636bf90188e7",
+    "area_id": "90b346a2-008a-4149-9860-21bf00bae6cc",
+    "version": 1,
+    "activa": true,
+    "descripcion": "DEMOSTRACIÓN de inspección ambiental. No constituye un formato municipal oficial. El funcionario aporta datos fuente; Ollama propone el borrador. Sin resultados, actuaciones, hallazgos y conclusiones quedan pendientes de verificación. Revisión humana obligatoria.",
+    "secciones_salida": [
+      {
+        "clave": "antecedentes",
+        "titulo": "Antecedentes de la solicitud",
+        "obligatoria": true
+      },
+      {
+        "clave": "objetivo",
+        "titulo": "Objetivo y alcance de la inspección",
+        "obligatoria": true
+      },
+      {
+        "clave": "actuaciones",
+        "titulo": "Actuaciones y fuentes disponibles",
+        "obligatoria": true
+      },
+      {
+        "clave": "hallazgos",
+        "titulo": "Hallazgos y observaciones",
+        "obligatoria": true
+      },
+      {
+        "clave": "conclusiones",
+        "titulo": "Conclusiones",
+        "obligatoria": true
+      },
+      {
+        "clave": "recomendaciones",
+        "titulo": "Recomendaciones y verificaciones pendientes",
+        "obligatoria": false
+      }
+    ],
+    "estructura_legacy": false,
+    "formato_documento": null
+  },
+  "prediccion": {
+    "id": "dba72d57-b507-449e-8793-9c91eae6cc8a",
+    "solicitud_id": "1e1c123d-cdce-49c5-96ae-45fdb0e27964",
+    "modelo": "SKLEARN_IA_01",
+    "version_modelo": "RF-IA-01-200CASOS-v1",
+    "algoritmos": {
+      "tipo_informe": "LogisticRegression",
+      "area_destino": "LogisticRegression",
+      "normativas": "OneVsRestClassifier[LogisticRegression]"
+    },
+    "es_mock": false,
+    "resultado_validacion": "PENDIENTE",
+    "validado_por": null,
+    "validado_at": null,
+    "tipo_informe": {
+      "id": "824bb791-d128-49fb-9795-0ae0a5427fff",
+      "codigo": "INFORME_LEGAL",
+      "nombre": "Informe Legal",
+      "confianza": 0.39993237804872767
+    },
+    "area_destino": {
+      "id": "5ead312f-3935-48b7-be35-02e1e6c0cd7b",
+      "codigo": "MDT_GAJ",
+      "nombre": "Gerencia de Asesoría Jurídica",
+      "confianza": 0.3739702284726909
+    },
+    "normativas": [],
+    "advertencias": [
+      "Tema identificado: LPAG. No existe una norma verificable asociada; revisión documental pendiente.",
+      "La confianza corresponde al tema detectado; no acredita vigencia ni aplicabilidad jurídica. Confirme cada referencia documental para este caso.",
+      "Correspondencia de área propuesta con el ROF 2020; confirme el destino. Rendimiento institucional no validado."
+    ],
+    "temas_normativos": [
+      {
+        "codigo": "LPAG",
+        "etiqueta": "Ley del Procedimiento Administrativo General",
+        "confianza": 0.3525562936239439,
+        "normativa_ids": []
+      }
+    ]
+  },
+  "confirmacion": {
+    "tipo": "INFORME_INSPECCION",
+    "area": "MDT_SGGA",
+    "normativa_ids": []
+  },
+  "datos_fuente": {
+    "estado_resultados": "Sin resultados de inspección"
+  },
+  "propuesta": {
+    "antecedentes": "Pendiente de verificación: se solicita una inspección ambiental del parque ficticio Aurora, pero no se aportaron resultados de la inspección.",
+    "objetivo": "Delimitar el alcance de la inspección para verificar el estado ambiental del parque ficticio Aurora.",
+    "actuaciones": "Pendiente de verificación: no se aportaron datos sobre actuaciones realizadas durante la inspección.",
+    "hallazgos": "Pendiente de verificación: no se aportaron observaciones o resultados de la inspección.",
+    "conclusiones": "Pendiente de verificación: no se pueden valorar los hallazgos del parque ficticio Aurora con la información disponible.",
+    "recomendaciones": "Pendiente de verificación: verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias."
+  },
+  "edicion_guardada": {
+    "antecedentes": "Pendiente de verificación: se solicita una inspección ambiental del parque ficticio Aurora, pero no se aportaron resultados de la inspección.",
+    "objetivo": "Delimitar el alcance de la inspección para verificar el estado ambiental del parque ficticio Aurora.",
+    "actuaciones": "Pendiente de verificación: no se aportaron datos sobre actuaciones realizadas durante la inspección.",
+    "hallazgos": "Pendiente de verificación: no se aportaron observaciones o resultados de la inspección.",
+    "conclusiones": "Revisión humana ficticia NAXJI: no se aportaron resultados de inspección.\nPendiente de verificación: obtener el acta y las evidencias antes de emitir conclusiones sobre el parque ficticio Aurora.",
+    "recomendaciones": "Pendiente de verificación: verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias.",
+    "encabezado": {
+      "asunto": "PRUEBA NAXJI INSPECCIÓN: solicitud de inspección ambiental del parque ficticio Aurora, sin resultados",
+      "documento": {
+        "fecha": "",
+        "emisor": "Subgerencia de Gestión Ambiental",
+        "numero": "",
+        "firmante": "",
+        "referencia": "",
+        "destinatario": "Subgerencia de Gestión Ambiental",
+        "cargo_firmante": ""
+      },
+      "area_origen": "Subgerencia de Gestión Ambiental",
+      "area_destino": "Subgerencia de Gestión Ambiental",
+      "tipo_documento": "Informe de Inspección",
+      "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+      "plantilla_version": 1
+    }
+  },
+  "http": {
+    "generacion": 201,
+    "edicion": 200,
+    "recuperacion": 200,
+    "descarga": 200
+  },
+  "limites": "Caso ficticio, no certifica fidelidad del modelo para cualquier entrada. Revisión humana obligatoria."
+}

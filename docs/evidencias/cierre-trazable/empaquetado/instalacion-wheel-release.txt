@@ -1,0 +1,7 @@
+Processing d:\naxji\.venv\artefactos-pmv-trazable-release\naxji_copilot_municipal_backend-0.1.0-py3-none-any.whl
+Installing collected packages: naxji-copilot-municipal-backend
+  Attempting uninstall: naxji-copilot-municipal-backend
+    Found existing installation: naxji-copilot-municipal-backend 0.1.0
+    Uninstalling naxji-copilot-municipal-backend-0.1.0:
+      Successfully uninstalled naxji-copilot-municipal-backend-0.1.0
+Successfully installed naxji-copilot-municipal-backend-0.1.0

@@ -1,0 +1,129 @@
+{
+  "entorno": "PostgreSQL aislado; identidad ficticia inyectada; no Supabase",
+  "ollama_real": true,
+  "modelo": "qwen2.5:7b",
+  "segundos": 5.303,
+  "datos_fuente": {
+    "estado_resultados": "Información parcial por verificar",
+    "lugar_inspeccion": "Parque ficticio de prueba NAXJI, acceso norte",
+    "fecha_inspeccion": "2026-09-30",
+    "alcance_solicitado": "Solo el entorno inmediato del acceso norte. No se inspeccionó el resto del parque.",
+    "resultados_observados": "Durante la visita de 10:20 a 10:40 se observaron dos bolsas cerradas junto al acceso norte. Ambas permanecían allí al terminar la observación. No se abrieron, pesaron ni identificó su contenido, origen o tiempo de permanencia. No se entrevistó a personas.",
+    "referencias_conocidas": "El solicitante describe la ficha ficticia F-01 y dos fotografías E-01 y E-02 del 2026-09-30. No están adjuntas; debe cotejarse su contenido antes de citarlas como evidencia verificada.",
+    "informacion_pendiente": "Confirmar ubicación y competencia territorial; obtener ficha y fotografías; verificar contenido, origen y permanencia de las bolsas."
+  },
+  "asunto": "PRUEBA NAXJI: inspección de bolsas con residuos en parque",
+  "propuesta": {
+    "informe_id": "f8284a70-efaa-417f-be84-11bdee201e30",
+    "solicitud_id": "bed69c9e-6576-4ae0-b39d-62a2db7a2b45",
+    "plantilla_id": "d763bcf9-2c54-4e83-ae0e-4000ea0d4628",
+    "titulo": "Informe de Inspección",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+    "plantilla_version": 2,
+    "estado": "BORRADOR",
+    "version_id": "c40a8893-0afa-4258-b9b9-f6cc29467af5",
+    "numero_version": 1,
+    "contenido": {
+      "cuerpo": "Se realizó una visita al entorno inmediato del acceso norte del parque ficticio de prueba NAXJI el 30 de septiembre de 2026, entre las 10:20 y 10:40. Durante la observación, se notaron dos bolsas cerradas junto al acceso norte, que permanecían allí al finalizar la visita. No se abrieron, pesaron ni se identificó su contenido, origen o tiempo de permanencia. No se entrevistó a personas. El solicitante describe la ficha ficticia F-01 y dos fotografías E-01 y E-02 del 30 de septiembre de 2026, aunque no están adjuntas. Se recomienda confirmar la ubicación y competencia territorial, obtener la ficha y fotografías, y verificar el contenido, origen y permanencia de las bolsas. Pendiente de verificación: la ubicación precisa y la competencia territorial.",
+      "encabezado": {
+        "asunto": "PRUEBA NAXJI: inspección de bolsas con residuos en parque",
+        "documento": {
+          "fecha": "",
+          "anexos": "",
+          "copias": "",
+          "emisor": "",
+          "numero": "",
+          "firmante": "",
+          "iniciales": "",
+          "referencia": "",
+          "destinatario": "",
+          "lugar_emision": "",
+          "cargo_firmante": "",
+          "cargo_destinatario": "",
+          "registro_documento": "",
+          "registro_expediente": ""
+        },
+        "area_origen": "Subgerencia de Gestión Ambiental",
+        "area_destino": "Subgerencia de Gestión Ambiental",
+        "tipo_documento": "Informe de Inspección",
+        "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+        "formato_documento": "mdt_informe_anexo08_2019_revision1",
+        "plantilla_version": 2
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "cuerpo",
+        "titulo": "Cuerpo del informe interno",
+        "obligatoria": true
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "IA",
+    "modelo_ia": "qwen2.5:7b",
+    "created_at": "2026-11-27T01:57:24.277128Z",
+    "updated_at": "2026-11-27T01:57:24.277128Z",
+    "sustento": null
+  },
+  "edicion": {
+    "informe_id": "f8284a70-efaa-417f-be84-11bdee201e30",
+    "solicitud_id": "bed69c9e-6576-4ae0-b39d-62a2db7a2b45",
+    "plantilla_id": "d763bcf9-2c54-4e83-ae0e-4000ea0d4628",
+    "titulo": "Informe de Inspección",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+    "plantilla_version": 2,
+    "estado": "BORRADOR",
+    "version_id": "d5650bfe-bf0e-492a-b232-5d813126652d",
+    "numero_version": 2,
+    "contenido": {
+      "cuerpo": "Se realizó una visita al entorno inmediato del acceso norte del parque ficticio de prueba NAXJI el 30 de septiembre de 2026, entre las 10:20 y 10:40. Durante la observación, se notaron dos bolsas cerradas junto al acceso norte, que permanecían allí al finalizar la visita. No se abrieron, pesaron ni se identificó su contenido, origen o tiempo de permanencia. No se entrevistó a personas. El solicitante describe la ficha ficticia F-01 y dos fotografías E-01 y E-02 del 30 de septiembre de 2026, aunque no están adjuntas. Se recomienda confirmar la ubicación y competencia territorial, obtener la ficha y fotografías, y verificar el contenido, origen y permanencia de las bolsas. Pendiente de verificación: la ubicación precisa y la competencia territorial.\nRevisión humana de prueba: obtener y cotejar las fuentes documentales antes de incorporarlas como anexos.",
+      "encabezado": {
+        "asunto": "PRUEBA NAXJI: inspección de bolsas con residuos en parque",
+        "documento": {
+          "fecha": "2026-10-01",
+          "anexos": "",
+          "copias": "",
+          "emisor": "",
+          "numero": "",
+          "firmante": "",
+          "iniciales": "",
+          "referencia": "",
+          "destinatario": "",
+          "lugar_emision": "Lugar de prueba NAXJI",
+          "cargo_firmante": "",
+          "cargo_destinatario": "",
+          "registro_documento": "",
+          "registro_expediente": ""
+        },
+        "area_origen": "Subgerencia de Gestión Ambiental",
+        "area_destino": "Subgerencia de Gestión Ambiental",
+        "tipo_documento": "Informe de Inspección",
+        "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+        "formato_documento": "mdt_informe_anexo08_2019_revision1",
+        "plantilla_version": 2
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "cuerpo",
+        "titulo": "Cuerpo del informe interno",
+        "obligatoria": true
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "USUARIO",
+    "modelo_ia": null,
+    "created_at": "2026-11-27T01:57:24.277128Z",
+    "updated_at": "2026-11-27T01:57:26.785262Z",
+    "sustento": null
+  },
+  "http": {
+    "generacion": 201,
+    "edicion": 200,
+    "recuperacion": 200,
+    "descarga": 200,
+    "descarga_ajena": 403
+  }
+}

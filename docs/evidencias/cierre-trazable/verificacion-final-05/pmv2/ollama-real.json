@@ -1,0 +1,213 @@
+{
+  "tipo": "PostgreSQL+pgvector, embeddings y Ollama reales; Storage y Auth con dobles",
+  "corpus": "SINTETICO-PMV2-REAL-01",
+  "modelo_embeddings": "bge-m3:567m",
+  "dimension": 1024,
+  "intentos": [
+    {
+      "status": 201,
+      "respuesta": {
+        "informe_id": "9a2ff642-e141-4465-b197-1801a3715a97",
+        "solicitud_id": "bfd8ba4c-7e5c-42d3-86a8-99a1044b356f",
+        "plantilla_id": "7626f4e3-977f-4f7e-8147-6ba7767cf4f6",
+        "titulo": "Informe Técnico",
+        "titulo_versionado": true,
+        "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+        "plantilla_version": 2,
+        "estado": "BORRADOR",
+        "version_id": "97f2061e-2c02-4f92-85c6-0745e72bf07e",
+        "numero_version": 1,
+        "contenido": {
+          "antecedentes": "Pendiente de verificación: No se aportaron datos sobre antecedentes o normas específicas para la inspección del parque. [F:879f0ea0-6037-5a18-8399-3de139dc52f0]",
+          "objetivo": "Pendiente de verificación: El objetivo del informe es documentar los criterios para una inspección ambiental de parque, sin afirmar actividades realizadas.",
+          "analisis_tecnico": "Pendiente de verificación: No se aportaron datos sobre actuaciones realizadas o hallazgos confirmados.",
+          "conclusiones": "Pendiente de verificación: No se pueden valorar los hallazgos del parque con la información disponible.",
+          "recomendaciones": "Pendiente de verificación: Se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias.",
+          "encabezado": {
+            "asunto": "Elaborar informe sobre criterios para documentar una inspección ambiental de parque",
+            "documento": {
+              "fecha": "",
+              "emisor": "Alcaldía",
+              "numero": "",
+              "firmante": "",
+              "referencia": "",
+              "destinatario": "Alcaldía",
+              "cargo_firmante": ""
+            },
+            "area_origen": "Alcaldía",
+            "area_destino": "Alcaldía",
+            "tipo_documento": "Informe Técnico",
+            "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+            "plantilla_version": 2
+          }
+        },
+        "secciones_salida": [
+          {
+            "clave": "antecedentes",
+            "titulo": "Antecedentes",
+            "obligatoria": true
+          },
+          {
+            "clave": "objetivo",
+            "titulo": "Objetivo del informe",
+            "obligatoria": true
+          },
+          {
+            "clave": "analisis_tecnico",
+            "titulo": "Análisis técnico",
+            "obligatoria": true
+          },
+          {
+            "clave": "conclusiones",
+            "titulo": "Conclusiones",
+            "obligatoria": true
+          },
+          {
+            "clave": "recomendaciones",
+            "titulo": "Recomendaciones",
+            "obligatoria": false
+          }
+        ],
+        "estructura_legacy": false,
+        "origen": "IA",
+        "modelo_ia": "qwen2.5:7b",
+        "created_at": "2026-11-27T02:07:00.570000Z",
+        "updated_at": "2026-11-27T02:07:00.570000Z",
+        "sustento": {
+          "estado": "RECUPERADO",
+          "fuentes": [
+            {
+              "fin": 236,
+              "tipo": "txt",
+              "citas": [
+                {
+                  "estado": "PENDIENTE_REVISION",
+                  "pasaje": "Pendiente de verificación: No se aportaron datos sobre antecedentes o normas específicas para la inspección del parque. [F:879f0ea0-6037-5a18-8399-3de139dc52f0]",
+                  "seccion": "antecedentes"
+                }
+              ],
+              "texto": "Documento ficticio de pruebas. Guía de gestión ambiental para parques. Para valorar residuos en un parque se necesitan observaciones documentadas y ubicación precisa. Esta guía no registra inspecciones ni hallazgos de ningún expediente.",
+              "inicio": 0,
+              "sha256": "975c6867281d3757df711ea165837add45bccf9f7f505172f5672d07098473e2",
+              "titulo": "Guía ambiental ficticia PMV2",
+              "similitud": 0.662485519795748,
+              "procedencia": "Corpus sintético autorizado para pruebas",
+              "documento_id": "bd44624a-4745-4c31-ae3e-a4e3f03b06fc",
+              "fragmento_id": "879f0ea0-6037-5a18-8399-3de139dc52f0",
+              "localizacion": "Párrafo 1",
+              "nombre_original": "manual.txt"
+            }
+          ],
+          "advertencia": "Las citas identifican referencias; requieren revisión humana y no verifican hechos ni vigencia normativa.",
+          "procesamiento": "extract-v1:chars-v1:1200:180:bge-m3:567m:1024:1",
+          "umbral_similitud": 0.5
+        }
+      }
+    }
+  ],
+  "recorrido": {
+    "carga": 201,
+    "procesamiento": 200,
+    "generacion": 201,
+    "edicion": 200,
+    "recuperacion": 200,
+    "docx": 200
+  },
+  "version_editada": {
+    "informe_id": "9a2ff642-e141-4465-b197-1801a3715a97",
+    "solicitud_id": "bfd8ba4c-7e5c-42d3-86a8-99a1044b356f",
+    "plantilla_id": "7626f4e3-977f-4f7e-8147-6ba7767cf4f6",
+    "titulo": "Informe Técnico",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+    "plantilla_version": 2,
+    "estado": "BORRADOR",
+    "version_id": "ffff6287-ed62-45cb-8b38-01fdb109e0b0",
+    "numero_version": 2,
+    "contenido": {
+      "antecedentes": "Pendiente de verificación: No se aportaron datos sobre antecedentes o normas específicas para la inspección del parque. [F:879f0ea0-6037-5a18-8399-3de139dc52f0]",
+      "objetivo": "Pendiente de verificación: El objetivo del informe es documentar los criterios para una inspección ambiental de parque, sin afirmar actividades realizadas.",
+      "analisis_tecnico": "Pendiente de verificación: No se aportaron datos sobre actuaciones realizadas o hallazgos confirmados.",
+      "conclusiones": "Pendiente de verificación: edición humana ficticia; faltan resultados.",
+      "recomendaciones": "Pendiente de verificación: Se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias.",
+      "encabezado": {
+        "asunto": "Elaborar informe sobre criterios para documentar una inspección ambiental de parque",
+        "documento": {
+          "fecha": "",
+          "emisor": "Alcaldía",
+          "numero": "",
+          "firmante": "",
+          "referencia": "",
+          "destinatario": "Alcaldía",
+          "cargo_firmante": ""
+        },
+        "area_origen": "Alcaldía",
+        "area_destino": "Alcaldía",
+        "tipo_documento": "Informe Técnico",
+        "plantilla_nombre": "Informe Técnico – Piloto NAXJI",
+        "plantilla_version": 2
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "antecedentes",
+        "titulo": "Antecedentes",
+        "obligatoria": true
+      },
+      {
+        "clave": "objetivo",
+        "titulo": "Objetivo del informe",
+        "obligatoria": true
+      },
+      {
+        "clave": "analisis_tecnico",
+        "titulo": "Análisis técnico",
+        "obligatoria": true
+      },
+      {
+        "clave": "conclusiones",
+        "titulo": "Conclusiones",
+        "obligatoria": true
+      },
+      {
+        "clave": "recomendaciones",
+        "titulo": "Recomendaciones",
+        "obligatoria": false
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "USUARIO",
+    "modelo_ia": null,
+    "created_at": "2026-11-27T02:07:00.570000Z",
+    "updated_at": "2026-11-27T02:07:01.413942Z",
+    "sustento": {
+      "estado": "RECUPERADO",
+      "fuentes": [
+        {
+          "fin": 236,
+          "tipo": "txt",
+          "citas": [
+            {
+              "estado": "PENDIENTE_REVISION",
+              "pasaje": "Pendiente de verificación: No se aportaron datos sobre antecedentes o normas específicas para la inspección del parque. [F:879f0ea0-6037-5a18-8399-3de139dc52f0]",
+              "seccion": "antecedentes"
+            }
+          ],
+          "texto": "Documento ficticio de pruebas. Guía de gestión ambiental para parques. Para valorar residuos en un parque se necesitan observaciones documentadas y ubicación precisa. Esta guía no registra inspecciones ni hallazgos de ningún expediente.",
+          "inicio": 0,
+          "sha256": "975c6867281d3757df711ea165837add45bccf9f7f505172f5672d07098473e2",
+          "titulo": "Guía ambiental ficticia PMV2",
+          "similitud": 0.662485519795748,
+          "procedencia": "Corpus sintético autorizado para pruebas",
+          "documento_id": "bd44624a-4745-4c31-ae3e-a4e3f03b06fc",
+          "fragmento_id": "879f0ea0-6037-5a18-8399-3de139dc52f0",
+          "localizacion": "Párrafo 1",
+          "nombre_original": "manual.txt"
+        }
+      ],
+      "advertencia": "Edición humana: las secciones modificadas requieren revisar sus citas. No se verificó su sustento automáticamente.",
+      "procesamiento": "extract-v1:chars-v1:1200:180:bge-m3:567m:1024:1",
+      "umbral_similitud": 0.5
+    }
+  }
+}

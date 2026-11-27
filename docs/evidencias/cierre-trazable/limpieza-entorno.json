@@ -1,0 +1,8 @@
+{
+  "fecha_utc": "2026-11-27T02:30:24.653047+00:00",
+  "contenedor_retirado": "f7e797b74179f21ee18845e05767902e7fbc4d330f3dfde3c2ca6fd7ead9f7bb",
+  "nombre": "naxji-trazable-20261126-qa",
+  "puerto": "127.0.0.1:15432",
+  "docker_rm_f_v_exit_code": 0,
+  "alcance": "Solo contenedor y volumen temporales propios; Docker Desktop y servicios ajenos preservados"
+}

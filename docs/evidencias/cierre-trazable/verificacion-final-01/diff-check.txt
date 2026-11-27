@@ -1,0 +1,2 @@
+warning: in the working copy of 'src/application/use_cases/revision_informes.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_pmv3_postgres.py', LF will be replaced by CRLF the next time Git touches it

@@ -1,0 +1,9 @@
+{
+  "resultado": "dos invocaciones conservan archivo historico y crean directorios diferentes",
+  "comandos": "simulados, no sustituyen pruebas funcionales",
+  "fechas_Lima": [
+    "2026-11-26",
+    "2026-11-26"
+  ],
+  "historico_preservado": true
+}

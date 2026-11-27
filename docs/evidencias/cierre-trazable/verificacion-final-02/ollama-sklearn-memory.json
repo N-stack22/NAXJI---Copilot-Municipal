@@ -1,0 +1,40 @@
+{
+  "entorno": "API memory, datos ficticios, predictor sklearn real, Ollama local real",
+  "modelo": "qwen2.5:7b",
+  "segundos": 4.786,
+  "plantilla": "Informe Técnico – Piloto NAXJI (DEMO)",
+  "secciones": [
+    {
+      "clave": "antecedentes",
+      "titulo": "Antecedentes",
+      "obligatoria": true
+    },
+    {
+      "clave": "objetivo",
+      "titulo": "Objetivo del informe",
+      "obligatoria": true
+    },
+    {
+      "clave": "analisis_tecnico",
+      "titulo": "Análisis técnico",
+      "obligatoria": true
+    },
+    {
+      "clave": "conclusiones",
+      "titulo": "Conclusiones",
+      "obligatoria": true
+    },
+    {
+      "clave": "recomendaciones",
+      "titulo": "Recomendaciones",
+      "obligatoria": false
+    }
+  ],
+  "contenido": {
+    "antecedentes": "Pendiente de verificación: no se aportaron antecedentes sobre la realización de la inspección del parque.",
+    "objetivo": "Delimitar el alcance de la solicitud para verificar la ubicación precisa y la competencia correspondiente, y programar una visita si corresponde.",
+    "analisis_tecnico": "Pendiente de verificación: no se aportaron datos sobre el estado del parque, mediciones, fotografías ni hallazgos.",
+    "conclusiones": "Pendiente de verificación: no se pueden valorar el estado del parque con la información disponible. No hay hallazgos confirmados con la información aportada.",
+    "recomendaciones": "Pendiente de verificación: se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias."
+  }
+}

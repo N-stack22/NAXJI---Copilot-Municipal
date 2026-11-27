@@ -1,0 +1,100 @@
+{
+  "entorno": "PostgreSQL aislado; identidad ficticia inyectada; sklearn y Ollama reales; sin Supabase",
+  "solicitud_id": "f5d1e222-ee3e-41b7-b6a7-1d367e3d4ee3",
+  "informe_id": "2840ed4b-e0e3-4ec7-866e-35b7d9630b20",
+  "modelo": "qwen2.5:7b",
+  "segundos": 5.326,
+  "asunto": "PRUEBA NAXJI: preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+  "datos_fuente": {
+    "estado_resultados": "Sin resultados de inspección"
+  },
+  "propuesta": {
+    "antecedentes": "Pendiente de verificación: se solicita preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+    "objetivo": "Delimitar el alcance de la inspección para verificar la posible acumulación de residuos en un parque del distrito de Huancayo.",
+    "actuaciones": "Pendiente de verificación: no se aportaron datos sobre actuaciones realizadas.",
+    "hallazgos": "Pendiente de verificación: no se aportaron observaciones o resultados de inspección.",
+    "conclusiones": "Pendiente de verificación: no se pueden valorar los hallazgos con la información disponible.",
+    "recomendaciones": "Pendiente de verificación: se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias."
+  },
+  "version_guardada": {
+    "informe_id": "2840ed4b-e0e3-4ec7-866e-35b7d9630b20",
+    "solicitud_id": "f5d1e222-ee3e-41b7-b6a7-1d367e3d4ee3",
+    "plantilla_id": "9dc42eef-1332-4118-844a-d790d4f5677b",
+    "titulo": "Informe de Inspección",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+    "plantilla_version": 1,
+    "estado": "BORRADOR",
+    "version_id": "03004452-a115-4813-b1a9-e8a42fdadbc9",
+    "numero_version": 2,
+    "contenido": {
+      "antecedentes": "Pendiente de verificación: se solicita preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+      "objetivo": "Delimitar el alcance de la inspección para verificar la posible acumulación de residuos en un parque del distrito de Huancayo.",
+      "actuaciones": "Pendiente de verificación: no se aportaron datos sobre actuaciones realizadas.",
+      "hallazgos": "Pendiente de verificación: no se aportaron observaciones o resultados de inspección.",
+      "conclusiones": "Pendiente de verificación: no se pueden valorar los hallazgos con la información disponible.\nRevisión humana de prueba: este documento usa datos ficticios y requiere validación antes de cualquier uso.",
+      "recomendaciones": "Pendiente de verificación: se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias.",
+      "encabezado": {
+        "asunto": "PRUEBA NAXJI: preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+        "documento": {
+          "fecha": "",
+          "emisor": "Unidad de prueba NAXJI (ficticia)",
+          "numero": "",
+          "firmante": "",
+          "referencia": "Prueba local; sin expediente oficial",
+          "destinatario": "Subgerencia de Gestión Ambiental",
+          "cargo_firmante": ""
+        },
+        "area_origen": "Subgerencia de Gestión Ambiental",
+        "area_destino": "Subgerencia de Gestión Ambiental",
+        "tipo_documento": "Informe de Inspección",
+        "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+        "plantilla_version": 1
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "antecedentes",
+        "titulo": "Antecedentes de la solicitud",
+        "obligatoria": true
+      },
+      {
+        "clave": "objetivo",
+        "titulo": "Objetivo y alcance de la inspección",
+        "obligatoria": true
+      },
+      {
+        "clave": "actuaciones",
+        "titulo": "Actuaciones y fuentes disponibles",
+        "obligatoria": true
+      },
+      {
+        "clave": "hallazgos",
+        "titulo": "Hallazgos y observaciones",
+        "obligatoria": true
+      },
+      {
+        "clave": "conclusiones",
+        "titulo": "Conclusiones",
+        "obligatoria": true
+      },
+      {
+        "clave": "recomendaciones",
+        "titulo": "Recomendaciones y verificaciones pendientes",
+        "obligatoria": false
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "USUARIO",
+    "modelo_ia": null,
+    "created_at": "2026-11-27T01:31:26.037478Z",
+    "updated_at": "2026-11-27T01:31:27.435957Z",
+    "sustento": null
+  },
+  "http": {
+    "generacion": 201,
+    "edicion": 200,
+    "recuperacion": 200,
+    "descarga": 200
+  }
+}

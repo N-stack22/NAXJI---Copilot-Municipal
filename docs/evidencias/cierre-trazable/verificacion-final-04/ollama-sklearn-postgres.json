@@ -1,0 +1,40 @@
+{
+  "entorno": "API postgres, datos ficticios, predictor sklearn real, Ollama local real",
+  "modelo": "qwen2.5:7b",
+  "segundos": 4.319,
+  "plantilla": "Informe Técnico – Piloto NAXJI",
+  "secciones": [
+    {
+      "clave": "antecedentes",
+      "titulo": "Antecedentes",
+      "obligatoria": true
+    },
+    {
+      "clave": "objetivo",
+      "titulo": "Objetivo del informe",
+      "obligatoria": true
+    },
+    {
+      "clave": "analisis_tecnico",
+      "titulo": "Análisis técnico",
+      "obligatoria": true
+    },
+    {
+      "clave": "conclusiones",
+      "titulo": "Conclusiones",
+      "obligatoria": true
+    },
+    {
+      "clave": "recomendaciones",
+      "titulo": "Recomendaciones",
+      "obligatoria": false
+    }
+  ],
+  "contenido": {
+    "antecedentes": "Pendiente de verificación: no se aportaron antecedentes sobre la realización de la inspección.",
+    "objetivo": "Preparar un borrador que identifique la información pendiente para evaluar la solicitud.",
+    "analisis_tecnico": "Pendiente de verificación: no se aportaron datos sobre actuaciones realizadas, mediciones, fotografías ni hallazgos.",
+    "conclusiones": "Pendiente de verificación: no se dispone de resultados de inspección que permitan concluir el estado del parque.",
+    "recomendaciones": "Pendiente de verificación: se recomienda verificar la ubicación precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias."
+  }
+}

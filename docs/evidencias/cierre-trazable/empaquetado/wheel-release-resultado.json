@@ -1,0 +1,10 @@
+{
+  "fecha_utc": "2026-11-27T02:06:46.449108+00:00",
+  "commit": "4103c7112d9e2ede107f64716d58e2df302e7689",
+  "fuentes_manifest_sha256": "b8a80c754c92dcf92208e14924edce32f37a64af3f66597cb110057062f8cc95",
+  "wheel": "naxji_copilot_municipal_backend-0.1.0-py3-none-any.whl",
+  "sha256": "fb379953bfd19854283354e2a483bb552e7e0628ef12cb805a5f0f9c648443df",
+  "sql_recursos": 46,
+  "exit_code": 0,
+  "instalacion": "venv limpio runtime; wheel definitivo sin editable y sin acceso a red en reinstalacion"
+}

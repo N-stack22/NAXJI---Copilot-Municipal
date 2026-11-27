@@ -1,0 +1,1259 @@
+{
+  "fecha_utc": "2026-11-27T01:28:15.017506+00:00",
+  "csv_nombre": "plantilla_datos_RF_IA_01_200_CASOS.csv",
+  "csv_sha256": "4068378c2b6055a127af74428d788f87affe8ab255e3c9cf4a279e78d6b3d2f8",
+  "notebook_nombre": "PoC_RF_IA_01_MEJORADO_200_CASOS.ipynb",
+  "notebook_sha256": "1e34a7d1a8680c8a892e8c239b37fd2626564079fd008deab690a84da6491cbb",
+  "filas": 200,
+  "particiones_filas_csv_base1_con_cabecera": {
+    "train": [
+      121,
+      79,
+      131,
+      63,
+      42,
+      158,
+      90,
+      112,
+      151,
+      180,
+      147,
+      127,
+      190,
+      51,
+      86,
+      199,
+      97,
+      139,
+      188,
+      125,
+      169,
+      116,
+      161,
+      111,
+      115,
+      43,
+      143,
+      67,
+      128,
+      134,
+      36,
+      109,
+      46,
+      182,
+      107,
+      172,
+      71,
+      5,
+      104,
+      44,
+      6,
+      72,
+      39,
+      82,
+      145,
+      137,
+      186,
+      75,
+      140,
+      81,
+      11,
+      133,
+      58,
+      73,
+      178,
+      163,
+      160,
+      129,
+      138,
+      166,
+      150,
+      38,
+      40,
+      193,
+      78,
+      98,
+      61,
+      17,
+      153,
+      175,
+      162,
+      105,
+      191,
+      47,
+      16,
+      89,
+      27,
+      171,
+      167,
+      24,
+      65,
+      18,
+      15,
+      59,
+      93,
+      174,
+      83,
+      114,
+      157,
+      64,
+      95,
+      101,
+      66,
+      118,
+      155,
+      12,
+      130,
+      3,
+      53,
+      108,
+      176,
+      117,
+      26,
+      77,
+      197,
+      50,
+      132,
+      48,
+      164,
+      7,
+      200,
+      187,
+      87,
+      106,
+      142,
+      2,
+      34,
+      23,
+      14,
+      201,
+      4,
+      84,
+      159,
+      31,
+      30,
+      80,
+      189,
+      29,
+      123,
+      25,
+      37,
+      177,
+      144,
+      192,
+      54,
+      99,
+      19,
+      91,
+      52,
+      194
+    ],
+    "validacion": [
+      124,
+      62,
+      103,
+      135,
+      185,
+      141,
+      120,
+      198,
+      69,
+      9,
+      21,
+      92,
+      154,
+      156,
+      179,
+      55,
+      196,
+      32,
+      45,
+      149,
+      22,
+      35,
+      94,
+      56,
+      100,
+      119,
+      76,
+      170,
+      173,
+      10
+    ],
+    "test": [
+      41,
+      13,
+      148,
+      96,
+      110,
+      68,
+      181,
+      33,
+      146,
+      183,
+      165,
+      28,
+      8,
+      113,
+      126,
+      88,
+      49,
+      136,
+      20,
+      122,
+      168,
+      60,
+      74,
+      57,
+      102,
+      195,
+      152,
+      184,
+      85,
+      70
+    ]
+  },
+  "algoritmos": {
+    "tipo_informe": "LogisticRegression",
+    "area_destino": "LogisticRegression",
+    "normativas": "OneVsRestClassifier[LogisticRegression]"
+  },
+  "comparacion_clones_en_memoria": {
+    "tipo_features": {
+      "word": {
+        "vocabulario_igual": true,
+        "idf_igual": true
+      },
+      "char": {
+        "vocabulario_igual": true,
+        "idf_igual": true
+      }
+    },
+    "area_features": {
+      "word": {
+        "vocabulario_igual": true,
+        "idf_igual": true
+      },
+      "char": {
+        "vocabulario_igual": true,
+        "idf_igual": true
+      }
+    },
+    "normas_features": {
+      "word": {
+        "vocabulario_igual": true,
+        "idf_igual": true
+      },
+      "char": {
+        "vocabulario_igual": true,
+        "idf_igual": true
+      }
+    },
+    "etiquetas_normativas_iguales": true,
+    "tipo_coeficientes_max_diferencia": 6.661338147750939e-16,
+    "tipo_predicciones_test_iguales": true,
+    "area_coeficientes_max_diferencia": 6.661338147750939e-16,
+    "area_predicciones_test_iguales": true,
+    "normas_coeficientes_max_diferencia": 2.9753977059954195e-14
+  },
+  "duplicados_textuales_normalizados": 0,
+  "similitud_test_train": {
+    "representacion": "TF-IDF word+char del artefacto existente; coseno máximo por caso test",
+    "maximo": 0.6924025375523378,
+    "mediana_maximos": 0.5914117006250821
+  },
+  "evaluacion_test_artefactos_existentes": {
+    "schema_version": 1,
+    "metadata_declarada": {
+      "fuente": "plantilla_datos_RF_IA_01_200_CASOS.csv",
+      "etiquetado": "Etiquetas del CSV local; autoría/revisión independiente no acreditadas",
+      "particion": "test reconstruido del notebook; sin garantía externa",
+      "independiente_entrenamiento": false
+    },
+    "numero_casos": 30,
+    "independencia_verificada": false,
+    "advertencias": [
+      "La procedencia e independencia son declaraciones del proveedor de datos, no verificadas por este programa.",
+      "No hay umbral académico de aceptación configurado. Estas métricas no certifican cumplimiento.",
+      "Las clases con soporte cero se incluyen con métricas cero; revise soporte y representatividad.",
+      "Memorando figura en el catálogo, pero no entre las clases del artefacto de tipo."
+    ],
+    "clases_entrenadas": {
+      "tipo_informe": [
+        "Informe Legal",
+        "Informe Técnico",
+        "Informe de Inspección"
+      ],
+      "area_destino": [
+        "Gerencia de Desarrollo Económico",
+        "Gerencia de Desarrollo Urbano",
+        "Gerencia de Servicios Públicos",
+        "Oficina de Asesoría Jurídica",
+        "Subgerencia de Ecología y Medio Ambiente",
+        "Subgerencia de Gestión del Riesgo de Desastres"
+      ],
+      "temas": [
+        "Ley del Procedimiento Administrativo General",
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones",
+        "Normativa de contratación pública aplicable",
+        "Normativa de transparencia y acceso a la información pública",
+        "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos",
+        "Normativa municipal sobre desarrollo urbano y edificaciones",
+        "Normativa municipal sobre fiscalización y sanciones administrativas",
+        "Normativa municipal sobre gestión de residuos sólidos",
+        "Normativa municipal sobre gestión de servicios públicos",
+        "Normativa municipal sobre licencias de funcionamiento",
+        "Normativa municipal sobre prevención y control de contaminación sonora"
+      ]
+    },
+    "cobertura_tipos": {
+      "presentes": [
+        "Informe Legal",
+        "Informe Técnico",
+        "Informe de Inspección"
+      ],
+      "sin_casos": [
+        "Memorando"
+      ]
+    },
+    "metricas": {
+      "tipo_informe": {
+        "accuracy": 1.0,
+        "por_clase_y_promedios": {
+          "Informe Técnico": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "Informe Legal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "Informe de Inspección": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 12.0
+          },
+          "Memorando": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1-score": 0.75,
+            "support": 30.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 30.0
+          }
+        },
+        "etiquetas_matriz": [
+          "Informe Técnico",
+          "Informe Legal",
+          "Informe de Inspección",
+          "Memorando"
+        ],
+        "matriz_confusion": [
+          [
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "area_destino": {
+        "accuracy": 1.0,
+        "por_clase_y_promedios": {
+          "Subgerencia de Ecología y Medio Ambiente": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 6.0
+          },
+          "Gerencia de Servicios Públicos": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 6.0
+          },
+          "Gerencia de Desarrollo Urbano": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Gerencia de Desarrollo Económico": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Subgerencia de Gestión del Riesgo de Desastres": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Oficina de Asesoría Jurídica": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 30.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 30.0
+          }
+        },
+        "etiquetas_matriz": [
+          "Subgerencia de Ecología y Medio Ambiente",
+          "Gerencia de Servicios Públicos",
+          "Gerencia de Desarrollo Urbano",
+          "Gerencia de Desarrollo Económico",
+          "Subgerencia de Gestión del Riesgo de Desastres",
+          "Oficina de Asesoría Jurídica"
+        ],
+        "matriz_confusion": [
+          [
+            6,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ]
+        ]
+      },
+      "temas_normativos": {
+        "accuracy_conjunto_exacto": 1.0,
+        "hamming_loss": 0.0,
+        "promedios": {
+          "micro": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "macro": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "weighted": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "samples": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "por_clase_y_promedios": {
+          "Ley del Procedimiento Administrativo General": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 6.0
+          },
+          "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa de contratación pública aplicable": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa de transparencia y acceso a la información pública": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa municipal sobre desarrollo urbano y edificaciones": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa municipal sobre fiscalización y sanciones administrativas": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa municipal sobre gestión de residuos sólidos": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa municipal sobre gestión de servicios públicos": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa municipal sobre licencias de funcionamiento": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Normativa municipal sobre prevención y control de contaminación sonora": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "micro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 36.0
+          },
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 36.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 36.0
+          },
+          "samples avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 36.0
+          }
+        },
+        "etiquetas_matrices": [
+          "Ley del Procedimiento Administrativo General",
+          "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones",
+          "Normativa de contratación pública aplicable",
+          "Normativa de transparencia y acceso a la información pública",
+          "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos",
+          "Normativa municipal sobre desarrollo urbano y edificaciones",
+          "Normativa municipal sobre fiscalización y sanciones administrativas",
+          "Normativa municipal sobre gestión de residuos sólidos",
+          "Normativa municipal sobre gestión de servicios públicos",
+          "Normativa municipal sobre licencias de funcionamiento",
+          "Normativa municipal sobre prevención y control de contaminación sonora"
+        ],
+        "matrices_confusion_por_etiqueta": [
+          [
+            [
+              24,
+              0
+            ],
+            [
+              0,
+              6
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              27,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        ]
+      }
+    },
+    "latencia_inferencia_ms": {
+      "p50": 5.663399933837354,
+      "p95": 6.108029931783676,
+      "p99": 7.160485906060786
+    }
+  },
+  "limitaciones": [
+    "Datos sintéticos; no son un corpus institucional independiente",
+    "No se ejecutó código del notebook ni se escribieron modelos",
+    "La concordancia de artefactos con un replay no certifica autoría, cadena de custodia o aprobación de etiquetas",
+    "Se publican agregados e índices; no se copian CSV/notebooks originales ni textos de casos"
+  ],
+  "csv_adicional": {
+    "nombre": "plantilla_datos_RF_IA_01_RELLENA.csv",
+    "sha256": "b5aff224dec662bada760a67fbca22a269a059cfd04f2a4a3ed24302e9e99218",
+    "filas": 60,
+    "solapamiento_exacto_con_csv_principal": 0,
+    "evaluacion": {
+      "schema_version": 1,
+      "metadata_declarada": {
+        "fuente": "plantilla_datos_RF_IA_01_RELLENA.csv",
+        "etiquetado": "Etiquetas del CSV local; autoría/revisión independiente no acreditadas",
+        "particion": "sondeo sintético adicional; independencia no acreditada",
+        "independiente_entrenamiento": false
+      },
+      "numero_casos": 60,
+      "independencia_verificada": false,
+      "advertencias": [
+        "La procedencia e independencia son declaraciones del proveedor de datos, no verificadas por este programa.",
+        "No hay umbral académico de aceptación configurado. Estas métricas no certifican cumplimiento.",
+        "Las clases con soporte cero se incluyen con métricas cero; revise soporte y representatividad.",
+        "Memorando figura en el catálogo, pero no entre las clases del artefacto de tipo."
+      ],
+      "clases_entrenadas": {
+        "tipo_informe": [
+          "Informe Legal",
+          "Informe Técnico",
+          "Informe de Inspección"
+        ],
+        "area_destino": [
+          "Gerencia de Desarrollo Económico",
+          "Gerencia de Desarrollo Urbano",
+          "Gerencia de Servicios Públicos",
+          "Oficina de Asesoría Jurídica",
+          "Subgerencia de Ecología y Medio Ambiente",
+          "Subgerencia de Gestión del Riesgo de Desastres"
+        ],
+        "temas": [
+          "Ley del Procedimiento Administrativo General",
+          "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones",
+          "Normativa de contratación pública aplicable",
+          "Normativa de transparencia y acceso a la información pública",
+          "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos",
+          "Normativa municipal sobre desarrollo urbano y edificaciones",
+          "Normativa municipal sobre fiscalización y sanciones administrativas",
+          "Normativa municipal sobre gestión de residuos sólidos",
+          "Normativa municipal sobre gestión de servicios públicos",
+          "Normativa municipal sobre licencias de funcionamiento",
+          "Normativa municipal sobre prevención y control de contaminación sonora"
+        ]
+      },
+      "cobertura_tipos": {
+        "presentes": [
+          "Informe Legal",
+          "Informe Técnico",
+          "Informe de Inspección"
+        ],
+        "sin_casos": [
+          "Memorando"
+        ]
+      },
+      "metricas": {
+        "tipo_informe": {
+          "accuracy": 0.9833333333333333,
+          "por_clase_y_promedios": {
+            "Informe Técnico": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 18.0
+            },
+            "Informe Legal": {
+              "precision": 0.9473684210526315,
+              "recall": 1.0,
+              "f1-score": 0.972972972972973,
+              "support": 18.0
+            },
+            "Informe de Inspección": {
+              "precision": 1.0,
+              "recall": 0.9583333333333334,
+              "f1-score": 0.9787234042553191,
+              "support": 24.0
+            },
+            "Memorando": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.9833333333333333,
+            "macro avg": {
+              "precision": 0.7368421052631579,
+              "recall": 0.7395833333333334,
+              "f1-score": 0.7379240943070731,
+              "support": 60.0
+            },
+            "weighted avg": {
+              "precision": 0.9842105263157895,
+              "recall": 0.9833333333333333,
+              "f1-score": 0.9833812535940196,
+              "support": 60.0
+            }
+          },
+          "etiquetas_matriz": [
+            "Informe Técnico",
+            "Informe Legal",
+            "Informe de Inspección",
+            "Memorando"
+          ],
+          "matriz_confusion": [
+            [
+              18,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              18,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              23,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "area_destino": {
+          "accuracy": 0.95,
+          "por_clase_y_promedios": {
+            "Subgerencia de Ecología y Medio Ambiente": {
+              "precision": 1.0,
+              "recall": 0.9166666666666666,
+              "f1-score": 0.9565217391304348,
+              "support": 12.0
+            },
+            "Gerencia de Servicios Públicos": {
+              "precision": 0.9166666666666666,
+              "recall": 0.9166666666666666,
+              "f1-score": 0.9166666666666666,
+              "support": 12.0
+            },
+            "Gerencia de Desarrollo Urbano": {
+              "precision": 0.8333333333333334,
+              "recall": 0.8333333333333334,
+              "f1-score": 0.8333333333333334,
+              "support": 6.0
+            },
+            "Gerencia de Desarrollo Económico": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "Subgerencia de Gestión del Riesgo de Desastres": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "Oficina de Asesoría Jurídica": {
+              "precision": 0.9473684210526315,
+              "recall": 1.0,
+              "f1-score": 0.972972972972973,
+              "support": 18.0
+            },
+            "accuracy": 0.95,
+            "macro avg": {
+              "precision": 0.9495614035087719,
+              "recall": 0.9444444444444443,
+              "f1-score": 0.9465824520172347,
+              "support": 60.0
+            },
+            "weighted avg": {
+              "precision": 0.9508771929824562,
+              "recall": 0.95,
+              "f1-score": 0.9498629063846455,
+              "support": 60.0
+            }
+          },
+          "etiquetas_matriz": [
+            "Subgerencia de Ecología y Medio Ambiente",
+            "Gerencia de Servicios Públicos",
+            "Gerencia de Desarrollo Urbano",
+            "Gerencia de Desarrollo Económico",
+            "Subgerencia de Gestión del Riesgo de Desastres",
+            "Oficina de Asesoría Jurídica"
+          ],
+          "matriz_confusion": [
+            [
+              11,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              11,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              5,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              18
+            ]
+          ]
+        },
+        "temas_normativos": {
+          "accuracy_conjunto_exacto": 0.9,
+          "hamming_loss": 0.010606060606060607,
+          "promedios": {
+            "micro": {
+              "precision": 0.922077922077922,
+              "recall": 0.9861111111111112,
+              "f1": 0.9530201342281879
+            },
+            "macro": {
+              "precision": 0.9383116883116883,
+              "recall": 0.9848484848484849,
+              "f1": 0.9577695032240487
+            },
+            "weighted": {
+              "precision": 0.9315476190476191,
+              "recall": 0.9861111111111112,
+              "f1": 0.9548784548784547
+            },
+            "samples": {
+              "precision": 0.9416666666666667,
+              "recall": 0.9833333333333333,
+              "f1": 0.9555555555555555
+            }
+          },
+          "por_clase_y_promedios": {
+            "Ley del Procedimiento Administrativo General": {
+              "precision": 0.8571428571428571,
+              "recall": 1.0,
+              "f1-score": 0.9230769230769231,
+              "support": 12.0
+            },
+            "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "Normativa de contratación pública aplicable": {
+              "precision": 0.8571428571428571,
+              "recall": 1.0,
+              "f1-score": 0.9230769230769231,
+              "support": 6.0
+            },
+            "Normativa de transparencia y acceso a la información pública": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos": {
+              "precision": 0.8571428571428571,
+              "recall": 1.0,
+              "f1-score": 0.9230769230769231,
+              "support": 6.0
+            },
+            "Normativa municipal sobre desarrollo urbano y edificaciones": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1-score": 0.8571428571428571,
+              "support": 6.0
+            },
+            "Normativa municipal sobre fiscalización y sanciones administrativas": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "Normativa municipal sobre gestión de residuos sólidos": {
+              "precision": 1.0,
+              "recall": 0.8333333333333334,
+              "f1-score": 0.9090909090909091,
+              "support": 6.0
+            },
+            "Normativa municipal sobre gestión de servicios públicos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "Normativa municipal sobre licencias de funcionamiento": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "Normativa municipal sobre prevención y control de contaminación sonora": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 6.0
+            },
+            "micro avg": {
+              "precision": 0.922077922077922,
+              "recall": 0.9861111111111112,
+              "f1-score": 0.9530201342281879,
+              "support": 72.0
+            },
+            "macro avg": {
+              "precision": 0.9383116883116883,
+              "recall": 0.9848484848484849,
+              "f1-score": 0.9577695032240487,
+              "support": 72.0
+            },
+            "weighted avg": {
+              "precision": 0.9315476190476191,
+              "recall": 0.9861111111111112,
+              "f1-score": 0.9548784548784547,
+              "support": 72.0
+            },
+            "samples avg": {
+              "precision": 0.9416666666666667,
+              "recall": 0.9833333333333333,
+              "f1-score": 0.9555555555555555,
+              "support": 72.0
+            }
+          },
+          "etiquetas_matrices": [
+            "Ley del Procedimiento Administrativo General",
+            "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones",
+            "Normativa de contratación pública aplicable",
+            "Normativa de transparencia y acceso a la información pública",
+            "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos",
+            "Normativa municipal sobre desarrollo urbano y edificaciones",
+            "Normativa municipal sobre fiscalización y sanciones administrativas",
+            "Normativa municipal sobre gestión de residuos sólidos",
+            "Normativa municipal sobre gestión de servicios públicos",
+            "Normativa municipal sobre licencias de funcionamiento",
+            "Normativa municipal sobre prevención y control de contaminación sonora"
+          ],
+          "matrices_confusion_por_etiqueta": [
+            [
+              [
+                46,
+                2
+              ],
+              [
+                0,
+                12
+              ]
+            ],
+            [
+              [
+                54,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                53,
+                1
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                54,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                53,
+                1
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                52,
+                2
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                54,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                54,
+                0
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            [
+              [
+                54,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                54,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            [
+              [
+                54,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ]
+          ]
+        }
+      },
+      "latencia_inferencia_ms": {
+        "p50": 5.598500021733344,
+        "p95": 6.219535192940384,
+        "p99": 12.553336031269229
+      }
+    }
+  }
+}

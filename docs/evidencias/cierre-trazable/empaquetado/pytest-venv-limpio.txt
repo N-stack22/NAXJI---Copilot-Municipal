@@ -1,0 +1,2708 @@
+........................................s.........................sss... [ 19%]
+.FF.................F.Fs..............F...F.......................FFss.. [ 39%]
+......F...................ss.......FFFFFs............................... [ 59%]
+..............................ss.F...........sF......................... [ 78%]
+.......EEEEEEFss.............FFFE........................Fssssss........ [ 98%]
+......                                                                   [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_sql_preserva_primera_repeticion_persistencia_y_filtros _
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_e44656d17f594211b0631143abfcf710', user='naxj...d-4665-98f5-da8fa0539310'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    @pytest.fixture
+    def pmv2_db(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        with settings.connect() as c:
+            antes = c.execute("SELECT to_jsonb(v) FROM public.versiones_informe v ORDER BY id").fetchall()
+            for _ in range(2):
+                script(c, "database/migrations/20261030_01_documentos_rag.sql")
+                assert c.execute("SELECT to_jsonb(v)-'sustento' FROM public.versiones_informe v ORDER BY id").fetchall() == antes
+            assert c.execute("SELECT count(*) FROM public.documentos").fetchone()[0] == 0
+            assert c.execute("SELECT count(*) FROM pg_class WHERE relname IN ('documentos','documento_fragmentos','version_citas') AND relrowsecurity").fetchone()[0] == 3
+        uow = PostgresUnidadTrabajo(settings)
+        gestor = GestionDocumentos(DocumentosPostgres(uow), AlmacenMemoria(), ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        deps = Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                         predictor=ContextPredictorMock(), generador=GeneradorBorradorMock(), documentos=gestor)
+>       usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+___ ERROR at setup of test_pg_citas_versiones_edicion_recuperacion_atomica ____
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_54f1755b604d48c3b50cce1df469ed5d', user='naxj...a-41de-9770-7259afc69931'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    @pytest.fixture
+    def pmv2_db(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        with settings.connect() as c:
+            antes = c.execute("SELECT to_jsonb(v) FROM public.versiones_informe v ORDER BY id").fetchall()
+            for _ in range(2):
+                script(c, "database/migrations/20261030_01_documentos_rag.sql")
+                assert c.execute("SELECT to_jsonb(v)-'sustento' FROM public.versiones_informe v ORDER BY id").fetchall() == antes
+            assert c.execute("SELECT count(*) FROM public.documentos").fetchone()[0] == 0
+            assert c.execute("SELECT count(*) FROM pg_class WHERE relname IN ('documentos','documento_fragmentos','version_citas') AND relrowsecurity").fetchone()[0] == 3
+        uow = PostgresUnidadTrabajo(settings)
+        gestor = GestionDocumentos(DocumentosPostgres(uow), AlmacenMemoria(), ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        deps = Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                         predictor=ContextPredictorMock(), generador=GeneradorBorradorMock(), documentos=gestor)
+>       usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_______ ERROR at setup of test_pg_reservas_no_permiten_resultado_tardio _______
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_fd812464a8e5411ca56ebc84040677a2', user='naxj...4-44cd-a05d-c138271f2b48'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    @pytest.fixture
+    def pmv2_db(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        with settings.connect() as c:
+            antes = c.execute("SELECT to_jsonb(v) FROM public.versiones_informe v ORDER BY id").fetchall()
+            for _ in range(2):
+                script(c, "database/migrations/20261030_01_documentos_rag.sql")
+                assert c.execute("SELECT to_jsonb(v)-'sustento' FROM public.versiones_informe v ORDER BY id").fetchall() == antes
+            assert c.execute("SELECT count(*) FROM public.documentos").fetchone()[0] == 0
+            assert c.execute("SELECT count(*) FROM pg_class WHERE relname IN ('documentos','documento_fragmentos','version_citas') AND relrowsecurity").fetchone()[0] == 3
+        uow = PostgresUnidadTrabajo(settings)
+        gestor = GestionDocumentos(DocumentosPostgres(uow), AlmacenMemoria(), ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        deps = Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                         predictor=ContextPredictorMock(), generador=GeneradorBorradorMock(), documentos=gestor)
+>       usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ ERROR at setup of test_finalizar_revierte_todos_los_fragmentos_si_falla_un_insert _
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_a3410d37026f41e58ad5ef025e6bab7e', user='naxj...c-4a52-9d6f-e7b30fbc9969'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    @pytest.fixture
+    def pmv2_db(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        with settings.connect() as c:
+            antes = c.execute("SELECT to_jsonb(v) FROM public.versiones_informe v ORDER BY id").fetchall()
+            for _ in range(2):
+                script(c, "database/migrations/20261030_01_documentos_rag.sql")
+                assert c.execute("SELECT to_jsonb(v)-'sustento' FROM public.versiones_informe v ORDER BY id").fetchall() == antes
+            assert c.execute("SELECT count(*) FROM public.documentos").fetchone()[0] == 0
+            assert c.execute("SELECT count(*) FROM pg_class WHERE relname IN ('documentos','documento_fragmentos','version_citas') AND relrowsecurity").fetchone()[0] == 3
+        uow = PostgresUnidadTrabajo(settings)
+        gestor = GestionDocumentos(DocumentosPostgres(uow), AlmacenMemoria(), ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        deps = Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                         predictor=ContextPredictorMock(), generador=GeneradorBorradorMock(), documentos=gestor)
+>       usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ ERROR at setup of test_finalizar_retiene_bloqueo_y_publica_fragmentos_con_estado_atomicamente _
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_b944887d81834768bd131de4f06e74a4', user='naxj...b-4979-8582-e320fc0dc440'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    @pytest.fixture
+    def pmv2_db(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        with settings.connect() as c:
+            antes = c.execute("SELECT to_jsonb(v) FROM public.versiones_informe v ORDER BY id").fetchall()
+            for _ in range(2):
+                script(c, "database/migrations/20261030_01_documentos_rag.sql")
+                assert c.execute("SELECT to_jsonb(v)-'sustento' FROM public.versiones_informe v ORDER BY id").fetchall() == antes
+            assert c.execute("SELECT count(*) FROM public.documentos").fetchone()[0] == 0
+            assert c.execute("SELECT count(*) FROM pg_class WHERE relname IN ('documentos','documento_fragmentos','version_citas') AND relrowsecurity").fetchone()[0] == 3
+        uow = PostgresUnidadTrabajo(settings)
+        gestor = GestionDocumentos(DocumentosPostgres(uow), AlmacenMemoria(), ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        deps = Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                         predictor=ContextPredictorMock(), generador=GeneradorBorradorMock(), documentos=gestor)
+>       usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+___ ERROR at setup of test_buscar_filtra_permisos_y_revision_antes_de_top_k ___
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_ebe1773e8e8d46db9c4015f8b93f90ec', user='naxj...b-4873-8f40-b59bea35f4e4'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    @pytest.fixture
+    def pmv2_db(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        with settings.connect() as c:
+            antes = c.execute("SELECT to_jsonb(v) FROM public.versiones_informe v ORDER BY id").fetchall()
+            for _ in range(2):
+                script(c, "database/migrations/20261030_01_documentos_rag.sql")
+                assert c.execute("SELECT to_jsonb(v)-'sustento' FROM public.versiones_informe v ORDER BY id").fetchall() == antes
+            assert c.execute("SELECT count(*) FROM public.documentos").fetchone()[0] == 0
+            assert c.execute("SELECT count(*) FROM pg_class WHERE relname IN ('documentos','documento_fragmentos','version_citas') AND relrowsecurity").fetchone()[0] == 3
+        uow = PostgresUnidadTrabajo(settings)
+        gestor = GestionDocumentos(DocumentosPostgres(uow), AlmacenMemoria(), ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        deps = Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                         predictor=ContextPredictorMock(), generador=GeneradorBorradorMock(), documentos=gestor)
+>       usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ ERROR at setup of test_fuentes_citadas_editadas_y_exportadas_sin_nueva_inferencia _
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_18e8821c7189489d8a18ebc037263335', user='naxj...3-4a6d-bfc5-977731ed35e7'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    @pytest.fixture
+    def pmv2_db(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        with settings.connect() as c:
+            antes = c.execute("SELECT to_jsonb(v) FROM public.versiones_informe v ORDER BY id").fetchall()
+            for _ in range(2):
+                script(c, "database/migrations/20261030_01_documentos_rag.sql")
+                assert c.execute("SELECT to_jsonb(v)-'sustento' FROM public.versiones_informe v ORDER BY id").fetchall() == antes
+            assert c.execute("SELECT count(*) FROM public.documentos").fetchone()[0] == 0
+            assert c.execute("SELECT count(*) FROM pg_class WHERE relname IN ('documentos','documento_fragmentos','version_citas') AND relrowsecurity").fetchone()[0] == 3
+        uow = PostgresUnidadTrabajo(settings)
+        gestor = GestionDocumentos(DocumentosPostgres(uow), AlmacenMemoria(), ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        deps = Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                         predictor=ContextPredictorMock(), generador=GeneradorBorradorMock(), documentos=gestor)
+>       usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+================================== FAILURES ===================================
+_ test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_RF_IA_01] __
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_4acb5f2ae557460c9fbdb164c9cdb04c', user='naxj...7-4bed-b1cc-758904f6df82'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+modelo = 'SKLEARN_RF_IA_01'
+
+    @pytest.mark.parametrize("modelo", ["SKLEARN_RF_IA_01", "SKLEARN_IA_01"])
+    @pytest.mark.skipif(not os.getenv("NAXJI_TEST_PG_PORT"), reason="PostgreSQL local aislado: opt-in")
+    def test_prediccion_historica_y_actual_se_recuperan_por_rest(db_local, modelo):
+        settings, uid, _, iid, _ = db_local
+        uow = PostgresUnidadTrabajo(settings)
+        catalogo = CatalogoRepositoryPostgres(uow)
+        with settings.connect() as c:
+            sid = c.execute("SELECT solicitud_id FROM public.informes WHERE id=%s", (iid,)).fetchone()[0]
+        p = ContextPredictorMock().predecir("DEMO anterior", sid)
+        p.modelo = modelo
+>       p.tipo_informe_predicho_id = catalogo.tipos_informe()[0].id
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_compatibilidad_predicciones.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:151: in tipos_informe
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+___ test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_IA_01] ___
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_48215a7ad6874b0eb6abf1ee92b19ea2', user='naxj...e-4d23-be51-d398d1652a15'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+modelo = 'SKLEARN_IA_01'
+
+    @pytest.mark.parametrize("modelo", ["SKLEARN_RF_IA_01", "SKLEARN_IA_01"])
+    @pytest.mark.skipif(not os.getenv("NAXJI_TEST_PG_PORT"), reason="PostgreSQL local aislado: opt-in")
+    def test_prediccion_historica_y_actual_se_recuperan_por_rest(db_local, modelo):
+        settings, uid, _, iid, _ = db_local
+        uow = PostgresUnidadTrabajo(settings)
+        catalogo = CatalogoRepositoryPostgres(uow)
+        with settings.connect() as c:
+            sid = c.execute("SELECT solicitud_id FROM public.informes WHERE id=%s", (iid,)).fetchone()[0]
+        p = ContextPredictorMock().predecir("DEMO anterior", sid)
+        p.modelo = modelo
+>       p.tipo_informe_predicho_id = catalogo.tipos_informe()[0].id
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_compatibilidad_predicciones.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:151: in tipos_informe
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_________ test_migracion_aditiva_idempotente_semilla_y_compatibilidad _________
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_7a73d48015d14a59818c4eead15a777c', user='naxj...f-4110-8005-88e987c29fae'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    def test_migracion_aditiva_idempotente_semilla_y_compatibilidad(db_local):
+        settings, _, _, iid, contenido = db_local
+        repo = CatalogoRepositoryPostgres(PostgresUnidadTrabajo(settings))
+>       assert repo.correspondencias_normativas(['NORM_RESIDUOS']) == []  # Antes de migrar.
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_correspondencias_postgres.py:37:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:134: in correspondencias_normativas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+________ test_sql_recupera_descarte_fuentes_y_genera_solo_confirmadas _________
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_1270c34de3d74744a641dd9c70f3929f', user='naxj...1-4a1f-ab68-e20af1f501d0'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    def test_sql_recupera_descarte_fuentes_y_genera_solo_confirmadas(db_local):
+        settings, uid, pid, _, _ = db_local
+        with settings.connect(autocommit=True) as c:
+            script(c, MIGRATION)
+            # Documentos expresamente FICTICIOS: no forman parte de la semilla propuesta.
+            for nombre in ('A', 'B'):
+                d = correspondencia_demo(nombre)
+                c.execute('INSERT INTO public.normativas(id,codigo,titulo,tipo,numero,fecha_publicacion,url_fuente) VALUES (%s,%s,%s,%s,%s,%s,%s)',
+                          (d.normativa.id,d.normativa.codigo,d.normativa.titulo,d.normativa.tipo,d.normativa.numero,d.normativa.fecha_publicacion,d.normativa.url_fuente))
+                c.execute('INSERT INTO public.normativa_correspondencias(etiqueta,normativa_id,estado_verificacion,fuente_url,fuente_vigencia_url,verificado_en,ambito,vigencia,justificacion) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+                          (d.etiqueta,d.normativa.id,d.estado_verificacion,d.fuente_url,d.fuente_vigencia_url,d.verificado_en,d.ambito,d.vigencia,d.justificacion))
+        config = Settings(persistence_mode='postgres', auth_mode='disabled')
+        deps = Container(config, database_settings=settings, predictor=ContextPredictorMock(), generador=GeneradorBorradorMock())
+>       area = deps.catalogos.areas()[0].id
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_correspondencias_postgres.py:92:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+____________ test_adaptador_postgres_serializa_snapshot_y_null_sql ____________
+
+    def test_adaptador_postgres_serializa_snapshot_y_null_sql():
+        secciones = secciones_desde_json(DEMO[1]["secciones_salida"])
+        version = VersionInforme(uuid4(), 1, {"resumen_prueba": "A", "hallazgos_prueba": "B"}, OrigenVersion.IA, None,
+                                 secciones_salida=secciones)
+        conexion = Mock()
+>       save(conexion, "versiones_informe", version, json_fields=("contenido",), insert_only=True)
+
+tests\test_estructura_borrador.py:123:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:110: in save
+    statement = sql.SQL(consulta("postgres", "save_insert")).format(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_____ test_migracion_preserva_versiones_y_repositorios_recuperan_snapshot _____
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_89f4db103578445390ef33d5305d1c05', user='naxj...c-4860-a84f-161073297282'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    def test_migracion_preserva_versiones_y_repositorios_recuperan_snapshot(db_local):
+        settings, uid, pid, iid, contenido = db_local
+        uow = PostgresUnidadTrabajo(settings)
+        plantillas, informes = PlantillaRepositoryPostgres(uow), InformeRepositoryPostgres(uow)
+>       assert secciones_a_json(plantillas.obtener_por_id(pid).secciones_salida) == DEMO[0]["secciones_salida"]
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_estructura_postgres.py:87:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:183: in obtener_por_id
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+________ test_generacion_edicion_recuperacion_exportacion[False-False] ________
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_51002a1baabf414c9eb04d4b50d201d1', user='nax...lette.testclient.TestClient object at 0x0000022A828B1D90>, <fastapi.applications.FastAPI object at 0x0000022A82FDD3D0>)
+tmp_path = WindowsPath('C:/Users/Usuario/AppData/Local/Temp/pytest-of-Usuario/pytest-54/test_generacion_edicion_recupe0')
+con_resultados = False, real = False
+
+    @pytest.mark.parametrize('con_resultados', [False, True])
+    @pytest.mark.parametrize('real', [False, pytest.param(True, marks=pytest.mark.skipif(os.getenv('NAXJI_RUN_OLLAMA_TESTS') != '1', reason='Ollama real opt-in'))])
+    def test_generacion_edicion_recuperacion_exportacion(piloto, tmp_path, con_resultados, real):
+        (db, uid, _, iid_legacy, contenido_legacy), deps, client, app = piloto
+        instalar(db)
+        datos = DATOS if con_resultados else {'estado_resultados': 'Sin resultados de inspección'}
+        asunto = 'PRUEBA NAXJI: inspección de bolsas con residuos en parque' if con_resultados else 'PRUEBA NAXJI: inspección de parque'
+>       sid, anterior, campos_v1, _, body = preparar_inspeccion(client, asunto=asunto, datos_fuente=datos)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_formato_mdt.py:73:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_inspeccion_piloto.py:58: in preparar_inspeccion
+    r = client.post("/solicitudes", json={"asunto": asunto})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:463: in request
+    return super().request(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:360: in handle_request
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:357: in handle_request
+    portal.call(self.app, scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:340: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:265: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\applications.py:1163: in __call__
+    await super().__call__(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:197: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\main.py:75: in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:173: in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:149: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+src\adapters\in\limite_documental.py:12: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2734: in app
+    await route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1780: in handle
+    await self.original_router.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2789: in handle
+    await included_router._handle_selected(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1800: in _handle_selected
+    await original_route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1279: in handle
+    await app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:158: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:144: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:706: in app
+    raw_response = await run_endpoint_function(
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:354: in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py:34: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:2706: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:1100: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\in\controllers\solicitud_controller.py:21: in crear
+    return deps.crear_solicitud.ejecutar(usuario, DatosSolicitud(**request.model_dump()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\crear_solicitud.py:18: in ejecutar
+    self.servicios.validar_referencias(solicitud)
+src\application\use_cases\servicios_solicitud.py:53: in validar_referencias
+    tipos = {t.id for t in self.catalogos.tipos_informe() if t.activo}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:151: in tipos_informe
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+------------------------------ Captured log call ------------------------------
+ERROR    src.main:main.py:107 Error no controlado en /solicitudes
+Traceback (most recent call last):
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 197, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\main.py", line 75, in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 173, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\limite_documental.py", line 12, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2734, in app
+    await route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1780, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2789, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1800, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1279, in handle
+    await app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 158, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 144, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 706, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 354, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\controllers\solicitud_controller.py", line 21, in crear
+    return deps.crear_solicitud.ejecutar(usuario, DatosSolicitud(**request.model_dump()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\application\use_cases\crear_solicitud.py", line 18, in ejecutar
+    self.servicios.validar_referencias(solicitud)
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\application\use_cases\servicios_solicitud.py", line 53, in validar_referencias
+    tipos = {t.id for t in self.catalogos.tipos_informe() if t.activo}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 151, in tipos_informe
+    with self.uow.connection() as c:
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 78, in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\sql_resources.py", line 9, in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 22, in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 65, in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 29, in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 155, in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 149, in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1380, in get_resource_reader
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 111, in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 67, in __init__
+    raise NotADirectoryError('MultiplexedPath only supports directories')
+NotADirectoryError: MultiplexedPath only supports directories
+________ test_generacion_edicion_recuperacion_exportacion[False-True] _________
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_51b27387b0b14df5af49653e66559d11', user='nax...lette.testclient.TestClient object at 0x0000022A821FED10>, <fastapi.applications.FastAPI object at 0x0000022A820CFB90>)
+tmp_path = WindowsPath('C:/Users/Usuario/AppData/Local/Temp/pytest-of-Usuario/pytest-54/test_generacion_edicion_recupe1')
+con_resultados = True, real = False
+
+    @pytest.mark.parametrize('con_resultados', [False, True])
+    @pytest.mark.parametrize('real', [False, pytest.param(True, marks=pytest.mark.skipif(os.getenv('NAXJI_RUN_OLLAMA_TESTS') != '1', reason='Ollama real opt-in'))])
+    def test_generacion_edicion_recuperacion_exportacion(piloto, tmp_path, con_resultados, real):
+        (db, uid, _, iid_legacy, contenido_legacy), deps, client, app = piloto
+        instalar(db)
+        datos = DATOS if con_resultados else {'estado_resultados': 'Sin resultados de inspección'}
+        asunto = 'PRUEBA NAXJI: inspección de bolsas con residuos en parque' if con_resultados else 'PRUEBA NAXJI: inspección de parque'
+>       sid, anterior, campos_v1, _, body = preparar_inspeccion(client, asunto=asunto, datos_fuente=datos)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_formato_mdt.py:73:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_inspeccion_piloto.py:58: in preparar_inspeccion
+    r = client.post("/solicitudes", json={"asunto": asunto})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:463: in request
+    return super().request(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:360: in handle_request
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:357: in handle_request
+    portal.call(self.app, scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:340: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:265: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\applications.py:1163: in __call__
+    await super().__call__(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:197: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\main.py:75: in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:173: in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:149: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+src\adapters\in\limite_documental.py:12: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2734: in app
+    await route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1780: in handle
+    await self.original_router.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2789: in handle
+    await included_router._handle_selected(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1800: in _handle_selected
+    await original_route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1279: in handle
+    await app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:158: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:144: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:706: in app
+    raw_response = await run_endpoint_function(
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:354: in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py:34: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:2706: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:1100: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\in\controllers\solicitud_controller.py:21: in crear
+    return deps.crear_solicitud.ejecutar(usuario, DatosSolicitud(**request.model_dump()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\crear_solicitud.py:18: in ejecutar
+    self.servicios.validar_referencias(solicitud)
+src\application\use_cases\servicios_solicitud.py:53: in validar_referencias
+    tipos = {t.id for t in self.catalogos.tipos_informe() if t.activo}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:151: in tipos_informe
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+------------------------------ Captured log call ------------------------------
+ERROR    src.main:main.py:107 Error no controlado en /solicitudes
+Traceback (most recent call last):
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 197, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\main.py", line 75, in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 173, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\limite_documental.py", line 12, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2734, in app
+    await route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1780, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2789, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1800, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1279, in handle
+    await app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 158, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 144, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 706, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 354, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\controllers\solicitud_controller.py", line 21, in crear
+    return deps.crear_solicitud.ejecutar(usuario, DatosSolicitud(**request.model_dump()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\application\use_cases\crear_solicitud.py", line 18, in ejecutar
+    self.servicios.validar_referencias(solicitud)
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\application\use_cases\servicios_solicitud.py", line 53, in validar_referencias
+    tipos = {t.id for t in self.catalogos.tipos_informe() if t.activo}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 151, in tipos_informe
+    with self.uow.connection() as c:
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 78, in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\sql_resources.py", line 9, in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 22, in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 65, in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 29, in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 155, in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 149, in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1380, in get_resource_reader
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 111, in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 67, in __init__
+    raise NotADirectoryError('MultiplexedPath only supports directories')
+NotADirectoryError: MultiplexedPath only supports directories
+______ test_inferencia_sin_bloqueo_postgres_y_dos_instancias_no_duplican ______
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_247add57b8174160906cdd21b6942af1', user='naxj...4-4318-af98-07ae57d02e8b'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    def test_inferencia_sin_bloqueo_postgres_y_dos_instancias_no_duplican(db_local):
+        settings, uid, pid, _, _ = db_local
+        def contenedor():
+            return Container(Settings(persistence_mode="postgres", auth_mode="disabled"), database_settings=settings,
+                             predictor=ContextPredictorMock(), generador=GeneradorBorradorMock())
+        deps, otro = contenedor(), contenedor()
+        fixture = json.loads((Path(__file__).parent / "fixtures/inspeccion_parque_sin_resultados.json").read_text(encoding="utf-8"))
+>       area = deps.catalogos.areas()[0].id
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_generacion_postgres.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:155: in areas
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ test_inspeccion_sin_resultados_reintento_edicion_recuperacion_docx_y_permisos _
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_2fd14fae915047a7ad40b97782c41c73', user='nax...lette.testclient.TestClient object at 0x0000022A82F04E10>, <fastapi.applications.FastAPI object at 0x0000022A831182D0>)
+
+    def test_inspeccion_sin_resultados_reintento_edicion_recuperacion_docx_y_permisos(piloto):
+        (db, uid, _, iid_legacy, contenido_legacy), deps, client, app = piloto
+>       sid, plantilla, _, _, body = preparar_inspeccion(client, notas=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_inspeccion_piloto.py:207:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_inspeccion_piloto.py:58: in preparar_inspeccion
+    r = client.post("/solicitudes", json={"asunto": asunto})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1144: in post
+    return self.request(
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:463: in request
+    return super().request(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:360: in handle_request
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:357: in handle_request
+    portal.call(self.app, scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:340: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:265: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\applications.py:1163: in __call__
+    await super().__call__(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:197: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\main.py:75: in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:173: in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:149: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+src\adapters\in\limite_documental.py:12: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2734: in app
+    await route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1780: in handle
+    await self.original_router.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2789: in handle
+    await included_router._handle_selected(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1800: in _handle_selected
+    await original_route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1279: in handle
+    await app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:158: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:144: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:706: in app
+    raw_response = await run_endpoint_function(
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:354: in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py:34: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:2706: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:1100: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\in\controllers\solicitud_controller.py:21: in crear
+    return deps.crear_solicitud.ejecutar(usuario, DatosSolicitud(**request.model_dump()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\crear_solicitud.py:18: in ejecutar
+    self.servicios.validar_referencias(solicitud)
+src\application\use_cases\servicios_solicitud.py:53: in validar_referencias
+    tipos = {t.id for t in self.catalogos.tipos_informe() if t.activo}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:151: in tipos_informe
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+------------------------------ Captured log call ------------------------------
+ERROR    src.main:main.py:107 Error no controlado en /solicitudes
+Traceback (most recent call last):
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 197, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\main.py", line 75, in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 173, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\limite_documental.py", line 12, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2734, in app
+    await route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1780, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2789, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1800, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1279, in handle
+    await app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 158, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 144, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 706, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 354, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\controllers\solicitud_controller.py", line 21, in crear
+    return deps.crear_solicitud.ejecutar(usuario, DatosSolicitud(**request.model_dump()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\application\use_cases\crear_solicitud.py", line 18, in ejecutar
+    self.servicios.validar_referencias(solicitud)
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\application\use_cases\servicios_solicitud.py", line 53, in validar_referencias
+    tipos = {t.id for t in self.catalogos.tipos_informe() if t.activo}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 151, in tipos_informe
+    with self.uow.connection() as c:
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 78, in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\sql_resources.py", line 9, in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 22, in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 65, in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 29, in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 155, in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 149, in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1380, in get_resource_reader
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 111, in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 67, in __init__
+    raise NotADirectoryError('MultiplexedPath only supports directories')
+NotADirectoryError: MultiplexedPath only supports directories
+_ test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Sin resultados de inspecci\xf3n-Notas sin acreditar resultados.-True] _
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_fee20535fefd4f60be38b130351aef45', user='nax...lette.testclient.TestClient object at 0x0000022A847A45D0>, <fastapi.applications.FastAPI object at 0x0000022A82F14550>)
+estado = 'Sin resultados de inspección'
+hechos = 'Notas sin acreditar resultados.', sin_hechos = True
+
+    @pytest.mark.parametrize("estado,hechos,sin_hechos", [
+        ("Sin resultados de inspección", "Notas sin acreditar resultados.", True),
+        ("Información parcial por verificar", "", True),
+        ("Resultados documentados disponibles", "", True),
+        ("Resultados documentados disponibles", "Acta ficticia de prueba: se aportó una medición identificada.", False),
+    ])
+    def test_estado_sin_resultados_y_hechos_se_interpretan_separadamente(piloto, estado, hechos, sin_hechos):
+        _, deps, _, _ = piloto
+>       plantilla = next(p for p in deps.plantillas.listar() if p.nombre == NOMBRE)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_inspeccion_piloto.py:250:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:178: in listar
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Informaci\xf3n parcial por verificar--True] _
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_e6bea3cd2798415aae02ab978d4bd31f', user='nax...lette.testclient.TestClient object at 0x0000022A81FE7F90>, <fastapi.applications.FastAPI object at 0x0000022A81ED5A90>)
+estado = 'Información parcial por verificar', hechos = '', sin_hechos = True
+
+    @pytest.mark.parametrize("estado,hechos,sin_hechos", [
+        ("Sin resultados de inspección", "Notas sin acreditar resultados.", True),
+        ("Información parcial por verificar", "", True),
+        ("Resultados documentados disponibles", "", True),
+        ("Resultados documentados disponibles", "Acta ficticia de prueba: se aportó una medición identificada.", False),
+    ])
+    def test_estado_sin_resultados_y_hechos_se_interpretan_separadamente(piloto, estado, hechos, sin_hechos):
+        _, deps, _, _ = piloto
+>       plantilla = next(p for p in deps.plantillas.listar() if p.nombre == NOMBRE)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_inspeccion_piloto.py:250:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:178: in listar
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles--True] _
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_6116ca637d784479a1baaa50a9f840fa', user='nax...lette.testclient.TestClient object at 0x0000022A8213E6D0>, <fastapi.applications.FastAPI object at 0x0000022A82EE6550>)
+estado = 'Resultados documentados disponibles', hechos = '', sin_hechos = True
+
+    @pytest.mark.parametrize("estado,hechos,sin_hechos", [
+        ("Sin resultados de inspección", "Notas sin acreditar resultados.", True),
+        ("Información parcial por verificar", "", True),
+        ("Resultados documentados disponibles", "", True),
+        ("Resultados documentados disponibles", "Acta ficticia de prueba: se aportó una medición identificada.", False),
+    ])
+    def test_estado_sin_resultados_y_hechos_se_interpretan_separadamente(piloto, estado, hechos, sin_hechos):
+        _, deps, _, _ = piloto
+>       plantilla = next(p for p in deps.plantillas.listar() if p.nombre == NOMBRE)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_inspeccion_piloto.py:250:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:178: in listar
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles-Acta ficticia de prueba: se aport\xf3 una medici\xf3n identificada.-False] _
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_fc822e250c0f4e9996040c3b09c14c1d', user='nax...lette.testclient.TestClient object at 0x0000022A82E36950>, <fastapi.applications.FastAPI object at 0x0000022A822B2250>)
+estado = 'Resultados documentados disponibles'
+hechos = 'Acta ficticia de prueba: se aportó una medición identificada.'
+sin_hechos = False
+
+    @pytest.mark.parametrize("estado,hechos,sin_hechos", [
+        ("Sin resultados de inspección", "Notas sin acreditar resultados.", True),
+        ("Información parcial por verificar", "", True),
+        ("Resultados documentados disponibles", "", True),
+        ("Resultados documentados disponibles", "Acta ficticia de prueba: se aportó una medición identificada.", False),
+    ])
+    def test_estado_sin_resultados_y_hechos_se_interpretan_separadamente(piloto, estado, hechos, sin_hechos):
+        _, deps, _, _ = piloto
+>       plantilla = next(p for p in deps.plantillas.listar() if p.nombre == NOMBRE)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_inspeccion_piloto.py:250:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\postgres.py:178: in listar
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+__________ test_perfil_conserva_area_roles_activos_y_perfil_inactivo __________
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_8d47c8a7863549128334e3b5483f3bdb', user='naxj...e-4954-80a5-d131ae2e2bea'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    def test_perfil_conserva_area_roles_activos_y_perfil_inactivo(db_local):
+        settings, uid, _, _, _ = db_local
+        with settings.connect() as c:
+            area_id, area_nombre = c.execute("SELECT id,nombre FROM public.areas_municipales ORDER BY codigo LIMIT 1").fetchone()
+            c.execute("UPDATE public.perfiles SET area_id=%s,cargo='Cargo QA',activo=false WHERE id=%s", (area_id, uid))
+            c.execute("INSERT INTO public.roles(codigo,nombre) VALUES ('ROL_DESCONOCIDO','Desconocido')")
+            c.execute("UPDATE public.roles SET activo=false WHERE codigo='REVISOR'")
+            c.execute("INSERT INTO public.usuario_roles(usuario_id,rol_id) SELECT %s,id FROM public.roles WHERE codigo IN ('FUNCIONARIO','REVISOR','ROL_DESCONOCIDO')", (uid,))
+        repo = PerfilRepositoryPostgres(PostgresUnidadTrabajo(settings))
+>       user = repo.obtener_usuario(uid, 'qa@example.invalid')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_perfil_postgres.py:25:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\adapters\out\persistence\perfil_repository_postgres.py:12: in obtener_usuario
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+________ test_semilla_aditiva_idempotente_y_persistencia_de_versiones _________
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_6e7ae2e55c1643ebb2852fac9832ee8c', user='naxj...9-4e0f-b711-0336c5086911'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    def test_semilla_aditiva_idempotente_y_persistencia_de_versiones(db_local):
+        db, uid, pid, iid_antiguo, contenido_antiguo = db_local
+        with db.connect(autocommit=True) as c:
+            antes = snapshot(c)
+            script(c, SEED)
+            despues = snapshot(c)
+            for tabla, registros in antes.items():
+                assert all(r in despues[tabla] for r in registros), tabla
+            assert len(despues["plantillas"]) == len(antes["plantillas"]) + 1
+            assert len(despues["campos_plantilla"]) == len(antes["campos_plantilla"]) + 6
+            script(c, SEED)
+            assert snapshot(c) == despues
+        settings = Settings(persistence_mode="postgres", auth_mode="disabled")
+        deps = Container(settings, database_settings=db, predictor=ContextPredictorMock(), generador=GeneradorBorradorMock())
+        usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}))
+        app = create_app(settings, deps)
+        app.dependency_overrides[get_current_user] = lambda: usuario
+        with TestClient(app) as client:
+>           assert client.get(f"/informes/{iid_antiguo}").json()["contenido"] == contenido_antiguo
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_piloto_v2_postgres.py:51:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1053: in get
+    return self.request(
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:463: in request
+    return super().request(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:360: in handle_request
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\testclient.py:357: in handle_request
+    portal.call(self.app, scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:340: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\from_thread.py:265: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\applications.py:1163: in __call__
+    await super().__call__(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:186: in __call__
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:197: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\main.py:75: in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:173: in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py:149: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+src\adapters\in\limite_documental.py:12: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2734: in app
+    await route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1780: in handle
+    await self.original_router.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:2789: in handle
+    await included_router._handle_selected(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1800: in _handle_selected
+    await original_route.handle(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:1279: in handle
+    await app(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:158: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:53: in wrapped_app
+    raise exc
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:144: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:706: in app
+    raw_response = await run_endpoint_function(
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py:354: in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py:34: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:2706: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+..\..\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py:1100: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\in\controllers\informe_controller.py:17: in obtener
+    return representar_informe(deps.obtener_informe.ejecutar(informe_id, usuario))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\obtener_informe.py:29: in ejecutar
+    informe = self.informes.obtener_por_id(informe_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:264: in obtener_por_id
+    with self.uow.connection() as c:
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:78: in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+------------------------------ Captured log call ------------------------------
+ERROR    src.main:main.py:107 Error no controlado en /informes/d3f31ac5-afd9-4e0f-b711-0336c5086911
+Traceback (most recent call last):
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 197, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\main.py", line 75, in auth_no_cache
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 173, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\limite_documental.py", line 12, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2734, in app
+    await route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1780, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 2789, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1800, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 1279, in handle
+    await app(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 158, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 144, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 706, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\routing.py", line 354, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\in\controllers\informe_controller.py", line 17, in obtener
+    return representar_informe(deps.obtener_informe.ejecutar(informe_id, usuario))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\application\use_cases\obtener_informe.py", line 29, in ejecutar
+    informe = self.informes.obtener_por_id(informe_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 264, in obtener_por_id
+    with self.uow.connection() as c:
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\postgres.py", line 78, in connection
+    connection.execute(consulta("postgres", "lectura_consistente"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\sql_resources.py", line 9, in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 22, in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py", line 65, in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 29, in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 155, in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py", line 149, in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1380, in get_resource_reader
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 111, in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py", line 67, in __init__
+    raise NotADirectoryError('MultiplexedPath only supports directories')
+NotADirectoryError: MultiplexedPath only supports directories
+___________ test_pgvector_instalado_en_extensions_conserva_esquema ____________
+
+db_local = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_997c9253966e40eeba832e7d6cfdb43c', user='naxj...b-461e-9dcc-32f268cba614'), {'antecedentes': 'A', 'desarrollo': 'D', 'conclusiones': 'C', 'objetivo': 'Anterior', ...})
+
+    def test_pgvector_instalado_en_extensions_conserva_esquema(db_local):
+        settings, uid, _, _, _ = db_local
+        with settings.connect() as c:
+            c.execute("CREATE SCHEMA extensions; CREATE EXTENSION vector WITH SCHEMA extensions")
+            script(c, "database/migrations/20261030_01_documentos_rag.sql")
+        gestor = GestionDocumentos(DocumentosPostgres(PostgresUnidadTrabajo(settings)), AlmacenMemoria(),
+                                   ExtractorArchivos(), EmbeddingsPrueba(), RagSettings())
+        usuario = UsuarioActual(uid, frozenset({Rol.FUNCIONARIO}))
+>       doc = cargar(gestor, usuario); gestor.procesar(doc.id, usuario)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv2_postgres.py:225:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_pmv2.py:42: in cargar
+    return gestor.cargar(usuario, "fuente.txt", texto.encode(), "Fuente ficticia", "Corpus sintético PMV2; autorizado para pruebas", ambito)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\documentos.py:74: in cargar
+    doc, creada = self.repo.crear(nuevo)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\documentos_postgres.py:23: in crear
+    c.execute(consulta("documentos_postgres", "bloquear_deduplicacion"), (llave,))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+__________ test_dos_instancias_deciden_una_vez_y_persisten_historia ___________
+
+revision_db = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_2d43258c69e64ea7a3c3e83f107f608b', user='naxj...16-3380-499e-8fb9-73803789daad'), activo=True, email=None, nombres=None, apellidos=None, cargo=None, area_nombre=None))
+
+    def test_dos_instancias_deciden_una_vez_y_persisten_historia(revision_db):
+        cfg, nuevo, iid, autor, revisor = revision_db
+        d, otro = nuevo(), nuevo()
+>       h = d.revision.enviar(iid, autor, 1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv3_postgres.py:48:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\application\use_cases\revision_informes.py:56: in enviar
+    informe, _ = self.cargar(informe_id, usuario, propietario=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\revision_informes.py:23: in cargar
+    informe = self.informes.obtener_por_id(informe_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\informe_auditado.py:12: in obtener_por_id
+    return self.base.obtener_por_id(informe_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:265: in obtener_por_id
+    return self.load(c, c.execute(consulta("postgres", "informe") + self.lock(), (informe_id,)).fetchone())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+___________ test_fallo_auditoria_revierte_edicion_y_estado_postgres ___________
+
+revision_db = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_7b9a470ace8240c5aa90e18a4f620554', user='naxj...7a-7698-4f39-b23a-b987ca6bed6a'), activo=True, email=None, nombres=None, apellidos=None, cargo=None, area_nombre=None))
+
+    def test_fallo_auditoria_revierte_edicion_y_estado_postgres(revision_db):
+        cfg, nuevo, iid, autor, revisor = revision_db
+        d = nuevo()
+>       h = d.revision.enviar(iid, autor, 1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv3_postgres.py:74:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\application\use_cases\revision_informes.py:56: in enviar
+    informe, _ = self.cargar(informe_id, usuario, propietario=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\revision_informes.py:23: in cargar
+    informe = self.informes.obtener_por_id(informe_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\informe_auditado.py:12: in obtener_por_id
+    return self.base.obtener_por_id(informe_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:265: in obtener_por_id
+    return self.load(c, c.execute(consulta("postgres", "informe") + self.lock(), (informe_id,)).fetchone())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_______________ test_permisos_listados_y_auditoria_en_postgres ________________
+
+revision_db = (DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_9202b11a2cbe472f9b92642cc36f9019', user='naxj...8b-9e42-49a2-a132-877b90adee66'), activo=True, email=None, nombres=None, apellidos=None, cargo=None, area_nombre=None))
+
+    def test_permisos_listados_y_auditoria_en_postgres(revision_db):
+        _, nuevo, iid, autor, revisor = revision_db
+        d = nuevo()
+        # Los registros previos a PMV3 no tienen historia de estado: no se inventa.
+>       assert d.revision.historial(iid, autor)["versiones"][0]["estado"] == "NO_REGISTRADO"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_pmv3_postgres.py:92:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\application\use_cases\revision_informes.py:110: in historial
+    informe, _ = self.cargar(informe_id, usuario)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\application\use_cases\revision_informes.py:23: in cargar
+    informe = self.informes.obtener_por_id(informe_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\informe_auditado.py:12: in obtener_por_id
+    return self.base.obtener_por_id(informe_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\postgres.py:265: in obtener_por_id
+    return self.load(c, c.execute(consulta("postgres", "informe") + self.lock(), (informe_id,)).fetchone())
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+_ test_todas_las_consultas_referenciadas_son_recursos_legibles_fuera_del_repo _
+
+tmp_path = WindowsPath('C:/Users/Usuario/AppData/Local/Temp/pytest-of-Usuario/pytest-54/test_todas_las_consultas_refer0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000022A81FF94D0>
+
+    def test_todas_las_consultas_referenciadas_son_recursos_legibles_fuera_del_repo(tmp_path, monkeypatch):
+        monkeypatch.chdir(tmp_path)
+        consulta.cache_clear()
+        referenced = set()
+        for name in ADAPTERS:
+            tree = ast.parse((PERSISTENCE / (name + ".py")).read_text(encoding="utf-8"))
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == "consulta":
+                    adapter, query = (arg.value for arg in node.args)
+>                   assert consulta(adapter, query)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^
+
+D:\NAXJI\.venv\worktrees\pmv-trazable\tests\test_sql_resources.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence\sql_resources.py:9: in consulta
+    resource = files(__package__).joinpath("sql").joinpath(adaptador).joinpath(nombre + ".sql")
+               ^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:22: in files
+    return from_package(get_package(package))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_common.py:65: in from_package
+    reader = spec.loader.get_resource_reader(spec.name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:29: in get_resource_reader
+    return CompatibilityFiles(self.spec)._native()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:155: in _native
+    reader = self._reader
+             ^^^^^^^^^^^^
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\_adapters.py:149: in _reader
+    return self.spec.loader.get_resource_reader(self.spec.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1380: in get_resource_reader
+    ???
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:111: in __init__
+    self.path = MultiplexedPath(*list(namespace_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = MultiplexedPath('D:\NAXJI\.venv\worktrees\pmv-trazable\src\adapters\out\persistence', '__editable__.naxji_copilot_municipal_backend-0.1.0.finder.__path_hook__')
+paths = ('D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-traza...e\\src\\adapters\\out\\persistence', 'D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\src\\adapters\\out\\persistence', ...)
+
+    def __init__(self, *paths):
+        self._paths = list(map(pathlib.Path, remove_duplicates(paths)))
+        if not self._paths:
+            message = 'MultiplexedPath must contain at least one path'
+            raise FileNotFoundError(message)
+        if not all(path.is_dir() for path in self._paths):
+>           raise NotADirectoryError('MultiplexedPath only supports directories')
+E           NotADirectoryError: MultiplexedPath only supports directories
+
+C:\Users\Usuario\AppData\Local\Programs\Python\Python311\Lib\importlib\resources\readers.py:67: NotADirectoryError
+============================== warnings summary ===============================
+..\..\runtime-pmv-trazable\Lib\site-packages\fastapi\testclient.py:1
+  D:\NAXJI\.venv\runtime-pmv-trazable\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_auth_integration.py:6: Auth real: requiere .env.local y .env.auth-test
+SKIPPED [1] tests\test_catalogos_supabase.py:49: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:67: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:109: Supabase: prueba opt-in
+SKIPPED [1] tests\test_correspondencias_postgres.py:134: Ollama real: opt-in
+SKIPPED [2] tests\test_formato_mdt.py:66: Ollama real opt-in
+SKIPPED [2] tests\test_inspeccion_contenido_real.py:21: Ollama y PostgreSQL aislado: opt-in
+SKIPPED [1] tests\test_inspeccion_piloto.py:260: Ollama real: opt-in
+SKIPPED [2] tests\test_ollama_integration.py:23: Ollama real: prueba opt-in
+SKIPPED [1] tests\test_piloto_v2_ollama.py:25: Requiere Ollama real y PostgreSQL local aislado: opt-in
+SKIPPED [1] tests\test_pmv2_postgres.py:229: Embeddings y Ollama reales: opt-in
+SKIPPED [1] tests\test_pmv2_postgres.py:287: Embeddings reales y pgvector: opt-in
+SKIPPED [1] tests\test_supabase_integration.py:43: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:70: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:88: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:126: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:150: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:173: Supabase: prueba opt-in
+ERROR tests/test_pmv2_postgres.py::test_sql_preserva_primera_repeticion_persistencia_y_filtros
+ERROR tests/test_pmv2_postgres.py::test_pg_citas_versiones_edicion_recuperacion_atomica
+ERROR tests/test_pmv2_postgres.py::test_pg_reservas_no_permiten_resultado_tardio
+ERROR tests/test_pmv2_postgres.py::test_finalizar_revierte_todos_los_fragmentos_si_falla_un_insert
+ERROR tests/test_pmv2_postgres.py::test_finalizar_retiene_bloqueo_y_publica_fragmentos_con_estado_atomicamente
+ERROR tests/test_pmv2_postgres.py::test_buscar_filtra_permisos_y_revision_antes_de_top_k
+ERROR tests/test_pmv3_rag_postgres.py::test_fuentes_citadas_editadas_y_exportadas_sin_nueva_inferencia
+FAILED tests/test_compatibilidad_predicciones.py::test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_RF_IA_01]
+FAILED tests/test_compatibilidad_predicciones.py::test_prediccion_historica_y_actual_se_recuperan_por_rest[SKLEARN_IA_01]
+FAILED tests/test_correspondencias_postgres.py::test_migracion_aditiva_idempotente_semilla_y_compatibilidad
+FAILED tests/test_correspondencias_postgres.py::test_sql_recupera_descarte_fuentes_y_genera_solo_confirmadas
+FAILED tests/test_estructura_borrador.py::test_adaptador_postgres_serializa_snapshot_y_null_sql
+FAILED tests/test_estructura_postgres.py::test_migracion_preserva_versiones_y_repositorios_recuperan_snapshot
+FAILED tests/test_formato_mdt.py::test_generacion_edicion_recuperacion_exportacion[False-False]
+FAILED tests/test_formato_mdt.py::test_generacion_edicion_recuperacion_exportacion[False-True]
+FAILED tests/test_generacion_postgres.py::test_inferencia_sin_bloqueo_postgres_y_dos_instancias_no_duplican
+FAILED tests/test_inspeccion_piloto.py::test_inspeccion_sin_resultados_reintento_edicion_recuperacion_docx_y_permisos
+FAILED tests/test_inspeccion_piloto.py::test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Sin resultados de inspecci\xf3n-Notas sin acreditar resultados.-True]
+FAILED tests/test_inspeccion_piloto.py::test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Informaci\xf3n parcial por verificar--True]
+FAILED tests/test_inspeccion_piloto.py::test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles--True]
+FAILED tests/test_inspeccion_piloto.py::test_estado_sin_resultados_y_hechos_se_interpretan_separadamente[Resultados documentados disponibles-Acta ficticia de prueba: se aport\xf3 una medici\xf3n identificada.-False]
+FAILED tests/test_perfil_postgres.py::test_perfil_conserva_area_roles_activos_y_perfil_inactivo
+FAILED tests/test_piloto_v2_postgres.py::test_semilla_aditiva_idempotente_y_persistencia_de_versiones
+FAILED tests/test_pmv2_postgres.py::test_pgvector_instalado_en_extensions_conserva_esquema
+FAILED tests/test_pmv3_postgres.py::test_dos_instancias_deciden_una_vez_y_persisten_historia
+FAILED tests/test_pmv3_postgres.py::test_fallo_auditoria_revierte_edicion_y_estado_postgres
+FAILED tests/test_pmv3_postgres.py::test_permisos_listados_y_auditoria_en_postgres
+FAILED tests/test_sql_resources.py::test_todas_las_consultas_referenciadas_son_recursos_legibles_fuera_del_repo
+21 failed, 317 passed, 21 skipped, 1 warning, 7 errors in 29.12s

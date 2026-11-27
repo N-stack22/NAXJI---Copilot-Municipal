@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "metadata_declarada": {
+    "fuente": "Prueba unitaria sintética",
+    "etiquetado": "Fixture de software",
+    "particion": "test_herramienta",
+    "independiente_entrenamiento": false
+  },
+  "numero_casos": 1,
+  "independencia_verificada": false,
+  "advertencias": [
+    "La procedencia e independencia son declaraciones del proveedor de datos, no verificadas por este programa.",
+    "No hay umbral académico de aceptación configurado. Estas métricas no certifican cumplimiento.",
+    "Las clases con soporte cero se incluyen con métricas cero; revise soporte y representatividad.",
+    "Memorando figura en el catálogo, pero no entre las clases del artefacto de tipo."
+  ],
+  "clases_entrenadas": {
+    "tipo_informe": [
+      "Informe Legal",
+      "Informe Técnico",
+      "Informe de Inspección"
+    ],
+    "area_destino": [
+      "Gerencia de Desarrollo Económico",
+      "Gerencia de Desarrollo Urbano",
+      "Gerencia de Servicios Públicos",
+      "Oficina de Asesoría Jurídica",
+      "Subgerencia de Ecología y Medio Ambiente",
+      "Subgerencia de Gestión del Riesgo de Desastres"
+    ],
+    "temas": [
+      "Ley del Procedimiento Administrativo General",
+      "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones",
+      "Normativa de contratación pública aplicable",
+      "Normativa de transparencia y acceso a la información pública",
+      "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos",
+      "Normativa municipal sobre desarrollo urbano y edificaciones",
+      "Normativa municipal sobre fiscalización y sanciones administrativas",
+      "Normativa municipal sobre gestión de residuos sólidos",
+      "Normativa municipal sobre gestión de servicios públicos",
+      "Normativa municipal sobre licencias de funcionamiento",
+      "Normativa municipal sobre prevención y control de contaminación sonora"
+    ]
+  },
+  "cobertura_tipos": {
+    "presentes": [
+      "Informe de Inspección"
+    ],
+    "sin_casos": [
+      "Informe Legal",
+      "Informe Técnico",
+      "Memorando"
+    ]
+  },
+  "metricas": {
+    "tipo_informe": {
+      "accuracy": 0.0,
+      "por_clase_y_promedios": {
+        "Informe Técnico": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Informe Legal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Informe de Inspección": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "Memorando": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.0,
+        "macro avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "weighted avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        }
+      },
+      "etiquetas_matriz": [
+        "Informe Técnico",
+        "Informe Legal",
+        "Informe de Inspección",
+        "Memorando"
+      ],
+      "matriz_confusion": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "area_destino": {
+      "accuracy": 0.0,
+      "por_clase_y_promedios": {
+        "Subgerencia de Ecología y Medio Ambiente": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "Gerencia de Servicios Públicos": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Gerencia de Desarrollo Urbano": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Gerencia de Desarrollo Económico": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Subgerencia de Gestión del Riesgo de Desastres": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Oficina de Asesoría Jurídica": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.0,
+        "macro avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "weighted avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        }
+      },
+      "etiquetas_matriz": [
+        "Subgerencia de Ecología y Medio Ambiente",
+        "Gerencia de Servicios Públicos",
+        "Gerencia de Desarrollo Urbano",
+        "Gerencia de Desarrollo Económico",
+        "Subgerencia de Gestión del Riesgo de Desastres",
+        "Oficina de Asesoría Jurídica"
+      ],
+      "matriz_confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "temas_normativos": {
+      "accuracy_conjunto_exacto": 0.0,
+      "hamming_loss": 0.09090909090909091,
+      "promedios": {
+        "micro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "macro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "weighted": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "samples": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "por_clase_y_promedios": {
+        "Ley del Procedimiento Administrativo General": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa de contratación pública aplicable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa de transparencia y acceso a la información pública": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa municipal sobre desarrollo urbano y edificaciones": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa municipal sobre fiscalización y sanciones administrativas": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa municipal sobre gestión de residuos sólidos": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa municipal sobre gestión de servicios públicos": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa municipal sobre licencias de funcionamiento": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "Normativa municipal sobre prevención y control de contaminación sonora": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "micro avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "macro avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "weighted avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "samples avg": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        }
+      },
+      "etiquetas_matrices": [
+        "Ley del Procedimiento Administrativo General",
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones",
+        "Normativa de contratación pública aplicable",
+        "Normativa de transparencia y acceso a la información pública",
+        "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos",
+        "Normativa municipal sobre desarrollo urbano y edificaciones",
+        "Normativa municipal sobre fiscalización y sanciones administrativas",
+        "Normativa municipal sobre gestión de residuos sólidos",
+        "Normativa municipal sobre gestión de servicios públicos",
+        "Normativa municipal sobre licencias de funcionamiento",
+        "Normativa municipal sobre prevención y control de contaminación sonora"
+      ],
+      "matrices_confusion_por_etiqueta": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  },
+  "predicciones": [
+    {
+      "entrada": "Inspección de parque de prueba",
+      "entrada_normalizada": "Inspección de parque de prueba",
+      "tipo_informe": "Informe Técnico",
+      "area_destino": "Oficina de Asesoría Jurídica",
+      "confianza_tipo": 0.3539297634692333,
+      "confianza_area": 0.32077749796673166,
+      "temas_normativos": [
+        "Ley del Procedimiento Administrativo General"
+      ],
+      "probabilidades_temas": {
+        "Ley del Procedimiento Administrativo General": 0.3093188674026579,
+        "Normativa aplicable a inspecciones técnicas de seguridad en edificaciones": 0.06830872117447462,
+        "Normativa de contratación pública aplicable": 0.04289774313930285,
+        "Normativa de transparencia y acceso a la información pública": 0.0707005182061511,
+        "Normativa municipal sobre comercio ambulatorio y uso de espacios públicos": 0.06378413153542124,
+        "Normativa municipal sobre desarrollo urbano y edificaciones": 0.07024379850011396,
+        "Normativa municipal sobre fiscalización y sanciones administrativas": 0.18960211962748233,
+        "Normativa municipal sobre gestión de residuos sólidos": 0.09816437932914286,
+        "Normativa municipal sobre gestión de servicios públicos": 0.15366264140473115,
+        "Normativa municipal sobre licencias de funcionamiento": 0.05361622117556036,
+        "Normativa municipal sobre prevención y control de contaminación sonora": 0.050423090011097564
+      },
+      "modelo": "SKLEARN_IA_01",
+      "version_modelo": "RF-IA-01-200CASOS-v1",
+      "algoritmos": {
+        "tipo_informe": "LogisticRegression",
+        "area_destino": "LogisticRegression",
+        "normativas": "OneVsRestClassifier[LogisticRegression]"
+      },
+      "umbral_normas": 0.25,
+      "validacion_humana": "PENDIENTE",
+      "inferencia_ms": 6.921699969097972,
+      "id": "prueba-1",
+      "referencia_etiquetada": {
+        "tipo_informe": "Informe de Inspección",
+        "area_destino": "Subgerencia de Ecología y Medio Ambiente",
+        "temas_normativos": []
+      }
+    }
+  ],
+  "latencia_inferencia_ms": {
+    "p50": 6.921699969097972,
+    "p95": 6.921699969097972,
+    "p99": 6.921699969097972
+  },
+  "sha256_datos": "2a9d0faf809e48c729519916d0d65dfcb3cf19f4f6d8f4c36b78a22072f8ae14",
+  "sha256_artefactos": {
+    "features_norm.joblib": "7f544c2908808d30d943dc56ae2c703b8f8d82bba1373644958eb5fb5b842bb7",
+    "mlb.joblib": "38a12ae14e9412c113e21c4b483820af2b735531250c67f064f884556404d924",
+    "model_config.json": "0bc37219ced6f93b198e3a7b6fe87b781d51f3832892f45a8e938cb69496fdf1",
+    "modelo_area.joblib": "fcb58df2ac8a32d4b3e66b65f55a3897a7515821e285b6dbbde35246e52912dc",
+    "modelo_normas.joblib": "1841c25b9144572347e5186b9c9f8964293cb3bafa0abec42434e853298630e4",
+    "modelo_tipo.joblib": "153c18fd25f250be0522f5b71cd3378bc86af772cb44faecc7c9dcac9d5c8113"
+  },
+  "versiones": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "sklearn": "1.6.1"
+  }
+}

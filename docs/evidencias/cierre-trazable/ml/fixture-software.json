@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "fuente": "Prueba unitaria sintética",
+    "etiquetado": "Fixture de software",
+    "particion": "test_herramienta",
+    "independiente_entrenamiento": false
+  },
+  "casos": [
+    {
+      "id": "prueba-1",
+      "asunto": "Inspección de parque de prueba",
+      "tipo_informe": "Informe de Inspección",
+      "area_destino": "Subgerencia de Ecología y Medio Ambiente",
+      "temas_normativos": []
+    }
+  ]
+}

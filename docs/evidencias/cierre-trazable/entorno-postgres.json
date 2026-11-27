@@ -1,0 +1,6 @@
+{
+  "image_digest": "pgvector/pgvector@sha256:2358fcba361ed2233a5ed81b5fe4ca779ccb304120ce531a3bf51c0ed7e2bc11",
+  "container": "f7e797b74179f21ee18845e05767902e7fbc4d330f3dfde3c2ca6fd7ead9f7bb pgvector/pgvector:pg18 {\"5432/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"15432\"}]}",
+  "postgres": "PostgreSQL 18.6 (Debian 18.6-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+  "scope": "Contenedor desechable creado para la tarea; sin Supabase compartido"
+}

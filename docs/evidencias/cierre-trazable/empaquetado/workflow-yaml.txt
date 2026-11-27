@@ -1,0 +1,1 @@
+YAML parseado, permisos de lectura y acciones con hash de 40 caracteres

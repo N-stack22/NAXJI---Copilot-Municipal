@@ -1,0 +1,126 @@
+{
+  "inicio_utc": "2026-11-27T01:09:31.247385+00:00",
+  "fin_utc": "2026-11-27T01:10:30.332966+00:00",
+  "commit": "d5c8f0fa58bff2b5fc82ec0b69150d2655c3ec9e",
+  "definicion": "Una transacción = una llamada HTTP medida; preparación y arranque excluidos",
+  "planificadas": 750,
+  "no_ejecutadas": 0,
+  "concurrencia_maxima": 4,
+  "ramp_up": "Sin rampa; pool fijo por fase dependiente",
+  "duracion_carga_s": 51.333531400188804,
+  "dobles": [
+    "Identidad/Auth",
+    "Storage en memoria",
+    "LLM determinista",
+    "Embeddings no semánticos",
+    "decisión humana simulada"
+  ],
+  "reales": [
+    "HTTP loopback",
+    "FastAPI",
+    "sklearn LogisticRegression versionado",
+    "PostgreSQL",
+    "pgvector",
+    "DOCX/PDF"
+  ],
+  "limites": "No mide capacidad de Ollama, Auth/Storage reales, RLS de Supabase ni aceptación humana. No es un ensayo de producción.",
+  "hardware": {
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9",
+    "procesador": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "cpu_logicas": 32,
+    "ram_host_bytes": 34070192128
+  },
+  "total": {
+    "emitidas": 750,
+    "completadas_http": 750,
+    "correctas_segun_caso": 750,
+    "fallidas": 0,
+    "rechazos_esperados": 125,
+    "tasa_error": 0.0,
+    "throughput_http_s": 14.610333237218928,
+    "latencia_ms": {
+      "p50": 263.14765005372465,
+      "p95": 336.6424399195239,
+      "p99": 376.66027097031474
+    }
+  },
+  "familias": {
+    "G1": {
+      "emitidas": 150,
+      "completadas_http": 150,
+      "correctas_segun_caso": 150,
+      "fallidas": 0,
+      "rechazos_esperados": 10,
+      "tasa_error": 0.0,
+      "throughput_http_s": 2.9220666474437857,
+      "latencia_ms": {
+        "p50": 232.38575004506856,
+        "p95": 249.4551999378018,
+        "p99": 307.8610688401386
+      }
+    },
+    "G2": {
+      "emitidas": 200,
+      "completadas_http": 200,
+      "correctas_segun_caso": 200,
+      "fallidas": 0,
+      "rechazos_esperados": 75,
+      "tasa_error": 0.0,
+      "throughput_http_s": 3.896088863258381,
+      "latencia_ms": {
+        "p50": 260.6835999758914,
+        "p95": 347.44116000365455,
+        "p99": 382.6429751445538
+      }
+    },
+    "G3": {
+      "emitidas": 150,
+      "completadas_http": 150,
+      "correctas_segun_caso": 150,
+      "fallidas": 0,
+      "rechazos_esperados": 0,
+      "tasa_error": 0.0,
+      "throughput_http_s": 2.9220666474437857,
+      "latencia_ms": {
+        "p50": 284.724349854514,
+        "p95": 323.64887996809557,
+        "p99": 341.76497393753374
+      }
+    },
+    "G4": {
+      "emitidas": 150,
+      "completadas_http": 150,
+      "correctas_segun_caso": 150,
+      "fallidas": 0,
+      "rechazos_esperados": 30,
+      "tasa_error": 0.0,
+      "throughput_http_s": 2.9220666474437857,
+      "latencia_ms": {
+        "p50": 262.37310003489256,
+        "p95": 343.32634489983303,
+        "p99": 383.5927689936942
+      }
+    },
+    "G5": {
+      "emitidas": 100,
+      "completadas_http": 100,
+      "correctas_segun_caso": 100,
+      "fallidas": 0,
+      "rechazos_esperados": 10,
+      "tasa_error": 0.0,
+      "throughput_http_s": 1.9480444316291905,
+      "latencia_ms": {
+        "p50": 288.9420499559492,
+        "p95": 357.3162099113688,
+        "p99": 385.41713201440876
+      }
+    }
+  },
+  "recursos": {
+    "alcance": "Proceso Python: arnés y API juntos; excluye contenedor PostgreSQL y GPU",
+    "rss_max_bytes": 254930944,
+    "cpu_max_porcentaje_arnes_api": 423.9
+  },
+  "estado_fuente": "Corrida exploratoria de d5c8f0f con cambios de trabajo; usar carga-750-release para el candidato definitivo"
+}

@@ -1,0 +1,75 @@
+F{"entorno": "API postgres, datos ficticios, predictor sklearn real, Ollama local real", "modelo": "qwen2.5:7b", "segundos": 3.842, "plantilla": "Informe T\u00e9cnico \u2013 Piloto NAXJI", "secciones": [{"clave": "antecedentes", "titulo": "Antecedentes", "obligatoria": true}, {"clave": "objetivo", "titulo": "Objetivo del informe", "obligatoria": true}, {"clave": "analisis_tecnico", "titulo": "An\u00e1lisis t\u00e9cnico", "obligatoria": true}, {"clave": "conclusiones", "titulo": "Conclusiones", "obligatoria": true}, {"clave": "recomendaciones", "titulo": "Recomendaciones", "obligatoria": false}], "contenido": {"objetivo": "Preparar un borrador que identifique la informaci\u00f3n pendiente para evaluar la solicitud.", "antecedentes": "Se ha solicitado una inspecci\u00f3n de un parque de prueba. No se ha registrado la realizaci\u00f3n de la inspecci\u00f3n.", "conclusiones": "Pendientes de verificaci\u00f3n; no existen resultados que permitan concluir el estado del parque.", "recomendaciones": "Verificar la ubicaci\u00f3n precisa y la competencia, y programar una visita si corresponde para documentar hechos y evidencias.", "analisis_tecnico": "No se dispone de resultados de inspecci\u00f3n, mediciones, fotograf\u00edas ni hallazgos. El estado del c\u00e9sped, limpieza e infraestructura no ha sido informado."}}
+.{"modelo": "qwen2.5:7b", "segundos": 4.266, "http": {"generacion": 201, "edicion": 200, "recuperacion": 200, "descarga": 200}}
+..........
+================================== FAILURES ===================================
+__________ test_flujo_completo_piloto_tecnico_sin_resultados[memory] __________
+
+tmp_path = WindowsPath('D:/NAXJI/.venv/worktrees/pmv-trazable/docs/evidencias/cierre-trazable/ollama-real/temporales/test_flujo_completo_piloto_tec0')
+request = <FixtureRequest for <Function test_flujo_completo_piloto_tecnico_sin_resultados[memory]>>
+persistencia = 'memory'
+
+    @pytest.mark.parametrize("persistencia", ["memory", "postgres"])
+    def test_flujo_completo_piloto_tecnico_sin_resultados(tmp_path, request, persistencia):
+        if persistencia == "postgres" and not os.getenv("NAXJI_TEST_PG_PORT"):
+            pytest.skip("El segundo escenario requiere PostgreSQL local aislado")
+        fixture = json.loads((Path(__file__).parent / "fixtures/inspeccion_parque_sin_resultados.json").read_text(encoding="utf-8"))
+        settings = Settings(persistence_mode=persistencia, auth_mode="mock" if persistencia == "memory" else "disabled",
+                            ollama_base_url=os.getenv("NAXJI_OLLAMA_BASE_URL", "http://localhost:11434"),
+                            ollama_model=os.getenv("NAXJI_OLLAMA_MODEL", "qwen2.5:7b"),
+                            ollama_timeout_seconds=float(os.getenv("NAXJI_OLLAMA_TIMEOUT_SECONDS", "300")))
+        database = request.getfixturevalue("db_local") if persistencia == "postgres" else None
+        deps = Container(settings, database_settings=database[0] if database else None)
+        app = create_app(settings, deps)
+        if database:
+            usuario = UsuarioActual(database[1], frozenset({Rol.FUNCIONARIO}), deps.catalogos.areas()[0].id)
+            app.dependency_overrides[get_current_user] = lambda: usuario
+        with TestClient(app) as client:
+            client.headers["Authorization"] = "Bearer demo-funcionario"
+            creada = client.post("/solicitudes", json={"asunto": fixture["asunto"]})
+            assert creada.status_code == 201, creada.text
+            sid = creada.json()["id"]
+            url = f"/solicitudes/{sid}"
+            prediccion = client.post(url + "/predecir-contexto")
+            assert prediccion.status_code == 200, prediccion.text
+            p = prediccion.json()
+            assert not p["es_mock"]
+            tecnico = next(t for t in client.get("/tipos-informe").json() if t["codigo"] == "INFORME_TECNICO")
+            area = p["area_destino"]["id"]
+            valida = client.post(url + "/validar-prediccion", json={"prediccion_id": p["id"], "resultado": "CORREGIDA",
+                                 "tipo_informe_id": tecnico["id"], "area_destino_id": area, "normativa_ids": []})
+            assert valida.status_code == 200, valida.text
+            piloto = client.get("/plantillas", params={"tipo_informe_id": tecnico["id"]}).json()[0]
+            campos = client.get(f"/plantillas/{piloto['id']}/campos").json()
+            valores = [{"campo_plantilla_id": c["id"], "valor": fixture["datos"][c["clave"]]} for c in campos if c["clave"] in fixture["datos"]]
+            guardada = client.put(url + "/completa", json={"asunto": fixture["asunto"], "tipo_informe_id": tecnico["id"],
+                                  "area_destino_id": area, "area_origen_id": area, "plantilla_id": piloto["id"], "valores": valores})
+            assert guardada.status_code == 200, guardada.text
+            inicio = perf_counter()
+            generado = client.post(url + "/generar-borrador", json={"instrucciones": "Redactar solo con lo aportado; dejar pendiente lo no verificado."})
+            duracion = round(perf_counter() - inicio, 3)
+            assert generado.status_code == 201, generado.text
+            informe = generado.json()
+            assert informe["modelo_ia"] == settings.ollama_model
+            assert informe["secciones_salida"] == piloto["secciones_salida"]
+            claves = [s["clave"] for s in piloto["secciones_salida"]]
+            assert set(informe["contenido"]) <= set(claves) | {"encabezado"}
+            for s in piloto["secciones_salida"]:
+                if s["obligatoria"]:
+                    assert informe["contenido"][s["clave"]].strip()
+            analisis = informe["contenido"]["analisis_tecnico"].lower()
+            conclusiones = informe["contenido"]["conclusiones"].lower()
+            assert any(t in analisis for t in ["pendiente", "no se dispone", "no se han", "no hay"])
+>           assert any(t in conclusiones for t in ["pendiente", "no se dispone", "no se han", "no hay", "no es posible"])
+E           assert False
+E            +  where False = any(<generator object test_flujo_completo_piloto_tecnico_sin_resultados.<locals>.<genexpr> at 0x000001DC601EBD80>)
+
+tests\test_ollama_integration.py:74: AssertionError
+============================== warnings summary ===============================
+..\..\Lib\site-packages\fastapi\testclient.py:1
+  D:\NAXJI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_ollama_integration.py::test_flujo_completo_piloto_tecnico_sin_resultados[memory]
+1 failed, 11 passed, 1 warning in 154.99s (0:02:34)

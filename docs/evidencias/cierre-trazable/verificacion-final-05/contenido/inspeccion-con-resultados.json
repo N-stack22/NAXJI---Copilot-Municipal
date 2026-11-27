@@ -1,0 +1,106 @@
+{
+  "entorno": "PostgreSQL aislado; identidad ficticia inyectada; sklearn y Ollama reales; sin Supabase",
+  "solicitud_id": "a184fc28-7dd7-49af-94c4-4a94aba353ab",
+  "informe_id": "d809d666-3eb5-4db6-bec7-a627af88f404",
+  "modelo": "qwen2.5:7b",
+  "segundos": 8.278,
+  "asunto": "PRUEBA NAXJI: preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+  "datos_fuente": {
+    "estado_resultados": "Resultados documentados disponibles",
+    "fecha_inspeccion": "2026-09-30",
+    "lugar_inspeccion": "Lugar ficticio de prueba: parque Aurora, entrada norte junto al acceso A, distrito de Huancayo",
+    "alcance_solicitado": "Describir únicamente la observación aportada y proponer su verificación por la unidad competente.",
+    "resultados_observados": "CASO FICTICIO: la ficha E1 del 2026-09-30 registra dos bolsas cerradas junto al acceso A de la entrada norte. No se conoce su contenido, origen ni permanencia. No se evaluó el resto del parque.",
+    "referencias_conocidas": "E1: ficha ficticia de observación del 2026-09-30; extracto aportado: dos bolsas cerradas junto al acceso A. FOTO-E1: referencia a fotografía ficticia, imagen no adjunta ni verificada.",
+    "informacion_pendiente": "Verificar competencia territorial, contenido y permanencia de las bolsas. Contrastar E1 y obtener la fotografía antes de decidir medidas."
+  },
+  "propuesta": {
+    "antecedentes": "Se solicita preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo, específicamente en el parque Aurora, entrada norte junto al acceso A.",
+    "objetivo": "El objetivo es verificar la existencia de residuos en el parque Aurora, con el fin de determinar si se requiere una acción correctiva.",
+    "actuaciones": "Se documentó la observación de dos bolsas cerradas junto al acceso A de la entrada norte del parque Aurora, según la ficha E1 del 30 de septiembre de 2026. No se evaluó el resto del parque.\n\nDatos aportados por el solicitante; no corroborados automáticamente:\nFecha aportada: 2026-09-30\nLugar aportado: Lugar ficticio de prueba: parque Aurora, entrada norte junto al acceso A, distrito de Huancayo\nObservaciones aportadas: CASO FICTICIO: la ficha E1 del 2026-09-30 registra dos bolsas cerradas junto al acceso A de la entrada norte. No se conoce su contenido, origen ni permanencia. No se evaluó el resto del parque.\nReferencias aportadas: E1: ficha ficticia de observación del 2026-09-30; extracto aportado: dos bolsas cerradas junto al acceso A. FOTO-E1: referencia a fotografía ficticia, imagen no adjunta ni verificada.",
+    "hallazgos": "Se observaron dos bolsas cerradas junto al acceso A de la entrada norte del parque Aurora, según la ficha E1 del 30 de septiembre de 2026. No se conoce su contenido, origen ni permanencia.",
+    "conclusiones": "Se observaron dos bolsas cerradas junto al acceso A de la entrada norte del parque Aurora, según la ficha E1 del 30 de septiembre de 2026. No se puede determinar el contenido, origen ni permanencia de las bolsas.",
+    "recomendaciones": "Se recomienda verificar la competencia territorial, el contenido y la permanencia de las bolsas. Se debe contrastar la ficha E1 y obtener la fotografía antes de decidir medidas."
+  },
+  "version_guardada": {
+    "informe_id": "d809d666-3eb5-4db6-bec7-a627af88f404",
+    "solicitud_id": "a184fc28-7dd7-49af-94c4-4a94aba353ab",
+    "plantilla_id": "84475e08-0a9e-4076-94d5-dc8f53e97a43",
+    "titulo": "Informe de Inspección",
+    "titulo_versionado": true,
+    "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+    "plantilla_version": 1,
+    "estado": "BORRADOR",
+    "version_id": "81968e2e-3bb0-4e9c-bcbf-4b0291e6dd0c",
+    "numero_version": 2,
+    "contenido": {
+      "antecedentes": "Se solicita preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo, específicamente en el parque Aurora, entrada norte junto al acceso A.",
+      "objetivo": "Describir la observación aportada en E1 y precisar las comprobaciones necesarias antes de decidir una actuación.",
+      "actuaciones": "Se documentó la observación de dos bolsas cerradas junto al acceso A de la entrada norte del parque Aurora, según la ficha E1 del 30 de septiembre de 2026. No se evaluó el resto del parque.\n\nDatos aportados por el solicitante; no corroborados automáticamente:\nFecha aportada: 2026-09-30\nLugar aportado: Lugar ficticio de prueba: parque Aurora, entrada norte junto al acceso A, distrito de Huancayo\nObservaciones aportadas: CASO FICTICIO: la ficha E1 del 2026-09-30 registra dos bolsas cerradas junto al acceso A de la entrada norte. No se conoce su contenido, origen ni permanencia. No se evaluó el resto del parque.\nReferencias aportadas: E1: ficha ficticia de observación del 2026-09-30; extracto aportado: dos bolsas cerradas junto al acceso A. FOTO-E1: referencia a fotografía ficticia, imagen no adjunta ni verificada.",
+      "hallazgos": "Se observaron dos bolsas cerradas junto al acceso A de la entrada norte del parque Aurora, según la ficha E1 del 30 de septiembre de 2026. No se conoce su contenido, origen ni permanencia.",
+      "conclusiones": "Según la ficha ficticia E1 aportada, se registran dos bolsas cerradas en la entrada norte, junto al acceso A. Esto no determina su contenido, origen ni permanencia, ni el estado del resto del parque. Se requiere contrastar la fuente y verificar la competencia territorial.\nRevisión humana de prueba: este documento usa datos ficticios y requiere validación antes de cualquier uso.",
+      "recomendaciones": "Se recomienda verificar la competencia territorial, el contenido y la permanencia de las bolsas. Se debe contrastar la ficha E1 y obtener la fotografía antes de decidir medidas.",
+      "encabezado": {
+        "asunto": "PRUEBA NAXJI: preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo.",
+        "documento": {
+          "fecha": "",
+          "emisor": "Unidad de prueba NAXJI (ficticia)",
+          "numero": "",
+          "firmante": "",
+          "referencia": "Prueba local; sin expediente oficial",
+          "destinatario": "Subgerencia de Gestión Ambiental",
+          "cargo_firmante": ""
+        },
+        "area_origen": "Subgerencia de Gestión Ambiental",
+        "area_destino": "Subgerencia de Gestión Ambiental",
+        "tipo_documento": "Informe de Inspección",
+        "plantilla_nombre": "Informe de Inspección – Piloto NAXJI",
+        "plantilla_version": 1
+      }
+    },
+    "secciones_salida": [
+      {
+        "clave": "antecedentes",
+        "titulo": "Antecedentes de la solicitud",
+        "obligatoria": true
+      },
+      {
+        "clave": "objetivo",
+        "titulo": "Objetivo y alcance de la inspección",
+        "obligatoria": true
+      },
+      {
+        "clave": "actuaciones",
+        "titulo": "Actuaciones y fuentes disponibles",
+        "obligatoria": true
+      },
+      {
+        "clave": "hallazgos",
+        "titulo": "Hallazgos y observaciones",
+        "obligatoria": true
+      },
+      {
+        "clave": "conclusiones",
+        "titulo": "Conclusiones",
+        "obligatoria": true
+      },
+      {
+        "clave": "recomendaciones",
+        "titulo": "Recomendaciones y verificaciones pendientes",
+        "obligatoria": false
+      }
+    ],
+    "estructura_legacy": false,
+    "origen": "USUARIO",
+    "modelo_ia": null,
+    "created_at": "2026-11-27T02:06:03.507540Z",
+    "updated_at": "2026-11-27T02:06:03.680025Z",
+    "sustento": null
+  },
+  "http": {
+    "generacion": 201,
+    "edicion": 200,
+    "recuperacion": 200,
+    "descarga": 200
+  }
+}

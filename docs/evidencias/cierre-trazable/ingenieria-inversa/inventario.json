@@ -1,0 +1,433 @@
+{
+  "python": "3.11.9",
+  "capas": {
+    "domain": {
+      "archivos_python": 18,
+      "lineas_python": 661,
+      "clases": [
+        "AreaMunicipal",
+        "CampoPlantilla",
+        "ConflictoEstado",
+        "CorrespondenciaNormativa",
+        "DatosInvalidos",
+        "Documento",
+        "ErrorDominio",
+        "ErrorGeneracion",
+        "ErrorServicio",
+        "EstadoInforme",
+        "EstadoSolicitud",
+        "Informe",
+        "NoAutorizado",
+        "NoEncontrado",
+        "Normativa",
+        "NormativaPredicha",
+        "OrigenVersion",
+        "Plantilla",
+        "PrediccionContexto",
+        "ResultadoValidacion",
+        "Rol",
+        "SeccionSalida",
+        "Solicitud",
+        "SolicitudService",
+        "SolicitudValor",
+        "TipoDato",
+        "TipoInforme",
+        "UsuarioActual",
+        "VersionInforme"
+      ]
+    },
+    "application": {
+      "archivos_python": 31,
+      "lineas_python": 1303,
+      "clases": [
+        "ActualizarBorrador",
+        "ActualizarSolicitud",
+        "AlmacenDocumentos",
+        "CatalogoRepository",
+        "ConsultarCatalogos",
+        "ContextPredictor",
+        "ContextoConfirmado",
+        "CrearSolicitud",
+        "DatosSolicitud",
+        "DocumentoRepository",
+        "Embeddings",
+        "ExportadorInforme",
+        "ExportarInforme",
+        "ExtractorDocumentos",
+        "GeneradorBorrador",
+        "GenerarBorrador",
+        "GestionDocumentos",
+        "GuardarSolicitudCompleta",
+        "GuardarValoresSolicitud",
+        "InformeRepository",
+        "LLMPort",
+        "NormaConfirmada",
+        "ObtenerContexto",
+        "ObtenerInforme",
+        "ObtenerSolicitud",
+        "PerfilRepository",
+        "PlantillaRepository",
+        "PredecirContexto",
+        "PrediccionRepository",
+        "RecuperadorDocumentos",
+        "ResultadoBorrador",
+        "RevisionInformes",
+        "RevisionRepository",
+        "ServiciosSolicitud",
+        "SolicitudRepository",
+        "SolicitudUseCase",
+        "UnidadTrabajo",
+        "ValidarPrediccion"
+      ]
+    },
+    "adapters": {
+      "archivos_python": 52,
+      "lineas_python": 3225,
+      "clases": [
+        "ActualizarSolicitudRequest",
+        "AlmacenSupabase",
+        "AreaResponse",
+        "CampoResponse",
+        "CatalogoRepositoryMemory",
+        "CatalogoRepositoryPostgres",
+        "CatalogoResponse",
+        "CategoriaPredicha",
+        "ConfiguracionResponse",
+        "ConsultaRag",
+        "ContextPredictorCatalogo",
+        "ContextPredictorMock",
+        "CorrespondenciaResponse",
+        "DecisionRequest",
+        "DocumentoResponse",
+        "DocumentosPostgres",
+        "EdicionRequest",
+        "EmbeddingsOllama",
+        "ErrorResponse",
+        "ExportadorDocx",
+        "ExportadorPdf",
+        "ExtractorArchivos",
+        "FragmentoResponse",
+        "FuenteResponse",
+        "GeneradorBorradorMock",
+        "GeneradorBorradorOllama",
+        "GenerarBorradorRequest",
+        "InformeAuditado",
+        "InformeRepositoryMemory",
+        "InformeRepositoryPostgres",
+        "InformeRequest",
+        "InformeResponse",
+        "LimiteDocumental",
+        "LoginRequest",
+        "Memoria",
+        "NormativaResponse",
+        "OllamaAdapter",
+        "PerfilRepositoryPostgres",
+        "PersistenceError",
+        "PlantillaRepositoryMemory",
+        "PlantillaRepositoryPostgres",
+        "PlantillaResponse",
+        "PostgresUnidadTrabajo",
+        "PrediccionRepositoryMemory",
+        "PrediccionRepositoryPostgres",
+        "PrediccionResponse",
+        "RecuperacionResponse",
+        "Repository",
+        "RequestModel",
+        "ResponseModel",
+        "RevisionMemory",
+        "RevisionPostgres",
+        "SeccionSalidaResponse",
+        "SklearnContextPredictor",
+        "SolicitudCompletaRequest",
+        "SolicitudRepositoryMemory",
+        "SolicitudRepositoryPostgres",
+        "SolicitudRequest",
+        "SolicitudResponse",
+        "TemaNormativoResponse",
+        "UsuarioResponse",
+        "ValidarPrediccionRequest",
+        "ValorRequest",
+        "ValorResponse",
+        "ValoresSolicitudRequest",
+        "VersionRequest"
+      ]
+    },
+    "infrastructure": {
+      "archivos_python": 8,
+      "lineas_python": 584,
+      "clases": [
+        "AuthError",
+        "Container",
+        "DatabaseSettings",
+        "RagSettings",
+        "Settings",
+        "SupabaseAuth",
+        "SupabaseAuthSettings"
+      ]
+    }
+  },
+  "rutas": [
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes",
+      "operacion": "crear_solicitudes_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/completa",
+      "operacion": "crear_completa_solicitudes_completa_post"
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/solicitudes/{solicitud_id}/completa",
+      "operacion": "actualizar_completa_solicitudes__solicitud_id__completa_put"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/{solicitud_id}",
+      "operacion": "obtener_solicitudes__solicitud_id__get"
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/solicitudes/{solicitud_id}",
+      "operacion": "actualizar_solicitudes__solicitud_id__put"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/{solicitud_id}/informe",
+      "operacion": "obtener_informe_solicitudes__solicitud_id__informe_get"
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/solicitudes/{solicitud_id}/valores",
+      "operacion": "guardar_valores_solicitudes__solicitud_id__valores_put"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/tipos-informe",
+      "operacion": "tipos_tipos_informe_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/areas",
+      "operacion": "areas_areas_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/plantillas",
+      "operacion": "plantillas_plantillas_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/plantillas/{plantilla_id}/campos",
+      "operacion": "campos_plantillas__plantilla_id__campos_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/{solicitud_id}/contexto",
+      "operacion": "obtener_contexto_solicitudes__solicitud_id__contexto_get"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/{solicitud_id}/predecir-contexto",
+      "operacion": "predecir_solicitudes__solicitud_id__predecir_contexto_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/{solicitud_id}/validar-prediccion",
+      "operacion": "validar_solicitudes__solicitud_id__validar_prediccion_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/{solicitud_id}/generar-borrador",
+      "operacion": "generar_solicitudes__solicitud_id__generar_borrador_post"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/informes/{informe_id}",
+      "operacion": "obtener_informes__informe_id__get"
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/informes/{informe_id}",
+      "operacion": "actualizar_informes__informe_id__put"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/informes/{informe_id}/versiones/{numero_version}",
+      "operacion": "obtener_version_informes__informe_id__versiones__numero_version__get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/informes/{informe_id}/versiones/{numero_version}/docx",
+      "operacion": "descargar_docx_informes__informe_id__versiones__numero_version__docx_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/auth/me",
+      "operacion": "usuario_actual_auth_me_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/auth/config",
+      "operacion": "config_auth_config_get"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "operacion": "login_auth_login_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/refresh",
+      "operacion": "refresh_auth_refresh_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/logout",
+      "operacion": "logout_auth_logout_post"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/configuracion",
+      "operacion": "configuracion_documentos_configuracion_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos",
+      "operacion": "listar_documentos_get"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/documentos",
+      "operacion": "cargar_documentos_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/documentos/recuperar",
+      "operacion": "recuperar_documentos_recuperar_post"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/{documento_id}",
+      "operacion": "obtener_documentos__documento_id__get"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/documentos/{documento_id}/procesar",
+      "operacion": "procesar_documentos__documento_id__procesar_post"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/{documento_id}/fragmentos/{fragmento_id}",
+      "operacion": "fragmento_documentos__documento_id__fragmentos__fragmento_id__get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/{documento_id}/original",
+      "operacion": "original_documentos__documento_id__original_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/config",
+      "operacion": "configuracion_revision_config_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/informes",
+      "operacion": "listar_revision_informes_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/informes/{informe_id}",
+      "operacion": "historial_revision_informes__informe_id__get"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/revision/informes/{informe_id}/enviar",
+      "operacion": "enviar_revision_informes__informe_id__enviar_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/revision/informes/{informe_id}/editar",
+      "operacion": "editar_revision_informes__informe_id__editar_post"
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/revision/informes/{informe_id}/decidir",
+      "operacion": "decidir_revision_informes__informe_id__decidir_post"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/informes/{informe_id}/versiones/{numero_version}/exportar",
+      "operacion": "exportar_revision_informes__informe_id__versiones__numero_version__exportar_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/auditoria",
+      "operacion": "auditoria_auditoria_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/ready",
+      "operacion": "ready_ready_get"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/health",
+      "operacion": "health_health_get"
+    }
+  ],
+  "variables_sin_valores": [
+    "NAXJI_API_DOCS_ENABLED",
+    "NAXJI_AUTH_ALLOWED_ORIGINS",
+    "NAXJI_AUTH_COOKIE_SAMESITE",
+    "NAXJI_AUTH_COOKIE_SECURE",
+    "NAXJI_AUTH_MODE",
+    "NAXJI_CORS_ORIGINS",
+    "NAXJI_DB_CONNECT_TIMEOUT",
+    "NAXJI_DB_HOST",
+    "NAXJI_DB_NAME",
+    "NAXJI_DB_PASSWORD",
+    "NAXJI_DB_PORT",
+    "NAXJI_DB_SSLMODE",
+    "NAXJI_DB_USER",
+    "NAXJI_DOCUMENT_FORMATS",
+    "NAXJI_DOCUMENT_MAX_BYTES",
+    "NAXJI_EMBEDDING_DIMENSION",
+    "NAXJI_EMBEDDING_MODEL",
+    "NAXJI_EMBEDDING_TIMEOUT_SECONDS",
+    "NAXJI_OLLAMA_BASE_URL",
+    "NAXJI_OLLAMA_MODEL",
+    "NAXJI_OLLAMA_TIMEOUT_SECONDS",
+    "NAXJI_PERSISTENCE_MODE",
+    "NAXJI_PMV3_ENABLED",
+    "NAXJI_RAG_CHUNK_OVERLAP",
+    "NAXJI_RAG_CHUNK_SIZE",
+    "NAXJI_RAG_CONTEXT_CHARS",
+    "NAXJI_RAG_ENABLED",
+    "NAXJI_RAG_LEASE_SECONDS",
+    "NAXJI_RAG_MAX_CHUNKS",
+    "NAXJI_RAG_MIN_SIMILARITY",
+    "NAXJI_RAG_PROCESSING_REVISION",
+    "NAXJI_RAG_TOP_K",
+    "NAXJI_STORAGE_BUCKET",
+    "NAXJI_STORAGE_SERVICE_KEY",
+    "NAXJI_SUPABASE_PUBLISHABLE_KEY",
+    "NAXJI_SUPABASE_URL",
+    "VITE_API_URL"
+  ],
+  "herramientas_detectadas_en_PATH": {
+    "und": false,
+    "understand": false,
+    "jmeter": false,
+    "zap": false,
+    "sonar-scanner": false,
+    "k6": true,
+    "docker": true,
+    "node": true,
+    "npm": true
+  },
+  "sql_recursos": 46,
+  "variables_nota": "Literales completos, nombres enteros compuestos de RagSettings y VITE_API_URL; sin valores privados"
+}

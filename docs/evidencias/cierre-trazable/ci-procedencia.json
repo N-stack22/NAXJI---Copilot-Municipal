@@ -1,0 +1,11 @@
+{
+  "fecha_utc": "2026-11-27T02:27:34.884201+00:00",
+  "ref_consultada": "refs/tags/v6",
+  "metodo": "git ls-remote en repositorios oficiales, sin escritura",
+  "acciones": {
+    "actions/checkout": "d23441a48e516b6c34aea4fa41551a30e30af803",
+    "actions/setup-python": "ece7cb06caefa5fff74198d8649806c4678c61a1",
+    "actions/setup-node": "249970729cb0ef3589644e2896645e5dc5ba9c38"
+  },
+  "github_run": "Pendiente; workflow solo local"
+}

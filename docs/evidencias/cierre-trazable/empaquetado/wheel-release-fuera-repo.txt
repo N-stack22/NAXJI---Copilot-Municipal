@@ -1,0 +1,1 @@
+API, SQL, plantilla, predictor con hash portable y PDF: OK desde wheel fuera del repositorio

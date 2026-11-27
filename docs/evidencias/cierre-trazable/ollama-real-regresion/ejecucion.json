@@ -1,0 +1,16 @@
+{
+  "fecha_utc": "2026-11-27T01:08:52.236176+00:00",
+  "exit_code": 0,
+  "comando": [
+    "D:\\NAXJI\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--showlocals",
+    "tests/test_ollama_integration.py",
+    "tests/test_piloto_v2_ollama.py",
+    "--basetemp",
+    "D:\\NAXJI\\.venv\\worktrees\\pmv-trazable\\docs\\evidencias\\cierre-trazable\\ollama-real-regresion\\temporales"
+  ]
+}

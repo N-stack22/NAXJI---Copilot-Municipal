@@ -1,0 +1,9 @@
+{
+  "fecha_utc": "2026-11-27T01:53:48.907047+00:00",
+  "wheel": "naxji_copilot_municipal_backend-0.1.0-py3-none-any.whl",
+  "sha256": "f8169dba045c8c5edd7ef27bb86fabdc7191abaf35bb454e7cc22852ce908f91",
+  "sql_recursos": 46,
+  "marcadores_paquetes": true,
+  "exit_code": 0,
+  "instalacion": "venv nuevo, solo wheel y lock runtime; prueba fuera del cwd, sin editable"
+}

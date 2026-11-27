@@ -1,0 +1,83 @@
+150/750; fallos inesperados: 0
+350/750; fallos inesperados: 0
+400/750; fallos inesperados: 0
+450/750; fallos inesperados: 0
+500/750; fallos inesperados: 0
+510/750; fallos inesperados: 0
+520/750; fallos inesperados: 0
+530/750; fallos inesperados: 0
+540/750; fallos inesperados: 0
+560/750; fallos inesperados: 0
+650/750; fallos inesperados: 0
+670/750; fallos inesperados: 0
+690/750; fallos inesperados: 0
+750/750; fallos inesperados: 0
+{
+  "emitidas": 750,
+  "completadas_http": 750,
+  "correctas_segun_caso": 750,
+  "fallidas": 0,
+  "rechazos_esperados": 125,
+  "tasa_error": 0.0,
+  "throughput_http_s": 15.170929681399887,
+  "latencia_ms": {
+    "p50": 252.75065016467124,
+    "p95": 313.2628200459294,
+    "p99": 348.49432409275323
+  }
+}
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/auth/me estado=401
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/solicitudes/{solicitud_id} estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=GET ruta=/auditoria estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403
+seguridad metodo=POST ruta=/revision/informes/{informe_id}/decidir estado=403

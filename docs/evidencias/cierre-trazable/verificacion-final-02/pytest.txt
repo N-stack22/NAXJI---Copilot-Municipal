@@ -1,0 +1,62 @@
+.......................................s.........................sss.... [ 19%]
+........................................................................ [ 39%]
+..........................F............................................. [ 59%]
+........................................................................ [ 79%]
+.......................................................ssssss........... [ 99%]
+...                                                                      [100%]
+================================== FAILURES ===================================
+__________ test_generar_editar_recuperar_y_descargar[con-resultados] __________
+
+piloto = ((DatabaseSettings(host='127.0.0.1', port=15432, dbname='naxji_step3_test_53546d6e2e144700971f767341c0f3a7', user='nax...lette.testclient.TestClient object at 0x000001AE0F491F50>, <fastapi.applications.FastAPI object at 0x000001AE0F2DD5D0>)
+tmp_path = WindowsPath('D:/NAXJI/.venv/worktrees/pmv-trazable/docs/evidencias/cierre-trazable/verificacion-final-02/temporales/test_generar_editar_recuperar_1')
+con_resultados = True
+
+    @pytest.mark.parametrize("con_resultados", [False, True], ids=["sin-resultados", "con-resultados"])
+    def test_generar_editar_recuperar_y_descargar(piloto, tmp_path, con_resultados):
+        (db, uid, *_), deps, client, _ = piloto
+        asunto = "PRUEBA NAXJI: preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de Huancayo."
+        datos = {"estado_resultados": "Sin resultados de inspección"}
+        if con_resultados:
+            datos = {"estado_resultados": "Resultados documentados disponibles", "fecha_inspeccion": "2026-09-30",
+                     "lugar_inspeccion": "Lugar ficticio de prueba: parque Aurora, entrada norte junto al acceso A, distrito de Huancayo",
+                     "alcance_solicitado": "Describir únicamente la observación aportada y proponer su verificación por la unidad competente.",
+                     "resultados_observados": "CASO FICTICIO: la ficha E1 del 2026-09-30 registra dos bolsas cerradas junto al acceso A de la entrada norte. No se conoce su contenido, origen ni permanencia. No se evaluó el resto del parque.",
+                     "referencias_conocidas": "E1: ficha ficticia de observación del 2026-09-30; extracto aportado: dos bolsas cerradas junto al acceso A. FOTO-E1: referencia a fotografía ficticia, imagen no adjunta ni verificada.",
+                     "informacion_pendiente": "Verificar competencia territorial, contenido y permanencia de las bolsas. Contrastar E1 y obtener la fotografía antes de decidir medidas."}
+        sid, plantilla, _, _, _ = preparar_inspeccion(client, asunto=asunto, datos_fuente=datos)
+        inicio = perf_counter()
+        r = client.post(f"/solicitudes/{sid}/generar-borrador", json={})
+        segundos = round(perf_counter() - inicio, 3)
+        assert r.status_code == 201, r.text
+        generado = r.json()
+        assert generado["modelo_ia"] == "qwen2.5:7b" and generado["titulo"] == "Informe de Inspección"
+        assert generado["plantilla_version"] == 1
+        assert generado["secciones_salida"] == plantilla["secciones_salida"]
+        propuesta = {s["clave"]: generado["contenido"][s["clave"]] for s in plantilla["secciones_salida"]}
+        texto = " ".join(propuesta.values()).lower()
+        assert "infantil" not in texto and "césped" not in texto
+        recomendaciones = propuesta["recomendaciones"].lower()
+        if con_resultados:
+>           assert "e1" in texto and "bolsas" in texto
+E           AssertionError: assert ('e1' in 'se solicita preparar un informe de inspección sobre una posible acumulación de residuos en un parque del distrito de ...ermanencia de las bolsas. se debe contrastar la información aportada y obtener la fotografía antes de decidir medidas.')
+
+tests\test_inspeccion_contenido_real.py:47: AssertionError
+============================== warnings summary ===============================
+..\..\Lib\site-packages\fastapi\testclient.py:1
+  D:\NAXJI\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_auth_integration.py:6: Auth real: requiere .env.local y .env.auth-test
+SKIPPED [1] tests\test_catalogos_supabase.py:49: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:67: Supabase: prueba opt-in
+SKIPPED [1] tests\test_catalogos_supabase.py:109: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:43: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:70: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:88: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:126: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:150: Supabase: prueba opt-in
+SKIPPED [1] tests\test_supabase_integration.py:173: Supabase: prueba opt-in
+FAILED tests/test_inspeccion_contenido_real.py::test_generar_editar_recuperar_y_descargar[con-resultados]
+1 failed, 352 passed, 10 skipped, 1 warning in 138.82s (0:02:18)

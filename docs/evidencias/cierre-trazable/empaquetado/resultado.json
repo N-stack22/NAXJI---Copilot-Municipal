@@ -1,0 +1,6 @@
+{
+  "fecha_utc": "2026-11-27T01:13:53.706595+00:00",
+  "exit_code": 0,
+  "sql_recursos": 46,
+  "instalacion": "venv nuevo, wheel y lock runtime, sin .env"
+}

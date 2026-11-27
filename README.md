@@ -1,4 +1,20 @@
-# NAXJI — Copilot Municipal: PMV1 + PMV2 documental/RAG
+# NAXJI — Copilot Municipal
+
+El candidato local añade PMV3: revisión por un revisor en una sola etapa, historial,
+auditoría y exportación aprobada Word/PDF sin regenerar con IA. Activación opt-in,
+migración aditiva y validación institucional todavía parcial.
+
+- [Resultados actuales, pruebas y límites](docs/RESULTADOS_CIERRE.md).
+- [Ejecución, configuración y demostración](docs/GUIA_CIERRE_Y_DEMO.md).
+- [Matriz HU y criterios de aceptación](docs/matriz_trazabilidad.md).
+- [Ingeniería inversa y arquitectura ejecutada](docs/ingenieria_inversa.md).
+- [Hallazgos y correcciones](docs/hallazgos_y_correcciones.md).
+- [Revisión académica y matriz de correcciones](docs/REVISION_ACADEMICA_Y_CORRECCIONES.md).
+
+El workflow CI queda preparado para pruebas aisladas, sin secretos ni despliegue;
+su primera ejecución en GitHub está pendiente de autorización para publicar.
+
+## Implementación y evidencias anteriores de PMV1/PMV2
 
 PMV2 implementa biblioteca autenticada `/documentos`, archivos privados, extracción
 PDF/DOCX/TXT, embeddings locales `bge-m3:567m`, recuperación PostgreSQL + pgvector
