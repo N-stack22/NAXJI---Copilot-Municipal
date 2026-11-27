@@ -14,3 +14,4 @@ build/
 *.egg-info/
 # Temporales propios de pytest; conservar logs/JSON/exportaciones elegidas como evidencia.
 docs/evidencias/cierre-trazable/**/temporales/
+docs/evidencias/cierre-seguridad-*/**/temporales/

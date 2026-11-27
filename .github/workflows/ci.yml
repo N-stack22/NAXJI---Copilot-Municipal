@@ -60,5 +60,12 @@ jobs:
           npm run build
       - name: Empaquetar backend
         run: python -m build
+      - name: Auditar todas las dependencias y recursos SQL
+        run: python scripts/auditar_cierre_estatico.py --salida "$RUNNER_TEMP/auditoria-naxji"
+      - name: Construir imagen de despliegue sin secretos
+        run: |
+          docker build -t naxji-ci .
+          test "$(docker image inspect --format '{{.Config.User}}' naxji-ci)" = "10001"
+          docker run --rm --entrypoint python naxji-ci -c "from importlib.resources import files; import src.adapters.out.persistence as p; resources=list(files(p).joinpath('sql').glob('*/*.sql')); assert resources and all(r.read_text().strip() for r in resources); print(len(resources))"
       - name: Verificar diff
         run: git diff --check

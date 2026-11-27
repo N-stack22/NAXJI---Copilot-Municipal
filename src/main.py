@@ -73,6 +73,7 @@ def create_app(settings: Settings | None = None, container: Container | None = N
     @app.middleware("http")
     async def auth_no_cache(request: Request, call_next):
         response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
         if request.url.path.startswith(("/auth/", "/documentos", "/informes", "/solicitudes", "/revision", "/auditoria")):
             response.headers["Cache-Control"] = "no-store"
         if response.status_code in {401, 403, 429}:
@@ -106,7 +107,8 @@ def create_app(settings: Settings | None = None, container: Container | None = N
         # Única frontera global: registra el fallo sin exponer detalles internos por HTTP.
         logger.error("Error no controlado en %s", request.url.path,
                      exc_info=(type(error), error, error.__traceback__))
-        return JSONResponse(status_code=500, content={"detail": "Error interno del servidor"})
+        return JSONResponse(status_code=500, content={"detail": "Error interno del servidor"},
+                            headers={"X-Content-Type-Options": "nosniff"})
 
     for nombre in ("solicitud", "catalogo", "ia", "informe", "usuario", "auth", "documento", "revision", "operacion"):
         modulo = importlib.import_module(f"src.adapters.in.controllers.{nombre}_controller")

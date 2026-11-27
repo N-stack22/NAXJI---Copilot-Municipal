@@ -1,0 +1,11 @@
+**
+!Dockerfile
+!pyproject.toml
+!requirements-runtime.lock.txt
+!src/
+!src/**
+!deploy/
+!deploy/start.py
+**/__pycache__/
+**/*.pyc
+**/.env*
