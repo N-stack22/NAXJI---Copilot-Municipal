@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import api, { mensajeError } from "../services/api";
 import { obtenerUsuarioGuardado, rolesUsuario } from "../services/authService";
 import FuentesInforme from "../components/FuentesInforme";
+import EncabezadoDocumento from "../components/EncabezadoDocumento";
 import "../styles/revision.css";
 
 const fecha = valor => new Date(valor).toLocaleString("es-PE");
@@ -83,6 +84,7 @@ export default function RevisionInformes() {
       </select>
       {version && <>
         <p>Autor: {version.autor_id || "no registrado"} · Fecha: {fecha(version.fecha)} · Estado de esta versión: {version.estado}</p>
+        <EncabezadoDocumento encabezado={version.contenido.encabezado} />
         <fieldset disabled={ocupado}>
           <legend>Contenido guardado y advertencias de respaldo</legend>
           <p>Las alertas señalan aspectos por comprobar; no verifican automáticamente la validez del documento.</p>

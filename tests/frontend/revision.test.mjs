@@ -22,7 +22,8 @@ for (const rol of ["REVISOR", "FUNCIONARIO", "ADMINISTRADOR"]) test(`PMV3: ${rol
   let root;
   const historial = { informe_id: "i1", creado_por: "autor", titulo: "Informe ficticio", estado: rol === "FUNCIONARIO" ? "BORRADOR" : "EN_REVISION",
     eventos: [], versiones: [{ id: "v1", numero_version: 1, autor_id: "autor", fecha: "2026-11-26T12:00:00Z", estado: "BORRADOR",
-      contenido: { antecedentes: "Contenido fuente", conclusiones: "Pendiente de verificación" },
+      contenido: { antecedentes: "Contenido fuente", conclusiones: "Pendiente de verificación",
+        encabezado: { asunto: "Asunto que se revisa", documento: { numero: "DEMO-REV-01", emisor: "Unidad ficticia" } } },
       secciones: [{ clave: "antecedentes", titulo: "Antecedentes" }, { clave: "conclusiones", titulo: "Conclusiones" }],
       advertencias: [{ seccion: "antecedentes", motivo: "Sin cita documental accesible" }, { seccion: "conclusiones", motivo: "Dato pendiente" }] }] };
   axios.defaults.adapter = async config => {
@@ -50,6 +51,8 @@ for (const rol of ["REVISOR", "FUNCIONARIO", "ADMINISTRADOR"]) test(`PMV3: ${rol
     const boton = texto => [...document.querySelectorAll("button")].find(b => b.textContent.includes(texto));
     assert.match(document.body.textContent, /Autor: autor/);
     assert.match(document.body.textContent, /Sin cita documental accesible/);
+    assert.match(document.querySelector('[aria-label="Datos administrativos del documento"]').textContent, /DEMO-REV-01/);
+    assert.match(document.body.textContent, /Asunto que se revisa/);
     assert.equal(document.querySelectorAll("script").length, 0);
     if (rol === "REVISOR") {
       assert.equal(boton("Aprobar versión").disabled, true);

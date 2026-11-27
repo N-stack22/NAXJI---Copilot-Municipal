@@ -8,9 +8,8 @@ from src.domain.entities.informe import VersionInforme
 from src.domain.entities.solicitud import ahora
 from src.domain.services.errores import ConflictoEstado, DatosInvalidos, NoAutorizado, NoEncontrado
 from src.domain.services.informe_service import validar_contenido
-from src.domain.services.respaldo import advertencias_respaldo
+from src.domain.services.respaldo import advertencias_respaldo, secciones_revisables
 from src.domain.value_objects.estados import EstadoInforme, OrigenVersion, Rol
-from src.domain.value_objects.seccion_salida import secciones_efectivas
 
 
 class RevisionInformes:
@@ -69,7 +68,7 @@ class RevisionInformes:
             if informe.estado != EstadoInforme.EN_REVISION:
                 raise ConflictoEstado("Solo se edita una versión en revisión")
             validar_contenido(contenido, anterior.secciones_salida)
-            claves = {s.clave for s in secciones_efectivas(anterior.secciones_salida)}
+            claves = {s["clave"] for s in secciones_revisables(anterior)}
             if contenido.keys() - claves:
                 raise DatosInvalidos("Edite únicamente las secciones del documento")
             nuevo = deepcopy(anterior.contenido)
@@ -117,7 +116,7 @@ class RevisionInformes:
                     "fecha": version.created_at, "autor_id": version.creado_por,
                     "estado": decisiones[-1]["estado"] if decisiones else "NO_REGISTRADO",
                     "titulo": version.titulo, "contenido": version.contenido,
-                    "secciones": [{"clave": s.clave, "titulo": s.titulo} for s in secciones_efectivas(version.secciones_salida)],
+                    "secciones": secciones_revisables(version),
                     "sustento": version.sustento, "advertencias": advertencias_respaldo(version)})
             return {"informe_id": informe.id, "titulo": informe.titulo, "estado": informe.estado, "creado_por": informe.creado_por,
                     "propietario_id": solicitud.usuario_id,

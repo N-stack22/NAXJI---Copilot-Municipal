@@ -89,7 +89,10 @@ def test_permisos_listados_y_auditoria_en_postgres(revision_db):
     _, nuevo, iid, autor, revisor = revision_db
     d = nuevo()
     # Los registros previos a PMV3 no tienen historia de estado: no se inventa.
-    assert d.revision.historial(iid, autor)["versiones"][0]["estado"] == "NO_REGISTRADO"
+    historica = d.revision.historial(iid, autor)["versiones"][0]
+    assert historica["estado"] == "NO_REGISTRADO"
+    assert "objetivo" in {s["clave"] for s in historica["secciones"]}
+    assert historica["contenido"]["objetivo"] == "Anterior"
     d.revision.enviar(iid, autor, 1)
     assert d.revision.listar(replace(revisor, area_id=uuid4())) == []
     assert d.revision.listar(revisor, 1)[0]["id"] == iid
