@@ -18,7 +18,7 @@ export default function RevisionInformes() {
   const id = parametros.get("informe");
   const version = historial?.versiones.find(v => v.numero_version === versionNumero);
   const ultima = historial?.versiones.at(-1);
-  const revisor = roles.includes("REVISOR") && historial?.creado_por !== usuario?.id;
+  const revisor = roles.includes("REVISOR") && historial?.creado_por !== usuario?.id && historial?.propietario_id !== usuario?.id;
   const editable = revisor && historial?.estado === "EN_REVISION" && version === ultima;
   const seccionesAdvertidas = [...new Set((version?.advertencias || []).map(a => a.seccion))];
   const comprobado = seccionesAdvertidas.every(s => comprobaciones[s]?.trim());

@@ -102,6 +102,15 @@ def test_rechazo_registra_motivo_y_bloquea_exportacion(caso):
             d.revision.exportar(i.id, 1, a, formato)
 
 
+def test_propietario_no_se_autorrevisa_cuando_autor_historico_no_esta_registrado(caso):
+    _, d, a, r, i = caso
+    d.memoria.informes[i.id].creado_por = None
+    h = d.revision.enviar(i.id, a, 1)
+    propietario_revisor = replace(a, roles=frozenset({Rol.FUNCIONARIO, Rol.REVISOR}), area_id=r.area_id)
+    with pytest.raises(NoAutorizado):
+        d.revision.decidir(i.id, propietario_revisor, 1, "APROBADO", "Intento de autorrevisión", comprobaciones(h))
+
+
 def test_error_evento_revierte_estado_y_version(caso):
     _, d, a, r, i = caso
     h = d.revision.enviar(i.id, a, 1)

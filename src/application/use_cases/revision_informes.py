@@ -29,7 +29,7 @@ class RevisionInformes:
         puede_revisar = (Rol.REVISOR in usuario.roles and usuario.area_id is not None
                          and usuario.area_id == solicitud.area_destino_id)
         if revisor:
-            if not puede_revisar or informe.creado_por == usuario.id:
+            if not puede_revisar or usuario.id in {informe.creado_por, solicitud.usuario_id}:
                 raise NoAutorizado("Se requiere un revisor del área de destino distinto del autor")
         elif propietario:
             autorizar(usuario, solicitud.usuario_id, escritura=True)
@@ -107,7 +107,7 @@ class RevisionInformes:
 
     def historial(self, informe_id, usuario):
         with self.s.uow.transaccion():
-            informe, _ = self.cargar(informe_id, usuario)
+            informe, solicitud = self.cargar(informe_id, usuario)
             eventos = self.repo.eventos(informe_id)
             protegido = self.obtener.proteger(informe, usuario)
             versiones = []
@@ -120,6 +120,7 @@ class RevisionInformes:
                     "secciones": [{"clave": s.clave, "titulo": s.titulo} for s in secciones_efectivas(version.secciones_salida)],
                     "sustento": version.sustento, "advertencias": advertencias_respaldo(version)})
             return {"informe_id": informe.id, "titulo": informe.titulo, "estado": informe.estado, "creado_por": informe.creado_por,
+                    "propietario_id": solicitud.usuario_id,
                     "versiones": versiones, "eventos": eventos}
 
     def listar(self, usuario, limite=25, desplazamiento=0):
