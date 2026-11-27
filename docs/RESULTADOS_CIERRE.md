@@ -1,66 +1,65 @@
 # Resultados del cierre académico y preparación de despliegue
 
-Corte:26/11/2026,América/Lima. Base `main` **7359a67**;rama **feature/cierre-seguridad-despliegue**. Los **3 PMV y10 HU se aceptan para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Esta aceptación no transforma omitidas en aprobadas ni autoriza afirmar resultados no medidos.
+Corte:26/11/2026, América/Lima. Base `main` **7359a67**; rama **feature/cierre-seguridad-despliegue**. Los **3 PMV y 10 HU se aceptan para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Esta aceptación no transforma omitidas en aprobadas ni autoriza afirmar resultados no medidos.
 
 ## Cambios y componentes conservados
 
-Se refuerzan `tests/test_arquitectura.py` y `tests/test_sql_resources.py`: imports relativos/alias/dinámicos literales,dominio→aplicación,recorrido completo y descubrimiento recursivo de persistencia,SQL concatenado/f-strings/comentarios. Se revisan **110 módulos y599 referencias import**, **16 módulos de persistencia y46 recursos SQL**,sin infracciones confirmadas. Por ello no se modifican los adaptadores ni la composición segura de `save()`.
+Se refuerzan `tests/test_arquitectura.py` y `tests/test_sql_resources.py`: imports relativos/alias/dinámicos literales, dominio→aplicación, recorrido completo y descubrimiento recursivo de persistencia, SQL concatenado/f-strings/comentarios. Se revisan **110 módulos y 599 referencias import**, **16 módulos de persistencia y 46 recursos SQL**, sin infracciones confirmadas. Por ello no se modifican los adaptadores ni la composición segura de `save()`.
 
-ZAP confirmó ausencias de cabeceras. Solo se añade `nosniff` a respuestas de API/incluido500 y `public/_headers` para CSP,marcos y `nosniff` del hosting estático. **No hay diff frente a7359a67 en dominio,aplicación,pilotos,modelos,predictor,RAG,persistencia,esquema,semillas ni JSX/advertencias HU-IA-04.** No se toca el informe académico final ni `.env`.
+ZAP confirmó ausencias de cabeceras. Solo se añade `nosniff` a respuestas de API/incluido 500 y `public/_headers` para CSP, marcos y `nosniff` del hosting estático. **No hay diff frente a7359a67 en dominio, aplicación, pilotos, modelos, predictor, RAG, persistencia, esquema, semillas ni JSX/advertencias HU-IA-04.** No se toca el informe académico final ni `.env`.
 
 ## Pruebas actuales y omitidas
 
 | Control | Resultado | Evidencia |
 |---|---|---|
-| Línea base7359a67 |346 backend aprobadas/21 omitidas;55 frontend;lint/build/diff0|`evidencias/cierre-seguridad-20261126/linea-base/`|
-| Suite tras correcciones |**375 aprobadas,21 omitidas,0 fallidas**,1 deprecación de QA|`verificacion-final-02/` (d5edbc2,38,29s);corrida01 conservada|
+| Línea base7359a67 |346 backend aprobadas/21 omitidas; 55 frontend; lint/build/diff0|`evidencias/cierre-seguridad-20261126/linea-base/`|
+| Suite tras correcciones |**375 aprobadas,21 omitidas,0 fallidas**,1 deprecación de QA|`verificacion-final-02/` (d5edbc2,38,29s); corrida 01 conservada|
 | Frontend |**55 aprobadas,0 omitidas/0 fallidas**|`frontend.txt`|
 | npm lint / npm build / git diff --check |Exit0|Logs de verificación|
-| python -m build |Wheel y sdist construidos|`empaquetado/python-build.log`;salida separada de dist web|
-| Docker release local |Primer intento falló por timeout PyPI;reintento**exit0**,47,70s|Ambos logs y JSON de empaquetado conservados|
-| Smoke de imagen,red none |UID10001,read-only,PORT8088,/health200,nosniff,/docs404,46SQL,predictor/PDF cargados|`empaquetado/smoke-imagen/resultado.json`;sin credenciales externas|
-| Arranque productivo sin configuración |Exit1 **esperado**,sin caída a memoria|`arranque-sin-config.log`;no se cuenta como una prueba fallida de aplicación|
-| CI Linux real |Ejecuci?n 45939307152 **success**,commit d5edbc2|[GitHub Actions](https://github.com/N-stack22/NAXJI---Copilot-Municipal/actions/runs/45939307152);logs y pasos en `ci/`|
+| python -m build |Wheel y sdist construidos|`empaquetado/python-build.log`; salida separada de dist web|
+| Docker release local |Primer intento falló por timeout PyPI; reintento**exit0**,47,70s|Ambos logs y JSON de empaquetado conservados|
+| Smoke de imagen, red none |UID 10001, read-only, PORT 8088,/health200, nosniff,/docs404,46SQL, predictor/PDF cargados|`empaquetado/smoke-imagen/resultado.json`; sin credenciales externas|
+| Arranque productivo sin configuración |Exit1 **esperado**, sin caída a memoria|`arranque-sin-config.log`; no se cuenta como una prueba fallida de aplicación|
+| CI Linux real |Ejecución 45939307152 **success**, commit d5edbc2|[GitHub Actions](https://github.com/N-stack22/NAXJI---Copilot-Municipal/actions/runs/45939307152); logs y pasos en `ci/`|
 
-Las **21 omitidas** son10 integraciones Supabase (1 Auth,3 catálogos,6 generales) y11 integraciones reales de Ollama/embeddings opt-in. No se ejecutan en esta misión. La evidencia histórica de otras corridas IA se conserva separada y no se atribuye a esta suite. La advertencia Starlette/TestClient/httpx está en el log;no se oculta.
+Las **21 omitidas** son 10 integraciones Supabase (1 Auth,3 catálogos,6 generales) y 11 integraciones reales de Ollama/embeddings opt-in. No se ejecutan en esta misión. La evidencia histórica de otras corridas IA se conserva separada y no se atribuye a esta suite. La advertencia Starlette/TestClient/httpx está en el log; no se oculta.
 
-CI e4f4ecf pasó375/21 y55 frontend,pero falló al comparar contra7359a67 porque checkout solo traía un commit. Se corrigió con fetch-depth0;no se relajó la auditoría. Logs del fallo y ejecuciones exitosas posteriores están archivados. Los ERROR de PostgreSQL dentro de fixtures de rollback/inmutabilidad son fallos provocados esperados,distintos de la conclusión del job.
+CI e4f4ecf pasó375/21 y 55 frontend, pero falló al comparar contra7359a67 porque checkout solo traía un commit. Se corrigió con fetch-depth0; no se relajó la auditoría. Logs del fallo y ejecuciones exitosas posteriores están archivados. Los ERROR de PostgreSQL dentro de fixtures de rollback/inmutabilidad son fallos provocados esperados, distintos de la conclusión del job.
 
-## ZAP real,antes/después
+## ZAP real, antes/después
 
-Imagen oficial ZAP **2.17.0**,digest `9624669db72f54d86c4b46a7064518bd9bf79d8c61a4c31befa9923489f328af`. Objetivos fijos `http://naxji-api:8001/` y `http://naxji-api:8000/openapi.json`,red Docker **internal**,sin salida externa ni puertos publicados. Frontend:spider/pasivo del build. API:OpenAPI/activo,con límites explícitos de tiempo y2 hilos. Memoria,Auth/Storage/predictor/generador/embeddings dobles;no se prueba producción ni Supabase compartido.
+Imagen oficial ZAP **2.17.0**, digest `9624669db72f54d86c4b46a7064518bd9bf79d8c61a4c31befa9923489f328af`. Objetivos fijos `http://naxji-api:8001/` y `http://naxji-api:8000/openapi.json`, red Docker **internal**, sin salida externa ni puertos publicados. Frontend: spider/pasivo del build. API: OpenAPI/activo, con límites explícitos de tiempo y 2 hilos. Memoria, Auth/Storage/predictor/generador/embeddings dobles; no se prueba producción ni Supabase compartido.
 
 | Objetivo | Antes válido | Después |
 |---|---|---|
 | Frontend |2 reglas medias(CSP/marcos),1 baja(nosniff),2 informativas|**0 altas/medias/bajas**,2 informativas|
 | API |1 baja(nosniff),2 informativas|**0 altas/medias/bajas**,2 informativas|
 
-Los HTML/JSON originales están en `zap/antes-02/` y `zap/despues/`;comparación en `zap/comparacion.json`. La corrida inicial `zap/antes/` se conserva:su filtro de identidad no aplicó el token ficticio y su API es exploratoria. En las dos corridas válidas se registraron **7465 peticiones API**,7462 con la identidad de prueba;`GET /auth/me` devolvió200 y se recorrieron41 plantillas/rutas distintas,incluido `no_identificada`. No son7465 funcionalidades ni las750 transacciones de carga.
+Los HTML/JSON originales están en `zap/antes-02/` y `zap/despues/`; comparación en `zap/comparacion.json`. La corrida inicial `zap/antes/` se conserva: su filtro de identidad no aplicó el token ficticio y su API es exploratoria. En las dos corridas válidas se registraron **7465 peticiones API**,7462 con la identidad de prueba;`GET /auth/me` devolvió200 y se recorrieron41 plantillas/rutas distintas, incluido `no_identificada`. No son 7465 funcionalidades ni las 750 transacciones de carga.
 
-Se conservan10027(comentario de dependencia sin secreto confirmado),10109(SPA moderna),100000(respuestas4xx) y10111(login identificado) como **informativos**. No se cambian reglas a IGNORE. El API posterior termina con0;el frontend con2 por sus informativos. El crawler pasivo no demuestra cobertura de toda la UI autenticada,SQL real ni prompt injection. Los códigos/riesgos de los reportes prevalecen frente a la etiqueta WARN de la consola.
+Se conservan10027(comentario de dependencia sin secreto confirmado),10109(SPA moderna),100000(respuestas4xx) y 10111(login identificado) como **informativos**. No se cambian reglas a IGNORE. El API posterior termina con 0; el frontend con 2 por sus informativos. El crawler pasivo no demuestra cobertura de toda la UI autenticada, SQL real ni prompt injection. Los códigos/riesgos de los reportes prevalecen frente a la etiqueta WARN de la consola.
 
-ZAP se ejecutó sobre el working tree de7359a67 con cambios pendientes(`dirty:true` en metadatos);las correcciones se consolidaron en47107d5. Los JSON registran ese hecho,no se cambia retrospectivamente su commit. Los componentes de negocio protegidos siguen sin diff.
+ZAP se ejecutó sobre el working tree de 7359a67 con cambios pendientes(`dirty:true` en metadatos); las correcciones se consolidaron en 47107d5. Los JSON registran ese hecho, no se cambia retrospectivamente su commit. Los componentes de negocio protegidos siguen sin diff.
 
-## Repetición de750 llamadas
+## Repetición de 750 llamadas
 
-La cabecera HTTP se comprobó con el arnés aislado existente,sin cambiar escenarios ni reglas. Commit **e4f4ecf**,750 llamadas únicas,**750 respuestas esperadas,0 fallos inesperados,125 rechazos previstos**,concurrencia4,sin rampa. Duración **45.82s**,throughput **16.37/s**,p50 **233.33ms**,p95 **294.60ms**,p99 **315.59ms**.
+La cabecera HTTP se comprobó con el arnés aislado existente, sin cambiar escenarios ni reglas. Commit **e4f4ecf**,750 llamadas únicas,**750 respuestas esperadas,0 fallos inesperados,125 rechazos previstos**, concurrencia4, sin rampa. Duración **45.82s**, throughput **16.37/s**, p50 **233.33ms**, p95 **294.60ms**, p99 **315.59ms**.
 
-PG/pgvector,HTTP,sklearn y DOCX/PDF reales;Auth/Storage/LLM/embeddings y decisión humana simulados. RSS pico239423488 bytes y CPU434,5% de proceso en convención psutil(100%=un núcleo lógico);no incluye contenedor PG/GPU. No es una comparación causal de mejora ni capacidad productiva de Ollama/Supabase. Se conservan JSONL,muestras y huellas en `carga-750-final/`.
+PG/pgvector, HTTP, sklearn y DOCX/PDF reales; Auth/Storage/LLM/embeddings y decisión humana simulados. RSS pico239423488 bytes y CPU 434,5% de proceso en convención psutil(100%=un núcleo lógico); no incluye contenedor PG/GPU. No es una comparación causal de mejora ni capacidad productiva de Ollama/Supabase. Se conservan JSONL, muestras y huellas en `carga-750-final/`.
 
 ## Understand y pendientes reales
 
-**Understand bloqueado**:no ejecutable en PATH,seis rutas o registro;licencia no verificable. No se exportaron métricas de complejidad ni mantenibilidad de esa herramienta. El inventario AST propio no se presenta como Understand. [Comandos/pasos manuales](UNDERSTAND_PENDIENTE.md).
+**Understand bloqueado**: no ejecutable en PATH, seis rutas o registro; licencia no verificable. No se exportaron métricas de complejidad ni mantenibilidad de esa herramienta. El inventario AST propio no se presenta como Understand. [Comandos/pasos manuales](UNDERSTAND_PENDIENTE.md).
 
-La configuración/credenciales/servicio IA estable del destino y su validación operativa quedan pendientes de quien despliegue;fuera del cierre académico. No hay encuestas,actas,métricas ambientales,aceptación institucional ni evaluación humana nuevas. El artículo inglés y las puntuaciones históricas permanecen como antecedentes,sin modificar el manuscrito académico.
+La configuración/credenciales/servicio IA estable del destino y su validación operativa quedan pendientes de quien despliegue; fuera del cierre académico. No hay encuestas, actas, métricas ambientales, aceptación institucional ni evaluación humana nuevas. El artículo inglés y las puntuaciones históricas permanecen como antecedentes, sin modificar el manuscrito académico.
 
 ## Entrega para despliegue y trazabilidad
 
-Dockerfile con Python/digest fijado,lock runtime,usuario no privilegiado y wheel instalado;`railway.toml`,`deploy/start.py`,`deploy/preflight.py`,`public/_headers`,guía de variables/activación/reversión. No migraciones automáticas ni servicios compartidos modificados. El preflight es offline,no valida credenciales. El build local inicial fallido no se presenta como aprobado;el reintento y la imagen tienen evidencia propia.
+Dockerfile con Python/digest fijado, lock runtime, usuario no privilegiado y wheel instalado;`railway.toml`,`deploy/start.py`,`deploy/preflight.py`,`public/_headers`, guía de variables/activación/reversión. No migraciones automáticas ni servicios compartidos modificados. El preflight es offline, no valida credenciales. El build local inicial fallido no se presenta como aprobado; el reintento y la imagen tienen evidencia propia.
 
-Se publica solo la rama independiente para CI;**main y servicios desplegados no se modifican en esta misión**. [Preparación de despliegue](PREPARACION_DESPLIEGUE.md),[observaciones cerradas/pendientes](MATRIZ_OBSERVACIONES_CIERRE.md),[10 HU](matriz_trazabilidad.md),[12 entregables](INDICE_12_ENTREGABLES.md),[ICACIT](ICACIT_EVIDENCIAS.md),informes01–07. Los contenedores PG/ZAP objetivo y su red temporal fueron retirados al finalizar;se conserva la imagen release local. Los logs/reportes originales conservan whitespace de herramientas mediante atributo Git acotado a la carpeta de evidencias;no se relajan reglas de código.
+Se publica solo la rama independiente para CI;**main y servicios desplegados no se modifican en esta misión**. [Preparación de despliegue](PREPARACION_DESPLIEGUE.md),[observaciones cerradas/pendientes](MATRIZ_OBSERVACIONES_CIERRE.md),[10 HU](matriz_trazabilidad.md),[12 entregables](INDICE_12_ENTREGABLES.md),[ICACIT](ICACIT_EVIDENCIAS.md), informes01–07. Los contenedores PG/ZAP objetivo y su red temporal fueron retirados al finalizar; se conserva la imagen release local. Los logs/reportes originales conservan whitespace de herramientas mediante atributo Git acotado a la carpeta de evidencias; no se relajan reglas de código.
 
 ---
-
 ## Anexo histórico conservado del cierre anterior
 
 Lo siguiente corresponde al candidato anterior y sus fechas/commits. Las frases históricas sobre aceptación/publicación no describen el alcance actual;prevalece la actualización de arriba. No se suman métricas de corridas distintas.

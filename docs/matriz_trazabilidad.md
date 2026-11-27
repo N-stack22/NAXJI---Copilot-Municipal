@@ -2,7 +2,7 @@
 
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
-Suite actual:375 aprobadas/21 omitidas y55 frontend; [observaciones actuales](MATRIZ_OBSERVACIONES_CIERRE.md). Los estados siguientes distinguen aceptación académica y límites de la evidencia.
+Suite actual:375 aprobadas/21 omitidas y 55 frontend; [observaciones actuales](MATRIZ_OBSERVACIONES_CIERRE.md). Los estados siguientes distinguen aceptación académica y límites de la evidencia.
 
 # Requisitos, historias y aceptación
 

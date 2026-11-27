@@ -2,7 +2,7 @@
 
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
-Se utiliza **OWASP 2021**, como exige el encargo. El escaneo real es ZAP2.17.0 contra un laboratorio Docker interno; nunca producción. Frontend: spider/pasivo sobre build. API: OpenAPI/activo con identidad ficticia de funcionario; memoria y dobles. No demuestra seguridad de PostgreSQL/Supabase/Ollama productivos.
+Se utiliza **OWASP 2021**, como exige el encargo. El escaneo real es ZAP 2.17.0 contra un laboratorio Docker interno; nunca producción. Frontend: spider/pasivo sobre build. API: OpenAPI/activo con identidad ficticia de funcionario; memoria y dobles. No demuestra seguridad de PostgreSQL/Supabase/Ollama productivos.
 
 | Categoría2021 | Evidencia actual | Límite conservado |
 |---|---|---|
