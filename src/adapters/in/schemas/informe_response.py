@@ -37,13 +37,18 @@ def representar_informe(informe: Informe, numero_version: int | None = None) -> 
                else max(informe.versiones, key=lambda v: v.numero_version))
     encabezado = version.contenido.get("encabezado", {})
     encabezado = encabezado if isinstance(encabezado, dict) else {}
+    secciones = secciones_efectivas(version.secciones_salida)
+    # JSONB no conserva el orden de las claves. Presentar el orden del snapshot
+    # sin modificar el contenido guardado ni descartar datos históricos adicionales.
+    contenido = {s.clave: version.contenido[s.clave] for s in secciones if s.clave in version.contenido}
+    contenido.update({k: v for k, v in version.contenido.items() if k not in contenido})
     return InformeResponse(
         informe_id=informe.id, solicitud_id=informe.solicitud_id, plantilla_id=informe.plantilla_id,
         titulo=version.titulo if version.titulo is not None else informe.titulo,
         titulo_versionado=version.titulo is not None, estado=informe.estado, version_id=version.id,
         plantilla_nombre=encabezado.get("plantilla_nombre"), plantilla_version=encabezado.get("plantilla_version"),
-        numero_version=version.numero_version, contenido=version.contenido,
-        secciones_salida=secciones_efectivas(version.secciones_salida),
+        numero_version=version.numero_version, contenido=contenido,
+        secciones_salida=secciones,
         estructura_legacy=version.secciones_salida is None,
         origen=version.origen, modelo_ia=version.modelo_ia,
         created_at=informe.created_at, updated_at=informe.updated_at,

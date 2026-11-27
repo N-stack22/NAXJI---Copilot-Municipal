@@ -115,7 +115,7 @@ class RevisionInformes:
                 decisiones = [e for e in eventos if e["version_id"] == version.id and e["accion"] != "EXPORTAR"]
                 versiones.append({"numero_version": version.numero_version, "id": version.id,
                     "fecha": version.created_at, "autor_id": version.creado_por,
-                    "estado": decisiones[-1]["estado"] if decisiones else "BORRADOR",
+                    "estado": decisiones[-1]["estado"] if decisiones else "NO_REGISTRADO",
                     "titulo": version.titulo, "contenido": version.contenido,
                     "secciones": [{"clave": s.clave, "titulo": s.titulo} for s in secciones_efectivas(version.secciones_salida)],
                     "sustento": version.sustento, "advertencias": advertencias_respaldo(version)})
