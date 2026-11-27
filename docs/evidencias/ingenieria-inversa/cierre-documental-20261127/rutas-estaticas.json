@@ -1,0 +1,351 @@
+{
+  "commit_fuente": "4f4d294f615cf0285d19f23d0f2aabbf1ee339d1",
+  "metodo": "Decoradores y add_api_route mediante AST; no consulta HTTP ni nueva ejecucion OpenAPI",
+  "operaciones_visibles": 42,
+  "rutas": [
+    {
+      "metodo": "GET",
+      "ruta": "/auth/config",
+      "archivo": "src/adapters/in/controllers/auth_controller.py",
+      "funcion": "config",
+      "linea": 62,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "archivo": "src/adapters/in/controllers/auth_controller.py",
+      "funcion": "login",
+      "linea": 68,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/refresh",
+      "archivo": "src/adapters/in/controllers/auth_controller.py",
+      "funcion": "refresh",
+      "linea": 75,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/logout",
+      "archivo": "src/adapters/in/controllers/auth_controller.py",
+      "funcion": "logout",
+      "linea": 82,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/tipos-informe",
+      "archivo": "src/adapters/in/controllers/catalogo_controller.py",
+      "funcion": "tipos",
+      "linea": 15,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/areas",
+      "archivo": "src/adapters/in/controllers/catalogo_controller.py",
+      "funcion": "areas",
+      "linea": 20,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/plantillas",
+      "archivo": "src/adapters/in/controllers/catalogo_controller.py",
+      "funcion": "plantillas",
+      "linea": 25,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/plantillas/{plantilla_id}/campos",
+      "archivo": "src/adapters/in/controllers/catalogo_controller.py",
+      "funcion": "campos",
+      "linea": 30,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/configuracion",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "configuracion",
+      "linea": 93,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "listar",
+      "linea": 101,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/documentos",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "cargar",
+      "linea": 110,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/documentos/recuperar",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "recuperar",
+      "linea": 124,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/{documento_id}",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "obtener",
+      "linea": 129,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/documentos/{documento_id}/procesar",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "procesar",
+      "linea": 136,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/{documento_id}/fragmentos/{fragmento_id}",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "fragmento",
+      "linea": 141,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/documentos/{documento_id}/original",
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "funcion": "original",
+      "linea": 147,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/{solicitud_id}/contexto",
+      "archivo": "src/adapters/in/controllers/ia_controller.py",
+      "funcion": "obtener_contexto",
+      "linea": 17,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/{solicitud_id}/predecir-contexto",
+      "archivo": "src/adapters/in/controllers/ia_controller.py",
+      "funcion": "predecir",
+      "linea": 24,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/{solicitud_id}/validar-prediccion",
+      "archivo": "src/adapters/in/controllers/ia_controller.py",
+      "funcion": "validar",
+      "linea": 31,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/{solicitud_id}/generar-borrador",
+      "archivo": "src/adapters/in/controllers/ia_controller.py",
+      "funcion": "generar",
+      "linea": 41,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/informes/{informe_id}",
+      "archivo": "src/adapters/in/controllers/informe_controller.py",
+      "funcion": "obtener",
+      "linea": 16,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/informes/{informe_id}/versiones/{numero_version}",
+      "archivo": "src/adapters/in/controllers/informe_controller.py",
+      "funcion": "obtener_version",
+      "linea": 22,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/informes/{informe_id}/versiones/{numero_version}/docx",
+      "archivo": "src/adapters/in/controllers/informe_controller.py",
+      "funcion": "descargar_docx",
+      "linea": 31,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/informes/{informe_id}",
+      "archivo": "src/adapters/in/controllers/informe_controller.py",
+      "funcion": "actualizar",
+      "linea": 40,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/ready",
+      "archivo": "src/adapters/in/controllers/operacion_controller.py",
+      "funcion": "ready",
+      "linea": 13,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/config",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "configuracion",
+      "linea": 34,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/informes",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "listar",
+      "linea": 39,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/informes/{informe_id}",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "historial",
+      "linea": 45,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/revision/informes/{informe_id}/enviar",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "enviar",
+      "linea": 50,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/revision/informes/{informe_id}/editar",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "editar",
+      "linea": 55,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/revision/informes/{informe_id}/decidir",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "decidir",
+      "linea": 60,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/revision/informes/{informe_id}/versiones/{numero_version}/exportar",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "exportar",
+      "linea": 65,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/auditoria",
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "funcion": "auditoria",
+      "linea": 74,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "crear",
+      "linea": 20,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "crear",
+      "linea": 20,
+      "visible_esquema": false
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/solicitudes/completa",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "crear_completa",
+      "linea": 26,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/solicitudes/{solicitud_id}/completa",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "actualizar_completa",
+      "linea": 34,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/{solicitud_id}",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "obtener",
+      "linea": 42,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/solicitudes/{solicitud_id}/informe",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "obtener_informe",
+      "linea": 48,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/solicitudes/{solicitud_id}",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "actualizar",
+      "linea": 54,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/solicitudes/{solicitud_id}/valores",
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "funcion": "guardar_valores",
+      "linea": 60,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/auth/me",
+      "archivo": "src/adapters/in/controllers/usuario_controller.py",
+      "funcion": "usuario_actual",
+      "linea": 27,
+      "visible_esquema": true
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/health",
+      "archivo": "src/main.py",
+      "funcion": "health",
+      "linea": 116,
+      "visible_esquema": true
+    }
+  ]
+}

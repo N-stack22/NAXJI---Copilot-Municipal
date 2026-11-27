@@ -1,0 +1,17 @@
+stateDiagram-v2
+  [*] --> BORRADOR : CrearSolicitud
+  BORRADOR --> LISTA_PARA_GENERAR : contexto confirmado y obligatorios completos
+  LISTA_PARA_GENERAR --> BORRADOR : cambio invalida contexto o datos
+  BORRADOR --> CANCELADA : ActualizarSolicitud
+  LISTA_PARA_GENERAR --> CANCELADA : ActualizarSolicitud
+  LISTA_PARA_GENERAR --> PROCESANDO : GenerarBorrador._reservar
+  PROCESANDO --> GENERADA : publicacion atomica o informe ya existente
+  PROCESANDO --> LISTA_PARA_GENERAR : fallo o reserva vencida con datos validos
+  PROCESANDO --> BORRADOR : fallo o reserva vencida con datos incompletos
+  note right of PROCESANDO
+    Inferencia fuera de transaccion
+    Publicar requiere intento vigente
+  end note
+  note right of GENERADA
+    No hay reapertura implementada
+  end note

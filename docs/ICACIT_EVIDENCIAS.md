@@ -1,5 +1,7 @@
 # ICACIT: siete atributos con evidencia real
 
+**Cierre documental 27/11/2026 sobre main 4f4d294:** se mantienen las siete competencias evaluadas mediante la evidencia técnica de la tabla, sin fabricar una puntuación ni acreditación institucional. [Dominio y contratos reales](evidencias/ingenieria-inversa/analisis/dominio.md), [UML textual](evidencias/ingenieria-inversa/analisis/diagramas_dominio.md), [doce prompts verificados](INDICE_12_ENTREGABLES.md) y [consolidado](ingenieria_inversa.md) amplían las evidencias de conocimientos, diseño y análisis. [Registro documental](evidencias/ingenieria-inversa/cierre-documental-20261127/README.md). Las pruebas se conservan 375/21 y 55, sin sumar corridas ni aprobar omitidas; no se repiten encuestas o mediciones inexistentes. El informe académico fue actualizado por separado según el usuario y no se modifica aquí.
+
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
 Se vinculan los siete atributos solicitados a evidencias disponibles; no se afirma acreditación formal ni se inventan estudios/actas. Las referencias de páginas del informe anterior se conservan en el historial7359a67; el documento académico original no se modifica.

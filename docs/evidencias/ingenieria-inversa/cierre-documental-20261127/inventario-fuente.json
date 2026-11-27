@@ -1,0 +1,5442 @@
+{
+  "fecha_corte": "2026-11-27",
+  "commit_fuente": "4f4d294f615cf0285d19f23d0f2aabbf1ee339d1",
+  "metodo": "AST de solo lectura de archivos versionados; no ejecuta aplicaciones ni proveedores; no es una nueva corrida de Understand",
+  "archivos_propios": 149,
+  "modulos_src": 110,
+  "coincidencia_huellas_understand": true,
+  "por_capa": {
+    "adapters": 52,
+    "application": 31,
+    "domain": 18,
+    "infrastructure": 8,
+    "main": 1
+  },
+  "modulos": [
+    {
+      "archivo": "deploy/preflight.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "verificar",
+          "linea": 7,
+          "argumentos": "values"
+        }
+      ]
+    },
+    {
+      "archivo": "deploy/start.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "main",
+          "linea": 6,
+          "argumentos": ""
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/auth_controller.py",
+      "clases": [
+        {
+          "nombre": "LoginRequest",
+          "linea": 13,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "email",
+              "tipo": "str"
+            },
+            {
+              "nombre": "password",
+              "tipo": "SecretStr"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "provider",
+          "linea": 18,
+          "argumentos": "request"
+        },
+        {
+          "nombre": "check_origin",
+          "linea": 24,
+          "argumentos": "request"
+        },
+        {
+          "nombre": "session_response",
+          "linea": 36,
+          "argumentos": "request, response, session"
+        },
+        {
+          "nombre": "config",
+          "linea": 62,
+          "argumentos": "request: Request"
+        },
+        {
+          "nombre": "login",
+          "linea": 68,
+          "argumentos": "datos: LoginRequest, request: Request, response: Response"
+        },
+        {
+          "nombre": "refresh",
+          "linea": 75,
+          "argumentos": "request: Request, response: Response"
+        },
+        {
+          "nombre": "logout",
+          "linea": 82,
+          "argumentos": "request: Request"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/catalogo_controller.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "tipos",
+          "linea": 15,
+          "argumentos": "usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "areas",
+          "linea": 20,
+          "argumentos": "usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "plantillas",
+          "linea": 25,
+          "argumentos": "usuario: Usuario, deps: Dependencias, tipo_informe_id: UUID | None=None"
+        },
+        {
+          "nombre": "campos",
+          "linea": 30,
+          "argumentos": "plantilla_id: UUID, usuario: Usuario, deps: Dependencias"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/documento_controller.py",
+      "clases": [
+        {
+          "nombre": "DocumentoResponse",
+          "linea": 17,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "nombre_original",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tamano",
+              "tipo": "int"
+            },
+            {
+              "nombre": "sha256",
+              "tipo": "str"
+            },
+            {
+              "nombre": "usuario_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "procedencia",
+              "tipo": "str"
+            },
+            {
+              "nombre": "ambito",
+              "tipo": "str"
+            },
+            {
+              "nombre": "area_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "estado",
+              "tipo": "str"
+            },
+            {
+              "nombre": "error",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "procesamiento",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "fragmentos",
+              "tipo": "int"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "FuenteResponse",
+          "linea": 36,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "documento_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "fragmento_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "procedencia",
+              "tipo": "str"
+            },
+            {
+              "nombre": "sha256",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "nombre_original",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "texto",
+              "tipo": "str"
+            },
+            {
+              "nombre": "localizacion",
+              "tipo": "str"
+            },
+            {
+              "nombre": "inicio",
+              "tipo": "int"
+            },
+            {
+              "nombre": "fin",
+              "tipo": "int"
+            },
+            {
+              "nombre": "similitud",
+              "tipo": "float"
+            },
+            {
+              "nombre": "citas",
+              "tipo": "list[dict]"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "RecuperacionResponse",
+          "linea": 52,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "estado",
+              "tipo": "Literal['CORPUS_VACIO', 'SIN_RESULTADOS', 'RECUPERADO']"
+            },
+            {
+              "nombre": "fuentes",
+              "tipo": "list[FuenteResponse]"
+            },
+            {
+              "nombre": "procesamiento",
+              "tipo": "str"
+            },
+            {
+              "nombre": "umbral_similitud",
+              "tipo": "float | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "FragmentoResponse",
+          "linea": 59,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "documento_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "texto",
+              "tipo": "str"
+            },
+            {
+              "nombre": "localizacion",
+              "tipo": "str"
+            },
+            {
+              "nombre": "inicio",
+              "tipo": "int"
+            },
+            {
+              "nombre": "fin",
+              "tipo": "int"
+            },
+            {
+              "nombre": "procesamiento",
+              "tipo": "str"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "ConfiguracionResponse",
+          "linea": 69,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "habilitado",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "max_bytes",
+              "tipo": "int"
+            },
+            {
+              "nombre": "formatos",
+              "tipo": "list[str]"
+            },
+            {
+              "nombre": "modelo_embeddings",
+              "tipo": "str"
+            },
+            {
+              "nombre": "dimension",
+              "tipo": "int"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "ConsultaRag",
+          "linea": 77,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "consulta",
+              "tipo": "str"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "servicio",
+          "linea": 81,
+          "argumentos": "deps"
+        },
+        {
+          "nombre": "representar",
+          "linea": 87,
+          "argumentos": "doc"
+        },
+        {
+          "nombre": "configuracion",
+          "linea": 93,
+          "argumentos": "usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "listar",
+          "linea": 101,
+          "argumentos": "usuario: Usuario, deps: Dependencias, limite: Annotated[int, Query(ge=1, le=100)]=100, offset: Annotated[int, Query(ge=0)]=0"
+        },
+        {
+          "nombre": "cargar",
+          "linea": 110,
+          "argumentos": "usuario: Usuario, deps: Dependencias, archivo: Annotated[UploadFile, File()], titulo: Annotated[str, Form(max_length=250)], procedencia: Annotated[str, Form(max_length=1000)], ambito: Annotated[str, Form()]='PRIVADO'"
+        },
+        {
+          "nombre": "recuperar",
+          "linea": 124,
+          "argumentos": "request: ConsultaRag, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "obtener",
+          "linea": 129,
+          "argumentos": "documento_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "procesar",
+          "linea": 136,
+          "argumentos": "documento_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "fragmento",
+          "linea": 141,
+          "argumentos": "documento_id: UUID, fragmento_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "original",
+          "linea": 147,
+          "argumentos": "documento_id: UUID, usuario: Usuario, deps: Dependencias"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/ia_controller.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "obtener_contexto",
+          "linea": 17,
+          "argumentos": "solicitud_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "predecir",
+          "linea": 24,
+          "argumentos": "solicitud_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "validar",
+          "linea": 31,
+          "argumentos": "solicitud_id: UUID, request: ValidarPrediccionRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "generar",
+          "linea": 41,
+          "argumentos": "solicitud_id: UUID, request: GenerarBorradorRequest, usuario: Usuario, deps: Dependencias"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/informe_controller.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "obtener",
+          "linea": 16,
+          "argumentos": "informe_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "obtener_version",
+          "linea": 22,
+          "argumentos": "informe_id: UUID, numero_version: Annotated[int, Path(ge=1)], usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "descargar_docx",
+          "linea": 31,
+          "argumentos": "informe_id: UUID, numero_version: Annotated[int, Path(ge=1)], usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "actualizar",
+          "linea": 40,
+          "argumentos": "informe_id: UUID, request: InformeRequest, usuario: Usuario, deps: Dependencias"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/operacion_controller.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "ready",
+          "linea": 13,
+          "argumentos": "usuario: Usuario, deps: Dependencias, request: Request"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/revision_controller.py",
+      "clases": [
+        {
+          "nombre": "VersionRequest",
+          "linea": 13,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "numero_version",
+              "tipo": "int"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "EdicionRequest",
+          "linea": 17,
+          "bases": [
+            "VersionRequest"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "contenido",
+              "tipo": "dict[str, str]"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "DecisionRequest",
+          "linea": 21,
+          "bases": [
+            "VersionRequest"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "decision",
+              "tipo": "Literal['APROBADO', 'RECHAZADO']"
+            },
+            {
+              "nombre": "motivo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "comprobaciones",
+              "tipo": "dict[str, str]"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "servicio",
+          "linea": 27,
+          "argumentos": "deps"
+        },
+        {
+          "nombre": "configuracion",
+          "linea": 34,
+          "argumentos": "usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "listar",
+          "linea": 39,
+          "argumentos": "usuario: Usuario, deps: Dependencias, limite: Annotated[int, Query(ge=1, le=100)]=25, desplazamiento: Annotated[int, Query(ge=0)]=0"
+        },
+        {
+          "nombre": "historial",
+          "linea": 45,
+          "argumentos": "informe_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "enviar",
+          "linea": 50,
+          "argumentos": "informe_id: UUID, request: VersionRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "editar",
+          "linea": 55,
+          "argumentos": "informe_id: UUID, request: EdicionRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "decidir",
+          "linea": 60,
+          "argumentos": "informe_id: UUID, request: DecisionRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "exportar",
+          "linea": 65,
+          "argumentos": "informe_id: UUID, numero_version: int, usuario: Usuario, deps: Dependencias, formato: Literal['docx', 'pdf']='docx'"
+        },
+        {
+          "nombre": "auditoria",
+          "linea": 74,
+          "argumentos": "usuario: Usuario, deps: Dependencias, limite: Annotated[int, Query(ge=1, le=100)]=50, desplazamiento: Annotated[int, Query(ge=0)]=0, informe_id: UUID | None=None"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/solicitud_controller.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "crear",
+          "linea": 20,
+          "argumentos": "request: SolicitudRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "crear_completa",
+          "linea": 26,
+          "argumentos": "request: SolicitudCompletaRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "actualizar_completa",
+          "linea": 34,
+          "argumentos": "solicitud_id: UUID, request: SolicitudCompletaRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "obtener",
+          "linea": 42,
+          "argumentos": "solicitud_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "obtener_informe",
+          "linea": 48,
+          "argumentos": "solicitud_id: UUID, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "actualizar",
+          "linea": 54,
+          "argumentos": "solicitud_id: UUID, request: ActualizarSolicitudRequest, usuario: Usuario, deps: Dependencias"
+        },
+        {
+          "nombre": "guardar_valores",
+          "linea": 60,
+          "argumentos": "solicitud_id: UUID, request: ValoresSolicitudRequest, usuario: Usuario, deps: Dependencias"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/controllers/usuario_controller.py",
+      "clases": [
+        {
+          "nombre": "UsuarioResponse",
+          "linea": 11,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "roles",
+              "tipo": "frozenset[Rol]"
+            },
+            {
+              "nombre": "area_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "email",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "nombres",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "apellidos",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "cargo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "area_nombre",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "usuario_actual",
+          "linea": 27,
+          "argumentos": "usuario: Usuario"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/limite_documental.py",
+      "clases": [
+        {
+          "nombre": "LimiteDocumental",
+          "linea": 6,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 7,
+              "argumentos": "self, app, max_bytes"
+            },
+            {
+              "nombre": "__call__",
+              "linea": 10,
+              "argumentos": "self, scope, receive, send"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/in/schemas/base.py",
+      "clases": [
+        {
+          "nombre": "RequestModel",
+          "linea": 9,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "ResponseModel",
+          "linea": 13,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/in/schemas/catalogo_response.py",
+      "clases": [
+        {
+          "nombre": "CatalogoResponse",
+          "linea": 11,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "nombre",
+              "tipo": "str"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "PlantillaResponse",
+          "linea": 18,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "nombre",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "area_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "version",
+              "tipo": "int"
+            },
+            {
+              "nombre": "activa",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "descripcion",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "secciones_salida",
+              "tipo": "list[SeccionSalidaResponse]"
+            },
+            {
+              "nombre": "estructura_legacy",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "formato_documento",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "AreaResponse",
+          "linea": 41,
+          "bases": [
+            "CatalogoResponse"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "area_padre_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "descripcion",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "CampoResponse",
+          "linea": 46,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "clave",
+              "tipo": "str"
+            },
+            {
+              "nombre": "etiqueta",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo_dato",
+              "tipo": "TipoDato"
+            },
+            {
+              "nombre": "obligatorio",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "orden",
+              "tipo": "int"
+            },
+            {
+              "nombre": "configuracion",
+              "tipo": "dict[str, JsonValue]"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "representar_plantilla",
+          "linea": 31,
+          "argumentos": "plantilla"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/schemas/error_response.py",
+      "clases": [
+        {
+          "nombre": "ErrorResponse",
+          "linea": 4,
+          "bases": [
+            "BaseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "detail",
+              "tipo": "str"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/in/schemas/informe_request.py",
+      "clases": [
+        {
+          "nombre": "GenerarBorradorRequest",
+          "linea": 6,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "instrucciones",
+              "tipo": "Texto"
+            },
+            {
+              "nombre": "usar_documentos",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "InformeRequest",
+          "linea": 12,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "contenido",
+              "tipo": "dict[str, JsonValue]"
+            },
+            {
+              "nombre": "numero_version",
+              "tipo": "int"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "Texto | None"
+            },
+            {
+              "nombre": "encabezado_oficial",
+              "tipo": "dict[str, str] | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/in/schemas/informe_response.py",
+      "clases": [
+        {
+          "nombre": "InformeResponse",
+          "linea": 14,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "informe_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "solicitud_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "titulo_versionado",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "plantilla_nombre",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "plantilla_version",
+              "tipo": "int | None"
+            },
+            {
+              "nombre": "estado",
+              "tipo": "EstadoInforme"
+            },
+            {
+              "nombre": "version_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "numero_version",
+              "tipo": "int"
+            },
+            {
+              "nombre": "contenido",
+              "tipo": "dict[str, JsonValue]"
+            },
+            {
+              "nombre": "secciones_salida",
+              "tipo": "list[SeccionSalidaResponse]"
+            },
+            {
+              "nombre": "estructura_legacy",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "origen",
+              "tipo": "OrigenVersion"
+            },
+            {
+              "nombre": "modelo_ia",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "sustento",
+              "tipo": "dict[str, JsonValue] | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "representar_informe",
+          "linea": 35,
+          "argumentos": "informe: Informe, numero_version: int | None=None"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/schemas/prediccion_request.py",
+      "clases": [
+        {
+          "nombre": "ValidarPrediccionRequest",
+          "linea": 7,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "prediccion_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "resultado",
+              "tipo": "ResultadoValidacion"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "normativa_ids",
+              "tipo": "list[UUID] | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/in/schemas/prediccion_response.py",
+      "clases": [
+        {
+          "nombre": "CategoriaPredicha",
+          "linea": 12,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "nombre",
+              "tipo": "str"
+            },
+            {
+              "nombre": "confianza",
+              "tipo": "float | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "CorrespondenciaResponse",
+          "linea": 19,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "etiqueta",
+              "tipo": "str"
+            },
+            {
+              "nombre": "estado_verificacion",
+              "tipo": "str"
+            },
+            {
+              "nombre": "documento_codigo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "documento_titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "documento_numero",
+              "tipo": "str"
+            },
+            {
+              "nombre": "documento_url",
+              "tipo": "str"
+            },
+            {
+              "nombre": "documento_publicacion",
+              "tipo": "date"
+            },
+            {
+              "nombre": "fuente_url",
+              "tipo": "str"
+            },
+            {
+              "nombre": "fuente_vigencia_url",
+              "tipo": "str"
+            },
+            {
+              "nombre": "verificado_en",
+              "tipo": "date"
+            },
+            {
+              "nombre": "ambito",
+              "tipo": "str"
+            },
+            {
+              "nombre": "vigencia",
+              "tipo": "str"
+            },
+            {
+              "nombre": "justificacion",
+              "tipo": "str"
+            },
+            {
+              "nombre": "confianza_tema",
+              "tipo": "float | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "TemaNormativoResponse",
+          "linea": 36,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "codigo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "etiqueta",
+              "tipo": "str"
+            },
+            {
+              "nombre": "confianza",
+              "tipo": "float | None"
+            },
+            {
+              "nombre": "normativa_ids",
+              "tipo": "list[UUID]"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "NormativaResponse",
+          "linea": 43,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "normativa_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "confianza",
+              "tipo": "float | None"
+            },
+            {
+              "nombre": "orden",
+              "tipo": "int | None"
+            },
+            {
+              "nombre": "aceptada",
+              "tipo": "bool | None"
+            },
+            {
+              "nombre": "correspondencias",
+              "tipo": "list[CorrespondenciaResponse]"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "PrediccionResponse",
+          "linea": 53,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "solicitud_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "modelo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "version_modelo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "algoritmos",
+              "tipo": "dict[str, str]"
+            },
+            {
+              "nombre": "es_mock",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "resultado_validacion",
+              "tipo": "ResultadoValidacion"
+            },
+            {
+              "nombre": "validado_por",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "validado_at",
+              "tipo": "datetime | None"
+            },
+            {
+              "nombre": "tipo_informe",
+              "tipo": "CategoriaPredicha | None"
+            },
+            {
+              "nombre": "area_destino",
+              "tipo": "CategoriaPredicha | None"
+            },
+            {
+              "nombre": "normativas",
+              "tipo": "list[NormativaResponse]"
+            },
+            {
+              "nombre": "advertencias",
+              "tipo": "list[str]"
+            },
+            {
+              "nombre": "temas_normativos",
+              "tipo": "list[TemaNormativoResponse]"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "representar_prediccion",
+          "linea": 71,
+          "argumentos": "p: PrediccionContexto, catalogos: CatalogoRepository"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/in/schemas/seccion_response.py",
+      "clases": [
+        {
+          "nombre": "SeccionSalidaResponse",
+          "linea": 4,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "clave",
+              "tipo": "str"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "obligatoria",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/in/schemas/solicitud_request.py",
+      "clases": [
+        {
+          "nombre": "SolicitudRequest",
+          "linea": 9,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "asunto",
+              "tipo": "Texto"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_origen_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "ActualizarSolicitudRequest",
+          "linea": 17,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "asunto",
+              "tipo": "Texto | None"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_origen_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "estado",
+              "tipo": "EstadoSolicitud | None"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "validar_cambios",
+              "linea": 26,
+              "argumentos": "self"
+            }
+          ]
+        },
+        {
+          "nombre": "ValorRequest",
+          "linea": 35,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "campo_plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "valor",
+              "tipo": "JsonValue"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "ValoresSolicitudRequest",
+          "linea": 40,
+          "bases": [
+            "RequestModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "valores",
+              "tipo": "list[ValorRequest]"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "sin_duplicados",
+              "linea": 44,
+              "argumentos": "self"
+            }
+          ]
+        },
+        {
+          "nombre": "SolicitudCompletaRequest",
+          "linea": 51,
+          "bases": [
+            "SolicitudRequest",
+            "ValoresSolicitudRequest"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/in/schemas/solicitud_response.py",
+      "clases": [
+        {
+          "nombre": "ValorResponse",
+          "linea": 10,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "solicitud_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "campo_plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "valor",
+              "tipo": "JsonValue"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "SolicitudResponse",
+          "linea": 19,
+          "bases": [
+            "ResponseModel"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "usuario_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "asunto",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_origen_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "estado",
+              "tipo": "EstadoSolicitud"
+            },
+            {
+              "nombre": "valores",
+              "tipo": "list[ValorResponse]"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/ai/context_predictor_catalogo.py",
+      "clases": [
+        {
+          "nombre": "ContextPredictorCatalogo",
+          "linea": 9,
+          "bases": [
+            "ContextPredictor"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 19,
+              "argumentos": "self, predictor, catalogos"
+            },
+            {
+              "nombre": "resolve",
+              "linea": 23,
+              "argumentos": "identifier, labels, records, aliases=None"
+            },
+            {
+              "nombre": "predecir",
+              "linea": 32,
+              "argumentos": "self, asunto, solicitud_id"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/ai/context_predictor_mock.py",
+      "clases": [
+        {
+          "nombre": "ContextPredictorMock",
+          "linea": 8,
+          "bases": [
+            "ContextPredictor"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "predecir",
+              "linea": 11,
+              "argumentos": "self, asunto: str, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/ai/embeddings_ollama.py",
+      "clases": [
+        {
+          "nombre": "EmbeddingsOllama",
+          "linea": 8,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 9,
+              "argumentos": "self, base_url, modelo='bge-m3:567m', dimension=1024, timeout=120, transport=None"
+            },
+            {
+              "nombre": "codificar",
+              "linea": 13,
+              "argumentos": "self, textos"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/ai/fidelidad_inspeccion.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "normalizar",
+          "linea": 9,
+          "argumentos": "texto"
+        },
+        {
+          "nombre": "politica_inspeccion",
+          "linea": 14,
+          "argumentos": "plantilla, datos, sin_hechos"
+        },
+        {
+          "nombre": "atribuir_datos_aportados",
+          "linea": 26,
+          "argumentos": "contenido, datos, politica"
+        },
+        {
+          "nombre": "validar_fidelidad_inspeccion",
+          "linea": 48,
+          "argumentos": "contenido, asunto, datos, contexto, politica"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/ai/generador_borrador_mock.py",
+      "clases": [
+        {
+          "nombre": "GeneradorBorradorMock",
+          "linea": 8,
+          "bases": [
+            "GeneradorBorrador"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "generar",
+              "linea": 9,
+              "argumentos": "self, asunto: str, plantilla: Plantilla, datos: dict, contexto: ContextoConfirmado, instrucciones: str"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/ai/generador_borrador_ollama.py",
+      "clases": [
+        {
+          "nombre": "GeneradorBorradorOllama",
+          "linea": 107,
+          "bases": [
+            "GeneradorBorrador"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 108,
+              "argumentos": "self, llm=None"
+            },
+            {
+              "nombre": "generar",
+              "linea": 111,
+              "argumentos": "self, asunto: str, plantilla: Plantilla, datos: dict, contexto: ContextoConfirmado, instrucciones: str"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "esquema_secciones",
+          "linea": 88,
+          "argumentos": "secciones"
+        },
+        {
+          "nombre": "objeto_sin_duplicados",
+          "linea": 98,
+          "argumentos": "pares"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/ai/integridad_modelos.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "verificar_artefactos",
+          "linea": 14,
+          "argumentos": "directorio"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/ai/ollama_adapter.py",
+      "clases": [
+        {
+          "nombre": "OllamaAdapter",
+          "linea": 9,
+          "bases": [
+            "LLMPort"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 10,
+              "argumentos": "self, model: str='qwen2.5:7b', base_url: str='http://localhost:11434', timeout_seconds: float=300.0, *, transport=None"
+            },
+            {
+              "nombre": "model",
+              "linea": 18,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "generar",
+              "linea": 21,
+              "argumentos": "self, prompt: str, *, sistema: str, esquema: dict"
+            },
+            {
+              "nombre": "_generar",
+              "linea": 25,
+              "argumentos": "self, prompt, sistema, esquema"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/ai/sklearn_context_predictor.py",
+      "clases": [
+        {
+          "nombre": "SklearnContextPredictor",
+          "linea": 49,
+          "bases": [
+            "ContextPredictor"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 51,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "_confianza_clase",
+              "linea": 122,
+              "argumentos": "modelo, texto: str, clase_predicha: str"
+            },
+            {
+              "nombre": "predecir",
+              "linea": 152,
+              "argumentos": "self, asunto: str, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "demo_id",
+          "linea": 38,
+          "argumentos": "nombre: str"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/documents/__init__.py",
+      "clases": [],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/documents/almacen_supabase.py",
+      "clases": [
+        {
+          "nombre": "AlmacenSupabase",
+          "linea": 12,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 14,
+              "argumentos": "self, url, clave, bucket, max_bytes, transport=None"
+            },
+            {
+              "nombre": "_client",
+              "linea": 22,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "_privado",
+              "linea": 26,
+              "argumentos": "self, client"
+            },
+            {
+              "nombre": "_ruta",
+              "linea": 32,
+              "argumentos": "self, ubicacion, autenticado=False"
+            },
+            {
+              "nombre": "guardar",
+              "linea": 36,
+              "argumentos": "self, ubicacion, contenido, tipo"
+            },
+            {
+              "nombre": "leer",
+              "linea": 46,
+              "argumentos": "self, ubicacion"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/documents/exportador_docx.py",
+      "clases": [
+        {
+          "nombre": "ExportadorDocx",
+          "linea": 40,
+          "bases": [
+            "ExportadorInforme"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "exportar",
+              "linea": 41,
+              "argumentos": "self, informe, version"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "titulo_dato",
+          "linea": 26,
+          "argumentos": "clave"
+        },
+        {
+          "nombre": "secciones_documento",
+          "linea": 30,
+          "argumentos": "version"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/documents/exportador_mdt.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "exportar_mdt",
+          "linea": 18,
+          "argumentos": "version"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/documents/exportador_pdf.py",
+      "clases": [
+        {
+          "nombre": "ExportadorPdf",
+          "linea": 22,
+          "bases": [
+            "ExportadorInforme"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "exportar",
+              "linea": 23,
+              "argumentos": "self, informe, version"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/documents/extractor.py",
+      "clases": [
+        {
+          "nombre": "ExtractorArchivos",
+          "linea": 7,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "extraer",
+              "linea": 8,
+              "argumentos": "self, contenido, tipo"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/documents/fuentes_docx.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "agregar_fuentes",
+          "linea": 1,
+          "argumentos": "documento, version"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/persistence/__init__.py",
+      "clases": [],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/catalogo_repository_memory.py",
+      "clases": [
+        {
+          "nombre": "CatalogoRepositoryMemory",
+          "linea": 14,
+          "bases": [
+            "CatalogoRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 18,
+              "argumentos": "self, *, normativas=None, correspondencias=()"
+            },
+            {
+              "nombre": "tipos_informe",
+              "linea": 22,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "areas",
+              "linea": 25,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "normativa",
+              "linea": 28,
+              "argumentos": "self, normativa_id: UUID"
+            },
+            {
+              "nombre": "correspondencias_normativas",
+              "linea": 43,
+              "argumentos": "self, etiquetas"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/datos_demo.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "demo_id",
+          "linea": 23,
+          "argumentos": "nombre: str"
+        },
+        {
+          "nombre": "plantillas_demo",
+          "linea": 221,
+          "argumentos": ""
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/persistence/documentos_postgres.py",
+      "clases": [
+        {
+          "nombre": "DocumentosPostgres",
+          "linea": 11,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 12,
+              "argumentos": "self, uow"
+            },
+            {
+              "nombre": "acceso",
+              "linea": 16,
+              "argumentos": "usuario"
+            },
+            {
+              "nombre": "crear",
+              "linea": 19,
+              "argumentos": "self, documento"
+            },
+            {
+              "nombre": "obtener",
+              "linea": 31,
+              "argumentos": "self, documento_id"
+            },
+            {
+              "nombre": "listar",
+              "linea": 36,
+              "argumentos": "self, usuario, limite=100, offset=0"
+            },
+            {
+              "nombre": "reservar",
+              "linea": 42,
+              "argumentos": "self, documento_id, estado, intento, hasta"
+            },
+            {
+              "nombre": "finalizar",
+              "linea": 50,
+              "argumentos": "self, documento_id, intento, estado, error=None, fragmentos=None, procesamiento=None"
+            },
+            {
+              "nombre": "contar",
+              "linea": 66,
+              "argumentos": "self, usuario, procesamiento"
+            },
+            {
+              "nombre": "buscar",
+              "linea": 71,
+              "argumentos": "self, usuario, vector, procesamiento, top_k, umbral"
+            },
+            {
+              "nombre": "fragmento",
+              "linea": 85,
+              "argumentos": "self, documento_id, fragmento_id"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/estado_postgres.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "comprobar_postgres",
+          "linea": 5,
+          "argumentos": "settings"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/persistence/informe_auditado.py",
+      "clases": [
+        {
+          "nombre": "InformeAuditado",
+          "linea": 6,
+          "bases": [
+            "InformeRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 8,
+              "argumentos": "self, informes, revisiones, uow"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 11,
+              "argumentos": "self, informe_id"
+            },
+            {
+              "nombre": "obtener_por_solicitud",
+              "linea": 14,
+              "argumentos": "self, solicitud_id"
+            },
+            {
+              "nombre": "guardar",
+              "linea": 17,
+              "argumentos": "self, informe"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/informe_repository_memory.py",
+      "clases": [
+        {
+          "nombre": "InformeRepositoryMemory",
+          "linea": 10,
+          "bases": [
+            "InformeRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 11,
+              "argumentos": "self, memoria: Memoria"
+            },
+            {
+              "nombre": "guardar",
+              "linea": 14,
+              "argumentos": "self, informe: Informe"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 25,
+              "argumentos": "self, informe_id: UUID"
+            },
+            {
+              "nombre": "obtener_por_solicitud",
+              "linea": 29,
+              "argumentos": "self, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/memoria.py",
+      "clases": [
+        {
+          "nombre": "Memoria",
+          "linea": 14,
+          "bases": [
+            "UnidadTrabajo"
+          ],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "solicitudes",
+              "tipo": "dict[UUID, Solicitud]"
+            },
+            {
+              "nombre": "informes",
+              "tipo": "dict[UUID, Informe]"
+            },
+            {
+              "nombre": "predicciones",
+              "tipo": "dict[UUID, PrediccionContexto]"
+            },
+            {
+              "nombre": "revisiones",
+              "tipo": "list[dict]"
+            },
+            {
+              "nombre": "lock",
+              "tipo": "RLock"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "transaccion",
+              "linea": 22,
+              "argumentos": "self"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/perfil_repository_postgres.py",
+      "clases": [
+        {
+          "nombre": "PerfilRepositoryPostgres",
+          "linea": 7,
+          "bases": [
+            "PerfilRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 8,
+              "argumentos": "self, uow"
+            },
+            {
+              "nombre": "obtener_usuario",
+              "linea": 11,
+              "argumentos": "self, usuario_id, email"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/plantilla_repository_memory.py",
+      "clases": [
+        {
+          "nombre": "PlantillaRepositoryMemory",
+          "linea": 8,
+          "bases": [
+            "PlantillaRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 9,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "listar",
+              "linea": 12,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 15,
+              "argumentos": "self, plantilla_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/postgres.py",
+      "clases": [
+        {
+          "nombre": "PersistenceError",
+          "linea": 34,
+          "bases": [
+            "RuntimeError"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "PostgresUnidadTrabajo",
+          "linea": 38,
+          "bases": [
+            "UnidadTrabajo"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 39,
+              "argumentos": "self, settings: DatabaseSettings"
+            },
+            {
+              "nombre": "active",
+              "linea": 44,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "transaccion",
+              "linea": 48,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "connection",
+              "linea": 69,
+              "argumentos": "self, *, write=False"
+            }
+          ]
+        },
+        {
+          "nombre": "Repository",
+          "linea": 122,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 123,
+              "argumentos": "self, uow"
+            },
+            {
+              "nombre": "lock",
+              "linea": 126,
+              "argumentos": "self"
+            }
+          ]
+        },
+        {
+          "nombre": "CatalogoRepositoryPostgres",
+          "linea": 130,
+          "bases": [
+            "Repository",
+            "CatalogoRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "correspondencias_normativas",
+              "linea": 131,
+              "argumentos": "self, etiquetas"
+            },
+            {
+              "nombre": "tipos_informe",
+              "linea": 150,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "areas",
+              "linea": 154,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "normativa",
+              "linea": 158,
+              "argumentos": "self, normativa_id"
+            },
+            {
+              "nombre": "normativa_por_codigo",
+              "linea": 163,
+              "argumentos": "self, codigo"
+            }
+          ]
+        },
+        {
+          "nombre": "PlantillaRepositoryPostgres",
+          "linea": 169,
+          "bases": [
+            "Repository",
+            "PlantillaRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "load",
+              "linea": 171,
+              "argumentos": "c, row"
+            },
+            {
+              "nombre": "listar",
+              "linea": 177,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 182,
+              "argumentos": "self, plantilla_id"
+            }
+          ]
+        },
+        {
+          "nombre": "SolicitudRepositoryPostgres",
+          "linea": 188,
+          "bases": [
+            "Repository",
+            "SolicitudRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "guardar",
+              "linea": 189,
+              "argumentos": "self, solicitud"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 200,
+              "argumentos": "self, solicitud_id"
+            }
+          ]
+        },
+        {
+          "nombre": "PrediccionRepositoryPostgres",
+          "linea": 211,
+          "bases": [
+            "Repository",
+            "PrediccionRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "guardar",
+              "linea": 212,
+              "argumentos": "self, prediccion"
+            },
+            {
+              "nombre": "ultima",
+              "linea": 221,
+              "argumentos": "self, solicitud_id"
+            }
+          ]
+        },
+        {
+          "nombre": "InformeRepositoryPostgres",
+          "linea": 232,
+          "bases": [
+            "Repository",
+            "InformeRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "guardar",
+              "linea": 233,
+              "argumentos": "self, informe"
+            },
+            {
+              "nombre": "load",
+              "linea": 255,
+              "argumentos": "c, row"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 263,
+              "argumentos": "self, informe_id"
+            },
+            {
+              "nombre": "obtener_por_solicitud",
+              "linea": 267,
+              "argumentos": "self, solicitud_id"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "entity",
+          "linea": 84,
+          "argumentos": "cls, row, **enums"
+        },
+        {
+          "nombre": "save",
+          "linea": 96,
+          "argumentos": "connection, table, item, *, omit=(), json_fields=(), extra=None, insert_only=False"
+        }
+      ]
+    },
+    {
+      "archivo": "src/adapters/out/persistence/prediccion_repository_memory.py",
+      "clases": [
+        {
+          "nombre": "PrediccionRepositoryMemory",
+          "linea": 9,
+          "bases": [
+            "PrediccionRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 10,
+              "argumentos": "self, memoria: Memoria"
+            },
+            {
+              "nombre": "guardar",
+              "linea": 13,
+              "argumentos": "self, prediccion: PrediccionContexto"
+            },
+            {
+              "nombre": "ultima",
+              "linea": 18,
+              "argumentos": "self, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/revision_memory.py",
+      "clases": [
+        {
+          "nombre": "RevisionMemory",
+          "linea": 6,
+          "bases": [
+            "RevisionRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 7,
+              "argumentos": "self, memoria"
+            },
+            {
+              "nombre": "registrar",
+              "linea": 10,
+              "argumentos": "self, evento"
+            },
+            {
+              "nombre": "eventos",
+              "linea": 14,
+              "argumentos": "self, informe_id"
+            },
+            {
+              "nombre": "listar",
+              "linea": 18,
+              "argumentos": "self, usuario, limite, desplazamiento"
+            },
+            {
+              "nombre": "auditoria",
+              "linea": 31,
+              "argumentos": "self, limite, desplazamiento, informe_id=None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/revision_postgres.py",
+      "clases": [
+        {
+          "nombre": "RevisionPostgres",
+          "linea": 7,
+          "bases": [
+            "RevisionRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 8,
+              "argumentos": "self, uow"
+            },
+            {
+              "nombre": "registrar",
+              "linea": 11,
+              "argumentos": "self, evento"
+            },
+            {
+              "nombre": "eventos",
+              "linea": 17,
+              "argumentos": "self, informe_id"
+            },
+            {
+              "nombre": "listar",
+              "linea": 21,
+              "argumentos": "self, usuario, limite, desplazamiento"
+            },
+            {
+              "nombre": "auditoria",
+              "linea": 27,
+              "argumentos": "self, limite, desplazamiento, informe_id=None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/solicitud_repository_memory.py",
+      "clases": [
+        {
+          "nombre": "SolicitudRepositoryMemory",
+          "linea": 10,
+          "bases": [
+            "SolicitudRepository"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 12,
+              "argumentos": "self, memoria: Memoria | None=None"
+            },
+            {
+              "nombre": "guardar",
+              "linea": 15,
+              "argumentos": "self, solicitud: Solicitud"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 20,
+              "argumentos": "self, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/adapters/out/persistence/sql_resources.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "consulta",
+          "linea": 7,
+          "argumentos": "adaptador: str, nombre: str"
+        }
+      ]
+    },
+    {
+      "archivo": "src/application/ports/input/solicitud_use_case.py",
+      "clases": [
+        {
+          "nombre": "DatosSolicitud",
+          "linea": 9,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "asunto",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_origen_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "SolicitudUseCase",
+          "linea": 17,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "ejecutar",
+              "linea": 20,
+              "argumentos": "self, usuario: UsuarioActual, datos: DatosSolicitud"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/catalogo_repository.py",
+      "clases": [
+        {
+          "nombre": "CatalogoRepository",
+          "linea": 8,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "tipos_informe",
+              "linea": 10,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "areas",
+              "linea": 13,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "normativa",
+              "linea": 16,
+              "argumentos": "self, normativa_id: UUID"
+            },
+            {
+              "nombre": "correspondencias_normativas",
+              "linea": 18,
+              "argumentos": "self, etiquetas: list[str]"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/context_predictor.py",
+      "clases": [
+        {
+          "nombre": "ContextPredictor",
+          "linea": 7,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "predecir",
+              "linea": 9,
+              "argumentos": "self, asunto: str, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/documentos.py",
+      "clases": [
+        {
+          "nombre": "AlmacenDocumentos",
+          "linea": 4,
+          "bases": [
+            "Protocol"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "guardar",
+              "linea": 5,
+              "argumentos": "self, ubicacion: str, contenido: bytes, tipo: str"
+            },
+            {
+              "nombre": "leer",
+              "linea": 6,
+              "argumentos": "self, ubicacion: str"
+            }
+          ]
+        },
+        {
+          "nombre": "ExtractorDocumentos",
+          "linea": 9,
+          "bases": [
+            "Protocol"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "extraer",
+              "linea": 10,
+              "argumentos": "self, contenido: bytes, tipo: str"
+            }
+          ]
+        },
+        {
+          "nombre": "Embeddings",
+          "linea": 13,
+          "bases": [
+            "Protocol"
+          ],
+          "decoradores": [],
+          "campos_anotados": [
+            {
+              "nombre": "modelo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "dimension",
+              "tipo": "int"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "codificar",
+              "linea": 17,
+              "argumentos": "self, textos: list[str]"
+            }
+          ]
+        },
+        {
+          "nombre": "DocumentoRepository",
+          "linea": 20,
+          "bases": [
+            "Protocol"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "crear",
+              "linea": 21,
+              "argumentos": "self, documento"
+            },
+            {
+              "nombre": "obtener",
+              "linea": 22,
+              "argumentos": "self, documento_id"
+            },
+            {
+              "nombre": "listar",
+              "linea": 23,
+              "argumentos": "self, usuario, limite=100, offset=0"
+            },
+            {
+              "nombre": "reservar",
+              "linea": 24,
+              "argumentos": "self, documento_id, estado, intento, hasta"
+            },
+            {
+              "nombre": "finalizar",
+              "linea": 25,
+              "argumentos": "self, documento_id, intento, estado, error=None, fragmentos=None, procesamiento=None"
+            },
+            {
+              "nombre": "contar",
+              "linea": 26,
+              "argumentos": "self, usuario, procesamiento"
+            },
+            {
+              "nombre": "buscar",
+              "linea": 27,
+              "argumentos": "self, usuario, vector, procesamiento, top_k, umbral"
+            },
+            {
+              "nombre": "fragmento",
+              "linea": 28,
+              "argumentos": "self, documento_id, fragmento_id"
+            }
+          ]
+        },
+        {
+          "nombre": "RecuperadorDocumentos",
+          "linea": 31,
+          "bases": [
+            "Protocol"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "recuperar",
+              "linea": 32,
+              "argumentos": "self, consulta, usuario"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/exportador_informe.py",
+      "clases": [
+        {
+          "nombre": "ExportadorInforme",
+          "linea": 6,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "exportar",
+              "linea": 8,
+              "argumentos": "self, informe: Informe, version: VersionInforme"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/generador_borrador.py",
+      "clases": [
+        {
+          "nombre": "NormaConfirmada",
+          "linea": 10,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "ContextoConfirmado",
+          "linea": 17,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "normativa_ids",
+              "tipo": "tuple[UUID, ...]"
+            },
+            {
+              "nombre": "tipo_informe_nombre",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "area_destino_nombre",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "normas",
+              "tipo": "tuple[NormaConfirmada, ...]"
+            },
+            {
+              "nombre": "fuentes",
+              "tipo": "tuple[dict, ...]"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "ResultadoBorrador",
+          "linea": 28,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "contenido",
+              "tipo": "dict[str, Any]"
+            },
+            {
+              "nombre": "modelo_ia",
+              "tipo": "str"
+            },
+            {
+              "nombre": "prompt_version",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "citas",
+              "tipo": "tuple[dict, ...]"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "GeneradorBorrador",
+          "linea": 35,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "generar",
+              "linea": 37,
+              "argumentos": "self, asunto: str, plantilla: Plantilla, datos: dict[str, Any], contexto: ContextoConfirmado, instrucciones: str"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/informe_repository.py",
+      "clases": [
+        {
+          "nombre": "InformeRepository",
+          "linea": 7,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "guardar",
+              "linea": 9,
+              "argumentos": "self, informe: Informe"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 14,
+              "argumentos": "self, informe_id: UUID"
+            },
+            {
+              "nombre": "obtener_por_solicitud",
+              "linea": 17,
+              "argumentos": "self, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/llm_port.py",
+      "clases": [
+        {
+          "nombre": "LLMPort",
+          "linea": 4,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "generar",
+              "linea": 7,
+              "argumentos": "self, prompt: str, *, sistema: str, esquema: dict"
+            },
+            {
+              "nombre": "model",
+              "linea": 16,
+              "argumentos": "self"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/perfil_repository.py",
+      "clases": [
+        {
+          "nombre": "PerfilRepository",
+          "linea": 7,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "obtener_usuario",
+              "linea": 9,
+              "argumentos": "self, usuario_id: UUID, email: str | None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/plantilla_repository.py",
+      "clases": [
+        {
+          "nombre": "PlantillaRepository",
+          "linea": 7,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "listar",
+              "linea": 9,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 12,
+              "argumentos": "self, plantilla_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/prediccion_repository.py",
+      "clases": [
+        {
+          "nombre": "PrediccionRepository",
+          "linea": 7,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "guardar",
+              "linea": 9,
+              "argumentos": "self, prediccion: PrediccionContexto"
+            },
+            {
+              "nombre": "ultima",
+              "linea": 14,
+              "argumentos": "self, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/revision_repository.py",
+      "clases": [
+        {
+          "nombre": "RevisionRepository",
+          "linea": 4,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "registrar",
+              "linea": 8,
+              "argumentos": "self, evento: dict"
+            },
+            {
+              "nombre": "eventos",
+              "linea": 11,
+              "argumentos": "self, informe_id"
+            },
+            {
+              "nombre": "listar",
+              "linea": 14,
+              "argumentos": "self, usuario, limite, desplazamiento"
+            },
+            {
+              "nombre": "auditoria",
+              "linea": 17,
+              "argumentos": "self, limite, desplazamiento, informe_id=None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/solicitud_repository.py",
+      "clases": [
+        {
+          "nombre": "SolicitudRepository",
+          "linea": 8,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "guardar",
+              "linea": 11,
+              "argumentos": "self, solicitud: Solicitud"
+            },
+            {
+              "nombre": "obtener_por_id",
+              "linea": 16,
+              "argumentos": "self, solicitud_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/ports/output/unidad_trabajo.py",
+      "clases": [
+        {
+          "nombre": "UnidadTrabajo",
+          "linea": 5,
+          "bases": [
+            "ABC"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "transaccion",
+              "linea": 7,
+              "argumentos": "self"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/actualizar_borrador.py",
+      "clases": [
+        {
+          "nombre": "ActualizarBorrador",
+          "linea": 18,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 19,
+              "argumentos": "self, servicios: ServiciosSolicitud, informes: InformeRepository"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 22,
+              "argumentos": "self, informe_id: UUID, usuario: UsuarioActual, contenido: dict, numero_version: int, titulo: str | None=None, encabezado_oficial: dict | None=None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/actualizar_solicitud.py",
+      "clases": [
+        {
+          "nombre": "ActualizarSolicitud",
+          "linea": 11,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 12,
+              "argumentos": "self, servicios: ServiciosSolicitud"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 15,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual, cambios: dict"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/consultar_catalogos.py",
+      "clases": [
+        {
+          "nombre": "ConsultarCatalogos",
+          "linea": 10,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 11,
+              "argumentos": "self, catalogos: CatalogoRepository, plantillas: PlantillaRepository"
+            },
+            {
+              "nombre": "tipos",
+              "linea": 14,
+              "argumentos": "self, usuario: UsuarioActual"
+            },
+            {
+              "nombre": "areas",
+              "linea": 18,
+              "argumentos": "self, usuario: UsuarioActual"
+            },
+            {
+              "nombre": "plantillas",
+              "linea": 22,
+              "argumentos": "self, usuario: UsuarioActual, tipo_informe_id: UUID | None=None"
+            },
+            {
+              "nombre": "campos",
+              "linea": 27,
+              "argumentos": "self, usuario: UsuarioActual, plantilla_id: UUID"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/crear_solicitud.py",
+      "clases": [
+        {
+          "nombre": "CrearSolicitud",
+          "linea": 8,
+          "bases": [
+            "SolicitudUseCase"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 10,
+              "argumentos": "self, servicios: ServiciosSolicitud"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 13,
+              "argumentos": "self, usuario: UsuarioActual, datos: DatosSolicitud"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/documentos.py",
+      "clases": [
+        {
+          "nombre": "GestionDocumentos",
+          "linea": 30,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 31,
+              "argumentos": "self, repo: DocumentoRepository, almacen: AlmacenDocumentos, extractor: ExtractorDocumentos, embeddings: Embeddings, config"
+            },
+            {
+              "nombre": "obtener",
+              "linea": 37,
+              "argumentos": "self, documento_id, usuario, escritura=False"
+            },
+            {
+              "nombre": "listar",
+              "linea": 46,
+              "argumentos": "self, usuario, limite=100, offset=0"
+            },
+            {
+              "nombre": "cargar",
+              "linea": 50,
+              "argumentos": "self, usuario, nombre, contenido, titulo, procedencia, ambito"
+            },
+            {
+              "nombre": "procesar",
+              "linea": 87,
+              "argumentos": "self, documento_id, usuario"
+            },
+            {
+              "nombre": "original",
+              "linea": 123,
+              "argumentos": "self, documento_id, usuario"
+            },
+            {
+              "nombre": "fragmento",
+              "linea": 130,
+              "argumentos": "self, documento_id, fragmento_id, usuario"
+            },
+            {
+              "nombre": "recuperar",
+              "linea": 137,
+              "argumentos": "self, consulta, usuario"
+            },
+            {
+              "nombre": "proteger",
+              "linea": 156,
+              "argumentos": "self, informe, usuario"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "segmentar",
+          "linea": 15,
+          "argumentos": "unidades, tamano, solapamiento"
+        },
+        {
+          "nombre": "vincular_citas",
+          "linea": 171,
+          "argumentos": "contenido, recuperacion, citas=()"
+        },
+        {
+          "nombre": "sustento_editado",
+          "linea": 199,
+          "argumentos": "anterior, contenido"
+        }
+      ]
+    },
+    {
+      "archivo": "src/application/use_cases/exportar_informe.py",
+      "clases": [
+        {
+          "nombre": "ExportarInforme",
+          "linea": 11,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 12,
+              "argumentos": "self, obtener_informe, exportador"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 15,
+              "argumentos": "self, informe_id, numero_version, usuario"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "version_guardada",
+          "linea": 4,
+          "argumentos": "informe, numero_version"
+        }
+      ]
+    },
+    {
+      "archivo": "src/application/use_cases/generar_borrador.py",
+      "clases": [
+        {
+          "nombre": "GenerarBorrador",
+          "linea": 29,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 30,
+              "argumentos": "self, servicios: ServiciosSolicitud, informes: InformeRepository, generador: GeneradorBorrador, *, tiempo_maximo=300.0, reloj=ahora, recuperador=None"
+            },
+            {
+              "nombre": "_vencida",
+              "linea": 37,
+              "argumentos": "self, solicitud"
+            },
+            {
+              "nombre": "_restaurar_estado",
+              "linea": 40,
+              "argumentos": "self, solicitud"
+            },
+            {
+              "nombre": "_recuperar_vencida",
+              "linea": 49,
+              "argumentos": "self, solicitud_id, usuario"
+            },
+            {
+              "nombre": "_contexto",
+              "linea": 64,
+              "argumentos": "self, solicitud, prediccion"
+            },
+            {
+              "nombre": "_reservar",
+              "linea": 81,
+              "argumentos": "self, solicitud_id, usuario"
+            },
+            {
+              "nombre": "_mismo_intento",
+              "linea": 106,
+              "argumentos": "actual, reservada"
+            },
+            {
+              "nombre": "_liberar",
+              "linea": 109,
+              "argumentos": "self, reservada, usuario"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 120,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual, instrucciones: str='', usar_documentos: bool=False"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/guardar_solicitud_completa.py",
+      "clases": [
+        {
+          "nombre": "GuardarSolicitudCompleta",
+          "linea": 9,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 10,
+              "argumentos": "self, servicios"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 13,
+              "argumentos": "self, usuario, datos, valores, solicitud_id=None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/guardar_valores_solicitud.py",
+      "clases": [
+        {
+          "nombre": "GuardarValoresSolicitud",
+          "linea": 10,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 11,
+              "argumentos": "self, servicios: ServiciosSolicitud"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 14,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual, valores: dict"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/obtener_contexto.py",
+      "clases": [
+        {
+          "nombre": "ObtenerContexto",
+          "linea": 1,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 2,
+              "argumentos": "self, servicios"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 5,
+              "argumentos": "self, solicitud_id, usuario"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/obtener_informe.py",
+      "clases": [
+        {
+          "nombre": "ObtenerInforme",
+          "linea": 10,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 11,
+              "argumentos": "self, servicios: ServiciosSolicitud, informes: InformeRepository, documentos=None, *, proteger_fuentes=True"
+            },
+            {
+              "nombre": "proteger",
+              "linea": 16,
+              "argumentos": "self, informe, usuario"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 28,
+              "argumentos": "self, informe_id: UUID, usuario: UsuarioActual"
+            },
+            {
+              "nombre": "por_solicitud",
+              "linea": 35,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/obtener_solicitud.py",
+      "clases": [
+        {
+          "nombre": "ObtenerSolicitud",
+          "linea": 6,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 8,
+              "argumentos": "self, servicios: ServiciosSolicitud"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 11,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/predecir_contexto.py",
+      "clases": [
+        {
+          "nombre": "PredecirContexto",
+          "linea": 13,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 14,
+              "argumentos": "self, servicios: ServiciosSolicitud, predictor: ContextPredictor"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 17,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/revision_informes.py",
+      "clases": [
+        {
+          "nombre": "RevisionInformes",
+          "linea": 15,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 16,
+              "argumentos": "self, servicios, informes, revisiones, obtener, exportadores"
+            },
+            {
+              "nombre": "cargar",
+              "linea": 20,
+              "argumentos": "self, informe_id, usuario, *, revisor=False, propietario=False"
+            },
+            {
+              "nombre": "registrar",
+              "linea": 40,
+              "argumentos": "self, informe, usuario, accion, estado, *, detalle=None, version=None"
+            },
+            {
+              "nombre": "vigente",
+              "linea": 47,
+              "argumentos": "informe, numero_version"
+            },
+            {
+              "nombre": "enviar",
+              "linea": 53,
+              "argumentos": "self, informe_id, usuario, numero_version"
+            },
+            {
+              "nombre": "editar",
+              "linea": 64,
+              "argumentos": "self, informe_id, usuario, numero_version, contenido"
+            },
+            {
+              "nombre": "decidir",
+              "linea": 84,
+              "argumentos": "self, informe_id, usuario, numero_version, decision, motivo, comprobaciones"
+            },
+            {
+              "nombre": "historial",
+              "linea": 107,
+              "argumentos": "self, informe_id, usuario"
+            },
+            {
+              "nombre": "listar",
+              "linea": 125,
+              "argumentos": "self, usuario, limite=25, desplazamiento=0"
+            },
+            {
+              "nombre": "auditoria",
+              "linea": 129,
+              "argumentos": "self, usuario, limite=50, desplazamiento=0, informe_id=None"
+            },
+            {
+              "nombre": "exportar",
+              "linea": 135,
+              "argumentos": "self, informe_id, numero_version, usuario, formato"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/servicios_solicitud.py",
+      "clases": [
+        {
+          "nombre": "ServiciosSolicitud",
+          "linea": 29,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "solicitudes",
+              "tipo": "SolicitudRepository"
+            },
+            {
+              "nombre": "plantillas",
+              "tipo": "PlantillaRepository"
+            },
+            {
+              "nombre": "predicciones",
+              "tipo": "PrediccionRepository"
+            },
+            {
+              "nombre": "catalogos",
+              "tipo": "CatalogoRepository"
+            },
+            {
+              "nombre": "uow",
+              "tipo": "UnidadTrabajo"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "obtener",
+              "linea": 36,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual, escritura: bool=False"
+            },
+            {
+              "nombre": "plantilla",
+              "linea": 45,
+              "argumentos": "self, plantilla_id: UUID | None"
+            },
+            {
+              "nombre": "validar_referencias",
+              "linea": 51,
+              "argumentos": "self, solicitud: Solicitud"
+            },
+            {
+              "nombre": "recalcular_estado",
+              "linea": 71,
+              "argumentos": "self, solicitud: Solicitud"
+            },
+            {
+              "nombre": "guardar",
+              "linea": 85,
+              "argumentos": "self, solicitud: Solicitud"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "autorizar",
+          "linea": 18,
+          "argumentos": "usuario: UsuarioActual, propietario: UUID | None=None, escritura: bool=False"
+        }
+      ]
+    },
+    {
+      "archivo": "src/application/use_cases/validar_prediccion.py",
+      "clases": [
+        {
+          "nombre": "ValidarPrediccion",
+          "linea": 12,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 13,
+              "argumentos": "self, servicios: ServiciosSolicitud"
+            },
+            {
+              "nombre": "ejecutar",
+              "linea": 16,
+              "argumentos": "self, solicitud_id: UUID, usuario: UsuarioActual, prediccion_id: UUID, resultado: ResultadoValidacion, tipo_informe_id: UUID | None=None, area_destino_id: UUID | None=None, normativa_ids: list[UUID] | None=None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/application/use_cases/verificar_referencias_normativas.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "verificar_referencias_normativas",
+          "linea": 4,
+          "argumentos": "catalogos, prediccion, seleccionadas"
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/entities/catalogo.py",
+      "clases": [
+        {
+          "nombre": "TipoInforme",
+          "linea": 7,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "nombre",
+              "tipo": "str"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "AreaMunicipal",
+          "linea": 15,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "nombre",
+              "tipo": "str"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "area_padre_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "descripcion",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "Normativa",
+          "linea": 25,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "codigo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "numero",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "fecha_publicacion",
+              "tipo": "date | None"
+            },
+            {
+              "nombre": "fecha_inicio_vigencia",
+              "tipo": "date | None"
+            },
+            {
+              "nombre": "fecha_fin_vigencia",
+              "tipo": "date | None"
+            },
+            {
+              "nombre": "url_fuente",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "descripcion",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/entities/correspondencia_normativa.py",
+      "clases": [
+        {
+          "nombre": "CorrespondenciaNormativa",
+          "linea": 21,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "etiqueta",
+              "tipo": "str"
+            },
+            {
+              "nombre": "normativa",
+              "tipo": "Normativa"
+            },
+            {
+              "nombre": "estado_verificacion",
+              "tipo": "str"
+            },
+            {
+              "nombre": "fuente_url",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "fuente_vigencia_url",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "verificado_en",
+              "tipo": "date | None"
+            },
+            {
+              "nombre": "ambito",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "vigencia",
+              "tipo": "str"
+            },
+            {
+              "nombre": "justificacion",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "activa",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "elegible",
+              "linea": 33,
+              "argumentos": "self, hoy=None"
+            },
+            {
+              "nombre": "evidencia",
+              "linea": 46,
+              "argumentos": "self"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "fuente_oficial",
+          "linea": 9,
+          "argumentos": "url"
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/entities/documento.py",
+      "clases": [
+        {
+          "nombre": "Documento",
+          "linea": 11,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "nombre_original",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tamano",
+              "tipo": "int"
+            },
+            {
+              "nombre": "sha256",
+              "tipo": "str"
+            },
+            {
+              "nombre": "usuario_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "procedencia",
+              "tipo": "str"
+            },
+            {
+              "nombre": "ambito",
+              "tipo": "str"
+            },
+            {
+              "nombre": "area_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "ubicacion",
+              "tipo": "str"
+            },
+            {
+              "nombre": "estado",
+              "tipo": "str"
+            },
+            {
+              "nombre": "error",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "intento",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "reserva_hasta",
+              "tipo": "datetime | None"
+            },
+            {
+              "nombre": "procesamiento",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "fragmentos",
+              "tipo": "int"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "puede_leer",
+          "linea": 33,
+          "argumentos": "documento, usuario"
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/entities/informe.py",
+      "clases": [
+        {
+          "nombre": "VersionInforme",
+          "linea": 12,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "informe_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "numero_version",
+              "tipo": "int"
+            },
+            {
+              "nombre": "contenido",
+              "tipo": "dict[str, Any]"
+            },
+            {
+              "nombre": "origen",
+              "tipo": "OrigenVersion"
+            },
+            {
+              "nombre": "creado_por",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "modelo_ia",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "prompt_version",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "resumen_cambios",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "secciones_salida",
+              "tipo": "list[SeccionSalida] | None"
+            },
+            {
+              "nombre": "sustento",
+              "tipo": "dict | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "Informe",
+          "linea": 31,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "solicitud_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "creado_por",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "estado",
+              "tipo": "EstadoInforme"
+            },
+            {
+              "nombre": "versiones",
+              "tipo": "list[VersionInforme]"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/entities/plantilla.py",
+      "clases": [
+        {
+          "nombre": "CampoPlantilla",
+          "linea": 10,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "clave",
+              "tipo": "str"
+            },
+            {
+              "nombre": "etiqueta",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo_dato",
+              "tipo": "TipoDato"
+            },
+            {
+              "nombre": "obligatorio",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "orden",
+              "tipo": "int"
+            },
+            {
+              "nombre": "configuracion",
+              "tipo": "dict[str, Any]"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "Plantilla",
+          "linea": 24,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "nombre",
+              "tipo": "str"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "area_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "version",
+              "tipo": "int"
+            },
+            {
+              "nombre": "activa",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "campos",
+              "tipo": "list[CampoPlantilla]"
+            },
+            {
+              "nombre": "descripcion",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "secciones_salida",
+              "tipo": "list[SeccionSalida] | None"
+            },
+            {
+              "nombre": "formato_documento",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/entities/prediccion_contexto.py",
+      "clases": [
+        {
+          "nombre": "NormativaPredicha",
+          "linea": 11,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "normativa_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "confianza",
+              "tipo": "float | None"
+            },
+            {
+              "nombre": "orden",
+              "tipo": "int | None"
+            },
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "aceptada",
+              "tipo": "bool | None"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "PrediccionContexto",
+          "linea": 20,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "solicitud_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "tipo_informe_predicho_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_destino_predicha_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "confianza_tipo",
+              "tipo": "float | None"
+            },
+            {
+              "nombre": "confianza_area",
+              "tipo": "float | None"
+            },
+            {
+              "nombre": "modelo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "version_modelo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "parametros",
+              "tipo": "dict[str, Any]"
+            },
+            {
+              "nombre": "resultado_validacion",
+              "tipo": "ResultadoValidacion"
+            },
+            {
+              "nombre": "validado_por",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "validado_at",
+              "tipo": "datetime | None"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "normativas",
+              "tipo": "list[NormativaPredicha]"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/entities/solicitud.py",
+      "clases": [
+        {
+          "nombre": "SolicitudValor",
+          "linea": 14,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "solicitud_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "campo_plantilla_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "valor",
+              "tipo": "Any"
+            },
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            }
+          ],
+          "metodos": []
+        },
+        {
+          "nombre": "Solicitud",
+          "linea": 24,
+          "bases": [],
+          "decoradores": [
+            "dataclass"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "usuario_id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "asunto",
+              "tipo": "str"
+            },
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "tipo_informe_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "plantilla_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_origen_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "area_destino_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "estado",
+              "tipo": "EstadoSolicitud"
+            },
+            {
+              "nombre": "valores",
+              "tipo": "list[SolicitudValor]"
+            },
+            {
+              "nombre": "created_at",
+              "tipo": "datetime"
+            },
+            {
+              "nombre": "updated_at",
+              "tipo": "datetime"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "ahora",
+          "linea": 9,
+          "argumentos": ""
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/entities/usuario_actual.py",
+      "clases": [
+        {
+          "nombre": "UsuarioActual",
+          "linea": 8,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "id",
+              "tipo": "UUID"
+            },
+            {
+              "nombre": "roles",
+              "tipo": "frozenset[Rol]"
+            },
+            {
+              "nombre": "area_id",
+              "tipo": "UUID | None"
+            },
+            {
+              "nombre": "activo",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "email",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "nombres",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "apellidos",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "cargo",
+              "tipo": "str | None"
+            },
+            {
+              "nombre": "area_nombre",
+              "tipo": "str | None"
+            }
+          ],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/services/errores.py",
+      "clases": [
+        {
+          "nombre": "ErrorDominio",
+          "linea": 1,
+          "bases": [
+            "Exception"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "DatosInvalidos",
+          "linea": 5,
+          "bases": [
+            "ErrorDominio"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "NoAutorizado",
+          "linea": 9,
+          "bases": [
+            "ErrorDominio"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "NoEncontrado",
+          "linea": 13,
+          "bases": [
+            "ErrorDominio"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "ConflictoEstado",
+          "linea": 17,
+          "bases": [
+            "ErrorDominio"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "ErrorServicio",
+          "linea": 21,
+          "bases": [
+            "ErrorDominio"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 22,
+              "argumentos": "self, codigo, mensaje"
+            }
+          ]
+        },
+        {
+          "nombre": "ErrorGeneracion",
+          "linea": 27,
+          "bases": [
+            "ErrorDominio"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 37,
+              "argumentos": "self, mensaje='No se pudo generar el borrador', *, codigo='GENERACION_FALLIDA'"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/services/informe_service.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "validar_contenido",
+          "linea": 7,
+          "argumentos": "contenido: dict, secciones: list[SeccionSalida] | None=None"
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/services/respaldo.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "secciones_revisables",
+          "linea": 5,
+          "argumentos": "version"
+        },
+        {
+          "nombre": "advertencias_respaldo",
+          "linea": 14,
+          "argumentos": "version"
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/services/solicitud_service.py",
+      "clases": [
+        {
+          "nombre": "SolicitudService",
+          "linea": 12,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "validar",
+              "linea": 15,
+              "argumentos": "solicitud: Solicitud"
+            },
+            {
+              "nombre": "editable",
+              "linea": 20,
+              "argumentos": "solicitud: Solicitud"
+            },
+            {
+              "nombre": "validar_valor",
+              "linea": 25,
+              "argumentos": "campo: CampoPlantilla, valor: Any"
+            },
+            {
+              "nombre": "validar_obligatorios",
+              "linea": 49,
+              "argumentos": "solicitud: Solicitud, plantilla: Plantilla"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/value_objects/encabezado_documento.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "texto_publico",
+          "linea": 15,
+          "argumentos": "valor"
+        },
+        {
+          "nombre": "datos_oficiales",
+          "linea": 20,
+          "argumentos": "encabezado"
+        },
+        {
+          "nombre": "campos_oficiales",
+          "linea": 28,
+          "argumentos": "encabezado"
+        },
+        {
+          "nombre": "crear_encabezado",
+          "linea": 32,
+          "argumentos": "asunto, plantilla, contexto, area_origen"
+        },
+        {
+          "nombre": "actualizar_datos_oficiales",
+          "linea": 49,
+          "argumentos": "encabezado, cambios"
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/value_objects/estado_solicitud.py",
+      "clases": [
+        {
+          "nombre": "EstadoSolicitud",
+          "linea": 4,
+          "bases": [
+            "str",
+            "Enum"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/value_objects/estados.py",
+      "clases": [
+        {
+          "nombre": "EstadoInforme",
+          "linea": 4,
+          "bases": [
+            "str",
+            "Enum"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "ResultadoValidacion",
+          "linea": 13,
+          "bases": [
+            "str",
+            "Enum"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "OrigenVersion",
+          "linea": 20,
+          "bases": [
+            "str",
+            "Enum"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "TipoDato",
+          "linea": 27,
+          "bases": [
+            "str",
+            "Enum"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        },
+        {
+          "nombre": "Rol",
+          "linea": 36,
+          "bases": [
+            "str",
+            "Enum"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": []
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/domain/value_objects/estructura_piloto.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "estructura_piloto",
+          "linea": 5,
+          "argumentos": ""
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/value_objects/fuentes_piloto.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "campos_fuente_piloto",
+          "linea": 15,
+          "argumentos": "plantilla_id"
+        }
+      ]
+    },
+    {
+      "archivo": "src/domain/value_objects/seccion_salida.py",
+      "clases": [
+        {
+          "nombre": "SeccionSalida",
+          "linea": 12,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "clave",
+              "tipo": "str"
+            },
+            {
+              "nombre": "titulo",
+              "tipo": "str"
+            },
+            {
+              "nombre": "obligatoria",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "__post_init__",
+              "linea": 17,
+              "argumentos": "self"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "estructura_legacy",
+          "linea": 27,
+          "argumentos": ""
+        },
+        {
+          "nombre": "secciones_efectivas",
+          "linea": 34,
+          "argumentos": "secciones: list[SeccionSalida] | None"
+        },
+        {
+          "nombre": "secciones_desde_json",
+          "linea": 46,
+          "argumentos": "valor"
+        },
+        {
+          "nombre": "secciones_a_json",
+          "linea": 58,
+          "argumentos": "secciones: list[SeccionSalida] | None"
+        }
+      ]
+    },
+    {
+      "archivo": "src/infrastructure/auth/mock.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "usuarios_demo",
+          "linea": 7,
+          "argumentos": ""
+        }
+      ]
+    },
+    {
+      "archivo": "src/infrastructure/auth/supabase.py",
+      "clases": [
+        {
+          "nombre": "AuthError",
+          "linea": 17,
+          "bases": [
+            "Exception"
+          ],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 18,
+              "argumentos": "self, status=401, detail='Credenciales o sesión no válidas'"
+            }
+          ]
+        },
+        {
+          "nombre": "SupabaseAuthSettings",
+          "linea": 24,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "url",
+              "tipo": "str"
+            },
+            {
+              "nombre": "publishable_key",
+              "tipo": "str"
+            },
+            {
+              "nombre": "cookie_secure",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "allowed_origins",
+              "tipo": "tuple[str, ...]"
+            },
+            {
+              "nombre": "cookie_samesite",
+              "tipo": "str"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "__post_init__",
+              "linea": 31,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "from_env",
+              "linea": 38,
+              "argumentos": "cls"
+            }
+          ]
+        },
+        {
+          "nombre": "SupabaseAuth",
+          "linea": 65,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 66,
+              "argumentos": "self, settings, transport=None"
+            },
+            {
+              "nombre": "_request",
+              "linea": 69,
+              "argumentos": "self, method, path, *, token=None, body=None, params=None"
+            },
+            {
+              "nombre": "verificar",
+              "linea": 92,
+              "argumentos": "self, token"
+            },
+            {
+              "nombre": "login",
+              "linea": 105,
+              "argumentos": "self, email, password"
+            },
+            {
+              "nombre": "refresh",
+              "linea": 109,
+              "argumentos": "self, token"
+            },
+            {
+              "nombre": "logout",
+              "linea": 115,
+              "argumentos": "self, token"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/infrastructure/configuration/container.py",
+      "clases": [
+        {
+          "nombre": "Container",
+          "linea": 30,
+          "bases": [],
+          "decoradores": [],
+          "campos_anotados": [],
+          "metodos": [
+            {
+              "nombre": "__init__",
+              "linea": 33,
+              "argumentos": "self, settings=None, *, database_settings=None, predictor=None, generador=None, documentos=None"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/infrastructure/configuration/database.py",
+      "clases": [
+        {
+          "nombre": "DatabaseSettings",
+          "linea": 29,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "host",
+              "tipo": "str"
+            },
+            {
+              "nombre": "port",
+              "tipo": "int"
+            },
+            {
+              "nombre": "dbname",
+              "tipo": "str"
+            },
+            {
+              "nombre": "user",
+              "tipo": "str"
+            },
+            {
+              "nombre": "password",
+              "tipo": "str"
+            },
+            {
+              "nombre": "sslmode",
+              "tipo": "str"
+            },
+            {
+              "nombre": "connect_timeout",
+              "tipo": "int"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "from_env",
+              "linea": 39,
+              "argumentos": "cls"
+            },
+            {
+              "nombre": "connect",
+              "linea": 63,
+              "argumentos": "self, **kwargs"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": [
+        {
+          "nombre": "environment",
+          "linea": 14,
+          "argumentos": ""
+        },
+        {
+          "nombre": "database_error",
+          "linea": 72,
+          "argumentos": "error"
+        }
+      ]
+    },
+    {
+      "archivo": "src/infrastructure/configuration/rag.py",
+      "clases": [
+        {
+          "nombre": "RagSettings",
+          "linea": 5,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "enabled",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "max_bytes",
+              "tipo": "int"
+            },
+            {
+              "nombre": "formats",
+              "tipo": "tuple[str, ...]"
+            },
+            {
+              "nombre": "chunk_size",
+              "tipo": "int"
+            },
+            {
+              "nombre": "chunk_overlap",
+              "tipo": "int"
+            },
+            {
+              "nombre": "max_chunks",
+              "tipo": "int"
+            },
+            {
+              "nombre": "top_k",
+              "tipo": "int"
+            },
+            {
+              "nombre": "threshold",
+              "tipo": "float"
+            },
+            {
+              "nombre": "context_chars",
+              "tipo": "int"
+            },
+            {
+              "nombre": "lease_seconds",
+              "tipo": "int"
+            },
+            {
+              "nombre": "processing_revision",
+              "tipo": "str"
+            },
+            {
+              "nombre": "embedding_model",
+              "tipo": "str"
+            },
+            {
+              "nombre": "embedding_dimension",
+              "tipo": "int"
+            },
+            {
+              "nombre": "embedding_timeout",
+              "tipo": "int"
+            },
+            {
+              "nombre": "storage_bucket",
+              "tipo": "str"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "__post_init__",
+              "linea": 22,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "from_values",
+              "linea": 40,
+              "argumentos": "cls, values"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/infrastructure/configuration/settings.py",
+      "clases": [
+        {
+          "nombre": "Settings",
+          "linea": 9,
+          "bases": [],
+          "decoradores": [
+            "dataclass(frozen=True)"
+          ],
+          "campos_anotados": [
+            {
+              "nombre": "auth_mode",
+              "tipo": "str"
+            },
+            {
+              "nombre": "cors_origins",
+              "tipo": "tuple[str, ...]"
+            },
+            {
+              "nombre": "persistence_mode",
+              "tipo": "str"
+            },
+            {
+              "nombre": "ollama_base_url",
+              "tipo": "str"
+            },
+            {
+              "nombre": "ollama_model",
+              "tipo": "str"
+            },
+            {
+              "nombre": "ollama_timeout_seconds",
+              "tipo": "float"
+            },
+            {
+              "nombre": "rag",
+              "tipo": "RagSettings"
+            },
+            {
+              "nombre": "pmv3_enabled",
+              "tipo": "bool"
+            },
+            {
+              "nombre": "api_docs_enabled",
+              "tipo": "bool"
+            }
+          ],
+          "metodos": [
+            {
+              "nombre": "__post_init__",
+              "linea": 20,
+              "argumentos": "self"
+            },
+            {
+              "nombre": "from_env",
+              "linea": 41,
+              "argumentos": "cls"
+            }
+          ]
+        }
+      ],
+      "funciones_modulo": []
+    },
+    {
+      "archivo": "src/infrastructure/dependencies.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "get_container",
+          "linea": 13,
+          "argumentos": "request: Request"
+        },
+        {
+          "nombre": "get_current_user",
+          "linea": 17,
+          "argumentos": "request: Request, credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)]"
+        }
+      ]
+    },
+    {
+      "archivo": "src/infrastructure/diagnostico.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "preparacion",
+          "linea": 6,
+          "argumentos": "settings, container"
+        }
+      ]
+    },
+    {
+      "archivo": "src/main.py",
+      "clases": [],
+      "funciones_modulo": [
+        {
+          "nombre": "health",
+          "linea": 24,
+          "argumentos": ""
+        },
+        {
+          "nombre": "create_app",
+          "linea": 28,
+          "argumentos": "settings: Settings | None=None, container: Container | None=None, *, auth=None"
+        }
+      ]
+    }
+  ]
+}

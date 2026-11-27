@@ -1,0 +1,104 @@
+classDiagram
+  class Solicitud {
+    UUID id
+    UUID usuario_id
+    str asunto
+    EstadoSolicitud estado
+  }
+  class SolicitudValor {
+    UUID id
+    UUID campo_plantilla_id
+    Any valor
+  }
+  class Plantilla {
+    UUID id
+    UUID tipo_informe_id
+    int version
+    bool activa
+  }
+  class CampoPlantilla {
+    UUID id
+    str clave
+    TipoDato tipo_dato
+    bool obligatorio
+  }
+  class SeccionSalida {
+    str clave
+    str titulo
+    bool obligatoria
+  }
+  class Informe {
+    UUID id
+    UUID solicitud_id
+    EstadoInforme estado
+  }
+  class VersionInforme {
+    UUID id
+    int numero_version
+    dict contenido
+    OrigenVersion origen
+    dict sustento
+  }
+  class PrediccionContexto {
+    UUID id
+    UUID solicitud_id
+    ResultadoValidacion resultado_validacion
+  }
+  class NormativaPredicha {
+    UUID id
+    UUID normativa_id
+    bool aceptada
+  }
+  class Documento {
+    UUID id
+    UUID usuario_id
+    str ambito
+    str estado
+    str sha256
+    int fragmentos
+  }
+  class UsuarioActual {
+    UUID id
+    UUID area_id
+    bool activo
+  }
+  class TipoInforme {
+    UUID id
+    str codigo
+  }
+  class AreaMunicipal {
+    UUID id
+    UUID area_padre_id
+  }
+  class Normativa {
+    UUID id
+    str titulo
+  }
+  class CorrespondenciaNormativa {
+    str etiqueta
+    elegible()
+    evidencia()
+  }
+  Solicitud "1" *-- "0..*" SolicitudValor : valores
+  Plantilla "1" *-- "0..*" CampoPlantilla : campos
+  Plantilla "1" o-- "0..*" SeccionSalida : estructura opcional
+  Informe "1" *-- "0..*" VersionInforme : versiones
+  VersionInforme "1" o-- "0..*" SeccionSalida : snapshot opcional
+  PrediccionContexto "1" *-- "0..*" NormativaPredicha : propuestas
+  Solicitud "1" --> "0..*" PrediccionContexto : solicitud_id
+  Solicitud "1" --> "0..1" Informe : solicitud_id y contrato de generacion
+  Solicitud --> Plantilla : plantilla_id opcional
+  Solicitud --> TipoInforme : tipo_informe_id opcional
+  Solicitud --> AreaMunicipal : origen y destino por UUID
+  SolicitudValor --> CampoPlantilla : campo_plantilla_id
+  Plantilla --> TipoInforme : tipo_informe_id
+  Plantilla --> AreaMunicipal : area_id opcional
+  Informe --> Plantilla : plantilla_id
+  Solicitud --> UsuarioActual : usuario_id de identidad
+  Documento --> UsuarioActual : usuario_id de identidad
+  NormativaPredicha --> Normativa : normativa_id
+  CorrespondenciaNormativa --> Normativa : normativa
+  note for Solicitud "Relaciones por campos del codigo; no representa un esquema SQL completo"
+  note for Informe "La lista inicia vacia; generar publica la primera version"
+  note for Documento "Fragmentos son filas/diccionarios; no hay clase Fragmento"
+  note for SeccionSalida "Objeto de valor congelado; None aplica estructura legacy"

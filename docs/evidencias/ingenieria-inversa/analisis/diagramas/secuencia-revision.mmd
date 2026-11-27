@@ -1,0 +1,28 @@
+sequenceDiagram
+  actor Persona as Revisor del area de destino
+  participant API as revision_controller
+  participant Caso as RevisionInformes
+  participant UoW as PostgresUnidadTrabajo
+  participant Informes as InformeAuditado
+  participant Repo as InformeRepositoryPostgres
+  participant Eventos as RevisionPostgres
+  Persona->>API: decidir numero_version, decision, motivo, comprobaciones
+  API->>Caso: decidir(...)
+  Caso->>UoW: transaccion()
+  Caso->>Informes: obtener_por_id(informe_id)
+  Informes->>Repo: obtener_por_id(informe_id)
+  Repo-->>Caso: informe con bloqueo de fila en UoW activa
+  Note over Caso: autor distinto, area de destino, version vigente y EN_REVISION
+  Note over Caso: APROBADO exige comprobaciones y fuentes accesibles
+  Caso->>Informes: guardar(informe con decision)
+  Informes->>Repo: guardar(informe)
+  Note over Informes: no hay nueva version en una decision; no duplica CREAR_VERSION
+  Caso->>Eventos: registrar(evento de decision)
+  alt todas las operaciones validas
+    UoW-->>Caso: commit conjunto
+    Caso-->>API: historial autorizado y fuentes protegidas
+    API-->>Persona: resultado
+  else conflicto o fallo dentro de transaccion
+    UoW-->>Caso: rollback conjunto
+    Caso-->>API: error de dominio o persistencia sanitizado
+  end

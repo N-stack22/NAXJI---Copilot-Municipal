@@ -1,5 +1,9 @@
 # Dictamen final del cierre académico
 
+**Dictamen documental actualizado 27/11/2026, main 4f4d294:** los doce prompts de ingeniería inversa están completos en el alcance acordado. Se amplían [Prompt 8: dominio](evidencias/ingenieria-inversa/analisis/dominio.md), [UML](evidencias/ingenieria-inversa/analisis/diagramas_dominio.md) y [Prompt 12: consolidado](ingenieria_inversa.md); la [matriz final](INDICE_12_ENTREGABLES.md) contiene requerimiento, entregable, evidencia, estado y observaciones. No quedan observaciones documentales abiertas de esos prompts; los pendientes operativos/institucionales externos conservan su límite. C-06 sigue cerrada con Understand real y sus 224 advertencias declaradas.
+
+Se conservan 375 backend aprobadas/21 optativas omitidas, 55 frontend aprobadas, 750 respuestas esperadas/0 errores inesperados, ZAP corregido y [CI aprobada del main de referencia](https://github.com/N-stack22/NAXJI---Copilot-Municipal/actions/runs/46023410611). DiezHU completas académicamente; siete competencias ICACIT evaluadas con evidencia. Esta edición es exclusivamente documental: sin cambios funcionales, modelos, RAG, arquitectura, plantillas, esquema ni informe académico final actualizado por separado. Los resultados de la tabla siguiente mantienen sus cortes; no se suman repeticiones ni se inventa nueva aceptación institucional.
+
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.
 
 | Área | Dictamen y evidencia |

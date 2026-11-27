@@ -1,5 +1,9 @@
 # Alcance académico vigente
 
+**Cierre definitivo documental 27/11/2026, referencia main 4f4d294.** Los tres PMV y las diezHU están completos dentro del alcance académico acordado. El usuario informa que el informe académico ya fue actualizado por separado; no se modifica ni se revisa aquí su nueva versión y no se emite otra calificación. Las propuestas de corrección de páginas, rúbricas y puntajes del antecedente no se presentan como pendientes vigentes de producto o del informe actualizado.
+
+Se completan [dominio y UML](evidencias/ingenieria-inversa/analisis/dominio.md), [matriz de doce prompts](INDICE_12_ENTREGABLES.md) e [informe integrado](ingenieria_inversa.md). Understand está ejecutado yC-06 cerrada; Qdrant, TypeScript y Event-Driven se distinguen como alternativas evaluadas. [Correcciones documentales y límites](evidencias/ingenieria-inversa/cierre-documental-20261127/README.md). Las 21 pruebas optativas siguen omitidas; validación institucional externa fuera del alcance. Los registros históricos no se borran ni recalifican.
+
 Actualización27/11/2026: se completa **C-06**, ejecución real de SciTools Understand8.1.1269 sobre main67d9db2. [Evidencia íntegra, métricas, diagramas y límites](evidencias/understand/README.md). Se actualizan los informes técnicos FURPS+,ICACIT,ingeniería inversa y cierre; **no se modifica el informe académico final ni se recalifican rúbricas**. Los diagnósticos históricos que indicaban ausencia de Understand quedan superados únicamente en ese punto; no se inventan encuestas,actas,ahorro ni validación institucional.
 
 Base `main` **7359a67**. Los **3 PMV y 10 HU están aceptados para el cierre académico por instrucción del usuario**. La validación institucional externa queda fuera del alcance. Las pruebas omitidas conservan ese estado. No se modifican pilotos, predictor, RAG, HU-IA-04, esquema ni documentos académicos originales.

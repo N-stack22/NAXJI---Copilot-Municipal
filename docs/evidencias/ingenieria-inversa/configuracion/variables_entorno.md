@@ -1,3 +1,29 @@
+# Prompt 5 — Variables y precedencia verificadas
+
+Main **4f4d294**, corte 27/11/2026. No se leen valores privados. [environment()](../../../../src/infrastructure/configuration/database.py) combina `.env` < `.env.local` < variables del proceso; desactiva interpolación de dotenv yno reescribe archivos. [Settings.from_env](../../../../src/infrastructure/configuration/settings.py), [DatabaseSettings.from_env](../../../../src/infrastructure/configuration/database.py), [RagSettings.from_values](../../../../src/infrastructure/configuration/rag.py) y [SupabaseAuthSettings.from_env](../../../../src/infrastructure/auth/supabase.py) son las fuentes efectivas.
+
+| Familia | Nombres reales y función | Condición/valor del código |
+| ---| ---| ---|
+| Persistencia/identidad | `NAXJI_PERSISTENCE_MODE`, `NAXJI_AUTH_MODE` | memory/postgres; mock, disabled, supabase. SupabaseAuth requierePG. |
+| DB privada | `NAXJI_DB_HOST`, `PORT`, `NAME`, `USER`, `PASSWORD`, `SSLMODE`, `CONNECT_TIMEOUT`, cada sufijo con prefijo `NAXJI_DB_` | Seis primeras obligatorias en modoPG; TLS require/verify-ca/verify-full; timeout 10 por defecto. No publicar contraseña ni URI con credenciales. |
+| Auth | `NAXJI_SUPABASE_URL`, `NAXJI_SUPABASE_PUBLISHABLE_KEY`, `NAXJI_AUTH_ALLOWED_ORIGINS`, `NAXJI_AUTH_COOKIE_SECURE`, `NAXJI_AUTH_COOKIE_SAMESITE` | URLHTTPS, clave publicable, orígenes explícitos; Secure true y SameSite strict por defecto; none requiereSecure. |
+| API | `NAXJI_CORS_ORIGINS`, `NAXJI_API_DOCS_ENABLED` | Sin comodines; docs true en Settings y false en Docker runtime preparado. No equivalen a disponibilidad del servicio. |
+| Generación | `NAXJI_OLLAMA_BASE_URL`, `NAXJI_OLLAMA_MODEL`, `NAXJI_OLLAMA_TIMEOUT_SECONDS` | localhost 11434 de desarrollo, qwen2.5:7b, 300 segundos. |
+| Documentos/Storage | `NAXJI_RAG_ENABLED`, `NAXJI_STORAGE_BUCKET`, `NAXJI_STORAGE_SERVICE_KEY`, `NAXJI_DOCUMENT_FORMATS`, `NAXJI_DOCUMENT_MAX_BYTES` | false, naxji-documentos, clave privada solo servidor, pdf/docx/txt,10485760 bytes. Requiere preparación autorizada del destino. |
+| Embeddings | `NAXJI_EMBEDDING_MODEL`, `NAXJI_EMBEDDING_DIMENSION`, `NAXJI_EMBEDDING_TIMEOUT_SECONDS` | bge-m3:567m, 1024,120 segundos. Cambiar dimensión requiere otra migración, no hacerlo en este cierre. |
+| Recuperación | `NAXJI_RAG_CHUNK_SIZE`, `CHUNK_OVERLAP`, `MAX_CHUNKS`, `TOP_K`, `MIN_SIMILARITY`, `CONTEXT_CHARS`, `LEASE_SECONDS`, `PROCESSING_REVISION`, cada sufijo con prefijo `NAXJI_RAG_` | Defaults 1200,180,2000,6, 0.5,8000,1800, "1". Se validan rangos; no se presenta el umbral como calibración institucional. |
+| Revisión | `NAXJI_PMV3_ENABLED` | false de fábrica; con activación requiere contratos y tabla de eventos preparados. |
+| Frontend | `VITE_API_URL` | Pública al compilar,`/api` por defecto en [api.js](../../../../src/adapters/in/web/services/api.js)/[session.js](../../../../src/adapters/in/web/services/session.js). Nunca clavesprivadas `VITE_*`. |
+| Contenedor | `PORT`, `FORWARDED_ALLOW_IPS` | [deploy/start.py](../../../../deploy/start.py):8000 y 127.0.0.1 por defecto; PORT 1–65535. |
+
+QA: `NAXJI_TEST_PG_PORT`, `NAXJI_RUN_DB_TESTS`, `NAXJI_RUN_AUTH_TESTS`, `NAXJI_RUN_OLLAMA_TESTS`, `NAXJI_RUN_PMV2_AI_TESTS` y salidas `NAXJI_*_EVIDENCE_DIR` controlan ensayos y no constituyen secretos del frontend. Las 21 optativas se conservan omitidas enCI; no se habilitan contra servicios compartidos para esta documentación.
+
+La tabla detallada anterior se conserva abajo como antecedente; se enlazan [ejemplos públicos](../../../../.env.example), [guía](../../../GUIA_CIERRE_Y_DEMO.md) y [preflight offline](../../../../deploy/preflight.py). Los defaults del código son ejemplos técnicos, no valores efectivos extraídos de un despliegue.
+
+## Antecedente literal conservado de 4f4d294
+
+Texto heredado, anterior a esta revisión documental del 27/11/2026. Las referencias a Understand bloqueado, ausencia de ZAP o falta de validación Linux describen aquel diagnóstico; quedan superadas por las evidencias vigentes enlazadas arriba. Los logs y mediciones originales no se alteran.
+
 > Actualización de cierre: los 3 PMV/10 HU están aceptados académicamente por instrucción del usuario. Este archivo conserva el corte técnico anterior. La evidencia vigente de guardias completas, ZAP real, CI y entrega Linux/Docker está en `docs/RESULTADOS_CIERRE.md`, `docs/MATRIZ_OBSERVACIONES_CIERRE.md` y `docs/INDICE_12_ENTREGABLES.md`. Understand continúa bloqueado; las omitidas no son aprobadas.
 
 # Variables sin secretos

@@ -1,0 +1,17 @@
+stateDiagram-v2
+  [*] --> BORRADOR : GenerarBorrador crea version IA
+  BORRADOR --> BORRADOR : ActualizarBorrador agrega version USUARIO
+  BORRADOR --> EN_REVISION : RevisionInformes.enviar
+  EN_REVISION --> EN_REVISION : editar agrega version REVISION
+  EN_REVISION --> APROBADO : decidir con comprobaciones humanas y fuentes accesibles
+  EN_REVISION --> RECHAZADO : decidir con motivo
+  APROBADO --> APROBADO : exportar version aprobada y registrar evento
+  note right of EN_REVISION
+    Revisor del area de destino
+    Distinto del creador y propietario
+    Control de version vigente
+  end note
+  note right of RECHAZADO
+    No hay reapertura implementada
+    OBSERVADO y ARCHIVADO solo constan en el enum
+  end note

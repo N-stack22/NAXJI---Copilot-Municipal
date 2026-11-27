@@ -1,0 +1,17 @@
+stateDiagram-v2
+  [*] --> SUBIENDO : cargar archivo autorizado
+  SUBIENDO --> CARGADO : almacen confirma y finaliza intento
+  SUBIENDO --> ERROR_CARGA : ErrorServicio del almacen
+  ERROR_CARGA --> SUBIENDO : reenviar mismo archivo
+  SUBIENDO --> SUBIENDO : reintento tras vencer reserva
+  CARGADO --> PROCESANDO : procesar
+  ERROR_PROCESAMIENTO --> PROCESANDO : reintentar
+  PROCESANDO --> INDEXADO : finalizar con fragmentos en transaccion
+  PROCESANDO --> ERROR_PROCESAMIENTO : fallo de extraccion o embeddings
+  INDEXADO --> INDEXADO : misma revision de procesamiento
+  INDEXADO --> PROCESANDO : otra revision de procesamiento
+  PROCESANDO --> PROCESANDO : nuevo intento tras vencer reserva
+  note right of INDEXADO
+    No hay clase EstadoDocumento
+    Estado es una cadena
+  end note
