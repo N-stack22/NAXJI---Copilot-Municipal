@@ -1,0 +1,131 @@
+{
+  "fecha_local": "2026-11-26",
+  "zona": "America/Lima",
+  "rama": "feature/finalizacion-pmv-trazable",
+  "commit": "2679b0e",
+  "origen": "http://127.0.0.1:5173",
+  "alcance": "Capturas reales de la interfaz local de NAXJI, con datos ficticios. Demostración en memoria: autenticación, almacenamiento, predictor, generador y embeddings de prueba. Las aprobaciones y rechazos son simulaciones del flujo de software. No se conectó producción ni se publicaron cambios.",
+  "formato": "JPEG original de la herramienta de captura; sin retoque ni montaje",
+  "capturas": [
+    {
+      "pmv": "PMV1",
+      "historia": "HU-001",
+      "titulo": "Iniciar sesión",
+      "descripcion": "Pantalla de acceso con identidad de demostración.",
+      "archivo": "PMV1/PMV1-HU-001-iniciar-sesion.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "1011c2f42b1e8819bd0330b7af95faad2567ee779db7333c96395754ef096b1f"
+    },
+    {
+      "pmv": "PMV1",
+      "historia": "HU-002",
+      "titulo": "Seleccionar plantilla y registrar datos",
+      "descripcion": "Plantilla de inspección, estructura de salida, área y datos obligatorios.",
+      "archivo": "PMV1/PMV1-HU-002-seleccionar-plantilla-y-datos.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "69df6104967fd758d3bff6e56595ee96f9bd58dc96f1ce66431483eaf29cc97c"
+    },
+    {
+      "pmv": "PMV1",
+      "historia": "HU-IA-01",
+      "titulo": "Generar borrador asistido",
+      "descripcion": "Versión guardada con encabezado y contenido producido por el generador de demostración.",
+      "archivo": "PMV1/PMV1-HU-IA-01-generar-borrador.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "af1033c4fe6026233cd2000cb7d3933840b340e7d8dd1f2057b1958e8bafa556"
+    },
+    {
+      "pmv": "PMV2",
+      "historia": "HU-003",
+      "titulo": "Cargar y procesar documentos",
+      "descripcion": "Formulario documental y fuente ficticia INDEXADA con un fragmento. La fuente inicial se preparó mediante los casos de uso del backend.",
+      "archivo": "PMV2/PMV2-HU-003-cargar-y-procesar-documento.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "1a5d8834433756028c9644c573d7bd198228ce5e912c55313a26437d19d7ed40"
+    },
+    {
+      "pmv": "PMV2",
+      "historia": "HU-IA-02",
+      "titulo": "Recuperar fuentes autorizadas",
+      "descripcion": "Fuente recuperada, localización, similitud y texto del fragmento. La similitud procede de embeddings de prueba, no mide calidad semántica real.",
+      "archivo": "PMV2/PMV2-HU-IA-02-recuperar-fuentes.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "d3d30403d238d9f15e7341d0aaa768cee6d3574669cd5c1acc1b133d789f3de1"
+    },
+    {
+      "pmv": "PMV2",
+      "historia": "HU-IA-03",
+      "titulo": "Mostrar citas y procedencia",
+      "descripcion": "Referencia del fragmento, procedencia, pasaje vinculado y descarga del original autorizado.",
+      "archivo": "PMV2/PMV2-HU-IA-03-citas-y-procedencia.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "bf06cdfc85d8e74d9ed4b4ef510209fd696d468642640ff13514743af6746d3a"
+    },
+    {
+      "pmv": "PMV3",
+      "historia": "HU-IA-04",
+      "titulo": "Señalar contenido sin respaldo suficiente",
+      "descripcion": "Advertencias por sección: fuente por contrastar, ausencia de cita y contenido pendiente.",
+      "archivo": "PMV3/PMV3-HU-IA-04-advertencias-sin-respaldo.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "09830f46e8c44b39be7ff4b0fce9bd1fc5e9219b9731c25848a0d649cb31619b"
+    },
+    {
+      "pmv": "PMV3",
+      "historia": "HU-004",
+      "titulo": "Editar, aprobar o rechazar borrador",
+      "descripcion": "Nueva versión editada por el revisor, justificaciones y opciones de decisión. La captura es anterior al rechazo simulado que después se ve en auditoría.",
+      "archivo": "PMV3/PMV3-HU-004-editar-aprobar-o-rechazar.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "4b5416dd627864df6ec6a3c0c48ee6b643f4fae130271246f0b733d47cc393ce"
+    },
+    {
+      "pmv": "PMV3",
+      "historia": "HU-005",
+      "titulo": "Consultar versiones y exportar informe",
+      "descripcion": "Registro de versiones y decisión simulada, con botones de descarga DOCX/PDF aprobados. La imagen muestra los controles; no acredita por sí sola una descarga.",
+      "archivo": "PMV3/PMV3-HU-005-historial-y-exportacion.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "8493e48776543c7e1e015eee7095dd2ab8918ce88850890f67fcaaf1edb96c5d"
+    },
+    {
+      "pmv": "PMV3",
+      "historia": "HU-006",
+      "titulo": "Consultar auditoría",
+      "descripcion": "Tabla administrativa con usuario, acción, informe, fecha y hora; incluye edición y rechazo realizados durante la sesión.",
+      "archivo": "PMV3/PMV3-HU-006-consultar-auditoria.jpg",
+      "dimensiones": [
+        1707,
+        1019
+      ],
+      "sha256": "2c3dae101116da18cd91094a2a03ce0c61a4b96dfe0af5b6ff99211ae01408eb"
+    }
+  ]
+}
