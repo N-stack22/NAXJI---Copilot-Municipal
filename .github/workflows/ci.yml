@@ -59,7 +59,7 @@ jobs:
           npm run lint
           npm run build
       - name: Empaquetar backend
-        run: python -m build
+        run: python -m build --outdir build/backend
       - name: Auditar todas las dependencias y recursos SQL
         run: python scripts/auditar_cierre_estatico.py --salida "$RUNNER_TEMP/auditoria-naxji"
       - name: Construir imagen de despliegue sin secretos
