@@ -1,7 +1,8 @@
 """750 llamadas HTTP reales en laboratorio efímero; sin destino externo configurable.
 
 PostgreSQL/pgvector y sklearn reales. Auth, Storage, LLM y embeddings DOBLES.
-No estima capacidad de Ollama ni certifica producción. No lee .env.
+No estima capacidad de Ollama ni certifica producción. Operaciones con configuración
+explícita de laboratorio, sin utilizar credenciales de servicios compartidos.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor

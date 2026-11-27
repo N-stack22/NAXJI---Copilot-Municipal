@@ -52,6 +52,11 @@ def test_huellas_detectan_modificacion_antes_de_deserializar(tmp_path):
     for nombre in HUELLAS:
         (tmp_path / nombre).write_bytes((original / nombre).read_bytes())
     verificar_artefactos(tmp_path)
+    config = tmp_path / 'model_config.json'
+    normalizado = config.read_bytes().replace(b'\r\n', b'\n')
+    for variante in (normalizado, normalizado.replace(b'\n', b'\r\n')):
+        config.write_bytes(variante)
+        verificar_artefactos(tmp_path)
     (tmp_path / 'modelo_tipo.joblib').write_bytes(b'alterado')
     with pytest.raises(ValueError, match='huella'):
         verificar_artefactos(tmp_path)
